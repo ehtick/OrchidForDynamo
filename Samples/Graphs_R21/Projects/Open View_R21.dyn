@@ -1,0 +1,175 @@
+{
+  "Uuid": "3c9d0464-8643-5ffe-96e5-ab1769818209",
+  "IsCustomNode": false,
+  "Description": "",
+  "Name": "Open View",
+  "ElementResolver": {
+    "ResolutionMap": {}
+  },
+  "Inputs": [],
+  "Outputs": [],
+  "Nodes": [
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "Orchid.RevitProject.Common.Document.OpenView@Revit.Elements.Element",
+      "Id": "6105c7256dc84cfea8756d3a3159de7b",
+      "Inputs": [
+        {
+          "Id": "e2db35dbd5614df8b3e16f2eb23abd6f",
+          "Name": "view",
+          "Description": "View to open.\n\nElement",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "701866f8481340008b63888da13f0464",
+          "Name": "View",
+          "Description": "New active view.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Open view in the active document.\n\nDocument.OpenView (view: Element): Element\n\nNamespace:\nOrchid.RevitProject.Common"
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
+      "NodeType": "ExtensionNode",
+      "Id": "d3e82b59bb024f10bfe0849fc5d3362f",
+      "Inputs": [
+        {
+          "Id": "5e944545f279402e8a512979a926245d",
+          "Name": "",
+          "Description": "Node to evaluate.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "9d78014f9e2e4a76928653780992e4e0",
+          "Name": "",
+          "Description": "Watch contents.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Visualize the output of node."
+    },
+    {
+      "ConcreteType": "DSRevitNodesUI.Views, DSRevitNodesUI",
+      "SelectedIndex": 0,
+      "SelectedString": "{3D}",
+      "NodeType": "ExtensionNode",
+      "Id": "312b2632070442c19ff2a46de3db6b99",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "5f910d93aa2844ee8d8eae78902fd85d",
+          "Name": "Views",
+          "Description": "The selected Views",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "All views available in the current document."
+    }
+  ],
+  "Connectors": [
+    {
+      "Start": "701866f8481340008b63888da13f0464",
+      "End": "5e944545f279402e8a512979a926245d",
+      "Id": "48083584aff64d3eae14eeaf6c8c1b73"
+    },
+    {
+      "Start": "5f910d93aa2844ee8d8eae78902fd85d",
+      "End": "e2db35dbd5614df8b3e16f2eb23abd6f",
+      "Id": "8161ac4d8b1049b3842c4ec8d0fbb6cc"
+    }
+  ],
+  "Dependencies": [],
+  "NodeLibraryDependencies": [
+    {
+      "Name": "Orchid",
+      "Version": "206.3.0.8042",
+      "ReferenceType": "Package",
+      "Nodes": [
+        "6105c7256dc84cfea8756d3a3159de7b"
+      ]
+    }
+  ],
+  "Bindings": [],
+  "View": {
+    "Dynamo": {
+      "ScaleFactor": 1.0,
+      "HasRunWithoutCrash": true,
+      "IsVisibleInDynamoLibrary": true,
+      "Version": "2.3.1.11775",
+      "RunType": "Manual",
+      "RunPeriod": "1000"
+    },
+    "Camera": {
+      "Name": "Background Preview",
+      "EyeX": -17.0,
+      "EyeY": 24.0,
+      "EyeZ": 50.0,
+      "LookX": 12.0,
+      "LookY": -13.0,
+      "LookZ": -58.0,
+      "UpX": 0.0,
+      "UpY": 1.0,
+      "UpZ": 0.0
+    },
+    "NodeViews": [
+      {
+        "ShowGeometry": true,
+        "Name": "o|Document.OpenView",
+        "Id": "6105c7256dc84cfea8756d3a3159de7b",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 947.2749391460959,
+        "Y": 394.17305149146847
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Watch",
+        "Id": "d3e82b59bb024f10bfe0849fc5d3362f",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1221.2749391460959,
+        "Y": 394.17305149146847
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Views",
+        "Id": "312b2632070442c19ff2a46de3db6b99",
+        "IsSetAsInput": true,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 700.27493914609556,
+        "Y": 394.17305149146847
+      }
+    ],
+    "Annotations": [],
+    "X": -1307.5164990595581,
+    "Y": -344.36505149233585,
+    "Zoom": 1.9099876695437723
+  }
+}

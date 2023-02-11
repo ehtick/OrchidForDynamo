@@ -1,0 +1,264 @@
+{
+  "Uuid": "b1a39d3d-fad4-4bad-89e0-085f868fd86c",
+  "IsCustomNode": false,
+  "Description": "",
+  "Name": "ReorderParameters",
+  "ElementResolver": {
+    "ResolutionMap": {
+      "List": {
+        "Key": "List",
+        "Value": "BuiltIn.ds"
+      },
+      "DSCore": {
+        "Key": "DSCore.String",
+        "Value": "DSCoreNodes.dll"
+      },
+      "Revit.Document": {
+        "Key": "Revit.Application.Document",
+        "Value": "RevitNodes.dll"
+      },
+      "Orchid.Common.Document": {
+        "Key": "Orchid.RevitProject.Common.Document",
+        "Value": "OrchidRB.dll"
+      },
+      "Orchid.RevitProject.Common.Document": {
+        "Key": "Orchid.RevitProject.Common.Document",
+        "Value": "OrchidRB.dll"
+      }
+    }
+  },
+  "Inputs": [],
+  "Outputs": [],
+  "Nodes": [
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "Orchid.RevitFamily.FamilyParameter.Reorder@Revit.Application.Document,Revit.Elements.FamilyParameter[]",
+      "Id": "52a02bef779542788333c32b2fca3b54",
+      "Inputs": [
+        {
+          "Id": "b353066358184394a25ab4a9d8f6ecae",
+          "Name": "familyDocument",
+          "Description": "Family document (rfa).\n\nDocument\nDefault value : null",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "4386d4d311564a2eb427dd20a820e3ef",
+          "Name": "familyParameter",
+          "Description": "Ordered list of family parameters\n\nFamilyParameter[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "c051e914b69b42908c36b975fea01879",
+          "Name": "boolean",
+          "Description": "Boolean value if reordering succeded.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Reorder family parameters.\n\nFamilyParameter.Reorder (familyDocument: Document = null, familyParameter: FamilyParameter[]): bool\n\nNamespace:\nOrchid.RevitFamily"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "Orchid.RevitFamily.FamilyParameter.ByName@Revit.Application.Document,string",
+      "Id": "6098d779259548508581d10d3e3f6d6e",
+      "Inputs": [
+        {
+          "Id": "980ef77914d5428197aaf9e1ab8476ec",
+          "Name": "familyDocument",
+          "Description": "Family document (rfa).\n\nDocument\nDefault value : null",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "48c8ee852dfc43069567d1f64bc1787c",
+          "Name": "name",
+          "Description": "Name as string value.\n\nstring",
+          "UsingDefaultValue": false,
+          "Level": 1,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "26235d5c234340898342c38cc9cb9635",
+          "Name": "FamilyParameter",
+          "Description": "Family parameter as Orchid type.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Get family parameter by name.\n\nFamilyParameter.ByName (familyDocument: Document = null, name: string): FamilyParameter\n\nNamespace:\nOrchid.RevitFamily"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "// Orginal order\n[\n// Graphics\n\"Hinging\",\n\"Above Cutplane\",\n\"Sealing\",\n// Materials and Finishes\n\"Glass\",\n\"Frame/Mullion\",\n\"Case/Transom\",\n\"Embrasure\",\n\"Sill Plate\",\n\"Wall Surface\",\n// Dimensions\n\"Width\",\n\"Height\",\n\"Rebate Depth\",\n\"Seal Width\",\n\"Case Depth\",\n\"Case Width\",\n\"Frame Depth\",\n\"Frame Width\",\n\"Rabbet Depth\",\n\"Rabbet Width\",\n\"Glass Thickness\",\n\"Default Sill Height\",\n\"Rough Width\",\n\"Rough Height\"\n];",
+      "Id": "195b72ed48b040cf9ffde4ad2f73c8e7",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "25886aced63d4f2f92f5d0b477ee4db3",
+          "Name": "",
+          "Description": "Value of expression at line 2",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Allows for DesignScript code to be authored directly"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "// new order\n[\n// Graphics\n\"Sealing\",\n\"Hinging\",\n\"Above Cutplane\",\n// Materials and Finishes\n\"Case/Transom\",\n\"Frame/Mullion\",\n\"Glass\",\n\"Embrasure\",\n\"Sill Plate\",\n\"Wall Surface\",\n// Dimensions\n\"Width\",\n\"Height\",\n\"Seal Width\",\n\"Rebate Depth\",\n\"Case Depth\",\n\"Case Width\",\n\"Rabbet Depth\",\n\"Rabbet Width\",\n\"Frame Depth\",\n\"Frame Width\",\n\"Glass Thickness\",\n\"Default Sill Height\",\n\"Rough Width\",\n\"Rough Height\"\n];",
+      "Id": "437be69c4bde42b4b72a6f4a5f824d43",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "4dc5cede77f0421093363a8fcf8ec775",
+          "Name": "",
+          "Description": "Value of expression at line 2",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Allows for DesignScript code to be authored directly"
+    }
+  ],
+  "Connectors": [
+    {
+      "Start": "26235d5c234340898342c38cc9cb9635",
+      "End": "4386d4d311564a2eb427dd20a820e3ef",
+      "Id": "6501e533e6594f9694371b129d70ec6d"
+    },
+    {
+      "Start": "4dc5cede77f0421093363a8fcf8ec775",
+      "End": "48c8ee852dfc43069567d1f64bc1787c",
+      "Id": "40a4183ac66f489dbd66a94cd726e48c"
+    }
+  ],
+  "Dependencies": [],
+  "NodeLibraryDependencies": [
+    {
+      "Name": "Orchid",
+      "Version": "206.3.1.8213",
+      "ReferenceType": "Package",
+      "Nodes": [
+        "52a02bef779542788333c32b2fca3b54",
+        "6098d779259548508581d10d3e3f6d6e"
+      ]
+    }
+  ],
+  "Bindings": [],
+  "View": {
+    "Dynamo": {
+      "ScaleFactor": 1.0,
+      "HasRunWithoutCrash": true,
+      "IsVisibleInDynamoLibrary": true,
+      "Version": "2.6.2.15705",
+      "RunType": "Manual",
+      "RunPeriod": "1000"
+    },
+    "Camera": {
+      "Name": "Background Preview",
+      "EyeX": -17.0,
+      "EyeY": 24.0,
+      "EyeZ": 50.0,
+      "LookX": 12.0,
+      "LookY": -13.0,
+      "LookZ": -58.0,
+      "UpX": 0.0,
+      "UpY": 1.0,
+      "UpZ": 0.0
+    },
+    "NodeViews": [
+      {
+        "ShowGeometry": true,
+        "Name": "o|FamilyParameter.Reorder",
+        "Id": "52a02bef779542788333c32b2fca3b54",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 3221.4973168202232,
+        "Y": 52.96541079044286
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "o|FamilyParameter.ByName",
+        "Id": "6098d779259548508581d10d3e3f6d6e",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 2836.3801403555717,
+        "Y": 79.290971019824156
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Code Block",
+        "Id": "195b72ed48b040cf9ffde4ad2f73c8e7",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 2178.90019101159,
+        "Y": 91.930971019824
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Code Block",
+        "Id": "437be69c4bde42b4b72a6f4a5f824d43",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 2510.26296389092,
+        "Y": 91.930971019824
+      }
+    ],
+    "Annotations": [
+      {
+        "Id": "380e3ead2c5d41768c944a3f3a37d0ae",
+        "Title": "Reorder parameters",
+        "Nodes": [
+          "52a02bef779542788333c32b2fca3b54",
+          "6098d779259548508581d10d3e3f6d6e",
+          "437be69c4bde42b4b72a6f4a5f824d43"
+        ],
+        "Left": 2500.26296389092,
+        "Top": -0.034589209557140066,
+        "Width": 1000.234352929303,
+        "Height": 667.96556022938114,
+        "FontSize": 36.0,
+        "InitialTop": 52.96541079044286,
+        "InitialHeight": 183.96556022938114,
+        "TextblockHeight": 43.0,
+        "Background": "#FFFF7BAC"
+      }
+    ],
+    "X": -2616.3827466391476,
+    "Y": 71.326852546098564,
+    "Zoom": 1.2145497795429177
+  }
+}

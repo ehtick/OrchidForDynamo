@@ -1,0 +1,153 @@
+{
+  "Uuid": "3c9d0464-8643-5ffe-96e5-ab1769818209",
+  "IsCustomNode": false,
+  "Description": "",
+  "Name": "MergePDF",
+  "ElementResolver": {
+    "ResolutionMap": {}
+  },
+  "Inputs": [],
+  "Outputs": [],
+  "Nodes": [
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "Orchid.Common.File.MergePDF@string[],string",
+      "Id": "6934f77ce24a4c36b923c999b120cf16",
+      "Inputs": [
+        {
+          "Id": "3caaae4aee804f229c34021796b05672",
+          "Name": "documents",
+          "Description": "List of PDF documents to be merged.\n\nstring[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "7f3e4b764c2441d682d4688ea5bc9795",
+          "Name": "filePath",
+          "Description": "Give a valid path for the merged PDF output.\n\nstring",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "55be5a3c5196479e8962b88de4d046dd",
+          "Name": "watch",
+          "Description": "Add a watch node to verify the output.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Merge list of PDF documents.\n\nFile.MergePDF (documents: string[], filePath: string): string\n\nNamespace:\nOrchid.Common"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "//input documents\n[\"%userprofile%\\\\Downloads\\\\PDF\\\\pdf1.pdf\",\n\"%userprofile%\\\\Downloads\\\\PDF\\\\pdf2.pdf\"];\n\n//output file path\n\"%userprofile%\\\\Downloads\\\\PDF\\\\result.pdf\";",
+      "Id": "637037350c5045f38f0876c7f7516082",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "eab873ca170c436bada6b4ef336a1f4d",
+          "Name": "",
+          "Description": "Value of expression at line 2",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "b35af1c98c8644ec9165bd32af3a0921",
+          "Name": "",
+          "Description": "Value of expression at line 6",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Allows for DesignScript code to be authored directly"
+    }
+  ],
+  "Connectors": [
+    {
+      "Start": "eab873ca170c436bada6b4ef336a1f4d",
+      "End": "3caaae4aee804f229c34021796b05672",
+      "Id": "a695191ebfef4a73a04f911c89e76851"
+    },
+    {
+      "Start": "b35af1c98c8644ec9165bd32af3a0921",
+      "End": "7f3e4b764c2441d682d4688ea5bc9795",
+      "Id": "4f3b1a6ff70d44318c0c2c5521b4a786"
+    }
+  ],
+  "Dependencies": [],
+  "NodeLibraryDependencies": [
+    {
+      "Name": "Orchid",
+      "Version": "206.3.0.8040",
+      "ReferenceType": "Package",
+      "Nodes": [
+        "6934f77ce24a4c36b923c999b120cf16"
+      ]
+    }
+  ],
+  "Bindings": [],
+  "View": {
+    "Dynamo": {
+      "ScaleFactor": 1.0,
+      "HasRunWithoutCrash": false,
+      "IsVisibleInDynamoLibrary": true,
+      "Version": "2.3.1.11775",
+      "RunType": "Manual",
+      "RunPeriod": "1000"
+    },
+    "Camera": {
+      "Name": "Background Preview",
+      "EyeX": -17.0,
+      "EyeY": 24.0,
+      "EyeZ": 50.0,
+      "LookX": 12.0,
+      "LookY": -13.0,
+      "LookZ": -58.0,
+      "UpX": 0.0,
+      "UpY": 1.0,
+      "UpZ": 0.0
+    },
+    "NodeViews": [
+      {
+        "ShowGeometry": true,
+        "Name": "o|File.MergePDF",
+        "Id": "6934f77ce24a4c36b923c999b120cf16",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 300.3631944578193,
+        "Y": -404.92947149901454
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Code Block",
+        "Id": "637037350c5045f38f0876c7f7516082",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": -192.6368055421807,
+        "Y": -440.43613816568154
+      }
+    ],
+    "Annotations": [],
+    "X": 446.75197176653342,
+    "Y": 1287.0154720930736,
+    "Zoom": 2.1634078212290504
+  }
+}
