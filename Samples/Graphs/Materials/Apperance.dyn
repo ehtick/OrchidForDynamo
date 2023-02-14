@@ -2,7 +2,7 @@
   "Uuid": "3c9d0464-8643-5ffe-96e5-ab1769818209",
   "IsCustomNode": false,
   "Description": "",
-  "Name": "Apperance_R23",
+  "Name": "Apperance",
   "ElementResolver": {
     "ResolutionMap": {
       "Vector": {
@@ -18,16 +18,18 @@
   "Inputs": [
     {
       "Id": "2c2c04e4378146979931f214289974bc",
-      "Name": "o|Appearance Asset",
-      "Type": "dropdownSelection",
-      "Value": "",
-      "Description": "Dropdown for appearances\n\nNamespace: Orchid.RevitMaterial",
-      "SelectedIndex": -1
+      "Name": "Appearances",
+      "Type": "selection",
+      "Type2": "dropdownSelection",
+      "Value": "Default Wall",
+      "Description": "Dropdown for appearances",
+      "SelectedIndex": 43
     },
     {
       "Id": "ab078631429b445c90f2978002e4b51a",
       "Name": "String",
       "Type": "string",
+      "Type2": "string",
       "Value": "%userprofile%\\Programming\\Testing\\Data\\Stone_3.bmp",
       "Description": "Creates a string.",
       "SelectedIndex": 0
@@ -38,7 +40,7 @@
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
       "NodeType": "FunctionNode",
-      "FunctionSignature": "Orchid.RevitMaterial.Appearance.All",
+      "FunctionSignature": "Orchid.RevitMaterial.Appearance.InDocument",
       "Id": "eaa845e957cb401db2d847b3f9128280",
       "Inputs": [],
       "Outputs": [
@@ -53,7 +55,7 @@
         }
       ],
       "Replication": "Auto",
-      "Description": "Get all appearance assets.\n\nAppearance.All ( ): Element[]\n\nNamespace: Orchid.RevitMaterial"
+      "Description": "Get all appearance assets.\n\nAppearance.InDocument ( ): Element[]"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
@@ -175,12 +177,12 @@
     {
       "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
       "NodeType": "CodeBlockNode",
-      "Code": "\"Default\";\n\"_xx\";",
+      "Code": "\"Default Wall\";\n\"_xx\";",
       "Id": "51b9a659188a43789ae79c48c1d74402",
       "Inputs": [],
       "Outputs": [
         {
-          "Id": "a5db9097b31847aabc5c5c7351285b9b",
+          "Id": "eb16183724874eaf9081b905f38c34a0",
           "Name": "",
           "Description": "Value of expression at line 1",
           "UsingDefaultValue": false,
@@ -189,7 +191,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "5d4d0cc574094c1e92ea044dce57410e",
+          "Id": "99857ea63361451fa4dfb2183a2f2625",
           "Name": "",
           "Description": "Value of expression at line 2",
           "UsingDefaultValue": false,
@@ -267,12 +269,12 @@
         }
       ],
       "Replication": "Auto",
-      "Description": "Duplicate appearance.\n\nAppearance.Duplicate (appearance: var, name: string = null): var[]..[]\n\nNamespace: Orchid.RevitMaterial"
+      "Description": "Duplicate appearance.\n\nAppearance.Duplicate (appearance: var, name: string = null): Element"
     },
     {
       "ConcreteType": "Orchid.E.RevitMaterial.Appearance, OrchidRE",
-      "SelectedIndex": -1,
-      "SelectedString": "",
+      "SelectedIndex": 43,
+      "SelectedString": "Default Wall",
       "NodeType": "ExtensionNode",
       "Id": "2c2c04e4378146979931f214289974bc",
       "Inputs": [],
@@ -288,7 +290,7 @@
         }
       ],
       "Replication": "Disabled",
-      "Description": "Dropdown for appearances\n\nNamespace: Orchid.RevitMaterial"
+      "Description": "Dropdown for appearances"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
@@ -318,7 +320,7 @@
         }
       ],
       "Replication": "Auto",
-      "Description": "Get appearance by name.\n\nAppearance.ByName (name: string): Element\n\nNamespace: Orchid.RevitMaterial"
+      "Description": "Get appearance by name.\n\nAppearance.ByName (name: string): Element"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
@@ -357,7 +359,7 @@
         }
       ],
       "Replication": "Auto",
-      "Description": "Set appearance.\n\nMaterial.SetAppearance (material: var, appearance: var): var[]..[]\n\nNamespace: Orchid.RevitMaterial"
+      "Description": "Set appearance.\n\nMaterial.SetAppearance (material: var, appearance: var): var[]..[]"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
@@ -417,7 +419,7 @@
         }
       ],
       "Replication": "Auto",
-      "Description": "Get appearance by name.\n\nAppearance.ByName (name: string): Element\n\nNamespace: Orchid.RevitMaterial"
+      "Description": "Get appearance by name.\n\nAppearance.ByName (name: string): Element"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
@@ -495,7 +497,7 @@
         }
       ],
       "Replication": "Auto",
-      "Description": "Create appearance by asset. Note. If the appearance exists is the asset binding being updated!\n\nAppearance.Create (name: string, asset: Asset): var[]..[]\n\nNamespace: Orchid.RevitMaterial"
+      "Description": "Create appearance by asset. Note: If the appearance exists is the asset binding being updated!\n\nAppearance.Create (name: string, asset: Asset): var[]..[]"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
@@ -534,7 +536,7 @@
         }
       ],
       "Replication": "Auto",
-      "Description": "Get asset(s) by schema, return distinct category.\n\nAsset.BySchema (schema: string, default: bool = true): var[]..[]\n\nNamespace: Orchid.RevitMaterial.Appearance"
+      "Description": "Get asset(s) by schema, return distinct category.\n\nAsset.BySchema (schema: string, default: bool = true): var[]..[]"
     },
     {
       "ConcreteType": "Orchid.E.RevitMaterial.AssetSchema, OrchidRE",
@@ -555,7 +557,7 @@
         }
       ],
       "Replication": "Disabled",
-      "Description": "Dropdown for Asset schema\n\nNamespace: Orchid.RevitMaterial.Appearance"
+      "Description": "Dropdown for Asset schema"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
@@ -585,7 +587,7 @@
         }
       ],
       "Replication": "Auto",
-      "Description": "The category of the asset.\n\nAsset.Category: string\n\nNamespace: Orchid.RevitMaterial.Appearance"
+      "Description": "The category of the asset.\n\nAsset.Category: string"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
@@ -615,7 +617,7 @@
         }
       ],
       "Replication": "Auto",
-      "Description": "Get asset by category.\n\nAsset.ByCategory (category: string): Asset\n\nNamespace: Orchid.RevitMaterial.Appearance"
+      "Description": "Get asset by category.\n\nAsset.ByCategory (category: string): Asset"
     },
     {
       "ConcreteType": "CoreNodeModels.Input.BoolSelector, CoreNodeModels",
@@ -674,7 +676,7 @@
       "Inputs": [],
       "Outputs": [
         {
-          "Id": "80c4299029d24607a5bb435af07eb0f1",
+          "Id": "464ead64405f4e86ad1ff10ccd153c53",
           "Name": "",
           "Description": "Value of expression at line 4",
           "UsingDefaultValue": false,
@@ -683,7 +685,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "198bf77fc6ff447bb91587c9966fd0f5",
+          "Id": "93a8f6f1dd934a6fb0c5603b20e0d5ec",
           "Name": "",
           "Description": "Value of expression at line 6",
           "UsingDefaultValue": false,
@@ -692,7 +694,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "c2ee8be7b4ca4c4199688e0d8c3ac90a",
+          "Id": "799d31997d21466a946c68128bd29e79",
           "Name": "",
           "Description": "Value of expression at line 8",
           "UsingDefaultValue": false,
@@ -701,7 +703,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "a544394ca34e4385b7bceb05b59f7687",
+          "Id": "0bb511377ec445f4bead976d6be3db8b",
           "Name": "",
           "Description": "Value of expression at line 10",
           "UsingDefaultValue": false,
@@ -710,7 +712,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "d47a52c0d1814f9bbceec1d4d34b4007",
+          "Id": "b8fc418a20f94c23b676951c2276127a",
           "Name": "",
           "Description": "Value of expression at line 12",
           "UsingDefaultValue": false,
@@ -719,7 +721,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "8dae9fda7aa14b76a768e31184066f5f",
+          "Id": "35faf3c2b07946599f3280f1502b6f30",
           "Name": "",
           "Description": "Value of expression at line 14",
           "UsingDefaultValue": false,
@@ -728,7 +730,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "165f202b759646719aaf100ce0585531",
+          "Id": "f1ccd79752414c93bd37357e20512742",
           "Name": "",
           "Description": "Value of expression at line 16",
           "UsingDefaultValue": false,
@@ -737,7 +739,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "a9f630ccc2b544a9bfd44b1495f6f16c",
+          "Id": "885fe08ac3c44570830ab5fba4026d3d",
           "Name": "",
           "Description": "Value of expression at line 18",
           "UsingDefaultValue": false,
@@ -746,7 +748,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "a96e0b5f2f1c454ead399f8ca2b7ee58",
+          "Id": "bdd4948bd7264831ad7e3ec94a0f73c2",
           "Name": "",
           "Description": "Value of expression at line 20",
           "UsingDefaultValue": false,
@@ -755,7 +757,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "4366b0396c3c455c85e148d974d00db4",
+          "Id": "9594406ac84d4341810b22f10f5d3615",
           "Name": "",
           "Description": "Value of expression at line 22",
           "UsingDefaultValue": false,
@@ -764,7 +766,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "8112f4d1eb3149e191d8c175a49607ab",
+          "Id": "0b38cec13964432a9f642db169205d09",
           "Name": "",
           "Description": "Value of expression at line 24",
           "UsingDefaultValue": false,
@@ -773,7 +775,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "eea54756ecaf43689efc46d4e9aa4c70",
+          "Id": "b48e6ecc0ef14996ab90dbd0e4f54f70",
           "Name": "",
           "Description": "Value of expression at line 26",
           "UsingDefaultValue": false,
@@ -782,7 +784,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "d3044a4c95a44d918dbec013f39253b6",
+          "Id": "dd1a0f7145984fc0ba4e4cdacbbe4b41",
           "Name": "",
           "Description": "Value of expression at line 28",
           "UsingDefaultValue": false,
@@ -791,7 +793,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "ef72acc8e1e644c4b906b4fe6af65b29",
+          "Id": "d45ee7b9360e4e01aca5441d6128dbb2",
           "Name": "",
           "Description": "Value of expression at line 30",
           "UsingDefaultValue": false,
@@ -800,7 +802,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "6ec3fc9bafdd4dd9a9f6f2bee54771ff",
+          "Id": "fd2eb5baa812482096ac0264a85b8347",
           "Name": "",
           "Description": "Value of expression at line 32",
           "UsingDefaultValue": false,
@@ -809,7 +811,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "201b1b7a3395440e8cd3bd5ff75bf88c",
+          "Id": "7879a7222c4b4572bf4de6eda25c7145",
           "Name": "",
           "Description": "Value of expression at line 34",
           "UsingDefaultValue": false,
@@ -818,7 +820,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "4ef0aed5fedf4750833e61d30ff8c36b",
+          "Id": "d422b50a7624430d8cd00dfdd89abefd",
           "Name": "",
           "Description": "Value of expression at line 36",
           "UsingDefaultValue": false,
@@ -867,7 +869,7 @@
         }
       ],
       "Replication": "Auto",
-      "Description": "Get asset(s) by schema, return distinct category.\n\nAsset.BySchema (schema: string, default: bool = true): var[]..[]\n\nNamespace: Orchid.RevitMaterial.Appearance"
+      "Description": "Get asset(s) by schema, return distinct category.\n\nAsset.BySchema (schema: string, default: bool = true): var[]..[]"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
@@ -944,7 +946,7 @@
         }
       ],
       "Replication": "Auto",
-      "Description": "Create appearance by schema (default). Note. If the appearance exists is the asset binding being updated!\n\nAppearance.Create (name: string, schema: string): var[]..[]\n\nNamespace: Orchid.RevitMaterial"
+      "Description": "Create appearance by schema (default). Note: If the appearance exists is the asset binding being updated!\n\nAppearance.Create (name: string, schema: string): var[]..[]"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
@@ -1059,7 +1061,7 @@
         }
       ],
       "Replication": "Auto",
-      "Description": "Set information.\n\nAppearance.SetInformation (appearance: var, description: string = null, keyword: string = null): Element\n\nNamespace: Orchid.RevitMaterial"
+      "Description": "Set information.\n\nAppearance.SetInformation (appearance: var, description: string = null, keyword: string = null): Element"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
@@ -1204,7 +1206,7 @@
         }
       ],
       "Replication": "Auto",
-      "Description": "Get appearance by name.\n\nAppearance.ByName (name: string): Element\n\nNamespace: Orchid.RevitMaterial"
+      "Description": "Get appearance by name.\n\nAppearance.ByName (name: string): Element"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
@@ -1293,7 +1295,7 @@
         {
           "Id": "d2013d921a434dd7a2f9965cdb1946e7",
           "Name": "File",
-          "Description": "File object.",
+          "Description": "File as string.",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -1301,7 +1303,7 @@
         }
       ],
       "Replication": "Auto",
-      "Description": "Get file from a path.\n\nFile.FromPath (path: string): string\n\nNamespace: Orchid.Common"
+      "Description": "Get file from a path.\n\nFile.FromPath (path: string): string"
     },
     {
       "ConcreteType": "CoreNodeModels.Input.StringInput, CoreNodeModels",
@@ -1369,7 +1371,7 @@
         }
       ],
       "Replication": "Auto",
-      "Description": "Set reflectivity appearance.\n\nAppearance.SetReflectivity (appearance: var, direct: double, oblique: double): Element\n\nNamespace: Orchid.RevitMaterial"
+      "Description": "Set reflectivity appearance.\n\nAppearance.SetReflectivity (appearance: var, direct: double, oblique: double): Element"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
@@ -1444,7 +1446,7 @@
         }
       ],
       "Replication": "Auto",
-      "Description": "Set transparency appearance.\n\nAppearance.SetTransparency (appearance: var, amount: double, texture: Texture, imageFade: double, translucency: Texture, refraction: double): Element\n\nNamespace: Orchid.RevitMaterial"
+      "Description": "Set transparency appearance.\n\nAppearance.SetTransparency (appearance: var, amount: double, texture: Texture, imageFade: double, translucency: Texture, refraction: double): Element"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
@@ -1519,7 +1521,7 @@
         }
       ],
       "Replication": "Auto",
-      "Description": "Set generic appearance.\n\nAppearance.SetGeneric (appearance: var, color: Color, texture: Texture, imageFade: double, glossiness: Texture, highlights: bool): Element\n\nNamespace: Orchid.RevitMaterial"
+      "Description": "Set generic appearance.\n\nAppearance.SetGeneric (appearance: var, color: Color, texture: Texture, imageFade: double, glossiness: Texture, highlights: bool): Element"
     },
     {
       "ConcreteType": "Orchid.E.RevitMaterial.TransparencyRefraction, OrchidRE",
@@ -1540,7 +1542,7 @@
         }
       ],
       "Replication": "Disabled",
-      "Description": "Dropdown for transparency refraction\n\nNamespace: Orchid.RevitMaterial"
+      "Description": "Dropdown for transparency refraction"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
@@ -1570,7 +1572,7 @@
         }
       ],
       "Replication": "Auto",
-      "Description": "Texture for an image input.\n\nTexture.Image (path: string): Texture\n\nNamespace: Orchid.RevitMaterial.Appearance"
+      "Description": "Texture for an image input.\n\nTexture.Image (path: string): Texture"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
@@ -1629,7 +1631,7 @@
         }
       ],
       "Replication": "Auto",
-      "Description": "Set cutouts appearance.\n\nAppearance.SetCutouts (appearance: var, texture: Texture): Element\n\nNamespace: Orchid.RevitMaterial"
+      "Description": "Set cutouts appearance.\n\nAppearance.SetCutouts (appearance: var, texture: Texture): Element"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
@@ -1724,7 +1726,7 @@
         }
       ],
       "Replication": "Auto",
-      "Description": "Set self illumination appearance.\n\nAppearance.SetSelfIllumination (appearance: var, texture: Texture, luminance: double, colorTemperature: double): Element\n\nNamespace: Orchid.RevitMaterial"
+      "Description": "Set self illumination appearance.\n\nAppearance.SetSelfIllumination (appearance: var, texture: Texture, luminance: double, colorTemperature: double): Element"
     },
     {
       "ConcreteType": "Orchid.E.RevitMaterial.SelfIlluminationLuminance, OrchidRE",
@@ -1745,7 +1747,7 @@
         }
       ],
       "Replication": "Disabled",
-      "Description": "Dropdown for self illumination luminance\n\nNamespace: Orchid.RevitMaterial"
+      "Description": "Dropdown for self illumination luminance"
     },
     {
       "ConcreteType": "Orchid.E.RevitMaterial.SelfIlluminationColorTemperatur, OrchidRE",
@@ -1766,7 +1768,7 @@
         }
       ],
       "Replication": "Disabled",
-      "Description": "Dropdown for self illumination color temperature\n\nNamespace: Orchid.RevitMaterial"
+      "Description": "Dropdown for self illumination color temperature"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
@@ -1796,7 +1798,7 @@
         }
       ],
       "Replication": "Auto",
-      "Description": "Texture for a slider (double) input\n\nTexture.Slider (value: double): Texture\n\nNamespace: Orchid.RevitMaterial.Appearance"
+      "Description": "Texture for a slider (double) input\n\nTexture.Slider (value: double): Texture"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
@@ -1844,7 +1846,7 @@
         }
       ],
       "Replication": "Auto",
-      "Description": "Set bump appearance.\n\nAppearance.SetBump (appearance: var, texture: Texture, amount: Texture): Element\n\nNamespace: Orchid.RevitMaterial"
+      "Description": "Set bump appearance.\n\nAppearance.SetBump (appearance: var, texture: Texture, amount: Texture): Element"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
@@ -1903,7 +1905,7 @@
         }
       ],
       "Replication": "Auto",
-      "Description": "Set tint appearance.\n\nAppearance.SetTint (appearance: var, color: Color): Element\n\nNamespace: Orchid.RevitMaterial"
+      "Description": "Set tint appearance.\n\nAppearance.SetTint (appearance: var, color: Color): Element"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
@@ -1933,7 +1935,7 @@
         }
       ],
       "Replication": "Auto",
-      "Description": "Texture for a slider (double) input\n\nTexture.Slider (value: double): Texture\n\nNamespace: Orchid.RevitMaterial.Appearance"
+      "Description": "Texture for a slider (double) input\n\nTexture.Slider (value: double): Texture"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
@@ -1963,7 +1965,7 @@
         }
       ],
       "Replication": "Auto",
-      "Description": "Texture for a slider (double) input\n\nTexture.Slider (value: double): Texture\n\nNamespace: Orchid.RevitMaterial.Appearance"
+      "Description": "Texture for a slider (double) input\n\nTexture.Slider (value: double): Texture"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
@@ -1993,7 +1995,7 @@
         }
       ],
       "Replication": "Auto",
-      "Description": "Texture for a dynamo color input.\n\nTexture.Color (color: Color): Texture\n\nNamespace: Orchid.RevitMaterial.Appearance"
+      "Description": "Texture for a dynamo color input.\n\nTexture.Color (color: Color): Texture"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
@@ -2032,7 +2034,7 @@
         }
       ],
       "Replication": "Auto",
-      "Description": "Set appearance.\n\nMaterial.SetAppearance (material: var, appearance: var): var[]..[]\n\nNamespace: Orchid.RevitMaterial"
+      "Description": "Set appearance.\n\nMaterial.SetAppearance (material: var, appearance: var): var[]..[]"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
@@ -2062,7 +2064,7 @@
         }
       ],
       "Replication": "Auto",
-      "Description": "Create material.\n\nMaterial.Create (name: string): var[]..[]\n\nNamespace: Orchid.RevitMaterial"
+      "Description": "Create material.\n\nMaterial.Create (name: string): var[]..[]"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
@@ -2209,7 +2211,7 @@
         }
       ],
       "Replication": "Auto",
-      "Description": "Convert Orchid and Dynamo Revit object to Autodesk Revit object.\n\nObject.ToRevitType (object: var): var[]..[]\n\nNamespace: Orchid.Common"
+      "Description": "Convert Orchid and Dynamo Revit object to Autodesk Revit object.\n\nObject.ToRevitType (object: var): var[]..[]"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
@@ -2239,7 +2241,7 @@
         }
       ],
       "Replication": "Auto",
-      "Description": "Convert Autodesk Revit object to Orchid object.\n\nObject.ToOrchidType (object: var): var[]..[]\n\nNamespace: Orchid.Common"
+      "Description": "Convert Autodesk Revit object to Orchid object.\n\nObject.ToOrchidType (object: var): var[]..[]"
     },
     {
       "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
@@ -2303,15 +2305,15 @@
       "IsHidden": "False"
     },
     {
-      "Start": "a5db9097b31847aabc5c5c7351285b9b",
+      "Start": "eb16183724874eaf9081b905f38c34a0",
       "End": "b0f25242507e458285dea40117e60bc6",
-      "Id": "35650c2344cf4a9594785db1c547bdc9",
+      "Id": "44fe6d39b46a463aaa8dc24ea69e018f",
       "IsHidden": "False"
     },
     {
-      "Start": "5d4d0cc574094c1e92ea044dce57410e",
+      "Start": "99857ea63361451fa4dfb2183a2f2625",
       "End": "97894d8663b3406e8262f80a830359f2",
-      "Id": "8aa966ac42384e5a81ce7213d7b80d8f",
+      "Id": "a2c963a9a4ea4538984ac37f1bfc8623",
       "IsHidden": "False"
     },
     {
@@ -2393,7 +2395,7 @@
       "IsHidden": "False"
     },
     {
-      "Start": "80c4299029d24607a5bb435af07eb0f1",
+      "Start": "464ead64405f4e86ad1ff10ccd153c53",
       "End": "1771074e02e548249b14735aa8596456",
       "Id": "07b029024d7442fcbb8a3c834d0b2c8e",
       "IsHidden": "False"
@@ -2709,7 +2711,7 @@
   "NodeLibraryDependencies": [
     {
       "Name": "Orchid",
-      "Version": "213.0.1.8223",
+      "Version": "216.3.0.8444",
       "ReferenceType": "Package",
       "Nodes": [
         "eaa845e957cb401db2d847b3f9128280",
@@ -2786,7 +2788,7 @@
       "ScaleFactor": 1.0,
       "HasRunWithoutCrash": true,
       "IsVisibleInDynamoLibrary": true,
-      "Version": "2.13.1.3887",
+      "Version": "2.16.1.2727",
       "RunType": "Manual",
       "RunPeriod": "1000"
     },
@@ -2805,7 +2807,7 @@
     "ConnectorPins": [],
     "NodeViews": [
       {
-        "Name": "o|Appearance.All",
+        "Name": "Appearance.InDocument",
         "ShowGeometry": true,
         "Id": "eaa845e957cb401db2d847b3f9128280",
         "IsSetAsInput": false,
@@ -2821,8 +2823,8 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 287.503602954327,
-        "Y": 1652.62851951148
+        "X": 352.106884793348,
+        "Y": 1652.60961732148
       },
       {
         "Name": "Watch",
@@ -2831,8 +2833,8 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 287.503602954327,
-        "Y": 1813.60437313081
+        "X": 352.106884793348,
+        "Y": 1813.58547094081
       },
       {
         "Name": "Watch",
@@ -2841,8 +2843,8 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 637.76362306874819,
-        "Y": 1813.6043731308064
+        "X": 713.17173026581077,
+        "Y": 1813.5854709408068
       },
       {
         "Name": "Code Block",
@@ -2851,8 +2853,8 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 1030.462494686685,
-        "Y": 2210.7510007435312
+        "X": 1121.5423929917204,
+        "Y": 2211.2006046887564
       },
       {
         "Name": "Code Block",
@@ -2861,8 +2863,8 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 1030.1674349278935,
-        "Y": 1661.455263645006
+        "X": 1110.0396109206868,
+        "Y": 1661.688842510096
       },
       {
         "Name": "Watch",
@@ -2871,48 +2873,48 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 1989.1674349278935,
-        "Y": 1652.8002636450058
+        "X": 2106.0396109206868,
+        "Y": 1653.0338425100958
       },
       {
-        "Name": "o|Appearance.Duplicate",
+        "Name": "Appearance.Duplicate",
         "ShowGeometry": true,
         "Id": "ea49c641977945098209aa57f6901590",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 1630.1674349278935,
-        "Y": 1652.8002636450058
+        "X": 1742.0396109206868,
+        "Y": 1653.0338425100958
       },
       {
-        "Name": "o|Appearance Asset",
+        "Name": "Appearances",
         "ShowGeometry": true,
         "Id": "2c2c04e4378146979931f214289974bc",
         "IsSetAsInput": true,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 1286.4640686103455,
-        "Y": 1832.3348563313134
+        "X": 1412.03961092069,
+        "Y": 1831.46488469078
       },
       {
-        "Name": "o|Appearance.ByName",
+        "Name": "Appearance.ByName",
         "ShowGeometry": true,
         "Id": "dfe6a16e219641d491e55e1a903a4e78",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 1357.462494686685,
-        "Y": 2293.0960007435306
+        "X": 1454.5423929917204,
+        "Y": 2293.5456046887566
       },
       {
-        "Name": "o|Material.SetAppearance",
+        "Name": "Material.SetAppearance",
         "ShowGeometry": true,
         "Id": "c114048c5d5f4ef1918f58a86afd9a14",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 1700.462494686685,
-        "Y": 2202.0960007435306
+        "X": 1784.5423929917204,
+        "Y": 2202.5456046887566
       },
       {
         "Name": "Material.ByName",
@@ -2921,18 +2923,18 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 1357.462494686685,
-        "Y": 2145.0960007435306
+        "X": 1454.5423929917204,
+        "Y": 2145.5456046887566
       },
       {
-        "Name": "o|Appearance.ByName",
+        "Name": "Appearance.ByName",
         "ShowGeometry": true,
         "Id": "b45fad023f1a40dc94d058baebc46cc5",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 1287.1674349278935,
-        "Y": 1652.8002636450058
+        "X": 1412.0396109206868,
+        "Y": 1653.0338425100958
       },
       {
         "Name": "Code Block",
@@ -2941,58 +2943,58 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 3094.37198923054,
-        "Y": 1810.14616988861
+        "X": 3134.8492196390721,
+        "Y": 1808.708991609542
       },
       {
-        "Name": "o|Appearance.Create",
+        "Name": "Appearance.Create",
         "ShowGeometry": true,
         "Id": "44d93a22194946c4a322483d64e3083f",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 3395.37198923054,
-        "Y": 1801.49116988861
+        "X": 3460.8492196390721,
+        "Y": 1800.0539916095418
       },
       {
-        "Name": "o|Asset.BySchema",
+        "Name": "Asset.BySchema",
         "ShowGeometry": true,
         "Id": "67712ce9f63d487da3717550d46f269f",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 2782.37198923054,
-        "Y": 1731.81866988861
+        "X": 2818.8492196390721,
+        "Y": 1730.8814916095419
       },
       {
-        "Name": "o|Asset Schema",
+        "Name": "Asset Schema",
         "ShowGeometry": true,
         "Id": "2af6acca58d8402c9dbc78b22b9a60c6",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 2458.37198923054,
-        "Y": 1674.81866988861
+        "X": 2489.84921963907,
+        "Y": 1730.8814916095409
       },
       {
-        "Name": "o|Asset.Category",
+        "Name": "Asset.Category",
         "ShowGeometry": true,
         "Id": "59bf5bbe62ee48c29f3228bdbc8a8c20",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 3094.37198923054,
-        "Y": 1653.49116988861
+        "X": 3134.8492196390721,
+        "Y": 1653.0539916095418
       },
       {
-        "Name": "o|Asset.ByCategory",
+        "Name": "Asset.ByCategory",
         "ShowGeometry": true,
         "Id": "a57a8c541bfe40c0a6b4437085211528",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 3395.37198923054,
-        "Y": 1653.49116988861
+        "X": 3460.8492196390721,
+        "Y": 1653.0539916095418
       },
       {
         "Name": "Boolean",
@@ -3001,8 +3003,8 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 2458.37198923054,
-        "Y": 1822.81866988861
+        "X": 2489.84921963907,
+        "Y": 1949.8144372206809
       },
       {
         "Name": "Watch",
@@ -3011,8 +3013,8 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 2068.4624946866852,
-        "Y": 2202.0960007435306
+        "X": 2136.5423929917206,
+        "Y": 2202.5456046887566
       },
       {
         "Name": "Code Block",
@@ -3021,18 +3023,18 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 2467.4058717988,
-        "Y": 1971.28085135316
+        "X": 2489.84921963907,
+        "Y": 2097.943187220681
       },
       {
-        "Name": "o|Asset.BySchema",
+        "Name": "Asset.BySchema",
         "ShowGeometry": true,
         "Id": "4ad064505b3a42899b36d88535e64401",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 2815.42573918241,
-        "Y": 2020.48835135316
+        "X": 2870.3092604608109,
+        "Y": 2132.1506872206792
       },
       {
         "Name": "Code Block",
@@ -3041,18 +3043,18 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 10.219841061835723,
-        "Y": -472.64492940607818
+        "X": 9.719841061837883,
+        "Y": -268.41324720894818
       },
       {
-        "Name": "o|Appearance.Create",
+        "Name": "Appearance.Create",
         "ShowGeometry": true,
         "Id": "531b78b4eec14a979150256b82f6e6f6",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 322.21984106183572,
-        "Y": -472.47242940607816
+        "X": 327.71984106183788,
+        "Y": -268.24074720894816
       },
       {
         "Name": "Code Block",
@@ -3061,8 +3063,8 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 337.76683606336081,
-        "Y": 617.00619652966964
+        "X": 343.11105880580391,
+        "Y": 616.978763412477
       },
       {
         "Name": "Code Block",
@@ -3071,18 +3073,18 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 337.76683606336081,
-        "Y": 220.00619652966958
+        "X": 343.11105880580391,
+        "Y": 219.97876341247692
       },
       {
-        "Name": "o|Appearance.SetInformation",
+        "Name": "Appearance.SetInformation",
         "ShowGeometry": true,
         "Id": "496651be32174872a6fbbfb6ebc54fe8",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 680.76683606336087,
-        "Y": 186.86869652966976
+        "X": 684.11105880580385,
+        "Y": 186.84126341247688
       },
       {
         "Name": "Color.ByARGB",
@@ -3091,8 +3093,8 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 680.76683606336087,
-        "Y": 398.86869652966971
+        "X": 684.11105880580385,
+        "Y": 398.841263412477
       },
       {
         "Name": "Code Block",
@@ -3101,8 +3103,8 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 337.76683606336081,
-        "Y": 443.35119652966966
+        "X": 343.11105880580391,
+        "Y": 443.323763412477
       },
       {
         "Name": "Code Block",
@@ -3111,18 +3113,18 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 9.7668360633608131,
-        "Y": 72.696196529669635
+        "X": 10.111058805803907,
+        "Y": 72.66876341247675
       },
       {
-        "Name": "o|Appearance.ByName",
+        "Name": "Appearance.ByName",
         "ShowGeometry": true,
         "Id": "b8bb25cdbae3468ba7c179d49726de08",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 337.76683606336081,
-        "Y": 72.868696529669762
+        "X": 343.11105880580391,
+        "Y": 72.841263412476877
       },
       {
         "Name": "Code Block",
@@ -3131,8 +3133,8 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 1076.7668360633606,
-        "Y": 839.35119652966966
+        "X": 1064.1110588058039,
+        "Y": 839.323763412477
       },
       {
         "Name": "Code Block",
@@ -3141,18 +3143,18 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 1076.7668360633606,
-        "Y": 691.69619652966969
+        "X": 1064.1110588058039,
+        "Y": 691.668763412477
       },
       {
-        "Name": "o|File.FromPath",
+        "Name": "File.FromPath",
         "ShowGeometry": true,
         "Id": "468a341cf2d64bfba7b5c7fa9225b152",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 337.76683606336081,
-        "Y": 794.36869652966959
+        "X": 343.11105880580391,
+        "Y": 794.341263412477
       },
       {
         "Name": "String",
@@ -3161,58 +3163,58 @@
         "IsSetAsInput": true,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 9.7668360633608131,
-        "Y": 794.36869652966959
+        "X": 10.111058805803907,
+        "Y": 794.341263412477
       },
       {
-        "Name": "o|Appearance.SetReflectivity",
+        "Name": "Appearance.SetReflectivity",
         "ShowGeometry": true,
         "Id": "d84b313c4fcd4b94816d02216d6f4523",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 1438.7668360633606,
-        "Y": 559.86869652966971
+        "X": 1428.1110588058039,
+        "Y": 559.841263412477
       },
       {
-        "Name": "o|Appearance.SetTransparency",
+        "Name": "Appearance.SetTransparency",
         "ShowGeometry": true,
         "Id": "50ee083cbbe04baf82534c74f473edaf",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 1829.7668360633606,
-        "Y": 648.86869652966959
+        "X": 1803.1110588058039,
+        "Y": 648.841263412477
       },
       {
-        "Name": "o|Appearance.SetGeneric",
+        "Name": "Appearance.SetGeneric",
         "ShowGeometry": true,
         "Id": "6b395b087b78455ebaaa6d49595f2a6b",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 1076.7668360633606,
-        "Y": 373.86869652966971
+        "X": 1064.1110588058039,
+        "Y": 373.841263412477
       },
       {
-        "Name": "o|Transparency Refraction",
+        "Name": "Transparency Refraction",
         "ShowGeometry": true,
         "Id": "c61d22c8f0cd4c008e74b64742a0af0c",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 1438.7668360633606,
-        "Y": 919.86869652966959
+        "X": 1428.1110588058039,
+        "Y": 919.841263412477
       },
       {
-        "Name": "o|Texture.Image",
+        "Name": "Texture.Image",
         "ShowGeometry": true,
         "Id": "4a91b760008a47dcaa98f46aa084c355",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 680.76683606336087,
-        "Y": 794.36869652966959
+        "X": 684.11105880580385,
+        "Y": 794.341263412477
       },
       {
         "Name": "Code Block",
@@ -3221,18 +3223,18 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 2265.7668360633606,
-        "Y": 1339.6961965296696
+        "X": 2245.1110588058041,
+        "Y": 1340.6687634124769
       },
       {
-        "Name": "o|Appearance.SetCutouts",
+        "Name": "Appearance.SetCutouts",
         "ShowGeometry": true,
         "Id": "2d312f3544f04ce8b7dafb2946a14d8e",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 2265.7668360633606,
-        "Y": 719.86869652966959
+        "X": 2245.1110588058041,
+        "Y": 719.841263412477
       },
       {
         "Name": "Code Block",
@@ -3241,58 +3243,58 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 1829.7668360633606,
-        "Y": 967.69619652966969
+        "X": 1803.1110588058039,
+        "Y": 967.66876341247689
       },
       {
-        "Name": "o|Appearance.SetSelfIllumination",
+        "Name": "Appearance.SetSelfIllumination",
         "ShowGeometry": true,
         "Id": "cc01da8aa93b421e808fd2c1e4db8d33",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 2723.7668360633606,
-        "Y": 947.86869652966959
+        "X": 2687.1110588058041,
+        "Y": 948.841263412477
       },
       {
-        "Name": "o|Self Illumination Luminance",
+        "Name": "Self Illumination Luminance",
         "ShowGeometry": true,
         "Id": "31a2c6ff152142c4bd8b1bce8957f0f6",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 2265.7668360633606,
-        "Y": 1043.8686965296697
+        "X": 2245.1110588058041,
+        "Y": 1045.841263412477
       },
       {
-        "Name": "o|Self Illumination Color Temperature",
+        "Name": "Self Illumination Color Temperature",
         "ShowGeometry": true,
         "Id": "b63a4d89871b4d9e945bfeaccf4e1856",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 2265.7668360633606,
-        "Y": 1190.8686965296697
+        "X": 2245.1110588058041,
+        "Y": 1192.841263412477
       },
       {
-        "Name": "o|Texture.Slider",
+        "Name": "Texture.Slider",
         "ShowGeometry": true,
         "Id": "41d7cdc1347e42328fa51689af7871f1",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 2723.7668360633606,
-        "Y": 1195.8686965296697
+        "X": 2687.1110588058041,
+        "Y": 1196.841263412477
       },
       {
-        "Name": "o|Appearance.SetBump",
+        "Name": "Appearance.SetBump",
         "ShowGeometry": true,
         "Id": "0d31cc974f70481895c6578d2589fedb",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 3151.7668360633606,
-        "Y": 1037.8686965296697
+        "X": 3099.1110588058041,
+        "Y": 1038.841263412477
       },
       {
         "Name": "Code Block",
@@ -3301,68 +3303,68 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 3151.7668360633606,
-        "Y": 1251.6961965296696
+        "X": 3099.1110588058041,
+        "Y": 1252.6687634124769
       },
       {
-        "Name": "o|Appearance.SetTint",
+        "Name": "Appearance.SetTint",
         "ShowGeometry": true,
         "Id": "f3138167bfe14518b45e8a468d058544",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 3572.7668360633606,
-        "Y": 1127.8686965296697
+        "X": 3526.1110588058041,
+        "Y": 1128.841263412477
       },
       {
-        "Name": "o|Texture.Slider",
+        "Name": "Texture.Slider",
         "ShowGeometry": true,
         "Id": "d8f07e532d0d40c7b1b3b2ecb709ca75",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 680.76683606336087,
-        "Y": 646.86869652966959
+        "X": 684.11105880580385,
+        "Y": 646.841263412477
       },
       {
-        "Name": "o|Texture.Slider",
+        "Name": "Texture.Slider",
         "ShowGeometry": true,
         "Id": "8d02c17d12b94cb1a69ff7df7b7a9321",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 1438.7668360633606,
-        "Y": 772.86869652966959
+        "X": 1428.1110588058039,
+        "Y": 772.841263412477
       },
       {
-        "Name": "o|Texture.Color",
+        "Name": "Texture.Color",
         "ShowGeometry": true,
         "Id": "31fe47c485ca402f91e57061d8b51c58",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 2265.7668360633606,
-        "Y": 896.86869652966959
+        "X": 2245.1110588058041,
+        "Y": 896.841263412477
       },
       {
-        "Name": "o|Material.SetAppearance",
+        "Name": "Material.SetAppearance",
         "ShowGeometry": true,
         "Id": "c2961e3d3aef4aca9d2ea599010e0b03",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 659.21984106183572,
-        "Y": -563.47242940607816
+        "X": 669.719841061838,
+        "Y": -359.24074720894816
       },
       {
-        "Name": "o|Material.Create",
+        "Name": "Material.Create",
         "ShowGeometry": true,
         "Id": "641224784e7a4ad4bbd6f4fe650e5c5e",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 322.21984106183572,
-        "Y": -620.47242940607816
+        "X": 327.71984106183788,
+        "Y": -416.24074720894816
       },
       {
         "Name": "Material.Name",
@@ -3371,8 +3373,8 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 1027.2198410618357,
-        "Y": -720.47242940607816
+        "X": 1021.719841061838,
+        "Y": -435.24074720894816
       },
       {
         "Name": "Watch",
@@ -3381,8 +3383,8 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 1336.2198410618357,
-        "Y": -406.47242940607816
+        "X": 1335.719841061838,
+        "Y": -283.24074720894816
       },
       {
         "Name": "Watch",
@@ -3391,8 +3393,8 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 1336.2198410618357,
-        "Y": -720.47242940607816
+        "X": 1335.719841061838,
+        "Y": -435.24074720894816
       },
       {
         "Name": "Watch",
@@ -3401,28 +3403,28 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 3717.94734804581,
-        "Y": 2341.47856697668
+        "X": 3841.3092604608109,
+        "Y": 2288.6506872206783
       },
       {
-        "Name": "o|Object.ToRevitType",
+        "Name": "Object.ToRevitType",
         "ShowGeometry": true,
         "Id": "ca03311d49ec42aa90cb1567e9ee00dd",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 3094.37198923054,
-        "Y": 2020.48835135316
+        "X": 3199.3092604608109,
+        "Y": 2132.1506872206792
       },
       {
-        "Name": "o|Object.ToOrchidType",
+        "Name": "Object.ToOrchidType",
         "ShowGeometry": true,
         "Id": "5d29d6ee5c734d97a1223d11a039b676",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 3395.37198923054,
-        "Y": 2020.48835135316
+        "X": 3515.3092604608109,
+        "Y": 1975.6506872206787
       },
       {
         "Name": "Watch",
@@ -3431,8 +3433,8 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 3717.94734804581,
-        "Y": 2020.48835135316
+        "X": 3841.3092604608109,
+        "Y": 1975.6506872206787
       }
     ],
     "Annotations": [
@@ -3451,12 +3453,12 @@
         ],
         "HasNestedGroups": false,
         "Left": 0.042039320885777443,
-        "Top": 1579.62851951148,
-        "Width": 919.72158374786238,
-        "Height": 531.97585361933011,
+        "Top": 1579.60961732148,
+        "Width": 1000.129690944925,
+        "Height": 531.97585361932988,
         "FontSize": 36.0,
-        "InitialTop": 1652.62851951148,
-        "InitialHeight": 305.97585361933011,
+        "InitialTop": 1652.60961732148,
+        "InitialHeight": 305.97585361932988,
         "TextblockHeight": 63.0,
         "Background": "#FFFFAA45"
       },
@@ -3475,13 +3477,13 @@
           "51b9a659188a43789ae79c48c1d74402"
         ],
         "HasNestedGroups": false,
-        "Left": 1020.1674349278935,
-        "Top": 1579.8002636450058,
-        "Width": 1251.0000000000002,
-        "Height": 384.53459268630763,
+        "Left": 1100.0396109206868,
+        "Top": 1580.0338425100958,
+        "Width": 1278.0,
+        "Height": 383.43104218068424,
         "FontSize": 36.0,
-        "InitialTop": 1652.8002636450058,
-        "InitialHeight": 324.53459268630763,
+        "InitialTop": 1653.0338425100958,
+        "InitialHeight": 323.43104218068424,
         "TextblockHeight": 63.0,
         "Background": "#FFFFAA45"
       },
@@ -3500,12 +3502,12 @@
           "17a91e833c594334a1a975f528030ddb"
         ],
         "HasNestedGroups": false,
-        "Left": 1020.462494686685,
-        "Top": 2072.0960007435306,
-        "Width": 1330.0000000000002,
-        "Height": 428.0,
+        "Left": 1111.5423929917204,
+        "Top": 2072.5456046887566,
+        "Width": 1192.0000000000002,
+        "Height": 353.0,
         "FontSize": 36.0,
-        "InitialTop": 2145.0960007435306,
+        "InitialTop": 2145.5456046887566,
         "InitialHeight": 293.0,
         "TextblockHeight": 63.0,
         "Background": "#FFFFAA45"
@@ -3533,13 +3535,13 @@
           "5f36f5c9396541a99109cce59411abe6"
         ],
         "HasNestedGroups": false,
-        "Left": 2448.37198923054,
-        "Top": 1580.49116988861,
-        "Width": 1551.5753588152702,
-        "Height": 1087.7896814645499,
+        "Left": 2479.84921963907,
+        "Top": 1580.0539916095418,
+        "Width": 1648.4600408217411,
+        "Height": 1214.8891956111393,
         "FontSize": 36.0,
-        "InitialTop": 1653.49116988861,
-        "InitialHeight": 511.99718146454984,
+        "InitialTop": 1653.0539916095418,
+        "InitialHeight": 780.59669561113651,
         "TextblockHeight": 63.0,
         "Background": "#FFFFAA45"
       },
@@ -3553,20 +3555,20 @@
         "Nodes": [
           "1765931a6dea4b5fa3668d7378e0afc5",
           "531b78b4eec14a979150256b82f6e6f6",
-          "443e8fee29214938bd7626ff71e8a4c2",
           "773fcff385104127925799cf9902a2a3",
           "bd388dc0714e476389522714ea83e91c",
           "c2961e3d3aef4aca9d2ea599010e0b03",
-          "641224784e7a4ad4bbd6f4fe650e5c5e"
+          "641224784e7a4ad4bbd6f4fe650e5c5e",
+          "443e8fee29214938bd7626ff71e8a4c2"
         ],
         "HasNestedGroups": false,
-        "Left": 0.21984106183572294,
-        "Top": -793.47242940607816,
-        "Width": 1618.0,
-        "Height": 685.0,
+        "Left": -0.280158938162117,
+        "Top": -508.24074720894816,
+        "Width": 1525.0,
+        "Height": 402.0,
         "FontSize": 36.0,
-        "InitialTop": -720.47242940607816,
-        "InitialHeight": 459.0,
+        "InitialTop": -435.24074720894816,
+        "InitialHeight": 312.0,
         "TextblockHeight": 63.0,
         "Background": "#FFA4E1FF"
       },
@@ -3609,19 +3611,19 @@
           "41d7cdc1347e42328fa51689af7871f1"
         ],
         "HasNestedGroups": false,
-        "Left": -0.23316393663918689,
-        "Top": -0.30380347033036514,
-        "Width": 3842.0,
-        "Height": 1472.0,
+        "Left": 0.11105880580390703,
+        "Top": -0.33123658752325014,
+        "Width": 3800.0,
+        "Height": 1473.0000000000002,
         "FontSize": 36.0,
-        "InitialTop": 72.696196529669635,
-        "InitialHeight": 1412.0,
+        "InitialTop": 72.66876341247675,
+        "InitialHeight": 1413.0000000000002,
         "TextblockHeight": 63.0,
         "Background": "#FFFFAA45"
       }
     ],
-    "X": 201.111397176183,
-    "Y": 231.16617073664395,
-    "Zoom": 0.2792142523794775
+    "X": 185.77512376610414,
+    "Y": 157.51892029578781,
+    "Zoom": 0.29298479315993159
   }
 }

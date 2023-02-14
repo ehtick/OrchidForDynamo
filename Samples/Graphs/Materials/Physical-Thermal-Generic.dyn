@@ -2,7 +2,7 @@
   "Uuid": "3c9d0464-8643-5ffe-96e5-ab1769818209",
   "IsCustomNode": false,
   "Description": "",
-  "Name": "Physical-Thermal-Generic_R23",
+  "Name": "Physical-Thermal-Generic",
   "ElementResolver": {
     "ResolutionMap": {
       "Vector": {
@@ -38,91 +38,102 @@
   "Inputs": [
     {
       "Id": "2d8a75c6479e4d86882cd72e2324e8d0",
-      "Name": "o|Material Aspect",
-      "Type": "dropdownSelection",
+      "Name": "Material Aspects",
+      "Type": "selection",
+      "Type2": "dropdownSelection",
       "Value": "Thermal",
-      "Description": "Dropdown for material aspects\n\nNamespace: Orchid.RevitMaterial",
+      "Description": "Dropdown for material aspects",
       "SelectedIndex": 1
     },
     {
       "Id": "69ff10f029554cb5a75129791937f182",
-      "Name": "o|Physical Behavior",
-      "Type": "dropdownSelection",
+      "Name": "Physical Behavior",
+      "Type": "selection",
+      "Type2": "dropdownSelection",
       "Value": "Orthotropic",
-      "Description": "Dropdown for physical behavior\n\nNamespace: Orchid.RevitMaterial",
+      "Description": "Dropdown for physical behavior",
       "SelectedIndex": 1
     },
     {
       "Id": "19c149d06899465abb1b8e70c279aafc",
       "Name": "Boolean",
       "Type": "boolean",
+      "Type2": "boolean",
       "Value": "false",
       "Description": "Selection between a true and false.",
       "SelectedIndex": 0
     },
     {
       "Id": "a77c5af0d01a43549096757204a34a53",
-      "Name": "o|Wood Construction",
-      "Type": "dropdownSelection",
+      "Name": "Wood Construction",
+      "Type": "selection",
+      "Type2": "dropdownSelection",
       "Value": "Natural",
-      "Description": "Dropdown for wood construction\n\nNamespace: Orchid.RevitMaterial",
+      "Description": "Dropdown for wood construction",
       "SelectedIndex": 0
     },
     {
       "Id": "2b78c763e70c4ad89e206d9d8f184c16",
-      "Name": "o|Physical Behavior",
-      "Type": "dropdownSelection",
+      "Name": "Physical Behavior",
+      "Type": "selection",
+      "Type2": "dropdownSelection",
       "Value": "Orthotropic",
-      "Description": "Dropdown for physical behavior\n\nNamespace: Orchid.RevitMaterial",
+      "Description": "Dropdown for physical behavior",
       "SelectedIndex": 1
     },
     {
       "Id": "ef7deea25a994409a7230ff5b4a01737",
-      "Name": "o|Material Aspect",
-      "Type": "dropdownSelection",
+      "Name": "Material Aspects",
+      "Type": "selection",
+      "Type2": "dropdownSelection",
       "Value": "Physical (Structural)",
-      "Description": "Dropdown for material aspects\n\nNamespace: Orchid.RevitMaterial",
+      "Description": "Dropdown for material aspects",
       "SelectedIndex": 0
     },
     {
       "Id": "645ed137fd764d55b9127163378fa6be",
-      "Name": "o|Thermal Type",
-      "Type": "dropdownSelection",
+      "Name": "Thermal Type",
+      "Type": "selection",
+      "Type2": "dropdownSelection",
       "Value": "Solid",
-      "Description": "Dropdown for thermal type\n\nNamespace: Orchid.RevitMaterial",
+      "Description": "Dropdown for thermal type",
       "SelectedIndex": 3
     },
     {
       "Id": "e112b36292d447bdb15ee75d7e56dbd2",
-      "Name": "o|Thermal PropertySet",
-      "Type": "dropdownSelection",
+      "Name": "Thermal PropertySet",
+      "Type": "selection",
+      "Type2": "dropdownSelection",
       "Value": "Brick - Common",
-      "Description": "Dropdown for thermal property set\n\nNamespace: Orchid.RevitMaterial",
-      "SelectedIndex": 1
+      "Description": "Dropdown for thermal property set",
+      "SelectedIndex": 2
     },
     {
       "Id": "108782c5b4e44434bf4705ad9f434a02",
-      "Name": "o|Physical Type",
-      "Type": "dropdownSelection",
+      "Name": "Physical Types",
+      "Type": "selection",
+      "Type2": "dropdownSelection",
       "Value": "Wood",
-      "Description": "Dropdown for physical type\n\nNamespace: Orchid.RevitMaterial",
+      "Description": "Dropdown for physical type",
       "SelectedIndex": 5
     },
     {
       "Id": "e43164e80ac9459bbbaee9de5b4ef65e",
       "Name": "Boolean",
       "Type": "boolean",
+      "Type2": "boolean",
       "Value": "true",
       "Description": "Selection between a true and false.",
       "SelectedIndex": 0
     },
     {
       "Id": "f00e4d08efcb4dbeab41ca3d1988915b",
-      "Name": "o|Physical PropertySet",
-      "Type": "dropdownSelection",
+      "Name": "Physical PropertySet",
+      "Type": "selection",
+      "Type2": "dropdownSelection",
       "Value": "Brick - Common 1800kg",
-      "Description": "Dropdown for physical property set\n\nNamespace: Orchid.RevitMaterial",
-      "SelectedIndex": 1
+      "Description": "Dropdown for physical property set",
+      "SelectedIndex": 0
     }
   ],
   "Outputs": [],
@@ -175,7 +186,7 @@
         }
       ],
       "Replication": "Disabled",
-      "Description": "Dropdown for material aspects\n\nNamespace: Orchid.RevitMaterial"
+      "Description": "Dropdown for material aspects"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
@@ -256,7 +267,7 @@
         {
           "Id": "4c911b0724334ae3bc97c6cfe13a0e86",
           "Name": "Material",
-          "Description": "Material as Dynamo type.",
+          "Description": "Material.",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -264,7 +275,7 @@
         }
       ],
       "Replication": "Auto",
-      "Description": "Create material.\n\nMaterial.Create (name: string): var[]..[]\n\nNamespace: Orchid.RevitMaterial"
+      "Description": "Create material.\n\nMaterial.Create (name: string): var[]..[]"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
@@ -275,7 +286,7 @@
         {
           "Id": "3265baede6504d49a8a20a8e0ec54b09",
           "Name": "propertySet",
-          "Description": "Thermal property set as Dynamo type.\n\nvar",
+          "Description": "Thermal property set.\n\nvar",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -376,7 +387,7 @@
         {
           "Id": "c375e42f0a8546fe9e5c0864179f94aa",
           "Name": "PropertySet",
-          "Description": "Thermal property set as Dynamo type.",
+          "Description": "Thermal property set.",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -384,7 +395,7 @@
         }
       ],
       "Replication": "Auto",
-      "Description": "Set properties. Note: Can only be used for the thermal type Solid!\n\nThermal.SetProperties (propertySet: var, transmitsLight: bool = false, behavior: string = null, thermalConductivity: double = -1, specificHeat: double = -1, density: double = -1, emissivity: double = -1, permeability: double = -1, porosity: double = -1, reflectivity: double = -1, electricalResistivity: double = -1): var[]..[]\n\nNamespace: Orchid.RevitMaterial"
+      "Description": "Set properties. Note: Can only be used for the thermal type Solid!\n\nThermal.SetProperties (propertySet: var, transmitsLight: bool = false, behavior: string = null, thermalConductivity: double = -1, specificHeat: double = -1, density: double = -1, emissivity: double = -1, permeability: double = -1, porosity: double = -1, reflectivity: double = -1, electricalResistivity: double = -1): var[]..[]"
     },
     {
       "ConcreteType": "Orchid.E.RevitMaterial.PhysicalBehavior, OrchidRE",
@@ -405,7 +416,7 @@
         }
       ],
       "Replication": "Disabled",
-      "Description": "Dropdown for physical behavior\n\nNamespace: Orchid.RevitMaterial"
+      "Description": "Dropdown for physical behavior"
     },
     {
       "ConcreteType": "CoreNodeModels.Input.BoolSelector, CoreNodeModels",
@@ -519,7 +530,7 @@
         {
           "Id": "245801010dd44eb085ccce261835455e",
           "Name": "propertySet",
-          "Description": "Thermal property set as Dynamo type.\n\nvar",
+          "Description": "Thermal property set.\n\nvar",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -575,7 +586,7 @@
         {
           "Id": "c6f4a60f499f49a78f0030cc01008c72",
           "Name": "PropertySet",
-          "Description": "Thermal property set as Dynamo type.",
+          "Description": "Thermal property set.",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -583,7 +594,7 @@
         }
       ],
       "Replication": "Auto",
-      "Description": "Set information.\n\nThermal.SetInformation (propertySet: var, description: string = null, keywords: string = null, subclass: string = null, source: string = null, sourceUrl: string = null): var[]..[]\n\nNamespace: Orchid.RevitMaterial"
+      "Description": "Set information.\n\nThermal.SetInformation (propertySet: var, description: string = null, keywords: string = null, subclass: string = null, source: string = null, sourceUrl: string = null): var[]..[]"
     },
     {
       "ConcreteType": "Orchid.E.RevitMaterial.WoodConstruction, OrchidRE",
@@ -604,7 +615,7 @@
         }
       ],
       "Replication": "Disabled",
-      "Description": "Dropdown for wood construction\n\nNamespace: Orchid.RevitMaterial"
+      "Description": "Dropdown for wood construction"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
@@ -615,7 +626,7 @@
         {
           "Id": "ec5348497706464a99eb76769af9f42a",
           "Name": "propertySet",
-          "Description": "Physical property set as Dynamo type.\n\nvar",
+          "Description": "Physical property set.\n\nvar",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -635,7 +646,7 @@
         {
           "Id": "14d212abbd204c45843b2f3e27fc15c4",
           "Name": "PropertySet",
-          "Description": "Physical property set as Dynamo type.",
+          "Description": "Physical property set.",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -643,7 +654,7 @@
         }
       ],
       "Replication": "Auto",
-      "Description": "Set behavior.\n\nPhysical.SetBehavior (propertySet: var, behavior: string): var[]..[]\n\nNamespace: Orchid.RevitMaterial"
+      "Description": "Set behavior.\n\nPhysical.SetBehavior (propertySet: var, behavior: string): var[]..[]"
     },
     {
       "ConcreteType": "Orchid.E.RevitMaterial.PhysicalBehavior, OrchidRE",
@@ -664,7 +675,7 @@
         }
       ],
       "Replication": "Disabled",
-      "Description": "Dropdown for physical behavior\n\nNamespace: Orchid.RevitMaterial"
+      "Description": "Dropdown for physical behavior"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
@@ -704,7 +715,7 @@
         {
           "Id": "c24df052b6154c3d9e933e5b1c4dd941",
           "Name": "Material",
-          "Description": "Material as Dynamo type.",
+          "Description": "Material.",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -712,7 +723,7 @@
         }
       ],
       "Replication": "Auto",
-      "Description": "Set physical property.\n\nMaterial.SetPhysical (material: var, aspect: string, propertySet: var): var[]..[]\n\nNamespace: Orchid.RevitMaterial"
+      "Description": "Set physical property.\n\nMaterial.SetPhysical (material: var, aspect: string, propertySet: var): var[]..[]"
     },
     {
       "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
@@ -762,7 +773,7 @@
         }
       ],
       "Replication": "Disabled",
-      "Description": "Dropdown for material aspects\n\nNamespace: Orchid.RevitMaterial"
+      "Description": "Dropdown for material aspects"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
@@ -1011,7 +1022,7 @@
         {
           "Id": "ad51669641ef4074b445a15c714f2e68",
           "Name": "PropertySet",
-          "Description": "Thermal property set as Dynamo type.",
+          "Description": "Thermal property set.",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -1019,7 +1030,7 @@
         }
       ],
       "Replication": "Auto",
-      "Description": "Create thermal property set. Note. If a thermal property exists with the same name it is being replaced!\n\nThermal.Create (name: string, type: string): var[]..[]\n\nNamespace: Orchid.RevitMaterial"
+      "Description": "Create thermal property set. Note: If a thermal property exists with the same name it is being replaced!\n\nThermal.Create (name: string, type: string): var[]..[]"
     },
     {
       "ConcreteType": "Orchid.E.RevitMaterial.ThermalType, OrchidRE",
@@ -1040,7 +1051,7 @@
         }
       ],
       "Replication": "Disabled",
-      "Description": "Dropdown for thermal type\n\nNamespace: Orchid.RevitMaterial"
+      "Description": "Dropdown for thermal type"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
@@ -1051,7 +1062,7 @@
         {
           "Id": "1075f651c88b4d07a561a67c6652e44f",
           "Name": "propertySet",
-          "Description": "Physical property set as Dynamo type.\n\nvar",
+          "Description": "Physical property set.\n\nvar",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -1071,7 +1082,7 @@
         {
           "Id": "a3553f3d6d8348ab877fca6f11622f07",
           "Name": "PropertySet",
-          "Description": "Physical property set as Dynamo type.",
+          "Description": "Physical property set.",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -1079,7 +1090,7 @@
         }
       ],
       "Replication": "Auto",
-      "Description": "Set basic thermal.\n\nPhysical.SetBasicThermal (propertySet: var, expansionCoefficient: double): var[]..[]\n\nNamespace: Orchid.RevitMaterial"
+      "Description": "Set basic thermal.\n\nPhysical.SetBasicThermal (propertySet: var, expansionCoefficient: double): var[]..[]"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
@@ -1090,7 +1101,7 @@
         {
           "Id": "3892d7e27c594426897e77a833530290",
           "Name": "propertySet",
-          "Description": "Physical property set as Dynamo type.\n\nvar",
+          "Description": "Physical property set.\n\nvar",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -1137,7 +1148,7 @@
         {
           "Id": "0e8f4e8c652c43489d3f4bc3e1915b79",
           "Name": "PropertySet",
-          "Description": "Physical property set as Dynamo type.",
+          "Description": "Physical property set.",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -1145,7 +1156,7 @@
         }
       ],
       "Replication": "Auto",
-      "Description": "Set mechanical.\n\nPhysical.SetMechanical (propertySet: var, youngModulus: double = -1, poissonRatio: double = -1, shearModulus: double = -1, density: double = -1): var[]..[]\n\nNamespace: Orchid.RevitMaterial"
+      "Description": "Set mechanical.\n\nPhysical.SetMechanical (propertySet: var, youngModulus: double = -1, poissonRatio: double = -1, shearModulus: double = -1, density: double = -1): var[]..[]"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
@@ -1156,7 +1167,7 @@
         {
           "Id": "eb643aa90f47441289a09272aba4c727",
           "Name": "propertySet",
-          "Description": "Physical property set as Dynamo type.\n\nvar",
+          "Description": "Physical property set.\n\nvar",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -1212,7 +1223,7 @@
         {
           "Id": "264d08080bbd4b00baa43f7335b509c8",
           "Name": "PropertySet",
-          "Description": "Physical property set as Dynamo type.",
+          "Description": "Physical property set.",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -1220,7 +1231,7 @@
         }
       ],
       "Replication": "Auto",
-      "Description": "Set information.\n\nPhysical.SetInformation (propertySet: var, description: string = null, keywords: string = null, subclass: string = null, source: string = null, sourceUrl: string = null): var[]..[]\n\nNamespace: Orchid.RevitMaterial"
+      "Description": "Set information.\n\nPhysical.SetInformation (propertySet: var, description: string = null, keywords: string = null, subclass: string = null, source: string = null, sourceUrl: string = null): var[]..[]"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
@@ -1231,7 +1242,7 @@
         {
           "Id": "d66c96564cfe4412a374b2068a4e1bca",
           "Name": "propertySet",
-          "Description": "Physical property set as Dynamo type.\n\nvar",
+          "Description": "Physical property set.\n\nvar",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -1332,7 +1343,7 @@
         {
           "Id": "4a15ab81e946494387f97b23874598e8",
           "Name": "PropertySet",
-          "Description": "Physical property set as Dynamo type.",
+          "Description": "Physical property set.",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -1340,11 +1351,11 @@
         }
       ],
       "Replication": "Auto",
-      "Description": "Set strength (extended).\n\nPhysical.SetStrengthExtended (propertySet: var, species: string = null, grade: string = null, bending: double = -1, parallelCompression: double = -1, perpendicularCompression: double = -1, parallelShear: double = -1, tensionParallel: double = -1, tensionPerpendicular: double = -1, averageModulus: double = -1, construction: int = -1): var[]..[]\n\nNamespace: Orchid.RevitMaterial"
+      "Description": "Set strength (extended).\n\nPhysical.SetStrengthExtended (propertySet: var, species: string = null, grade: string = null, bending: double = -1, parallelCompression: double = -1, perpendicularCompression: double = -1, parallelShear: double = -1, tensionParallel: double = -1, tensionPerpendicular: double = -1, averageModulus: double = -1, construction: int = -1): var[]..[]"
     },
     {
       "ConcreteType": "Orchid.E.RevitMaterial.ThermalPropertySet, OrchidRE",
-      "SelectedIndex": 1,
+      "SelectedIndex": 2,
       "SelectedString": "Brick - Common",
       "NodeType": "ExtensionNode",
       "Id": "e112b36292d447bdb15ee75d7e56dbd2",
@@ -1361,7 +1372,7 @@
         }
       ],
       "Replication": "Disabled",
-      "Description": "Dropdown for thermal property set\n\nNamespace: Orchid.RevitMaterial"
+      "Description": "Dropdown for thermal property set"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
@@ -1372,7 +1383,7 @@
         {
           "Id": "bfd80d88580c4aafbcae201739b09455",
           "Name": "propertySet",
-          "Description": "Thermal property set as Dynamo type.\n\nvar",
+          "Description": "Thermal property set.\n\nvar",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -1392,7 +1403,7 @@
         {
           "Id": "ac61a86a2cf74f299192439800334bf9",
           "Name": "PropertySet",
-          "Description": "Thermal property set as Dynamo type.",
+          "Description": "Thermal property set.",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -1400,7 +1411,7 @@
         }
       ],
       "Replication": "Auto",
-      "Description": "Duplicate thermal property set (asset).\n\nThermal.Duplicate (propertySet: var, name: string = null): var[]..[]\n\nNamespace: Orchid.RevitMaterial"
+      "Description": "Duplicate thermal property set (asset).\n\nThermal.Duplicate (propertySet: var, name: string = null): var[]..[]"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
@@ -1480,7 +1491,7 @@
         {
           "Id": "af644792a9574a589dce6e7d20d82750",
           "Name": "PropertySet",
-          "Description": "Physical (structural) property set as Dynamo type.",
+          "Description": "Physical (structural) property set.",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -1488,7 +1499,7 @@
         }
       ],
       "Replication": "Auto",
-      "Description": "Create physical property set. Note. If a thermal property exists with the same name it is being replaced!\n\nPhysical.Create (name: string, type: string): var[]..[]\n\nNamespace: Orchid.RevitMaterial"
+      "Description": "Create physical property set. Note: If a thermal property exists with the same name it is being replaced!\n\nPhysical.Create (name: string, type: string): var[]..[]"
     },
     {
       "ConcreteType": "Orchid.E.RevitMaterial.PhysicalType, OrchidRE",
@@ -1509,7 +1520,7 @@
         }
       ],
       "Replication": "Disabled",
-      "Description": "Dropdown for physical type\n\nNamespace: Orchid.RevitMaterial"
+      "Description": "Dropdown for physical type"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
@@ -1519,7 +1530,7 @@
       "Inputs": [],
       "Outputs": [
         {
-          "Id": "0f88a32d8d9249cb8ad0577be49d448f",
+          "Id": "6918df8a251549e9af0d807297cfbc0a",
           "Name": "",
           "Description": "Value of expression at line 1",
           "UsingDefaultValue": false,
@@ -1539,7 +1550,7 @@
       "Inputs": [],
       "Outputs": [
         {
-          "Id": "9599ed2f67e34c278139636ca79309fa",
+          "Id": "b14c23e80555423bbade0f173f45bbf6",
           "Name": "",
           "Description": "Value of expression at line 1",
           "UsingDefaultValue": false,
@@ -1548,7 +1559,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "c01594b552564fc7a3935cb2f3a0b469",
+          "Id": "5b43697214a34697a8b1e8ca21c2a480",
           "Name": "",
           "Description": "Value of expression at line 2",
           "UsingDefaultValue": false,
@@ -1557,7 +1568,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "f1b4527038004d6e9451bf477f69c856",
+          "Id": "b28dd990d2714fcbbfb53cec4a083ae3",
           "Name": "",
           "Description": "Value of expression at line 3",
           "UsingDefaultValue": false,
@@ -1566,7 +1577,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "751123462e464daf9465a0e5ee151e79",
+          "Id": "9d2974f5550e44c896cc8af9690df3e0",
           "Name": "",
           "Description": "Value of expression at line 4",
           "UsingDefaultValue": false,
@@ -1575,7 +1586,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "9d132f15adf94714928e1803ace79fb6",
+          "Id": "e4cc4e6cb7044c4785c226fdba0023a5",
           "Name": "",
           "Description": "Value of expression at line 5",
           "UsingDefaultValue": false,
@@ -1584,7 +1595,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "7abbfe3897c5407c8d96126c6b1e5f01",
+          "Id": "4637d6ebd66947a4b5a518bb7b9fe970",
           "Name": "",
           "Description": "Value of expression at line 6",
           "UsingDefaultValue": false,
@@ -1625,7 +1636,7 @@
         {
           "Id": "590bf8b33e56400fac3d5e7bfbab105c",
           "Name": "propertySet",
-          "Description": "Physical property set as Dynamo type.\n\nvar",
+          "Description": "Physical property set.\n\nvar",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -1645,7 +1656,7 @@
         {
           "Id": "fbc027bd3de647e5bfadd4cc9dc40834",
           "Name": "PropertySet",
-          "Description": "Physical property set as Dynamo type.",
+          "Description": "Physical property set.",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -1653,11 +1664,11 @@
         }
       ],
       "Replication": "Auto",
-      "Description": "Duplicate physical property set (asset).\n\nPhysical.Duplicate (propertySet: var, name: string = null): var[]..[]\n\nNamespace: Orchid.RevitMaterial"
+      "Description": "Duplicate physical property set (asset).\n\nPhysical.Duplicate (propertySet: var, name: string = null): var[]..[]"
     },
     {
       "ConcreteType": "Orchid.E.RevitMaterial.PhysicalPropertySet, OrchidRE",
-      "SelectedIndex": 1,
+      "SelectedIndex": 0,
       "SelectedString": "Brick - Common 1800kg",
       "NodeType": "ExtensionNode",
       "Id": "f00e4d08efcb4dbeab41ca3d1988915b",
@@ -1674,7 +1685,7 @@
         }
       ],
       "Replication": "Disabled",
-      "Description": "Dropdown for physical property set\n\nNamespace: Orchid.RevitMaterial"
+      "Description": "Dropdown for physical property set"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
@@ -1758,14 +1769,14 @@
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
       "NodeType": "FunctionNode",
-      "FunctionSignature": "Orchid.RevitMaterial.Physical.All",
+      "FunctionSignature": "Orchid.RevitMaterial.Physical.InDocument",
       "Id": "584e989b07d94fb0a40e266ee83f86e0",
       "Inputs": [],
       "Outputs": [
         {
           "Id": "38d40dd3d72b449797b5894d71f738fe",
           "Name": "PropertySet",
-          "Description": "Physical property set as Dynamo type.",
+          "Description": "Physical property set.",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -1773,7 +1784,7 @@
         }
       ],
       "Replication": "Auto",
-      "Description": "Get all physical property set (asset).\n\nPhysical.All ( ): Element[]\n\nNamespace: Orchid.RevitMaterial"
+      "Description": "Get all physical property set (asset).\n\nPhysical.InDocument ( ): Element[]"
     },
     {
       "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
@@ -1836,14 +1847,14 @@
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
       "NodeType": "FunctionNode",
-      "FunctionSignature": "Orchid.RevitMaterial.Thermal.All",
+      "FunctionSignature": "Orchid.RevitMaterial.Thermal.InDocument",
       "Id": "01e63bad43a240e196524554abb47d6e",
       "Inputs": [],
       "Outputs": [
         {
           "Id": "c210fd7519304e0c8cdc6a063f1524b1",
           "Name": "PropertySet",
-          "Description": "Thermal property set as Dynamo type.",
+          "Description": "Thermal property set.",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -1851,7 +1862,7 @@
         }
       ],
       "Replication": "Auto",
-      "Description": "Get all thermal property set (asset).\n\nThermal.All ( ): Element[]\n\nNamespace: Orchid.RevitMaterial"
+      "Description": "Get all thermal property set (asset).\n\nThermal.InDocument ( ): Element[]"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
@@ -1979,7 +1990,7 @@
         {
           "Id": "b03f64c222db4d368e4219e9bfd4d202",
           "Name": "Material",
-          "Description": "Material as Dynamo type.",
+          "Description": "Material.",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -1987,7 +1998,7 @@
         }
       ],
       "Replication": "Auto",
-      "Description": "Set thermal property.\n\nMaterial.SetThermal (material: var, aspect: string, propertySet: var): var[]..[]\n\nNamespace: Orchid.RevitMaterial"
+      "Description": "Set thermal property.\n\nMaterial.SetThermal (material: var, aspect: string, propertySet: var): var[]..[]"
     }
   ],
   "Connectors": [
@@ -2280,79 +2291,79 @@
       "IsHidden": "False"
     },
     {
-      "Start": "0f88a32d8d9249cb8ad0577be49d448f",
+      "Start": "6918df8a251549e9af0d807297cfbc0a",
       "End": "6ecce8369b7c4f919b987cf3bdcd01e6",
       "Id": "556d367d551b44889c347c65e506602c",
       "IsHidden": "False"
     },
     {
-      "Start": "0f88a32d8d9249cb8ad0577be49d448f",
+      "Start": "6918df8a251549e9af0d807297cfbc0a",
       "End": "925a440c528446798c2f62307f868812",
       "Id": "8af7d046b9c54b5e93296a8967840ca4",
       "IsHidden": "False"
     },
     {
-      "Start": "0f88a32d8d9249cb8ad0577be49d448f",
+      "Start": "6918df8a251549e9af0d807297cfbc0a",
       "End": "2162952a6eeb4c4790e1e2c37fe0d1ce",
       "Id": "de2c47705af84c37902000d1100b48a1",
       "IsHidden": "False"
     },
     {
-      "Start": "9599ed2f67e34c278139636ca79309fa",
+      "Start": "b14c23e80555423bbade0f173f45bbf6",
       "End": "ddb7e5964fa2444e802d3fd5c1437099",
       "Id": "73f4b2fd3d2040969648542d4d614dfa",
       "IsHidden": "False"
     },
     {
-      "Start": "9599ed2f67e34c278139636ca79309fa",
+      "Start": "b14c23e80555423bbade0f173f45bbf6",
       "End": "68aad3cd0d1c40678be5617f9386da69",
       "Id": "3db2a53d195346468dc59ffad96111fc",
       "IsHidden": "False"
     },
     {
-      "Start": "c01594b552564fc7a3935cb2f3a0b469",
+      "Start": "5b43697214a34697a8b1e8ca21c2a480",
       "End": "4c9211a39f7d4738a37c6c42cd431f5c",
       "Id": "cf3dd43529ed46e385b6f7e357f1dd70",
       "IsHidden": "False"
     },
     {
-      "Start": "f1b4527038004d6e9451bf477f69c856",
+      "Start": "b28dd990d2714fcbbfb53cec4a083ae3",
       "End": "dc1aa2dd0d3644028eda6faec15c5166",
       "Id": "3a414c7ff54248fc803cba05fd8d6f0b",
       "IsHidden": "False"
     },
     {
-      "Start": "751123462e464daf9465a0e5ee151e79",
+      "Start": "9d2974f5550e44c896cc8af9690df3e0",
       "End": "6667876539a3496b965b57caa5762fcd",
       "Id": "8cc3f6f2fac949009b0bc0ed2b9ba2a2",
       "IsHidden": "False"
     },
     {
-      "Start": "751123462e464daf9465a0e5ee151e79",
+      "Start": "9d2974f5550e44c896cc8af9690df3e0",
       "End": "72f4b9178f37466b9b1707bbb7947240",
       "Id": "29553f19454a4b91a96f09e5d5c6024a",
       "IsHidden": "False"
     },
     {
-      "Start": "9d132f15adf94714928e1803ace79fb6",
+      "Start": "e4cc4e6cb7044c4785c226fdba0023a5",
       "End": "5d9a9b2d501c43d689625ee8a38ce475",
       "Id": "704024b68b014fcfaa97508a148aa0a5",
       "IsHidden": "False"
     },
     {
-      "Start": "9d132f15adf94714928e1803ace79fb6",
+      "Start": "e4cc4e6cb7044c4785c226fdba0023a5",
       "End": "163b350c5df4439292f70f2ec2b60185",
       "Id": "a14970f9408d410a87cdfce403c1aec9",
       "IsHidden": "False"
     },
     {
-      "Start": "7abbfe3897c5407c8d96126c6b1e5f01",
+      "Start": "4637d6ebd66947a4b5a518bb7b9fe970",
       "End": "3cb755c6e3f942ff9f43184a9fa59fc9",
       "Id": "b9198524ca814951be6cf986139ed12f",
       "IsHidden": "False"
     },
     {
-      "Start": "7abbfe3897c5407c8d96126c6b1e5f01",
+      "Start": "4637d6ebd66947a4b5a518bb7b9fe970",
       "End": "300c8b17bd8a45d7a8ff941760743271",
       "Id": "718440bbfb134c24a53b6ce72ed1a22e",
       "IsHidden": "False"
@@ -2428,7 +2439,7 @@
   "NodeLibraryDependencies": [
     {
       "Name": "Orchid",
-      "Version": "213.0.1.8192",
+      "Version": "216.3.0.8444",
       "ReferenceType": "Package",
       "Nodes": [
         "2d8a75c6479e4d86882cd72e2324e8d0",
@@ -2488,7 +2499,7 @@
       "ScaleFactor": 100.0,
       "HasRunWithoutCrash": true,
       "IsVisibleInDynamoLibrary": true,
-      "Version": "2.13.1.3887",
+      "Version": "2.16.1.2727",
       "RunType": "Manual",
       "RunPeriod": "1000"
     },
@@ -2513,18 +2524,18 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 3492.4497507707624,
-        "Y": 1291.6695608281113
+        "X": 3530.972114170956,
+        "Y": 1047.3999791214123
       },
       {
-        "Name": "o|Material Aspect",
+        "Name": "Material Aspects",
         "ShowGeometry": true,
         "Id": "2d8a75c6479e4d86882cd72e2324e8d0",
         "IsSetAsInput": true,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 2394.4497507707624,
-        "Y": 1148.1695608281113
+        "X": 2417.972114170956,
+        "Y": 1146.8999791214123
       },
       {
         "Name": "Material.Name",
@@ -2533,8 +2544,8 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 3183.4497507707624,
-        "Y": 978.66956082811134
+        "X": 3216.972114170956,
+        "Y": 896.39997912141223
       },
       {
         "Name": "Watch",
@@ -2543,38 +2554,38 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 3492.4497507707624,
-        "Y": 978.66956082811134
+        "X": 3530.972114170956,
+        "Y": 896.39997912141223
       },
       {
-        "Name": "o|Material.Create",
+        "Name": "Material.Create",
         "ShowGeometry": true,
         "Id": "a3652cd5ce3e43a1b1b337234dab10fa",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 2394.4497507707624,
-        "Y": 1000.6695608281113
+        "X": 2417.972114170956,
+        "Y": 999.39997912141223
       },
       {
-        "Name": "o|Thermal.SetProperties",
+        "Name": "Thermal.SetProperties",
         "ShowGeometry": true,
         "Id": "ebc3a488def64961a9471863216122a2",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 2394.4497507707624,
-        "Y": 1296.1695608281113
+        "X": 2417.972114170956,
+        "Y": 1293.8999791214123
       },
       {
-        "Name": "o|Physical Behavior",
+        "Name": "Physical Behavior",
         "ShowGeometry": true,
         "Id": "69ff10f029554cb5a75129791937f182",
         "IsSetAsInput": true,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 2015.4497507707626,
-        "Y": 1506.1695608281113
+        "X": 2033.9721141709558,
+        "Y": 1503.8999791214123
       },
       {
         "Name": "Boolean",
@@ -2583,8 +2594,8 @@
         "IsSetAsInput": true,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 2015.4497507707626,
-        "Y": 1359.1695608281113
+        "X": 2033.9721141709558,
+        "Y": 1356.8999791214123
       },
       {
         "Name": "Code Block",
@@ -2593,58 +2604,58 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 2015.4497507707626,
-        "Y": 1653.7895608281112
+        "X": 2033.9721141709558,
+        "Y": 1652.5199791214127
       },
       {
-        "Name": "o|Thermal.SetInformation",
+        "Name": "Thermal.SetInformation",
         "ShowGeometry": true,
         "Id": "4fd56f9a60b448429ae4521759d8e7ba",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 2015.4497507707626,
-        "Y": 1041.1695608281113
+        "X": 2033.9721141709558,
+        "Y": 1039.8999791214123
       },
       {
-        "Name": "o|Wood Construction",
+        "Name": "Wood Construction",
         "ShowGeometry": true,
         "Id": "a77c5af0d01a43549096757204a34a53",
         "IsSetAsInput": true,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 2015.4497507707626,
-        "Y": 894.16956082811134
+        "X": 2033.9721141709558,
+        "Y": 892.89997912141223
       },
       {
-        "Name": "o|Physical.SetBehavior",
+        "Name": "Physical.SetBehavior",
         "ShowGeometry": true,
         "Id": "2d468d2bf12248a98f36fbd18d127596",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 1239.4497507707626,
-        "Y": 208.16956082811151
+        "X": 1247.9721141709558,
+        "Y": 207.89997912141237
       },
       {
-        "Name": "o|Physical Behavior",
+        "Name": "Physical Behavior",
         "ShowGeometry": true,
         "Id": "2b78c763e70c4ad89e206d9d8f184c16",
         "IsSetAsInput": true,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 870.44975077076265,
-        "Y": 384.1695608281114
+        "X": 880.97211417095593,
+        "Y": 383.8999791214124
       },
       {
-        "Name": "o|Material.SetPhysical",
+        "Name": "Material.SetPhysical",
         "ShowGeometry": true,
         "Id": "4d488dfb00e8448daed72dc0d9d3f6af",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 2841.4497507707624,
-        "Y": 508.1695608281114
+        "X": 2869.972114170956,
+        "Y": 668.89997912141246
       },
       {
         "Name": "Watch",
@@ -2653,18 +2664,18 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 3492.4497507707624,
-        "Y": 664.66956082811134
+        "X": 3530.972114170956,
+        "Y": 744.39997912141223
       },
       {
-        "Name": "o|Material Aspect",
+        "Name": "Material Aspects",
         "ShowGeometry": true,
         "Id": "ef7deea25a994409a7230ff5b4a01737",
         "IsSetAsInput": true,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 2394.4497507707624,
-        "Y": 360.16956082811151
+        "X": 2417.972114170956,
+        "Y": 358.8999791214124
       },
       {
         "Name": "Material.Name",
@@ -2673,8 +2684,8 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 3183.4497507707624,
-        "Y": 351.66956082811151
+        "X": 3216.972114170956,
+        "Y": 593.39997912141246
       },
       {
         "Name": "Watch",
@@ -2683,8 +2694,8 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 3492.4497507707624,
-        "Y": 351.66956082811151
+        "X": 3530.972114170956,
+        "Y": 593.39997912141246
       },
       {
         "Name": "Code Block",
@@ -2693,8 +2704,8 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 1601.4497507707626,
-        "Y": 458.47956082811135
+        "X": 1614.9721141709558,
+        "Y": 458.20997912141235
       },
       {
         "Name": "Code Block",
@@ -2703,8 +2714,8 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 2015.4497507707626,
-        "Y": 622.61706082811133
+        "X": 2033.9721141709558,
+        "Y": 621.34747912141245
       },
       {
         "Name": "Code Block",
@@ -2713,88 +2724,88 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 1239.4497507707626,
-        "Y": 385.9970608281115
+        "X": 1247.9721141709558,
+        "Y": 385.72747912141239
       },
       {
-        "Name": "o|Thermal.Create",
+        "Name": "Thermal.Create",
         "ShowGeometry": true,
         "Id": "93a14291120140e29d4db6123ebf1ce1",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 1601.4497507707626,
-        "Y": 1041.1695608281113
+        "X": 1614.9721141709558,
+        "Y": 1039.8999791214123
       },
       {
-        "Name": "o|Thermal Type",
+        "Name": "Thermal Type",
         "ShowGeometry": true,
         "Id": "645ed137fd764d55b9127163378fa6be",
         "IsSetAsInput": true,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 1239.4497507707626,
-        "Y": 1075.1695608281113
+        "X": 1247.9721141709558,
+        "Y": 1073.8999791214123
       },
       {
-        "Name": "o|Physical.SetBasicThermal",
+        "Name": "Physical.SetBasicThermal",
         "ShowGeometry": true,
         "Id": "bc2f039d9bbf4180b100eadb6a9c2e19",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 1601.4497507707626,
-        "Y": 280.16956082811151
+        "X": 1614.9721141709558,
+        "Y": 279.89997912141234
       },
       {
-        "Name": "o|Physical.SetMechanical",
+        "Name": "Physical.SetMechanical",
         "ShowGeometry": true,
         "Id": "748cb5a591324b78889fefb3cbac5842",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 2015.4497507707626,
-        "Y": 339.16956082811151
+        "X": 2033.9721141709558,
+        "Y": 338.8999791214124
       },
       {
-        "Name": "o|Physical.SetInformation",
+        "Name": "Physical.SetInformation",
         "ShowGeometry": true,
         "Id": "031463a103ca4ab9b1944c6782e6864a",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 870.44975077076265,
-        "Y": 66.169560828111528
+        "X": 880.97211417095593,
+        "Y": 65.899979121412372
       },
       {
-        "Name": "o|Physical.SetStrengthExtended",
+        "Name": "Physical.SetStrengthExtended",
         "ShowGeometry": true,
         "Id": "96f5d45e0c7444d88b71d45951713326",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 2394.4497507707624,
-        "Y": 507.1695608281114
+        "X": 2417.972114170956,
+        "Y": 506.8999791214124
       },
       {
-        "Name": "o|Thermal PropertySet",
+        "Name": "Thermal PropertySet",
         "ShowGeometry": true,
         "Id": "e112b36292d447bdb15ee75d7e56dbd2",
         "IsSetAsInput": true,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 1169.7403974813142,
-        "Y": -463.14638958083088
+        "X": 1130.4065466466188,
+        "Y": -389.55166926577721
       },
       {
-        "Name": "o|Thermal.Duplicate",
+        "Name": "Thermal.Duplicate",
         "ShowGeometry": true,
         "Id": "63e51b9e35fc40378c4ef5f698f35ce6",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 1516.7403974813142,
-        "Y": -406.14638958083088
+        "X": 1477.4065466466188,
+        "Y": -332.55166926577721
       },
       {
         "Name": "Code Block",
@@ -2803,8 +2814,8 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 1169.7403974813142,
-        "Y": -315.3188895808309
+        "X": 1130.4065466466188,
+        "Y": -241.72416926577722
       },
       {
         "Name": "Watch",
@@ -2813,28 +2824,28 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 1878.7403974813142,
-        "Y": -406.14638958083088
+        "X": 1839.4065466466188,
+        "Y": -332.55166926577721
       },
       {
-        "Name": "o|Physical.Create",
+        "Name": "Physical.Create",
         "ShowGeometry": true,
         "Id": "ab5d9d437e7c462092b77cabc4fbc7f2",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 317.44975077076271,
-        "Y": 66.169560828111528
+        "X": 321.97211417095605,
+        "Y": 65.899979121412372
       },
       {
-        "Name": "o|Physical Type",
+        "Name": "Physical Types",
         "ShowGeometry": true,
         "Id": "108782c5b4e44434bf4705ad9f434a02",
         "IsSetAsInput": true,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 10.449750770762687,
-        "Y": 100.16956082811159
+        "X": 9.97211417095599,
+        "Y": 99.899979121412144
       },
       {
         "Name": "Code Block",
@@ -2843,8 +2854,8 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 10.449750770762687,
-        "Y": 1000.4970608281135
+        "X": 9.97211417095599,
+        "Y": 999.22747912141119
       },
       {
         "Name": "Code Block",
@@ -2853,8 +2864,8 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 317.44975077076288,
-        "Y": 614.63456082811149
+        "X": 321.97211417095559,
+        "Y": 613.86497912141215
       },
       {
         "Name": "Boolean",
@@ -2863,28 +2874,28 @@
         "IsSetAsInput": true,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 10.449750770762687,
-        "Y": 614.63456082811149
+        "X": 9.97211417095599,
+        "Y": 613.86497912141215
       },
       {
-        "Name": "o|Physical.Duplicate",
+        "Name": "Physical.Duplicate",
         "ShowGeometry": true,
         "Id": "31dd9953b5de41be9dd282e30bb4abb6",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 415.1122515726272,
-        "Y": -406.09197697477816
+        "X": 415.28803604694917,
+        "Y": -332.76956786744967
       },
       {
-        "Name": "o|Physical PropertySet",
+        "Name": "Physical PropertySet",
         "ShowGeometry": true,
         "Id": "f00e4d08efcb4dbeab41ca3d1988915b",
         "IsSetAsInput": true,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 10.112251572627201,
-        "Y": -463.09197697477816
+        "X": 10.288036046949173,
+        "Y": -389.76956786744967
       },
       {
         "Name": "Code Block",
@@ -2893,8 +2904,8 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 10.112251572627201,
-        "Y": -315.26447697477818
+        "X": 10.288036046949173,
+        "Y": -241.94206786744968
       },
       {
         "Name": "Watch",
@@ -2903,8 +2914,8 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 777.1122515726272,
-        "Y": -406.09197697477816
+        "X": 777.28803604694917,
+        "Y": -332.76956786744967
       },
       {
         "Name": "Element.Name",
@@ -2913,18 +2924,18 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 224.25773396851966,
-        "Y": -1080.1974515055085
+        "X": 312.43611811761582,
+        "Y": -1009.5674213852481
       },
       {
-        "Name": "o|Physical.All",
+        "Name": "Physical.InDocument",
         "ShowGeometry": true,
         "Id": "584e989b07d94fb0a40e266ee83f86e0",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 10.058192632041369,
-        "Y": -933.40654507262457
+        "X": 10.093811989521612,
+        "Y": -862.77651495236455
       },
       {
         "Name": "Watch",
@@ -2933,8 +2944,8 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 224.25773396851966,
-        "Y": -933.40654507262457
+        "X": 312.43611811761616,
+        "Y": -862.77651495236455
       },
       {
         "Name": "Watch",
@@ -2943,18 +2954,18 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 574.51775408295066,
-        "Y": -933.40654507262457
+        "X": 662.69613823204713,
+        "Y": -862.77651495236455
       },
       {
-        "Name": "o|Thermal.All",
+        "Name": "Thermal.InDocument",
         "ShowGeometry": true,
         "Id": "01e63bad43a240e196524554abb47d6e",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 1170.2591433384341,
-        "Y": -933.57534709807214
+        "X": 1129.59093230684,
+        "Y": -862.80360084148117
       },
       {
         "Name": "Element.Name",
@@ -2963,8 +2974,8 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 1384.4586846749141,
-        "Y": -1080.3662535309563
+        "X": 1433.085330243704,
+        "Y": -1009.5945072743655
       },
       {
         "Name": "Watch",
@@ -2973,8 +2984,8 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 1384.4586846749141,
-        "Y": -933.57534709807214
+        "X": 1433.0853302437,
+        "Y": -862.80360084148117
       },
       {
         "Name": "Watch",
@@ -2983,18 +2994,18 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 1734.718704789344,
-        "Y": -933.57534709807214
+        "X": 1783.3453503581338,
+        "Y": -862.80360084148128
       },
       {
-        "Name": "o|Material.SetThermal",
+        "Name": "Material.SetThermal",
         "ShowGeometry": true,
         "Id": "df58909e60384e13a6c6237dbceb3d12",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 2841.4497507707624,
-        "Y": 1135.1695608281113
+        "X": 2869.972114170956,
+        "Y": 971.89997912141223
       }
     ],
     "Annotations": [
@@ -3041,12 +3052,12 @@
           "df58909e60384e13a6c6237dbceb3d12"
         ],
         "HasNestedGroups": false,
-        "Left": 0.44975077076268732,
-        "Top": 0.16956082811152839,
-        "Width": 3773.9999999999995,
-        "Height": 1893.6199999999997,
+        "Left": -0.027885829044009824,
+        "Top": -0.1000208785876282,
+        "Width": 3720.0,
+        "Height": 1892.6200000000003,
         "FontSize": 30.0,
-        "InitialTop": 66.169560828111528,
+        "InitialTop": 65.899979121412372,
         "InitialHeight": 1732.6199999999997,
         "TextblockHeight": 56.0,
         "Background": "#FFA4E1FF"
@@ -3065,12 +3076,12 @@
           "c7faa2edc6c340bb8a324cc96a74acbb"
         ],
         "HasNestedGroups": false,
-        "Left": 0.11225157262720131,
-        "Top": -529.09197697477816,
-        "Width": 1059.0,
-        "Height": 421.0,
+        "Left": 0.2880360469491734,
+        "Top": -455.76956786744967,
+        "Width": 1019.0,
+        "Height": 345.8275,
         "FontSize": 30.0,
-        "InitialTop": -463.09197697477816,
+        "InitialTop": -389.76956786744967,
         "InitialHeight": 292.8275,
         "TextblockHeight": 56.0,
         "Background": "#FFD4B6DB"
@@ -3089,12 +3100,12 @@
           "d428cb545e384b86b7ff02c2d3fa7870"
         ],
         "HasNestedGroups": false,
-        "Left": 1159.7403974813142,
-        "Top": -529.14638958083083,
-        "Width": 1001.0,
-        "Height": 420.99999999999994,
+        "Left": 1120.4065466466188,
+        "Top": -455.55166926577721,
+        "Width": 961.00000000000023,
+        "Height": 345.8275,
         "FontSize": 30.0,
-        "InitialTop": -463.14638958083088,
+        "InitialTop": -389.55166926577721,
         "InitialHeight": 292.8275,
         "TextblockHeight": 56.0,
         "Background": "#FFD4B6DB"
@@ -3113,13 +3124,13 @@
           "7c7d0504467b4df4898bdebcf04593d8"
         ],
         "HasNestedGroups": false,
-        "Left": 0.0581926320413686,
-        "Top": -1146.1974515055085,
-        "Width": 856.45956145090929,
-        "Height": 510.79090643288396,
+        "Left": 0.093811989521611849,
+        "Top": -1075.5674213852481,
+        "Width": 949.60232624252558,
+        "Height": 510.7909064328835,
         "FontSize": 30.0,
-        "InitialTop": -1080.1974515055085,
-        "InitialHeight": 291.79090643288396,
+        "InitialTop": -1009.5674213852481,
+        "InitialHeight": 291.7909064328835,
         "TextblockHeight": 56.0,
         "Background": "#FFD4B6DB"
       },
@@ -3137,19 +3148,19 @@
           "52c92c37902844aa836b256daf0ba509"
         ],
         "HasNestedGroups": false,
-        "Left": 1160.2591433384341,
-        "Top": -1146.3662535309563,
-        "Width": 856.45956145090986,
-        "Height": 510.79090643288419,
+        "Left": 1119.59093230684,
+        "Top": -1075.5945072743655,
+        "Width": 950.75441805129412,
+        "Height": 510.7909064328843,
         "FontSize": 30.0,
-        "InitialTop": -1080.3662535309563,
-        "InitialHeight": 291.79090643288419,
+        "InitialTop": -1009.5945072743655,
+        "InitialHeight": 291.7909064328843,
         "TextblockHeight": 56.0,
         "Background": "#FFD4B6DB"
       }
     ],
-    "X": 158.72283486522713,
-    "Y": 373.91734490216049,
-    "Zoom": 0.318334031425118
+    "X": 183.63326859568951,
+    "Y": 359.40779810907708,
+    "Zoom": 0.32627732791295572
   }
 }

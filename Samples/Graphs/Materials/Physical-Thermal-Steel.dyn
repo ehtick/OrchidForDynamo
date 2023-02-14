@@ -37,25 +37,85 @@
   },
   "Inputs": [
     {
+      "Id": "3321f3f48a1c46e3a4b6cdae45279a25",
+      "Name": "Thermal Type",
+      "Type": "selection",
+      "Type2": "dropdownSelection",
+      "Value": "Solid",
+      "Description": "Dropdown for thermal type",
+      "SelectedIndex": 3
+    },
+    {
       "Id": "52b405bea8cd40449bd479bf9c83530e",
       "Name": "Boolean",
       "Type": "boolean",
+      "Type2": "boolean",
       "Value": "false",
-      "Description": "Selection between a true and false."
+      "Description": "Selection between a true and false.",
+      "SelectedIndex": 0
+    },
+    {
+      "Id": "97c8f2ea82324e2a87069f354d796c07",
+      "Name": "Physical Behavior",
+      "Type": "selection",
+      "Type2": "dropdownSelection",
+      "Value": "Isotropic",
+      "Description": "Dropdown for physical behavior",
+      "SelectedIndex": 0
+    },
+    {
+      "Id": "7c49dfea41424ee1baa62ef292829a19",
+      "Name": "Material Aspects",
+      "Type": "selection",
+      "Type2": "dropdownSelection",
+      "Value": "Thermal",
+      "Description": "Dropdown for material aspects",
+      "SelectedIndex": 1
+    },
+    {
+      "Id": "9045820a66e94937beba50f2692f880a",
+      "Name": "Physical Types",
+      "Type": "selection",
+      "Type2": "dropdownSelection",
+      "Value": "Metal",
+      "Description": "Dropdown for physical type",
+      "SelectedIndex": 3
+    },
+    {
+      "Id": "697a3a1ddaed4c5db2993b1ac1cd6f3a",
+      "Name": "Physical Behavior",
+      "Type": "selection",
+      "Type2": "dropdownSelection",
+      "Value": "Isotropic",
+      "Description": "Dropdown for physical behavior",
+      "SelectedIndex": 0
+    },
+    {
+      "Id": "f20e98b1e8c848c281f2ef9f7e5728f1",
+      "Name": "Material Aspects",
+      "Type": "selection",
+      "Type2": "dropdownSelection",
+      "Value": "Physical (Structural)",
+      "Description": "Dropdown for material aspects",
+      "SelectedIndex": 0
     },
     {
       "Id": "45710cf797cb4b71ad3c56c6a048e9d8",
       "Name": "Boolean",
       "Type": "boolean",
+      "Type2": "boolean",
       "Value": "false",
-      "Description": "Selection between a true and false."
+      "Description": "Selection between a true and false.",
+      "SelectedIndex": 0
     },
     {
       "Id": "44a7fdcb7dd74171b79e47ec10f69bba",
       "Name": "Boolean",
       "Type": "boolean",
+      "Type2": "boolean",
       "Value": "true",
-      "Description": "Selection between a true and false."
+      "Description": "Selection between a true and false.",
+      "SelectedIndex": 0
     }
   ],
   "Outputs": [],
@@ -87,7 +147,7 @@
         }
       ],
       "Replication": "Disabled",
-      "Description": "Visualize the output of node."
+      "Description": "Visualize the node's output"
     },
     {
       "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
@@ -116,7 +176,7 @@
         }
       ],
       "Replication": "Disabled",
-      "Description": "Visualize the output of node."
+      "Description": "Visualize the node's output"
     },
     {
       "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
@@ -145,7 +205,7 @@
         }
       ],
       "Replication": "Disabled",
-      "Description": "Visualize the output of node."
+      "Description": "Visualize the node's output"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
@@ -156,7 +216,7 @@
         {
           "Id": "ed3d74034cc34cc49853db7280ef549f",
           "Name": "propertySet",
-          "Description": "Physical property set as Dynamo type.\n\nvar",
+          "Description": "Physical property set.\n\nvar",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -193,7 +253,7 @@
         }
       ],
       "Replication": "Auto",
-      "Description": "Get strength.\n\nPhysical.GetStrength (propertySet: var): var[]..[]\n\nNamespace:\nOrchid.RevitMaterial"
+      "Description": "Get strength.\n\nPhysical.GetStrength (propertySet: var): var[]..[]"
     },
     {
       "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
@@ -222,7 +282,7 @@
         }
       ],
       "Replication": "Disabled",
-      "Description": "Visualize the output of node."
+      "Description": "Visualize the node's output"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
@@ -233,7 +293,7 @@
         {
           "Id": "7c5b8280f8224fadb780e81c5677e4ea",
           "Name": "propertySet",
-          "Description": "Thermal property set as Dynamo type.\n\nvar",
+          "Description": "Thermal property set.\n\nvar",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -288,7 +348,7 @@
         }
       ],
       "Replication": "Auto",
-      "Description": "Get information.\n\nThermal.GetInformation (propertySet: var): var[]..[]\n\nNamespace:\nOrchid.RevitMaterial"
+      "Description": "Get information.\n\nThermal.GetInformation (propertySet: var): var[]..[]"
     },
     {
       "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
@@ -317,7 +377,7 @@
         }
       ],
       "Replication": "Disabled",
-      "Description": "Visualize the output of node."
+      "Description": "Visualize the node's output"
     },
     {
       "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
@@ -346,7 +406,7 @@
         }
       ],
       "Replication": "Disabled",
-      "Description": "Visualize the output of node."
+      "Description": "Visualize the node's output"
     },
     {
       "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
@@ -375,7 +435,7 @@
         }
       ],
       "Replication": "Disabled",
-      "Description": "Visualize the output of node."
+      "Description": "Visualize the node's output"
     },
     {
       "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
@@ -404,7 +464,7 @@
         }
       ],
       "Replication": "Disabled",
-      "Description": "Visualize the output of node."
+      "Description": "Visualize the node's output"
     },
     {
       "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
@@ -433,7 +493,7 @@
         }
       ],
       "Replication": "Disabled",
-      "Description": "Visualize the output of node."
+      "Description": "Visualize the node's output"
     },
     {
       "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
@@ -462,7 +522,7 @@
         }
       ],
       "Replication": "Disabled",
-      "Description": "Visualize the output of node."
+      "Description": "Visualize the node's output"
     },
     {
       "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
@@ -491,7 +551,7 @@
         }
       ],
       "Replication": "Disabled",
-      "Description": "Visualize the output of node."
+      "Description": "Visualize the node's output"
     },
     {
       "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
@@ -520,7 +580,7 @@
         }
       ],
       "Replication": "Disabled",
-      "Description": "Visualize the output of node."
+      "Description": "Visualize the node's output"
     },
     {
       "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
@@ -549,7 +609,7 @@
         }
       ],
       "Replication": "Disabled",
-      "Description": "Visualize the output of node."
+      "Description": "Visualize the node's output"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
@@ -560,7 +620,7 @@
         {
           "Id": "574c55f9e1c44cce82b16f230001b932",
           "Name": "propertySet",
-          "Description": "Thermal property set as Dynamo type.\n\nvar",
+          "Description": "Thermal property set.\n\nvar",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -660,7 +720,7 @@
         }
       ],
       "Replication": "Auto",
-      "Description": "Get properties.\n\nThermal.GetProperties (propertySet: var): var[]..[]\n\nNamespace:\nOrchid.RevitMaterial"
+      "Description": "Get properties.\n\nThermal.GetProperties (propertySet: var): var[]..[]"
     },
     {
       "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
@@ -689,7 +749,7 @@
         }
       ],
       "Replication": "Disabled",
-      "Description": "Visualize the output of node."
+      "Description": "Visualize the node's output"
     },
     {
       "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
@@ -718,7 +778,7 @@
         }
       ],
       "Replication": "Disabled",
-      "Description": "Visualize the output of node."
+      "Description": "Visualize the node's output"
     },
     {
       "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
@@ -747,7 +807,7 @@
         }
       ],
       "Replication": "Disabled",
-      "Description": "Visualize the output of node."
+      "Description": "Visualize the node's output"
     },
     {
       "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
@@ -776,7 +836,7 @@
         }
       ],
       "Replication": "Disabled",
-      "Description": "Visualize the output of node."
+      "Description": "Visualize the node's output"
     },
     {
       "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
@@ -805,7 +865,7 @@
         }
       ],
       "Replication": "Disabled",
-      "Description": "Visualize the output of node."
+      "Description": "Visualize the node's output"
     },
     {
       "ConcreteType": "Orchid.E.RevitMaterial.ThermalType, OrchidRE",
@@ -826,7 +886,7 @@
         }
       ],
       "Replication": "Disabled",
-      "Description": "Dropdown for thermal type\n\nNamespace:\nOrchid.RevitMaterial"
+      "Description": "Dropdown for thermal type"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
@@ -836,7 +896,7 @@
       "Inputs": [],
       "Outputs": [
         {
-          "Id": "70071c0e92d44d6095e858ea6f8d8a9e",
+          "Id": "389344da06e8431aa9010f98eab42829",
           "Name": "",
           "Description": "Value of expression at line 1",
           "UsingDefaultValue": false,
@@ -845,7 +905,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "4f13b774ec0b4fc89145c895876ab72c",
+          "Id": "cbeff0ea8f9445fcb88be84fb7e23c55",
           "Name": "",
           "Description": "Value of expression at line 2",
           "UsingDefaultValue": false,
@@ -854,7 +914,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "f5c4ab2b3fe548408f2b76eab923b63c",
+          "Id": "66b6c51ad779416b8c8cfeaaabdc646f",
           "Name": "",
           "Description": "Value of expression at line 3",
           "UsingDefaultValue": false,
@@ -863,7 +923,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "8321d12d4f0247deab943805836f7c82",
+          "Id": "7c80e9c1801042c9a108682a96e988af",
           "Name": "",
           "Description": "Value of expression at line 4",
           "UsingDefaultValue": false,
@@ -872,7 +932,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "0f88cd5c9bb1480ab7d60b3b4301d073",
+          "Id": "83c733c2d2d84fd698cff17661cae7a2",
           "Name": "",
           "Description": "Value of expression at line 5",
           "UsingDefaultValue": false,
@@ -881,7 +941,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "2f9afcf575924f2a8ce0ba849750c61b",
+          "Id": "2721003e1189455d928288cfda926615",
           "Name": "",
           "Description": "Value of expression at line 6",
           "UsingDefaultValue": false,
@@ -890,7 +950,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "719bf8b607e94bf8afe22a0b450818f3",
+          "Id": "40963c4eeb6e4d1a9977ef1e54276bb5",
           "Name": "",
           "Description": "Value of expression at line 7",
           "UsingDefaultValue": false,
@@ -899,7 +959,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "041c881a7a4645cebc599b53926bf95a",
+          "Id": "8f85cc626c524b668f63c3fa12fa6651",
           "Name": "",
           "Description": "Value of expression at line 8",
           "UsingDefaultValue": false,
@@ -933,8 +993,8 @@
     },
     {
       "ConcreteType": "Orchid.E.RevitMaterial.PhysicalBehavior, OrchidRE",
-      "SelectedIndex": -1,
-      "SelectedString": "",
+      "SelectedIndex": 0,
+      "SelectedString": "Isotropic",
       "NodeType": "ExtensionNode",
       "Id": "97c8f2ea82324e2a87069f354d796c07",
       "Inputs": [],
@@ -950,7 +1010,7 @@
         }
       ],
       "Replication": "Disabled",
-      "Description": "Dropdown for physical behavior\n\nNamespace:\nOrchid.RevitMaterial"
+      "Description": "Dropdown for physical behavior"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
@@ -981,7 +1041,7 @@
         {
           "Id": "f4017fd832e34a1cb5cc8bffa0f5f456",
           "Name": "PropertySet",
-          "Description": "Thermal property set as Dynamo type.",
+          "Description": "Thermal property set.",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -989,7 +1049,7 @@
         }
       ],
       "Replication": "Auto",
-      "Description": "Create thermal property set.\n\nThermal.Create (name: string, type: string): var[]..[]\n\nNamespace:\nOrchid.RevitMaterial"
+      "Description": "Create thermal property set. Note: If a thermal property exists with the same name it is being replaced!\n\nThermal.Create (name: string, type: string): var[]..[]"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
@@ -1000,7 +1060,7 @@
         {
           "Id": "6a4525f0b4a944ab9dd3e8b887c80918",
           "Name": "propertySet",
-          "Description": "Thermal property set as Dynamo type.\n\nvar",
+          "Description": "Thermal property set.\n\nvar",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -1101,7 +1161,7 @@
         {
           "Id": "fc11fc6af0cc44698d81fa2510cec880",
           "Name": "PropertySet",
-          "Description": "Thermal property set as Dynamo type.",
+          "Description": "Thermal property set.",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -1109,7 +1169,7 @@
         }
       ],
       "Replication": "Auto",
-      "Description": "Set properties. Note: Can only be used for the thermal type Solid!\n\nThermal.SetProperties (propertySet: var, transmitsLight: bool = false, behavior: string = null, thermalConductivity: double = -1, specificHeat: double = -1, density: double = -1, emissivity: double = -1, permeability: double = -1, porosity: double = -1, reflectivity: double = -1, electricalResistivity: double = -1): var[]..[]\n\nNamespace:\nOrchid.RevitMaterial"
+      "Description": "Set properties. Note: Can only be used for the thermal type Solid!\n\nThermal.SetProperties (propertySet: var, transmitsLight: bool = false, behavior: string = null, thermalConductivity: double = -1, specificHeat: double = -1, density: double = -1, emissivity: double = -1, permeability: double = -1, porosity: double = -1, reflectivity: double = -1, electricalResistivity: double = -1): var[]..[]"
     },
     {
       "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
@@ -1138,7 +1198,7 @@
         }
       ],
       "Replication": "Disabled",
-      "Description": "Visualize the output of node."
+      "Description": "Visualize the node's output"
     },
     {
       "ConcreteType": "Orchid.E.RevitMaterial.MaterialAspect, OrchidRE",
@@ -1159,7 +1219,7 @@
         }
       ],
       "Replication": "Disabled",
-      "Description": "Dropdown for material aspects\n\nNamespace:\nOrchid.RevitMaterial"
+      "Description": "Dropdown for material aspects"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
@@ -1170,7 +1230,7 @@
         {
           "Id": "3b5e5f5f9ea343ce9ba3a33c34194ac0",
           "Name": "propertySet",
-          "Description": "Thermal property set as Dynamo type.\n\nvar",
+          "Description": "Thermal property set.\n\nvar",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -1226,7 +1286,7 @@
         {
           "Id": "d012a7e46d4048f0912afe771fd43505",
           "Name": "PropertySet",
-          "Description": "Thermal property set as Dynamo type.",
+          "Description": "Thermal property set.",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -1234,7 +1294,7 @@
         }
       ],
       "Replication": "Auto",
-      "Description": "Set information.\n\nThermal.SetInformation (propertySet: var, description: string = null, keywords: string = null, subclass: string = null, source: string = null, sourceUrl: string = null): var[]..[]\n\nNamespace:\nOrchid.RevitMaterial"
+      "Description": "Set information.\n\nThermal.SetInformation (propertySet: var, description: string = null, keywords: string = null, subclass: string = null, source: string = null, sourceUrl: string = null): var[]..[]"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
@@ -1265,7 +1325,7 @@
         {
           "Id": "1da25adc42634ba39238dfb150b625e0",
           "Name": "PropertySet",
-          "Description": "Physical (structural) property set as Dynamo type.",
+          "Description": "Physical (structural) property set.",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -1273,7 +1333,7 @@
         }
       ],
       "Replication": "Auto",
-      "Description": "Create physical property set.\n\nPhysical.Create (name: string, type: string): var[]..[]\n\nNamespace:\nOrchid.RevitMaterial"
+      "Description": "Create physical property set. Note: If a thermal property exists with the same name it is being replaced!\n\nPhysical.Create (name: string, type: string): var[]..[]"
     },
     {
       "ConcreteType": "Orchid.E.RevitMaterial.PhysicalType, OrchidRE",
@@ -1294,7 +1354,7 @@
         }
       ],
       "Replication": "Disabled",
-      "Description": "Dropdown for physical type\n\nNamespace:\nOrchid.RevitMaterial"
+      "Description": "Dropdown for physical type"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
@@ -1304,7 +1364,7 @@
       "Inputs": [],
       "Outputs": [
         {
-          "Id": "ed098d3df7064ea6b42897a003c9e6c4",
+          "Id": "2b374fa26b7f41bbafd1c832d9fac18e",
           "Name": "",
           "Description": "Value of expression at line 1",
           "UsingDefaultValue": false,
@@ -1325,7 +1385,7 @@
         {
           "Id": "f51197f7a1114ba08f9e4408760fd1e1",
           "Name": "propertySet",
-          "Description": "Physical property set as Dynamo type.\n\nvar",
+          "Description": "Physical property set.\n\nvar",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -1345,7 +1405,7 @@
         {
           "Id": "d4aa6efd6d064ed6aa2b8e3f3acd627c",
           "Name": "PropertySet",
-          "Description": "Physical property set as Dynamo type.",
+          "Description": "Physical property set.",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -1353,7 +1413,7 @@
         }
       ],
       "Replication": "Auto",
-      "Description": "Set behavior.\n\nPhysical.SetBehavior (propertySet: var, behavior: string): var[]..[]\n\nNamespace:\nOrchid.RevitMaterial"
+      "Description": "Set behavior.\n\nPhysical.SetBehavior (propertySet: var, behavior: string): var[]..[]"
     },
     {
       "ConcreteType": "Orchid.E.RevitMaterial.PhysicalBehavior, OrchidRE",
@@ -1374,7 +1434,7 @@
         }
       ],
       "Replication": "Disabled",
-      "Description": "Dropdown for physical behavior\n\nNamespace:\nOrchid.RevitMaterial"
+      "Description": "Dropdown for physical behavior"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
@@ -1433,7 +1493,7 @@
         }
       ],
       "Replication": "Disabled",
-      "Description": "Visualize the output of node."
+      "Description": "Visualize the node's output"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
@@ -1473,7 +1533,7 @@
         {
           "Id": "a14abe2c0a2a42baadede4bd946946f5",
           "Name": "Material",
-          "Description": "Material as Dynamo type.",
+          "Description": "Material.",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -1481,7 +1541,7 @@
         }
       ],
       "Replication": "Auto",
-      "Description": "Set physical property.\n\nMaterial.SetPhysical (material: var, aspect: string, propertySet: var): var[]..[]\n\nNamespace:\nOrchid.RevitMaterial"
+      "Description": "Set physical property.\n\nMaterial.SetPhysical (material: var, aspect: string, propertySet: var): var[]..[]"
     },
     {
       "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
@@ -1510,7 +1570,7 @@
         }
       ],
       "Replication": "Disabled",
-      "Description": "Visualize the output of node."
+      "Description": "Visualize the node's output"
     },
     {
       "ConcreteType": "Orchid.E.RevitMaterial.MaterialAspect, OrchidRE",
@@ -1531,7 +1591,7 @@
         }
       ],
       "Replication": "Disabled",
-      "Description": "Dropdown for material aspects\n\nNamespace:\nOrchid.RevitMaterial"
+      "Description": "Dropdown for material aspects"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
@@ -1542,7 +1602,7 @@
         {
           "Id": "fefa4d6b592f4fbea2397364100c6e7e",
           "Name": "propertySet",
-          "Description": "Physical property set as Dynamo type.\n\nvar",
+          "Description": "Physical property set.\n\nvar",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -1589,7 +1649,7 @@
         {
           "Id": "766685b86d3943d587bc0b1568142781",
           "Name": "PropertySet",
-          "Description": "Physical property set as Dynamo type.",
+          "Description": "Physical property set.",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -1597,7 +1657,7 @@
         }
       ],
       "Replication": "Auto",
-      "Description": "Set mechanical.\n\nPhysical.SetMechanical (propertySet: var, youngModulus: double = -1, poissonRatio: double = -1, shearModulus: double = -1, density: double = -1): var[]..[]\n\nNamespace:\nOrchid.RevitMaterial"
+      "Description": "Set mechanical.\n\nPhysical.SetMechanical (propertySet: var, youngModulus: double = -1, poissonRatio: double = -1, shearModulus: double = -1, density: double = -1): var[]..[]"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
@@ -1619,7 +1679,7 @@
         {
           "Id": "0a85df23316147039bc69e1e31dcae84",
           "Name": "Material",
-          "Description": "Material as Dynamo type.",
+          "Description": "Material.",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -1627,7 +1687,7 @@
         }
       ],
       "Replication": "Auto",
-      "Description": "Create material.\n\nMaterial.Create (name: string): var[]..[]\n\nNamespace:\nOrchid.RevitMaterial"
+      "Description": "Create material.\n\nMaterial.Create (name: string): var[]..[]"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
@@ -1686,7 +1746,7 @@
         }
       ],
       "Replication": "Disabled",
-      "Description": "Visualize the output of node."
+      "Description": "Visualize the node's output"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
@@ -1697,7 +1757,7 @@
         {
           "Id": "f6baff2ef9a64b9084470080e0c348ae",
           "Name": "propertySet",
-          "Description": "Physical property set as Dynamo type.\n\nvar",
+          "Description": "Physical property set.\n\nvar",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -1717,7 +1777,7 @@
         {
           "Id": "e44428cc0a9149e3bccfae8b900ec7a6",
           "Name": "PropertySet",
-          "Description": "Physical property set as Dynamo type.",
+          "Description": "Physical property set.",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -1725,7 +1785,7 @@
         }
       ],
       "Replication": "Auto",
-      "Description": "Set basic thermal.\n\nPhysical.SetBasicThermal (propertySet: var, expansionCoefficient: double): var[]..[]\n\nNamespace:\nOrchid.RevitMaterial"
+      "Description": "Set basic thermal.\n\nPhysical.SetBasicThermal (propertySet: var, expansionCoefficient: double): var[]..[]"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
@@ -1735,7 +1795,7 @@
       "Inputs": [],
       "Outputs": [
         {
-          "Id": "9fb2782fc22245ee9883f0bd3c3a3542",
+          "Id": "b6eb2e080cad4395bc3930a8b7febe68",
           "Name": "",
           "Description": "Value of expression at line 1",
           "UsingDefaultValue": false,
@@ -1744,7 +1804,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "96dbf961c0a84bb9bc80102c9e4b879d",
+          "Id": "6c696bdcf7a84faeac9f9bf39488fbb5",
           "Name": "",
           "Description": "Value of expression at line 2",
           "UsingDefaultValue": false,
@@ -1753,7 +1813,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "db7f33ff55f9443d8f4d5f0128aa1d4d",
+          "Id": "05733359596444ad99c683b77ec916e6",
           "Name": "",
           "Description": "Value of expression at line 3",
           "UsingDefaultValue": false,
@@ -1762,7 +1822,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "5552c712310c46988618f9175e553904",
+          "Id": "45b6dc3b25134d46848da7bf190588bd",
           "Name": "",
           "Description": "Value of expression at line 4",
           "UsingDefaultValue": false,
@@ -1802,7 +1862,7 @@
       "Inputs": [],
       "Outputs": [
         {
-          "Id": "59fd3349f43e49f791983e4ce7967fe0",
+          "Id": "0891f21872694dbfa4b446ea3b5f3b2e",
           "Name": "",
           "Description": "Value of expression at line 1",
           "UsingDefaultValue": false,
@@ -1811,7 +1871,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "53cf64e09f88442ab8f9c7a4f7f97ce3",
+          "Id": "24b8dbde0db340a793e5c753f75c4411",
           "Name": "",
           "Description": "Value of expression at line 2",
           "UsingDefaultValue": false,
@@ -1831,7 +1891,7 @@
       "Inputs": [],
       "Outputs": [
         {
-          "Id": "09778bfdde1a4554b28d26c23250d7b5",
+          "Id": "150dba5201e64f078f28e85f8a4a3e40",
           "Name": "",
           "Description": "Value of expression at line 1",
           "UsingDefaultValue": false,
@@ -1852,7 +1912,7 @@
         {
           "Id": "240ff85fb12a4321a0bdc39b9eee0e52",
           "Name": "propertySet",
-          "Description": "Physical property set as Dynamo type.\n\nvar",
+          "Description": "Physical property set.\n\nvar",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -1890,7 +1950,7 @@
         {
           "Id": "a801db1148ba44e8ae1096a774f9016f",
           "Name": "PropertySet",
-          "Description": "Physical property set as Dynamo type.",
+          "Description": "Physical property set.",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -1898,7 +1958,7 @@
         }
       ],
       "Replication": "Auto",
-      "Description": "Set strength.\n\nPhysical.SetStrength (propertySet: var, yieldStress: double = -1, tensileStrength: double = -1, thermalTreated: bool = false): var[]..[]\n\nNamespace:\nOrchid.RevitMaterial"
+      "Description": "Set strength.\n\nPhysical.SetStrength (propertySet: var, yieldStress: double = -1, tensileStrength: double = -1, thermalTreated: bool = false): var[]..[]"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
@@ -1908,7 +1968,7 @@
       "Inputs": [],
       "Outputs": [
         {
-          "Id": "73aaca5b681a4ccfa42b4cc6d75ff3c1",
+          "Id": "810d45a95dd3444d8dd46c781213475b",
           "Name": "",
           "Description": "Value of expression at line 1",
           "UsingDefaultValue": false,
@@ -1917,7 +1977,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "d6d1d7d283314366bf67145f80e50189",
+          "Id": "9bb797f35fec4962b8720c742cc25c6c",
           "Name": "",
           "Description": "Value of expression at line 2",
           "UsingDefaultValue": false,
@@ -1926,7 +1986,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "62940fb46fb241baafdec01db5b7a096",
+          "Id": "da918cc05eb946e28010b0e86db63c48",
           "Name": "",
           "Description": "Value of expression at line 3",
           "UsingDefaultValue": false,
@@ -1935,7 +1995,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "7a101d7c8e054843b791a54878a31027",
+          "Id": "20c46cc609e14a4387dad966f61ae93a",
           "Name": "",
           "Description": "Value of expression at line 4",
           "UsingDefaultValue": false,
@@ -1944,7 +2004,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "b849b9b497bd400c845ba16cba0eaef6",
+          "Id": "14fc97b471a44c5ab8ea52087491e6e0",
           "Name": "",
           "Description": "Value of expression at line 5",
           "UsingDefaultValue": false,
@@ -1953,7 +2013,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "2679d8399d6e4a27b0e14e5d9cd2c7a3",
+          "Id": "c32ddacd26fe4f48829c7829acaa5277",
           "Name": "",
           "Description": "Value of expression at line 6",
           "UsingDefaultValue": false,
@@ -1994,7 +2054,7 @@
         {
           "Id": "f07292a5a1354ba381627203c939d619",
           "Name": "propertySet",
-          "Description": "Physical property set as Dynamo type.\n\nvar",
+          "Description": "Physical property set.\n\nvar",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -2050,7 +2110,7 @@
         {
           "Id": "6cf9a78c410248699bd7899894f5384b",
           "Name": "PropertySet",
-          "Description": "Physical property set as Dynamo type.",
+          "Description": "Physical property set.",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -2058,7 +2118,7 @@
         }
       ],
       "Replication": "Auto",
-      "Description": "Set information.\n\nPhysical.SetInformation (propertySet: var, description: string = null, keywords: string = null, subclass: string = null, source: string = null, sourceUrl: string = null): var[]..[]\n\nNamespace:\nOrchid.RevitMaterial"
+      "Description": "Set information.\n\nPhysical.SetInformation (propertySet: var, description: string = null, keywords: string = null, subclass: string = null, source: string = null, sourceUrl: string = null): var[]..[]"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
@@ -2069,7 +2129,7 @@
         {
           "Id": "faa026cc90ed4166a06fc6491af6772b",
           "Name": "propertySet",
-          "Description": "Physical property set as Dynamo type.\n\nvar",
+          "Description": "Physical property set.\n\nvar",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -2124,7 +2184,7 @@
         }
       ],
       "Replication": "Auto",
-      "Description": "Get shear modulus (mechanical).\n\nPhysical.GetShearModulus (propertySet: var): var[]..[]\n\nNamespace:\nOrchid.RevitMaterial"
+      "Description": "Get shear modulus (mechanical).\n\nPhysical.GetShearModulus (propertySet: var): var[]..[]"
     },
     {
       "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
@@ -2153,7 +2213,7 @@
         }
       ],
       "Replication": "Disabled",
-      "Description": "Visualize the output of node."
+      "Description": "Visualize the node's output"
     },
     {
       "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
@@ -2182,7 +2242,7 @@
         }
       ],
       "Replication": "Disabled",
-      "Description": "Visualize the output of node."
+      "Description": "Visualize the node's output"
     },
     {
       "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
@@ -2211,7 +2271,7 @@
         }
       ],
       "Replication": "Disabled",
-      "Description": "Visualize the output of node."
+      "Description": "Visualize the node's output"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
@@ -2222,7 +2282,7 @@
         {
           "Id": "a1e250d03ae64d2f8feda76311dc13fb",
           "Name": "propertySet",
-          "Description": "Physical property set as Dynamo type.\n\nvar",
+          "Description": "Physical property set.\n\nvar",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -2286,7 +2346,7 @@
         }
       ],
       "Replication": "Auto",
-      "Description": "Get poisson ratio (mechanical).\n\nPhysical.GetPoissonRatio (propertySet: var): var[]..[]\n\nNamespace:\nOrchid.RevitMaterial"
+      "Description": "Get poisson ratio (mechanical).\n\nPhysical.GetPoissonRatio (propertySet: var): var[]..[]"
     },
     {
       "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
@@ -2315,7 +2375,7 @@
         }
       ],
       "Replication": "Disabled",
-      "Description": "Visualize the output of node."
+      "Description": "Visualize the node's output"
     },
     {
       "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
@@ -2344,7 +2404,7 @@
         }
       ],
       "Replication": "Disabled",
-      "Description": "Visualize the output of node."
+      "Description": "Visualize the node's output"
     },
     {
       "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
@@ -2373,7 +2433,7 @@
         }
       ],
       "Replication": "Disabled",
-      "Description": "Visualize the output of node."
+      "Description": "Visualize the node's output"
     },
     {
       "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
@@ -2402,7 +2462,7 @@
         }
       ],
       "Replication": "Disabled",
-      "Description": "Visualize the output of node."
+      "Description": "Visualize the node's output"
     },
     {
       "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
@@ -2431,7 +2491,7 @@
         }
       ],
       "Replication": "Disabled",
-      "Description": "Visualize the output of node."
+      "Description": "Visualize the node's output"
     },
     {
       "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
@@ -2460,7 +2520,7 @@
         }
       ],
       "Replication": "Disabled",
-      "Description": "Visualize the output of node."
+      "Description": "Visualize the node's output"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
@@ -2471,7 +2531,7 @@
         {
           "Id": "3d9569a1104b418f9ecdb75719960d40",
           "Name": "propertySet",
-          "Description": "Physical property set as Dynamo type.\n\nvar",
+          "Description": "Physical property set.\n\nvar",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -2535,7 +2595,7 @@
         }
       ],
       "Replication": "Auto",
-      "Description": "Get young modulus (mechanical).\n\nPhysical.GetYoungModulus (propertySet: var): var[]..[]\n\nNamespace:\nOrchid.RevitMaterial"
+      "Description": "Get young modulus (mechanical).\n\nPhysical.GetYoungModulus (propertySet: var): var[]..[]"
     },
     {
       "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
@@ -2564,7 +2624,7 @@
         }
       ],
       "Replication": "Disabled",
-      "Description": "Visualize the output of node."
+      "Description": "Visualize the node's output"
     },
     {
       "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
@@ -2593,7 +2653,7 @@
         }
       ],
       "Replication": "Disabled",
-      "Description": "Visualize the output of node."
+      "Description": "Visualize the node's output"
     },
     {
       "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
@@ -2622,7 +2682,7 @@
         }
       ],
       "Replication": "Disabled",
-      "Description": "Visualize the output of node."
+      "Description": "Visualize the node's output"
     },
     {
       "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
@@ -2651,7 +2711,7 @@
         }
       ],
       "Replication": "Disabled",
-      "Description": "Visualize the output of node."
+      "Description": "Visualize the node's output"
     },
     {
       "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
@@ -2680,7 +2740,7 @@
         }
       ],
       "Replication": "Disabled",
-      "Description": "Visualize the output of node."
+      "Description": "Visualize the node's output"
     },
     {
       "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
@@ -2709,7 +2769,7 @@
         }
       ],
       "Replication": "Disabled",
-      "Description": "Visualize the output of node."
+      "Description": "Visualize the node's output"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
@@ -2720,7 +2780,7 @@
         {
           "Id": "8684b9ea6a0a4031a8b998d4aa740d00",
           "Name": "propertySet",
-          "Description": "Physical property set as Dynamo type.\n\nvar",
+          "Description": "Physical property set.\n\nvar",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -2784,7 +2844,7 @@
         }
       ],
       "Replication": "Auto",
-      "Description": "Get expansion coefficient (basic thermal).\n\nPhysical.GetExpansionCoefficient (propertySet: var): var[]..[]\n\nNamespace:\nOrchid.RevitMaterial"
+      "Description": "Get expansion coefficient (basic thermal).\n\nPhysical.GetExpansionCoefficient (propertySet: var): var[]..[]"
     },
     {
       "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
@@ -2813,7 +2873,7 @@
         }
       ],
       "Replication": "Disabled",
-      "Description": "Visualize the output of node."
+      "Description": "Visualize the node's output"
     },
     {
       "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
@@ -2842,7 +2902,7 @@
         }
       ],
       "Replication": "Disabled",
-      "Description": "Visualize the output of node."
+      "Description": "Visualize the node's output"
     },
     {
       "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
@@ -2871,7 +2931,7 @@
         }
       ],
       "Replication": "Disabled",
-      "Description": "Visualize the output of node."
+      "Description": "Visualize the node's output"
     },
     {
       "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
@@ -2900,7 +2960,7 @@
         }
       ],
       "Replication": "Disabled",
-      "Description": "Visualize the output of node."
+      "Description": "Visualize the node's output"
     },
     {
       "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
@@ -2929,7 +2989,7 @@
         }
       ],
       "Replication": "Disabled",
-      "Description": "Visualize the output of node."
+      "Description": "Visualize the node's output"
     },
     {
       "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
@@ -2958,7 +3018,7 @@
         }
       ],
       "Replication": "Disabled",
-      "Description": "Visualize the output of node."
+      "Description": "Visualize the node's output"
     },
     {
       "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
@@ -2987,7 +3047,7 @@
         }
       ],
       "Replication": "Disabled",
-      "Description": "Visualize the output of node."
+      "Description": "Visualize the node's output"
     },
     {
       "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
@@ -3016,7 +3076,7 @@
         }
       ],
       "Replication": "Disabled",
-      "Description": "Visualize the output of node."
+      "Description": "Visualize the node's output"
     },
     {
       "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
@@ -3045,7 +3105,7 @@
         }
       ],
       "Replication": "Disabled",
-      "Description": "Visualize the output of node."
+      "Description": "Visualize the node's output"
     },
     {
       "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
@@ -3074,7 +3134,7 @@
         }
       ],
       "Replication": "Disabled",
-      "Description": "Visualize the output of node."
+      "Description": "Visualize the node's output"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
@@ -3085,7 +3145,7 @@
         {
           "Id": "23a58da6cc1f4db09a7a8e5c056339b9",
           "Name": "propertySet",
-          "Description": "Physical property set as Dynamo type.\n\nvar",
+          "Description": "Physical property set.\n\nvar",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -3140,7 +3200,7 @@
         }
       ],
       "Replication": "Auto",
-      "Description": "Get information.\n\nPhysical.GetInformation (propertySet: var): var[]..[]\n\nNamespace:\nOrchid.RevitMaterial"
+      "Description": "Get information.\n\nPhysical.GetInformation (propertySet: var): var[]..[]"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
@@ -3151,7 +3211,7 @@
         {
           "Id": "5fee38cbdd6f4c72b2d3b68bfec4cb7c",
           "Name": "propertySet",
-          "Description": "Physical property set as Dynamo type.\n\nvar",
+          "Description": "Physical property set.\n\nvar",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -3170,7 +3230,7 @@
         }
       ],
       "Replication": "Auto",
-      "Description": "Get behavior.\n\nPhysical.GetBehavior (propertySet: var): string\n\nNamespace:\nOrchid.RevitMaterial"
+      "Description": "Get behavior.\n\nPhysical.GetBehavior (propertySet: var): string"
     },
     {
       "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
@@ -3199,7 +3259,7 @@
         }
       ],
       "Replication": "Disabled",
-      "Description": "Visualize the output of node."
+      "Description": "Visualize the node's output"
     },
     {
       "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
@@ -3228,7 +3288,7 @@
         }
       ],
       "Replication": "Disabled",
-      "Description": "Visualize the output of node."
+      "Description": "Visualize the node's output"
     },
     {
       "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
@@ -3257,7 +3317,7 @@
         }
       ],
       "Replication": "Disabled",
-      "Description": "Visualize the output of node."
+      "Description": "Visualize the node's output"
     },
     {
       "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
@@ -3286,7 +3346,7 @@
         }
       ],
       "Replication": "Disabled",
-      "Description": "Visualize the output of node."
+      "Description": "Visualize the node's output"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
@@ -3326,7 +3386,7 @@
         {
           "Id": "a792b87139074f00929ddd2ba4e9e63b",
           "Name": "Material",
-          "Description": "Material as Dynamo type.",
+          "Description": "Material.",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -3334,561 +3394,670 @@
         }
       ],
       "Replication": "Auto",
-      "Description": "Set thermal property.\n\nMaterial.SetThermal (material: var, aspect: string, propertySet: var): var[]..[]\n\nNamespace:\nOrchid.RevitMaterial"
+      "Description": "Set thermal property.\n\nMaterial.SetThermal (material: var, aspect: string, propertySet: var): var[]..[]"
     }
   ],
   "Connectors": [
     {
       "Start": "e01719312f4143db9dd24b4203111572",
       "End": "be9934acaf524b1e94cbb7e899492f9c",
-      "Id": "ae64f576518b4f25827665b3c9dbdccf"
+      "Id": "ae64f576518b4f25827665b3c9dbdccf",
+      "IsHidden": "False"
     },
     {
       "Start": "8ab342d83b964566a22b047309ff9e53",
       "End": "7e97d5145baf4640bdb1ba0a1f6acab9",
-      "Id": "adde769a399f48aeaeb5b0387836bb9a"
+      "Id": "adde769a399f48aeaeb5b0387836bb9a",
+      "IsHidden": "False"
     },
     {
       "Start": "1a3d22a083c94a33b05ba5a6f4e8562c",
       "End": "6c8140c256af47a681dcdec95672389f",
-      "Id": "0b69721834a74eab8ae3247c03ab377d"
+      "Id": "0b69721834a74eab8ae3247c03ab377d",
+      "IsHidden": "False"
     },
     {
       "Start": "fcae0e15e32945fd8f9b9228ec844198",
       "End": "451eb92d0dd4405dbbfc1c272c58c451",
-      "Id": "3f1c03a96f304cf295a98f954d74b170"
+      "Id": "3f1c03a96f304cf295a98f954d74b170",
+      "IsHidden": "False"
     },
     {
       "Start": "1d87ffeb2f954ccfabf85248056603b5",
       "End": "5adcf8fcd11c4ba18bd921871e48e679",
-      "Id": "9c5033f18ebb458d9c91dc9281b7de3c"
+      "Id": "9c5033f18ebb458d9c91dc9281b7de3c",
+      "IsHidden": "False"
     },
     {
       "Start": "43327d52283740c5ae6c8ee04a0fc98d",
       "End": "1c0a9ebf543c401b845d904a8a5c7729",
-      "Id": "62c8a0d3c4594e9f8a2a278f2be4a4a5"
+      "Id": "62c8a0d3c4594e9f8a2a278f2be4a4a5",
+      "IsHidden": "False"
     },
     {
       "Start": "b9f0c8d1e6064105bdd064fe7a42f9a6",
       "End": "542c41b0fffc4ef7b62a59d194febae1",
-      "Id": "d3b921f5c7af4e1b8fbb0b1cab2468d0"
+      "Id": "d3b921f5c7af4e1b8fbb0b1cab2468d0",
+      "IsHidden": "False"
     },
     {
       "Start": "3d94de96db4246c69b0bc496283c3b2d",
       "End": "7a1424652d3e46c0b43acd230a56aba4",
-      "Id": "0a9aa722e6734b43a455ca6efe719fd2"
+      "Id": "0a9aa722e6734b43a455ca6efe719fd2",
+      "IsHidden": "False"
     },
     {
       "Start": "2d613afffdd14561a81ca36ff44d2271",
       "End": "00871535a1eb43febbb1a43e3d70cc6c",
-      "Id": "3b20eecf2f394d8bbb6f30ff5359bec1"
+      "Id": "3b20eecf2f394d8bbb6f30ff5359bec1",
+      "IsHidden": "False"
     },
     {
       "Start": "494e2d1e725a4a88bb72f81c6c0c2ffd",
       "End": "78f9029e82d749dd8ac24fcb16aff0dd",
-      "Id": "0f64db6603b64ffc8cca0afd89fe26d1"
+      "Id": "0f64db6603b64ffc8cca0afd89fe26d1",
+      "IsHidden": "False"
     },
     {
       "Start": "70c63c2e6da74e50addd91d33e91a4e3",
       "End": "da10d069ed254f12af600983d70f3564",
-      "Id": "8d532405eb284450be93611c0927e191"
+      "Id": "8d532405eb284450be93611c0927e191",
+      "IsHidden": "False"
     },
     {
       "Start": "24026ff4c0f24e45a404608f60672375",
       "End": "c1061170734f4c38ac5c36538cd87a29",
-      "Id": "021501f700484927ba4f97cbd59f51fd"
+      "Id": "021501f700484927ba4f97cbd59f51fd",
+      "IsHidden": "False"
     },
     {
       "Start": "2819c3fadd32441fa8429ba1d52f3edf",
       "End": "5bea4f7c698c47d1819a5a534837864d",
-      "Id": "f7ba9605c0a14a5db13c45be57212f90"
+      "Id": "f7ba9605c0a14a5db13c45be57212f90",
+      "IsHidden": "False"
     },
     {
       "Start": "4a490e61e0e24a0a863235f7b655e5d5",
       "End": "1fe925b38ad7425985abffc013c40e49",
-      "Id": "1a32d759a9084a65bda4d3ae2691a0b7"
+      "Id": "1a32d759a9084a65bda4d3ae2691a0b7",
+      "IsHidden": "False"
     },
     {
       "Start": "ece49eb1f34842078e05f48b63916096",
       "End": "5ab4901116ec4601b8aa69a939568a0a",
-      "Id": "7bc9fd07b7314adba5a37b0cc79eda51"
+      "Id": "7bc9fd07b7314adba5a37b0cc79eda51",
+      "IsHidden": "False"
     },
     {
       "Start": "58a52501ef234686b83ac78e3d640778",
       "End": "6b52e3a5b39a42d9a063576e1edb1809",
-      "Id": "862e7125276e41768409f604cf3075af"
+      "Id": "862e7125276e41768409f604cf3075af",
+      "IsHidden": "False"
     },
     {
       "Start": "d28bcec20d1c4f0786e6a656bcf47dc8",
       "End": "978d1ebbbbc5491992920326b2c6ea0b",
-      "Id": "d3515feca16949db8e01789f27a78828"
+      "Id": "d3515feca16949db8e01789f27a78828",
+      "IsHidden": "False"
     },
     {
       "Start": "78b33ce5dc2947cabf192921934ae73e",
       "End": "e0eaee93b8da4c709fbe689bc560c250",
-      "Id": "0dc7b967f8d34e50abd7e3def9a04006"
+      "Id": "0dc7b967f8d34e50abd7e3def9a04006",
+      "IsHidden": "False"
     },
     {
       "Start": "afcc2af21de24044aedd11ec5073b26d",
       "End": "c5f3f2f2e4574cb48f765e402cd2ecdd",
-      "Id": "8fcf61a5947d4e8cb6260325c9af5e11"
+      "Id": "8fcf61a5947d4e8cb6260325c9af5e11",
+      "IsHidden": "False"
     },
     {
-      "Start": "70071c0e92d44d6095e858ea6f8d8a9e",
+      "Start": "389344da06e8431aa9010f98eab42829",
       "End": "2f8b0d576e9449dfb4dca4e65ebff469",
-      "Id": "d3b2b3ede3684a739a1028508aa07ff0"
+      "Id": "d3b2b3ede3684a739a1028508aa07ff0",
+      "IsHidden": "False"
     },
     {
-      "Start": "4f13b774ec0b4fc89145c895876ab72c",
+      "Start": "cbeff0ea8f9445fcb88be84fb7e23c55",
       "End": "688505f610064a1eba3ae93a37fbc1ba",
-      "Id": "902429b1f8dc4298adaf344c20954f90"
+      "Id": "902429b1f8dc4298adaf344c20954f90",
+      "IsHidden": "False"
     },
     {
-      "Start": "f5c4ab2b3fe548408f2b76eab923b63c",
+      "Start": "66b6c51ad779416b8c8cfeaaabdc646f",
       "End": "0cf9bbdceef04d4ea994e872f10a3800",
-      "Id": "3fc31eb86649474d87592f8e76382342"
+      "Id": "3fc31eb86649474d87592f8e76382342",
+      "IsHidden": "False"
     },
     {
-      "Start": "8321d12d4f0247deab943805836f7c82",
+      "Start": "7c80e9c1801042c9a108682a96e988af",
       "End": "40f7cb7e4c1246a28985366e51c6b8f7",
-      "Id": "9348375c5127494287adcbebd4a4553a"
+      "Id": "9348375c5127494287adcbebd4a4553a",
+      "IsHidden": "False"
     },
     {
-      "Start": "0f88cd5c9bb1480ab7d60b3b4301d073",
+      "Start": "83c733c2d2d84fd698cff17661cae7a2",
       "End": "1b644846363a4481b16f094e35a28c9f",
-      "Id": "e2fdc23471c04c278d3748cfcbc44390"
+      "Id": "e2fdc23471c04c278d3748cfcbc44390",
+      "IsHidden": "False"
     },
     {
-      "Start": "2f9afcf575924f2a8ce0ba849750c61b",
+      "Start": "2721003e1189455d928288cfda926615",
       "End": "ee02e329abb3446abe36338a2c64e191",
-      "Id": "db268e1a804b4c5cbe34471eacd3077d"
+      "Id": "db268e1a804b4c5cbe34471eacd3077d",
+      "IsHidden": "False"
     },
     {
-      "Start": "719bf8b607e94bf8afe22a0b450818f3",
+      "Start": "40963c4eeb6e4d1a9977ef1e54276bb5",
       "End": "1be63341d0a14f98b7e1d6c440b09aa1",
-      "Id": "b9c46d125b3c47eda687415f4b7934d5"
+      "Id": "b9c46d125b3c47eda687415f4b7934d5",
+      "IsHidden": "False"
     },
     {
-      "Start": "041c881a7a4645cebc599b53926bf95a",
+      "Start": "8f85cc626c524b668f63c3fa12fa6651",
       "End": "cfbfc021b81e46eba5b2bd9527586c5d",
-      "Id": "29dbb740695b464ca88bc1d6e6ee66ca"
+      "Id": "29dbb740695b464ca88bc1d6e6ee66ca",
+      "IsHidden": "False"
     },
     {
       "Start": "15b51ce51f404ee4a4179e7ad0601b80",
       "End": "4c2215c2ad4f4e0ebe9a8b2de65bc915",
-      "Id": "850acaa7338a4074b16c50743c10fb07"
+      "Id": "850acaa7338a4074b16c50743c10fb07",
+      "IsHidden": "False"
     },
     {
       "Start": "2e65960f4e9f48d8ab5d485ae4d2e574",
       "End": "37539972a3074224bf42601abc6b67c0",
-      "Id": "e578ed2c3b904a56be2cdfb5aa8fe6ea"
+      "Id": "e578ed2c3b904a56be2cdfb5aa8fe6ea",
+      "IsHidden": "False"
     },
     {
       "Start": "f4017fd832e34a1cb5cc8bffa0f5f456",
       "End": "3b5e5f5f9ea343ce9ba3a33c34194ac0",
-      "Id": "672113108fd14dadaa17b68ebfd85a74"
-    },
-    {
-      "Start": "fc11fc6af0cc44698d81fa2510cec880",
-      "End": "574c55f9e1c44cce82b16f230001b932",
-      "Id": "c811e453e9134253bd75fb0a9e3a8b43"
+      "Id": "672113108fd14dadaa17b68ebfd85a74",
+      "IsHidden": "False"
     },
     {
       "Start": "fc11fc6af0cc44698d81fa2510cec880",
       "End": "0e296b86c7e74d48b340f19e446b4fe4",
-      "Id": "b13d601328b94af9b0a49944da09023b"
+      "Id": "b13d601328b94af9b0a49944da09023b",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "fc11fc6af0cc44698d81fa2510cec880",
+      "End": "574c55f9e1c44cce82b16f230001b932",
+      "Id": "72721002b53940b9a22120149063394c",
+      "IsHidden": "False"
     },
     {
       "Start": "948bb2bd36924d55b0c9b2bdce5f5b99",
       "End": "abdbe29f12c94e368e9f6d0af36c0877",
-      "Id": "8661e926f8f241dc9b1fb8195509c5ba"
-    },
-    {
-      "Start": "d012a7e46d4048f0912afe771fd43505",
-      "End": "7c5b8280f8224fadb780e81c5677e4ea",
-      "Id": "dda798bbc60846a5b554e96675518cc4"
+      "Id": "8661e926f8f241dc9b1fb8195509c5ba",
+      "IsHidden": "False"
     },
     {
       "Start": "d012a7e46d4048f0912afe771fd43505",
       "End": "6a4525f0b4a944ab9dd3e8b887c80918",
-      "Id": "b6f056fb658c48b9b4dccde7836fe84e"
+      "Id": "b6f056fb658c48b9b4dccde7836fe84e",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "d012a7e46d4048f0912afe771fd43505",
+      "End": "7c5b8280f8224fadb780e81c5677e4ea",
+      "Id": "f52c47172cbd49c78b3bf4188cebdc55",
+      "IsHidden": "False"
     },
     {
       "Start": "1da25adc42634ba39238dfb150b625e0",
       "End": "f07292a5a1354ba381627203c939d619",
-      "Id": "0708a2e6a3f84cf9b4a9f71127f74234"
+      "Id": "0708a2e6a3f84cf9b4a9f71127f74234",
+      "IsHidden": "False"
     },
     {
       "Start": "52de549241174eedb0019d43f1da079a",
       "End": "a9d50f8e1b3f4a7097f9eedfb01c7729",
-      "Id": "9e8267910a31468eae707229376c12b3"
+      "Id": "9e8267910a31468eae707229376c12b3",
+      "IsHidden": "False"
     },
     {
-      "Start": "ed098d3df7064ea6b42897a003c9e6c4",
+      "Start": "2b374fa26b7f41bbafd1c832d9fac18e",
       "End": "09208bf752db4df58f12802fe6779857",
-      "Id": "79140b5278bb422a90ccdde66070f915"
+      "Id": "79140b5278bb422a90ccdde66070f915",
+      "IsHidden": "False"
     },
     {
-      "Start": "ed098d3df7064ea6b42897a003c9e6c4",
+      "Start": "2b374fa26b7f41bbafd1c832d9fac18e",
       "End": "e0e1beb258344e289236aecd5909d60a",
-      "Id": "b75c2c47ae0848ddb4668cc6bb6486ae"
+      "Id": "b75c2c47ae0848ddb4668cc6bb6486ae",
+      "IsHidden": "False"
     },
     {
-      "Start": "ed098d3df7064ea6b42897a003c9e6c4",
+      "Start": "2b374fa26b7f41bbafd1c832d9fac18e",
       "End": "38f150e2fbeb4bd8bc9fa493eebaa20a",
-      "Id": "6a1ed17dd2974199949db013b2c7af4a"
+      "Id": "6a1ed17dd2974199949db013b2c7af4a",
+      "IsHidden": "False"
     },
     {
       "Start": "d4aa6efd6d064ed6aa2b8e3f3acd627c",
       "End": "f6baff2ef9a64b9084470080e0c348ae",
-      "Id": "d3016ec714dc496ca8b5064180c0eab3"
-    },
-    {
-      "Start": "d4aa6efd6d064ed6aa2b8e3f3acd627c",
-      "End": "5fee38cbdd6f4c72b2d3b68bfec4cb7c",
-      "Id": "b909cc68f10f4a7d9b1d914465586c5b"
+      "Id": "d3016ec714dc496ca8b5064180c0eab3",
+      "IsHidden": "False"
     },
     {
       "Start": "025a0af9b57a49239544c6889276818f",
       "End": "50314f009ea741b2b867adbc4008e5a6",
-      "Id": "51081199518f4f618d0f5a452dee835e"
+      "Id": "51081199518f4f618d0f5a452dee835e",
+      "IsHidden": "False"
     },
     {
       "Start": "a90414ad8de64c78a59f52f826ddb677",
       "End": "d3ca9bc169ac48099d26cd825e80b5bd",
-      "Id": "0e7a7b1ac5dd45bda8376192583dcb9f"
+      "Id": "0e7a7b1ac5dd45bda8376192583dcb9f",
+      "IsHidden": "False"
     },
     {
       "Start": "a14abe2c0a2a42baadede4bd946946f5",
       "End": "69aa998f8a014be1b8275305692f03f0",
-      "Id": "2a26c4d365674205a2b603f2fea2e1ee"
+      "Id": "2a26c4d365674205a2b603f2fea2e1ee",
+      "IsHidden": "False"
     },
     {
       "Start": "a14abe2c0a2a42baadede4bd946946f5",
       "End": "95fb9f6c730949f3b77196163c7bc938",
-      "Id": "2dbc914dc642437db570dd5ab92b40b4"
+      "Id": "2dbc914dc642437db570dd5ab92b40b4",
+      "IsHidden": "False"
     },
     {
       "Start": "7c8d606dd1594aadbef4f60e88c2b472",
       "End": "a0e96e3d73b34cc098e831a595eeb1c7",
-      "Id": "5f8f051a9f7643eab6e83b1c00237cf0"
+      "Id": "5f8f051a9f7643eab6e83b1c00237cf0",
+      "IsHidden": "False"
     },
     {
       "Start": "766685b86d3943d587bc0b1568142781",
       "End": "240ff85fb12a4321a0bdc39b9eee0e52",
-      "Id": "692f84296f404ace8553a51d6bdd1377"
-    },
-    {
-      "Start": "766685b86d3943d587bc0b1568142781",
-      "End": "faa026cc90ed4166a06fc6491af6772b",
-      "Id": "758e029b8ec44bfa8aa15823f042a956"
-    },
-    {
-      "Start": "766685b86d3943d587bc0b1568142781",
-      "End": "a1e250d03ae64d2f8feda76311dc13fb",
-      "Id": "1cf4775cc5fd4e958d67b9f70cd82e8a"
+      "Id": "692f84296f404ace8553a51d6bdd1377",
+      "IsHidden": "False"
     },
     {
       "Start": "766685b86d3943d587bc0b1568142781",
       "End": "3d9569a1104b418f9ecdb75719960d40",
-      "Id": "fa18239d922b455886bb9b0da0ed933f"
+      "Id": "c9386738df6e4e52897dc1fa4f162d6d",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "766685b86d3943d587bc0b1568142781",
+      "End": "a1e250d03ae64d2f8feda76311dc13fb",
+      "Id": "b6b9e64222744f56b98d2c34765d1bb9",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "766685b86d3943d587bc0b1568142781",
+      "End": "faa026cc90ed4166a06fc6491af6772b",
+      "Id": "cba663b517924bfa9a16b80a2b4e02ca",
+      "IsHidden": "False"
     },
     {
       "Start": "0a85df23316147039bc69e1e31dcae84",
       "End": "eefadc01022c4b0faa40c571e9dbcdf3",
-      "Id": "6fe61dc234244d92bfd545d8b26e943f"
+      "Id": "6fe61dc234244d92bfd545d8b26e943f",
+      "IsHidden": "False"
     },
     {
       "Start": "0a85df23316147039bc69e1e31dcae84",
       "End": "eb43cd3e545e461197f309b899cdb4f8",
-      "Id": "c07c706c2bb14028a630c3aa878a354e"
+      "Id": "c07c706c2bb14028a630c3aa878a354e",
+      "IsHidden": "False"
     },
     {
       "Start": "30aafb24ccb94f90b1232afb49fb9711",
       "End": "cbd4af87eb784854b4b1788d4c32a341",
-      "Id": "f8d817cc25794999983ff4e720550713"
+      "Id": "f8d817cc25794999983ff4e720550713",
+      "IsHidden": "False"
     },
     {
       "Start": "e44428cc0a9149e3bccfae8b900ec7a6",
       "End": "fefa4d6b592f4fbea2397364100c6e7e",
-      "Id": "69f65107bb614ebe8b65c0ae9552613d"
+      "Id": "69f65107bb614ebe8b65c0ae9552613d",
+      "IsHidden": "False"
     },
     {
       "Start": "e44428cc0a9149e3bccfae8b900ec7a6",
       "End": "8684b9ea6a0a4031a8b998d4aa740d00",
-      "Id": "e47fff225df74f2c9c49d26c8912f742"
+      "Id": "087de80f5d4e4d0cacbe6311c0e620e0",
+      "IsHidden": "False"
     },
     {
-      "Start": "9fb2782fc22245ee9883f0bd3c3a3542",
+      "Start": "b6eb2e080cad4395bc3930a8b7febe68",
       "End": "41f459e0d29a4865a42eb19e0be3cc36",
-      "Id": "9a09502b91a64dd6a798a9fbbf80ceda"
+      "Id": "9a09502b91a64dd6a798a9fbbf80ceda",
+      "IsHidden": "False"
     },
     {
-      "Start": "96dbf961c0a84bb9bc80102c9e4b879d",
+      "Start": "6c696bdcf7a84faeac9f9bf39488fbb5",
       "End": "aa8f8e94b591445ba33738bc04e3b50b",
-      "Id": "c7466eadd52d477bb1c856601eb22c2e"
+      "Id": "c7466eadd52d477bb1c856601eb22c2e",
+      "IsHidden": "False"
     },
     {
-      "Start": "db7f33ff55f9443d8f4d5f0128aa1d4d",
+      "Start": "05733359596444ad99c683b77ec916e6",
       "End": "8bb39b50725c4a27b9ea211aad10e749",
-      "Id": "e9110777943f4aeaa7c22ff73a911d02"
+      "Id": "e9110777943f4aeaa7c22ff73a911d02",
+      "IsHidden": "False"
     },
     {
-      "Start": "5552c712310c46988618f9175e553904",
+      "Start": "45b6dc3b25134d46848da7bf190588bd",
       "End": "240612ae4dc34220baa71147df564309",
-      "Id": "017e53e34a6044b1819fc6522a8a95d9"
+      "Id": "017e53e34a6044b1819fc6522a8a95d9",
+      "IsHidden": "False"
     },
     {
       "Start": "b60182eab6834fae954d5aa5813e7b17",
       "End": "acd6daab982f4bf0898b8d8bfcdd510c",
-      "Id": "b0bb08454bb44fe8a6d67383e8108d1e"
+      "Id": "b0bb08454bb44fe8a6d67383e8108d1e",
+      "IsHidden": "False"
     },
     {
-      "Start": "59fd3349f43e49f791983e4ce7967fe0",
+      "Start": "0891f21872694dbfa4b446ea3b5f3b2e",
       "End": "a908e99b279640a99c68e257b4241b8a",
-      "Id": "995e482aba184774bfffba500aea073a"
+      "Id": "995e482aba184774bfffba500aea073a",
+      "IsHidden": "False"
     },
     {
-      "Start": "53cf64e09f88442ab8f9c7a4f7f97ce3",
+      "Start": "24b8dbde0db340a793e5c753f75c4411",
       "End": "cd671f33a5db4b8fae92b0239f93cc05",
-      "Id": "a2313f7b19224c6e89b2bcb9445f8a17"
+      "Id": "a2313f7b19224c6e89b2bcb9445f8a17",
+      "IsHidden": "False"
     },
     {
-      "Start": "09778bfdde1a4554b28d26c23250d7b5",
+      "Start": "150dba5201e64f078f28e85f8a4a3e40",
       "End": "dbaa586e4d3f44fb84ddc5fed7a2a15b",
-      "Id": "61322f27ebcc47a185ec967a032ad5fb"
-    },
-    {
-      "Start": "a801db1148ba44e8ae1096a774f9016f",
-      "End": "ed3d74034cc34cc49853db7280ef549f",
-      "Id": "85a5628714424bde9b6ecf9222992632"
+      "Id": "61322f27ebcc47a185ec967a032ad5fb",
+      "IsHidden": "False"
     },
     {
       "Start": "a801db1148ba44e8ae1096a774f9016f",
       "End": "9876ef1729b141de9a6ddb269cac5de6",
-      "Id": "e5ab137c73c64fbaa32deee3523dd41d"
+      "Id": "e5ab137c73c64fbaa32deee3523dd41d",
+      "IsHidden": "False"
     },
     {
-      "Start": "73aaca5b681a4ccfa42b4cc6d75ff3c1",
+      "Start": "a801db1148ba44e8ae1096a774f9016f",
+      "End": "ed3d74034cc34cc49853db7280ef549f",
+      "Id": "0c7547820eb7439a90fad2793960efb0",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "810d45a95dd3444d8dd46c781213475b",
       "End": "8f013c2e401f425fb1605c99ab379fc4",
-      "Id": "fc2db07eade144dabf3d14976856e5d1"
+      "Id": "fc2db07eade144dabf3d14976856e5d1",
+      "IsHidden": "False"
     },
     {
-      "Start": "73aaca5b681a4ccfa42b4cc6d75ff3c1",
+      "Start": "810d45a95dd3444d8dd46c781213475b",
       "End": "10e527fbb48b4bae954c692cd2cc77c8",
-      "Id": "171245ae82fd4bea8510310e430d64a3"
+      "Id": "171245ae82fd4bea8510310e430d64a3",
+      "IsHidden": "False"
     },
     {
-      "Start": "d6d1d7d283314366bf67145f80e50189",
+      "Start": "9bb797f35fec4962b8720c742cc25c6c",
       "End": "5516c47efa9d4c7ba946cc89880669a7",
-      "Id": "b9a142297ad44286a13e75968a1a77cb"
+      "Id": "b9a142297ad44286a13e75968a1a77cb",
+      "IsHidden": "False"
     },
     {
-      "Start": "62940fb46fb241baafdec01db5b7a096",
+      "Start": "da918cc05eb946e28010b0e86db63c48",
       "End": "a9d00da56e5a4618875ef15776102d7c",
-      "Id": "cd309359e0c6415681d0c17bdb2c2678"
+      "Id": "cd309359e0c6415681d0c17bdb2c2678",
+      "IsHidden": "False"
     },
     {
-      "Start": "7a101d7c8e054843b791a54878a31027",
+      "Start": "20c46cc609e14a4387dad966f61ae93a",
       "End": "721c37127b0645bc9246885c224c1523",
-      "Id": "a58d968305c243b5b6b1799fd61354bc"
+      "Id": "a58d968305c243b5b6b1799fd61354bc",
+      "IsHidden": "False"
     },
     {
-      "Start": "7a101d7c8e054843b791a54878a31027",
+      "Start": "20c46cc609e14a4387dad966f61ae93a",
       "End": "d827a5c1e5974eb2958bf10ba42a5378",
-      "Id": "cd60d8008d994b91bd1680362ae754b0"
+      "Id": "cd60d8008d994b91bd1680362ae754b0",
+      "IsHidden": "False"
     },
     {
-      "Start": "b849b9b497bd400c845ba16cba0eaef6",
+      "Start": "14fc97b471a44c5ab8ea52087491e6e0",
       "End": "205537d8f64f4cd9a4c5e1140fa976ee",
-      "Id": "b22c14c79fd44f92baf0a385d95552a0"
+      "Id": "b22c14c79fd44f92baf0a385d95552a0",
+      "IsHidden": "False"
     },
     {
-      "Start": "b849b9b497bd400c845ba16cba0eaef6",
+      "Start": "14fc97b471a44c5ab8ea52087491e6e0",
       "End": "af1907b375654341ade33e884534b611",
-      "Id": "7df27396f55944d78aa2fe2a98bba228"
+      "Id": "7df27396f55944d78aa2fe2a98bba228",
+      "IsHidden": "False"
     },
     {
-      "Start": "2679d8399d6e4a27b0e14e5d9cd2c7a3",
+      "Start": "c32ddacd26fe4f48829c7829acaa5277",
       "End": "a21e69fd3ce44f039f47d9c402adec95",
-      "Id": "4f22e846f9734146b0df8a31b289f49a"
+      "Id": "4f22e846f9734146b0df8a31b289f49a",
+      "IsHidden": "False"
     },
     {
-      "Start": "2679d8399d6e4a27b0e14e5d9cd2c7a3",
+      "Start": "c32ddacd26fe4f48829c7829acaa5277",
       "End": "2d6ef880a372464c93cf324e9e6de46f",
-      "Id": "3fb48ed945c149a5aa90f20f8bb257b2"
+      "Id": "3fb48ed945c149a5aa90f20f8bb257b2",
+      "IsHidden": "False"
     },
     {
       "Start": "6cf9a78c410248699bd7899894f5384b",
       "End": "f51197f7a1114ba08f9e4408760fd1e1",
-      "Id": "aef3651dc2224300a6838e89a2dab2d7"
+      "Id": "aef3651dc2224300a6838e89a2dab2d7",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "6cf9a78c410248699bd7899894f5384b",
+      "End": "5fee38cbdd6f4c72b2d3b68bfec4cb7c",
+      "Id": "df9f9196973a4b3e9a49d720cca5a2c4",
+      "IsHidden": "False"
     },
     {
       "Start": "6cf9a78c410248699bd7899894f5384b",
       "End": "23a58da6cc1f4db09a7a8e5c056339b9",
-      "Id": "df35c74445d24c4abf40bb393c0c5183"
+      "Id": "9d28399f0f6542f9a292f23bbad0233f",
+      "IsHidden": "False"
     },
     {
       "Start": "72ddb96a48d749e9a0025c535230b3d2",
       "End": "2bee722d233642d0b5da6c6e83032812",
-      "Id": "6c1818ac15d84627a395cd733965a637"
+      "Id": "6c1818ac15d84627a395cd733965a637",
+      "IsHidden": "False"
     },
     {
       "Start": "99613d4df231471795b434dd50968918",
       "End": "06541dbe5014427cb29924648e48c68d",
-      "Id": "87f8c56e632d4cf59d31e3b4d686612e"
+      "Id": "87f8c56e632d4cf59d31e3b4d686612e",
+      "IsHidden": "False"
     },
     {
       "Start": "ed0bdf28f7224f43bbd6c00c1c919b3c",
       "End": "712f86b8cd174ed5a0f53e3c1117989c",
-      "Id": "17537a85bb5a4660a47985afa5955c0b"
+      "Id": "17537a85bb5a4660a47985afa5955c0b",
+      "IsHidden": "False"
     },
     {
       "Start": "d9bba617a0884ea59648c0d2215a17ad",
       "End": "e80310b607c64616b5ceee2695816039",
-      "Id": "d6a23c7446024f54a0d85efca97c144a"
+      "Id": "d6a23c7446024f54a0d85efca97c144a",
+      "IsHidden": "False"
     },
     {
       "Start": "0d6832da70244ed19210ff151cf4460d",
       "End": "22e5fd2e178b4818b98fd7a9d584a084",
-      "Id": "9eb352e02a24422c86452980d6be754f"
+      "Id": "9eb352e02a24422c86452980d6be754f",
+      "IsHidden": "False"
     },
     {
       "Start": "e81d052604e84ee2890317580f9bd0da",
       "End": "7e0ad14e6ca94c68aca43209d3ae305e",
-      "Id": "6afd13aa66374e18a9cdf99962056aa6"
+      "Id": "6afd13aa66374e18a9cdf99962056aa6",
+      "IsHidden": "False"
     },
     {
       "Start": "036d0ae2f5ac4b82bb8e7c1487550db1",
       "End": "0bbb2e7a8fed47b396d70d8ffa4a03b8",
-      "Id": "5752ae055e6f4e80ba2f3bd0e7a65577"
+      "Id": "5752ae055e6f4e80ba2f3bd0e7a65577",
+      "IsHidden": "False"
     },
     {
       "Start": "dc01ff9c228c4f0cb515a80f28862636",
       "End": "cf6f167bff014dee813d38dfcd3a78f9",
-      "Id": "5f0900c797af454fa7ee006bdaa96072"
+      "Id": "5f0900c797af454fa7ee006bdaa96072",
+      "IsHidden": "False"
     },
     {
       "Start": "adfe71f497194efc97423f90936f8d05",
       "End": "88acb36c688549f981501295e428add8",
-      "Id": "7f2f4d67eb324b439a315eae81dc28d2"
+      "Id": "7f2f4d67eb324b439a315eae81dc28d2",
+      "IsHidden": "False"
     },
     {
       "Start": "5e4c37f3ca084b62a788c4f18c743cb2",
       "End": "ae041ed2c054497095d7e6a05b58af64",
-      "Id": "177a7f01d39e46babffa30c8e8b3ea9e"
+      "Id": "177a7f01d39e46babffa30c8e8b3ea9e",
+      "IsHidden": "False"
     },
     {
       "Start": "5a297a6253e340a69db1931076a07b96",
       "End": "0219b312fcef43eeb726dedbdf15e8a1",
-      "Id": "bbff94127a6b4150ab97cb1d02cdb286"
+      "Id": "bbff94127a6b4150ab97cb1d02cdb286",
+      "IsHidden": "False"
     },
     {
       "Start": "a779ed72011945cfbcdb027fb728c3cf",
       "End": "709a6d04bff74686835438fe922aa23a",
-      "Id": "c8ba1c19790947e6a0eca3d1eb16fc27"
+      "Id": "c8ba1c19790947e6a0eca3d1eb16fc27",
+      "IsHidden": "False"
     },
     {
       "Start": "a02d0d38e5a34d6b909b65137d64c726",
       "End": "f016e41368b14368ba7494966631b6da",
-      "Id": "6a39cbb7dd9a4e17a6fcb03d0b207f74"
+      "Id": "6a39cbb7dd9a4e17a6fcb03d0b207f74",
+      "IsHidden": "False"
     },
     {
       "Start": "be7b60bbfe3a4adaa17aa32cb381ae24",
       "End": "7e1d73f9145a46d9a291a91dcc1d23ff",
-      "Id": "4f5edab3aad848e991951dc5f87f0a9c"
+      "Id": "4f5edab3aad848e991951dc5f87f0a9c",
+      "IsHidden": "False"
     },
     {
       "Start": "58f81c56094946d08458e0ab8ece9e68",
       "End": "52651d587e8c44bc81a36ac928729942",
-      "Id": "946ec4052f5e4ccda21d1c1fc996877f"
+      "Id": "946ec4052f5e4ccda21d1c1fc996877f",
+      "IsHidden": "False"
     },
     {
       "Start": "c3f33a4b1be444e8a5e597c7fa537133",
       "End": "c551856be19a4196b12ae0b14220f379",
-      "Id": "66c1cbab6928427a8e4274020ec1f920"
+      "Id": "66c1cbab6928427a8e4274020ec1f920",
+      "IsHidden": "False"
     },
     {
       "Start": "3b28a6e0621040c5b969dd9a124e4d46",
       "End": "fb17f31658474c8abce948bf7c411b36",
-      "Id": "255c91a3e7b14078b4c91df45a80479b"
+      "Id": "255c91a3e7b14078b4c91df45a80479b",
+      "IsHidden": "False"
     },
     {
       "Start": "7222cba8aff24a228bad9a5768f044e7",
       "End": "9d8e8c6487084eec8ea1bc5def5a64fa",
-      "Id": "87096c55d9cd4af6bb63ac7803bb9aad"
+      "Id": "87096c55d9cd4af6bb63ac7803bb9aad",
+      "IsHidden": "False"
     },
     {
       "Start": "73e7e8ba429343fda6da522f3be0018e",
       "End": "26cbd115de184c5eb05ae1b4020097e4",
-      "Id": "89ff1cbe99bb4468b61f762730a3f17b"
+      "Id": "89ff1cbe99bb4468b61f762730a3f17b",
+      "IsHidden": "False"
     },
     {
       "Start": "5d2d750b401e42cab1951d2668d9430c",
       "End": "1b5c7cadbdba4d179468364667e12647",
-      "Id": "737d5f8f57dc4f9c8f758cea552a9383"
+      "Id": "737d5f8f57dc4f9c8f758cea552a9383",
+      "IsHidden": "False"
     },
     {
       "Start": "292ada2dc90446d6a77eff4dd5a9108c",
       "End": "ac8ec18224be478d9a9c6ea56fa86e7a",
-      "Id": "45c3316776d84213b07ddb8d5c32e016"
+      "Id": "45c3316776d84213b07ddb8d5c32e016",
+      "IsHidden": "False"
     },
     {
       "Start": "a66ec5b6966f48a08a5aeac67b1c8188",
       "End": "b9c0f11915564fd9957bfa0c12220ffb",
-      "Id": "c28f5527598d43d5aaf92fe5414d88db"
+      "Id": "c28f5527598d43d5aaf92fe5414d88db",
+      "IsHidden": "False"
     },
     {
       "Start": "3739c06890b3446082aa8a2b9df82c87",
       "End": "fc75b3326bdf4b28a3e8a4611837ae7e",
-      "Id": "8f095863111f4f5ba8cd682b1d78dcc5"
+      "Id": "8f095863111f4f5ba8cd682b1d78dcc5",
+      "IsHidden": "False"
     },
     {
       "Start": "a9484006e9eb4ce8a49d195a1b3851a4",
       "End": "1cef6c13ac734b18a80e0861a0c3f060",
-      "Id": "1f01143996a4437ba1818949636a0bf4"
+      "Id": "1f01143996a4437ba1818949636a0bf4",
+      "IsHidden": "False"
     },
     {
       "Start": "2a330db99a9645ccaad3949dca6d145c",
       "End": "9c24ccb08590457f8afaa5f1da07d7ea",
-      "Id": "6a3776f1760342e5abe491f310727cf2"
+      "Id": "6a3776f1760342e5abe491f310727cf2",
+      "IsHidden": "False"
     },
     {
       "Start": "77131fcf5a6d47b68078272f5473a939",
       "End": "e728ac95ca204fe490fc99c8736c2ec0",
-      "Id": "a7efd17e25614918a2f24e54bb835fcc"
+      "Id": "a7efd17e25614918a2f24e54bb835fcc",
+      "IsHidden": "False"
     },
     {
       "Start": "31b51d316f764606a356ad76f55d26e4",
       "End": "3fc6b8f0e75b4a1196dc023ea1856c78",
-      "Id": "5bb7b6e9607842b4b03f0b42d9313476"
+      "Id": "5bb7b6e9607842b4b03f0b42d9313476",
+      "IsHidden": "False"
     },
     {
       "Start": "17b3c28a91d54d47af6d9a646f8cb7c1",
       "End": "3e71a6cf7b25490d921ead8b5427db85",
-      "Id": "810839d6c75745d682f4489c470aa48d"
+      "Id": "810839d6c75745d682f4489c470aa48d",
+      "IsHidden": "False"
     },
     {
       "Start": "8302eef654d740938d82ea3a9b541597",
       "End": "3b063c7854d74bdd9f8f6e917ad74b9c",
-      "Id": "46543826771b458486eb6ed9033f1485"
+      "Id": "46543826771b458486eb6ed9033f1485",
+      "IsHidden": "False"
     },
     {
       "Start": "a792b87139074f00929ddd2ba4e9e63b",
       "End": "65b1789ffbe24e4b9747d2ac29ca5274",
-      "Id": "295ec00b90c84995836aa10b9b302d2d"
+      "Id": "295ec00b90c84995836aa10b9b302d2d",
+      "IsHidden": "False"
     },
     {
       "Start": "a792b87139074f00929ddd2ba4e9e63b",
       "End": "4af55293fe754c05921172a93f9c3e5e",
-      "Id": "8ab728547fb14b4885aaa7b7776c6462"
+      "Id": "8ab728547fb14b4885aaa7b7776c6462",
+      "IsHidden": "False"
     }
   ],
   "Dependencies": [],
   "NodeLibraryDependencies": [
     {
       "Name": "Orchid",
-      "Version": "206.3.1.8192",
+      "Version": "216.3.0.8444",
       "ReferenceType": "Package",
       "Nodes": [
         "db131f7a40294341bdd11828013a3dd5",
@@ -3921,13 +4090,36 @@
       ]
     }
   ],
+  "Thumbnail": "",
+  "GraphDocumentationURL": null,
+  "ExtensionWorkspaceData": [
+    {
+      "ExtensionGuid": "28992e1d-abb9-417f-8b1b-05e053bee670",
+      "Name": "Properties",
+      "Version": "2.16",
+      "Data": {}
+    },
+    {
+      "ExtensionGuid": "DFBD9CC0-DB40-457A-939E-8C8555555A9D",
+      "Name": "Generative Design",
+      "Version": "3.0",
+      "Data": {}
+    }
+  ],
+  "Author": "None provided",
+  "Linting": {
+    "activeLinter": "None",
+    "activeLinterId": "7b75fb44-43fd-4631-a878-29f4d5d8399a",
+    "warningCount": 0,
+    "errorCount": 0
+  },
   "Bindings": [],
   "View": {
     "Dynamo": {
       "ScaleFactor": 100.0,
       "HasRunWithoutCrash": true,
       "IsVisibleInDynamoLibrary": true,
-      "Version": "2.6.2.15705",
+      "Version": "2.16.1.2727",
       "RunType": "Manual",
       "RunPeriod": "1000"
     },
@@ -3943,921 +4135,931 @@
       "UpY": 1.0,
       "UpZ": 0.0
     },
+    "ConnectorPins": [],
     "NodeViews": [
       {
-        "ShowGeometry": true,
         "Name": "Watch",
+        "ShowGeometry": true,
         "Id": "0ce74e8d77074ab887a54d9661ef8c61",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 3445.8760501410998,
-        "Y": 1702.9108945410499
+        "X": 3506.85467385308,
+        "Y": 2255.5921240621956
       },
       {
-        "ShowGeometry": true,
         "Name": "Watch",
+        "ShowGeometry": true,
         "Id": "af4e006ed04743b399289114ed2f0a71",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 3445.8760501410998,
-        "Y": 1578.9108945410499
+        "X": 3506.85467385308,
+        "Y": 2104.5921240621956
       },
       {
-        "ShowGeometry": true,
         "Name": "Watch",
+        "ShowGeometry": true,
         "Id": "80b65818dd424f0d9ec181d06a587449",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 3445.8760501410998,
-        "Y": 1454.9108945410499
+        "X": 3506.85467385308,
+        "Y": 1953.5921240621958
       },
       {
+        "Name": "Physical.GetStrength",
         "ShowGeometry": true,
-        "Name": "o|Physical.GetStrength",
         "Id": "db131f7a40294341bdd11828013a3dd5",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 3059.8760501410998,
-        "Y": 1552.9108945410499
+        "X": 3117.85467385308,
+        "Y": 2070.5921240621956
       },
       {
-        "ShowGeometry": true,
         "Name": "Watch",
+        "ShowGeometry": true,
         "Id": "c1ae0edf05ed47238c5f4b938cd25944",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 1757.9179682875163,
-        "Y": 1979.4091589334002
+        "X": 1676.5055437103792,
+        "Y": 2561.8363247351535
       },
       {
+        "Name": "Thermal.GetInformation",
         "ShowGeometry": true,
-        "Name": "o|Thermal.GetInformation",
         "Id": "a52b9696e60c43258b41db6b7de5bdcb",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 1398.9179682875163,
-        "Y": 1679.4091589334002
+        "X": 1311.5055437103792,
+        "Y": 2191.8363247351535
       },
       {
-        "ShowGeometry": true,
         "Name": "Watch",
+        "ShowGeometry": true,
         "Id": "5232d4cbc42f455396451ab85cec45b0",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 1757.9179682875163,
-        "Y": 1855.4091589334002
+        "X": 1676.5055437103792,
+        "Y": 2410.8363247351535
       },
       {
-        "ShowGeometry": true,
         "Name": "Watch",
+        "ShowGeometry": true,
         "Id": "646479962efc48e48a08dc79983bfea2",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 1757.9179682875163,
-        "Y": 1731.4091589334002
+        "X": 1676.5055437103792,
+        "Y": 2259.8363247351535
       },
       {
-        "ShowGeometry": true,
         "Name": "Watch",
+        "ShowGeometry": true,
         "Id": "e47bafeefd014572a542f6cb0bb2e5c9",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 1757.9179682875163,
-        "Y": 1607.4091589333993
+        "X": 1676.5055437103792,
+        "Y": 2108.8363247351535
       },
       {
-        "ShowGeometry": true,
         "Name": "Watch",
+        "ShowGeometry": true,
         "Id": "cca25723a7db49249167d52ba59d5789",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 1757.9179682875163,
-        "Y": 1483.4091589333993
+        "X": 1676.5055437103792,
+        "Y": 1957.8363247351538
       },
       {
-        "ShowGeometry": true,
         "Name": "Watch",
+        "ShowGeometry": true,
         "Id": "ea5c1fb1c43444be9bb4b16b954e7641",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 2685.1296699714712,
-        "Y": 1738.8869066006191
+        "X": 2615.41845112677,
+        "Y": 2260.25072575386
       },
       {
-        "ShowGeometry": true,
         "Name": "Watch",
+        "ShowGeometry": true,
         "Id": "a8b170639cfc43c2a015c1232d35477e",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 2685.1296699714712,
-        "Y": 1862.8869066006191
+        "X": 2615.41845112677,
+        "Y": 2411.25072575386
       },
       {
-        "ShowGeometry": true,
         "Name": "Watch",
+        "ShowGeometry": true,
         "Id": "5f08cd2f690d400f992353959d8fba7e",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 2685.1296699714712,
-        "Y": 1986.8869066006191
+        "X": 2615.41845112677,
+        "Y": 2562.25072575386
       },
       {
-        "ShowGeometry": true,
         "Name": "Watch",
+        "ShowGeometry": true,
         "Id": "6fa3baba26e4453e806371a2f377d089",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 2685.1296699714712,
-        "Y": 1614.8869066006191
+        "X": 2615.41845112677,
+        "Y": 2109.25072575386
       },
       {
-        "ShowGeometry": true,
         "Name": "Watch",
+        "ShowGeometry": true,
         "Id": "5b270278354e4667857d43fac47c4295",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 2685.1296699714712,
-        "Y": 1490.8869066006191
+        "X": 2615.41845112677,
+        "Y": 1958.25072575386
       },
       {
+        "Name": "Thermal.GetProperties",
         "ShowGeometry": true,
-        "Name": "o|Thermal.GetProperties",
         "Id": "a057fe7b5c854061a6d782bc8a06f011",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 2271.1296699714712,
-        "Y": 1686.8869066006191
+        "X": 2201.5178604329481,
+        "Y": 2106.5879596816194
       },
       {
-        "ShowGeometry": true,
         "Name": "Watch",
+        "ShowGeometry": true,
         "Id": "6dbe7a26264c4ce59c0cebdeb9ea9d3d",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 2830.41021587447,
-        "Y": 1986.4847111113795
+        "X": 2871.52918018962,
+        "Y": 2562.25072575386
       },
       {
-        "ShowGeometry": true,
         "Name": "Watch",
+        "ShowGeometry": true,
         "Id": "d16979c1d1084977922c0eaa8367b116",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 2830.41021587447,
-        "Y": 1862.4847111113795
+        "X": 2871.52918018962,
+        "Y": 2411.25072575386
       },
       {
-        "ShowGeometry": true,
         "Name": "Watch",
+        "ShowGeometry": true,
         "Id": "aa67b4af3b87485fb6f9e5f1783d5e89",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 2830.41021587447,
-        "Y": 1738.4847111113795
+        "X": 2871.52918018962,
+        "Y": 2260.25072575386
       },
       {
-        "ShowGeometry": true,
         "Name": "Watch",
+        "ShowGeometry": true,
         "Id": "a3856953b45a40cf905015d89d9153c6",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 2830.41021587447,
-        "Y": 1614.4847111113795
+        "X": 2871.52918018962,
+        "Y": 2109.25072575386
       },
       {
-        "ShowGeometry": true,
         "Name": "Watch",
+        "ShowGeometry": true,
         "Id": "d0b9e428457e4fe9976b334885ef6b47",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 2830.41021587447,
-        "Y": 1490.4847111113795
+        "X": 2871.52918018962,
+        "Y": 1958.25072575386
       },
       {
+        "Name": "Thermal Type",
         "ShowGeometry": true,
-        "Name": "o|Thermal Type",
         "Id": "3321f3f48a1c46e3a4b6cdae45279a25",
         "IsSetAsInput": true,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 1111.0095986130525,
-        "Y": 689.67463223922925
+        "X": 1216.732367013507,
+        "Y": 959.72787509155432
       },
       {
-        "ShowGeometry": true,
         "Name": "Code Block",
+        "ShowGeometry": true,
         "Id": "1dd166264f024f57bc2f5830564bb170",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 1892.0095986130525,
-        "Y": 1093.3812989058997
+        "X": 2002.732367013507,
+        "Y": 1539.3478750915547
       },
       {
-        "ShowGeometry": true,
         "Name": "Boolean",
+        "ShowGeometry": true,
         "Id": "52b405bea8cd40449bd479bf9c83530e",
         "IsSetAsInput": true,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 1892.0095986130525,
-        "Y": 901.67463223922925
+        "X": 2002.732367013507,
+        "Y": 1243.7278750915543
       },
       {
+        "Name": "Physical Behavior",
         "ShowGeometry": true,
-        "Name": "o|Physical Behavior",
         "Id": "97c8f2ea82324e2a87069f354d796c07",
         "IsSetAsInput": true,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 1892.0095986130525,
-        "Y": 984.67463223923016
+        "X": 2002.732367013507,
+        "Y": 1391.7278750915543
       },
       {
+        "Name": "Thermal.Create",
         "ShowGeometry": true,
-        "Name": "o|Thermal.Create",
         "Id": "f64705c760c942098646211da0eba672",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 1474.0095986130525,
-        "Y": 663.67463223922925
+        "X": 1583.732367013507,
+        "Y": 925.72787509155432
       },
       {
+        "Name": "Thermal.SetProperties",
         "ShowGeometry": true,
-        "Name": "o|Thermal.SetProperties",
         "Id": "b4d43a422da946f0acc77498715bcb23",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 2273.0095986130527,
-        "Y": 834.67463223922925
+        "X": 2386.732367013507,
+        "Y": 1150.7278750915543
       },
       {
-        "ShowGeometry": true,
         "Name": "Watch",
+        "ShowGeometry": true,
         "Id": "ce1fe266ad0b40588d7aa65201f29f5f",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 3331.0095986130527,
-        "Y": 744.67463223922925
+        "X": 3462.732367013507,
+        "Y": 1002.2278750915543
       },
       {
+        "Name": "Material Aspects",
         "ShowGeometry": true,
-        "Name": "o|Material Aspect",
         "Id": "7c49dfea41424ee1baa62ef292829a19",
         "IsSetAsInput": true,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 2273.0095986130527,
-        "Y": 726.67463223922925
+        "X": 2386.732367013507,
+        "Y": 1003.7278750915543
       },
       {
+        "Name": "Thermal.SetInformation",
         "ShowGeometry": true,
-        "Name": "o|Thermal.SetInformation",
         "Id": "5e1d61b9d67941e9880777831c33b629",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 1892.0095986130525,
-        "Y": 663.67463223922925
+        "X": 2002.732367013507,
+        "Y": 925.72787509155432
       },
       {
+        "Name": "Physical.Create",
         "ShowGeometry": true,
-        "Name": "o|Physical.Create",
         "Id": "b46ef087f4f24bf2b8efca2d53d6f3c7",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 255.00959861304534,
-        "Y": 45.674632239229254
+        "X": 321.732367013507,
+        "Y": 65.727875091554438
       },
       {
+        "Name": "Physical Types",
         "ShowGeometry": true,
-        "Name": "o|Physical Type",
         "Id": "9045820a66e94937beba50f2692f880a",
         "IsSetAsInput": true,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 10.009598613045341,
-        "Y": 71.674632239229254
+        "X": 9.7323670135069733,
+        "Y": 99.7278750915544
       },
       {
-        "ShowGeometry": true,
         "Name": "Code Block",
+        "ShowGeometry": true,
         "Id": "2e65c2d6b9f8434691d2d66f10c2701b",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 10.009598613045341,
-        "Y": 621.88796557255966
+        "X": 9.73236701350697,
+        "Y": 856.055375091554
       },
       {
+        "Name": "Physical.SetBehavior",
         "ShowGeometry": true,
-        "Name": "o|Physical.SetBehavior",
         "Id": "b7bae53c44464205a325ec90c1677abd",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 1111.0095986130525,
-        "Y": 151.67463223922925
+        "X": 1216.732367013507,
+        "Y": 207.72787509155444
       },
       {
+        "Name": "Physical Behavior",
         "ShowGeometry": true,
-        "Name": "o|Physical Behavior",
         "Id": "697a3a1ddaed4c5db2993b1ac1cd6f3a",
         "IsSetAsInput": true,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 748.00959861305262,
-        "Y": 283.67463223922925
+        "X": 849.732367013507,
+        "Y": 383.72787509155444
       },
       {
-        "ShowGeometry": true,
         "Name": "Material.Name",
+        "ShowGeometry": true,
         "Id": "fc01b222082045fb9a61e6b7a7ea5e0b",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 3028.0095986130527,
-        "Y": 620.67463223922925
+        "X": 3148.732367013507,
+        "Y": 851.22787509155455
       },
       {
-        "ShowGeometry": true,
         "Name": "Watch",
+        "ShowGeometry": true,
         "Id": "cf0092a439ff44c994ccf8a73b41b1d6",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 3331.0095986130527,
-        "Y": 620.67463223922925
+        "X": 3462.732367013507,
+        "Y": 851.22787509155455
       },
       {
+        "Name": "Material.SetPhysical",
         "ShowGeometry": true,
-        "Name": "o|Material.SetPhysical",
         "Id": "f36edd3b589d42039ae19d5ca5967176",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 2687.00959861305,
-        "Y": 428.674632239229
+        "X": 2801.732367013507,
+        "Y": 623.72787509155455
       },
       {
-        "ShowGeometry": true,
         "Name": "Watch",
+        "ShowGeometry": true,
         "Id": "664b4ac9520e452c818b47768c5c805d",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 3331.0095986130527,
-        "Y": 490.67463223922925
+        "X": 3462.732367013507,
+        "Y": 699.22787509155455
       },
       {
+        "Name": "Material Aspects",
         "ShowGeometry": true,
-        "Name": "o|Material Aspect",
         "Id": "f20e98b1e8c848c281f2ef9f7e5728f1",
         "IsSetAsInput": true,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 2273.0095986130527,
-        "Y": 323.67463223922925
+        "X": 2386.732367013507,
+        "Y": 460.72787509155444
       },
       {
+        "Name": "Physical.SetMechanical",
         "ShowGeometry": true,
-        "Name": "o|Physical.SetMechanical",
         "Id": "e4646c65d3264a3fadfe835cc068cfd2",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 1892.0095986130525,
-        "Y": 249.67463223922925
+        "X": 2002.732367013507,
+        "Y": 338.72787509155444
       },
       {
+        "Name": "Material.Create",
         "ShowGeometry": true,
-        "Name": "o|Material.Create",
         "Id": "ea8b1f1c8c0f4e1f9dc0e19ea8f8ca6e",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 2273.0095986130527,
-        "Y": 617.67463223922925
+        "X": 2386.732367013507,
+        "Y": 856.22787509155455
       },
       {
-        "ShowGeometry": true,
         "Name": "Material.Name",
+        "ShowGeometry": true,
         "Id": "533b5ee0805c4ddeafb485073a525603",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 3028.0095986130527,
-        "Y": 366.67463223922925
+        "X": 3148.732367013507,
+        "Y": 548.22787509155455
       },
       {
-        "ShowGeometry": true,
         "Name": "Watch",
+        "ShowGeometry": true,
         "Id": "3c7415089db64693beb106851c3dfb23",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 3331.0095986130527,
-        "Y": 366.67463223922925
+        "X": 3462.732367013507,
+        "Y": 548.22787509155455
       },
       {
+        "Name": "Physical.SetBasicThermal",
         "ShowGeometry": true,
-        "Name": "o|Physical.SetBasicThermal",
         "Id": "3c33fb5ca9aa43949e657ce48d0f4763",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 1474.0095986130525,
-        "Y": 203.67463223922925
+        "X": 1583.732367013507,
+        "Y": 279.72787509155444
       },
       {
-        "ShowGeometry": true,
         "Name": "Code Block",
+        "ShowGeometry": true,
         "Id": "19aefd7f6e264320ab0acbe0f9caa6c9",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 1474.0095986130525,
-        "Y": 338.52796557256
+        "X": 1583.732367013507,
+        "Y": 458.03787509155438
       },
       {
-        "ShowGeometry": true,
         "Name": "Boolean",
+        "ShowGeometry": true,
         "Id": "45710cf797cb4b71ad3c56c6a048e9d8",
         "IsSetAsInput": true,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 1892.0095986130525,
-        "Y": 580.67463223922925
+        "X": 2002.732367013507,
+        "Y": 778.72787509155455
       },
       {
-        "ShowGeometry": true,
         "Name": "Code Block",
+        "ShowGeometry": true,
         "Id": "03978b0bbd264d04a6d324b3bf3452f7",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 1892.0095986130525,
-        "Y": 462.10129890589917
+        "X": 2002.732367013507,
+        "Y": 621.38287509155452
       },
       {
-        "ShowGeometry": true,
         "Name": "Code Block",
+        "ShowGeometry": true,
         "Id": "c5c445d687284cf59711af5524228b78",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 1111.0095986130525,
-        "Y": 285.88796557255966
+        "X": 1216.732367013507,
+        "Y": 385.55537509155442
       },
       {
+        "Name": "Physical.SetStrength",
         "ShowGeometry": true,
-        "Name": "o|Physical.SetStrength",
         "Id": "d839fb6eec714ba7864c348d3dab45b9",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 2273.0095986130527,
-        "Y": 431.67463223922925
+        "X": 2386.732367013507,
+        "Y": 608.72787509155455
       },
       {
-        "ShowGeometry": true,
         "Name": "Code Block",
+        "ShowGeometry": true,
         "Id": "fc8aac7f3b834a4e9daa8a0382b2a032",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 255.00959861304534,
-        "Y": 392.95463223922991
+        "X": 321.732367013507,
+        "Y": 556.692875091554
       },
       {
-        "ShowGeometry": true,
         "Name": "Boolean",
+        "ShowGeometry": true,
         "Id": "44a7fdcb7dd74171b79e47ec10f69bba",
         "IsSetAsInput": true,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 10.009598613045341,
-        "Y": 406.67463223922925
+        "X": 9.73236701350697,
+        "Y": 556.692875091554
       },
       {
+        "Name": "Physical.SetInformation",
         "ShowGeometry": true,
-        "Name": "o|Physical.SetInformation",
         "Id": "fb187fdf1e1b4e039cd396ba01c5a0b0",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 748.00959861305262,
-        "Y": 45.674632239229254
+        "X": 849.732367013507,
+        "Y": 65.727875091554438
       },
       {
+        "Name": "Physical.GetShearModulus",
         "ShowGeometry": true,
-        "Name": "o|Physical.GetShearModulus",
         "Id": "672cc7bf4d834c6c9a9bdbcaf327fa69",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 3010.6868154729364,
-        "Y": -509.01058153019028
+        "X": 3114.3273047315206,
+        "Y": -615.64005133639739
       },
       {
-        "ShowGeometry": true,
         "Name": "Watch",
+        "ShowGeometry": true,
         "Id": "1005d7a02bb544d8aa6b4eb49fa2e1c2",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 3403.6868154729364,
-        "Y": -581.01058153019028
+        "X": 3507.3273047315206,
+        "Y": -698.64005133639739
       },
       {
-        "ShowGeometry": true,
         "Name": "Watch",
+        "ShowGeometry": true,
         "Id": "48f558ebc3bd4b1393895b35daa59d4a",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 3403.6868154729364,
-        "Y": -457.01058153019028
+        "X": 3507.3273047315206,
+        "Y": -547.64005133639739
       },
       {
-        "ShowGeometry": true,
         "Name": "Watch",
+        "ShowGeometry": true,
         "Id": "11942203daf74b75b07475b72b958e59",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 3403.6868154729364,
-        "Y": -705.01058153019028
+        "X": 3507.3273047315206,
+        "Y": -849.64005133640251
       },
       {
+        "Name": "Physical.GetPoissonRatio",
         "ShowGeometry": true,
-        "Name": "o|Physical.GetPoissonRatio",
         "Id": "b26b33952eb3488f89307daa1c73623f",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 2450.11368012602,
-        "Y": -583.96522444297068
+        "X": 2479.7863859102549,
+        "Y": -708.7079324406576
       },
       {
-        "ShowGeometry": true,
         "Name": "Watch",
+        "ShowGeometry": true,
         "Id": "92c8c50ba1174706ac200432dc68d897",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 2834.11368012602,
-        "Y": -704.96522444297068
+        "X": 2866.7863859102549,
+        "Y": -850.7079324406576
       },
       {
-        "ShowGeometry": true,
         "Name": "Watch",
+        "ShowGeometry": true,
         "Id": "09d0a35d33354281a551564fa07c6a51",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 2834.11368012602,
-        "Y": -580.96522444297068
+        "X": 2866.7863859102549,
+        "Y": -699.7079324406576
       },
       {
-        "ShowGeometry": true,
         "Name": "Watch",
+        "ShowGeometry": true,
         "Id": "e3a085e9503d4cf79a4987053d19baea",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 3403.6868154729364,
-        "Y": -333.01058153019028
+        "X": 3507.3273047315206,
+        "Y": -396.64005133639739
       },
       {
-        "ShowGeometry": true,
         "Name": "Watch",
+        "ShowGeometry": true,
         "Id": "5b76020d218348138bf39cb8701cbb64",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 3403.6868154729364,
-        "Y": -209.01058153019028
+        "X": 3507.3273047315206,
+        "Y": -245.64005133639739
       },
       {
-        "ShowGeometry": true,
         "Name": "Watch",
+        "ShowGeometry": true,
         "Id": "42742eb648d24c99a7d32df85004f785",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 2834.11368012602,
-        "Y": -456.96522444297068
+        "X": 2866.7863859102549,
+        "Y": -547.7079324406576
       },
       {
-        "ShowGeometry": true,
         "Name": "Watch",
+        "ShowGeometry": true,
         "Id": "a1f4f99c2b5a476a8d754e23236a5fe9",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 2834.11368012602,
-        "Y": -332.96522444297068
+        "X": 2866.7863859102549,
+        "Y": -396.7079324406576
       },
       {
+        "Name": "Physical.GetYoungModulus",
         "ShowGeometry": true,
-        "Name": "o|Physical.GetYoungModulus",
         "Id": "056953e427f74b928f25be629f8f779b",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 1889.9530670224974,
-        "Y": -583.86817219371994
+        "X": 1824.67595698778,
+        "Y": -708.9532173210207
       },
       {
-        "ShowGeometry": true,
         "Name": "Watch",
+        "ShowGeometry": true,
         "Id": "6c5626414755476e8dfa992cc7c46c04",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 2278.9530670224976,
-        "Y": -580.86817219371994
+        "X": 2215.67595698778,
+        "Y": -699.9532173210207
       },
       {
-        "ShowGeometry": true,
         "Name": "Watch",
+        "ShowGeometry": true,
         "Id": "24fb247ccf104fc8bd9dc8e625af4877",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 2278.9530670224976,
-        "Y": -456.86817219371994
+        "X": 2215.67595698778,
+        "Y": -547.9532173210207
       },
       {
-        "ShowGeometry": true,
         "Name": "Watch",
+        "ShowGeometry": true,
         "Id": "4bb7d09ef49b4bc38a4328dcc56c5184",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 2278.9530670224976,
-        "Y": -332.86817219371994
+        "X": 2215.67595698778,
+        "Y": -396.9532173210207
       },
       {
-        "ShowGeometry": true,
         "Name": "Watch",
+        "ShowGeometry": true,
         "Id": "32db3c727c03403692deb3af0ce59f05",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 2278.9530670224976,
-        "Y": -704.86817219371994
+        "X": 2215.67595698778,
+        "Y": -850.9532173210207
       },
       {
-        "ShowGeometry": true,
         "Name": "Watch",
+        "ShowGeometry": true,
         "Id": "a1b0da6bdebd4fe1997b01fbec15aa3f",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 2834.11368012602,
-        "Y": -208.96522444297068
+        "X": 2866.7863859102549,
+        "Y": -245.70793244065771
       },
       {
-        "ShowGeometry": true,
         "Name": "Watch",
+        "ShowGeometry": true,
         "Id": "7b0fecfe064a4b2ca15289f6d898189e",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 2278.9530670224976,
-        "Y": -208.86817219371994
+        "X": 2215.67595698778,
+        "Y": -245.9532173210207
       },
       {
+        "Name": "Physical.GetExpansionCoefficient",
         "ShowGeometry": true,
-        "Name": "o|Physical.GetExpansionCoefficient",
         "Id": "78516402bf40445da9bedd6fdfc95a5d",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 1250.4398572931366,
-        "Y": -583.91299315791082
+        "X": 1144.5048382455896,
+        "Y": -708.80981442624329
       },
       {
-        "ShowGeometry": true,
         "Name": "Watch",
+        "ShowGeometry": true,
         "Id": "486acab425084105a5b9f02178520ec6",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 1676.4398572931366,
-        "Y": -704.91299315791082
+        "X": 1570.5048382455896,
+        "Y": -850.80981442624329
       },
       {
-        "ShowGeometry": true,
         "Name": "Watch",
+        "ShowGeometry": true,
         "Id": "9aca148244fd4686b73211b7da25b9ab",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 1676.4398572931366,
-        "Y": -580.91299315791082
+        "X": 1570.5048382455896,
+        "Y": -699.80981442624329
       },
       {
-        "ShowGeometry": true,
         "Name": "Watch",
+        "ShowGeometry": true,
         "Id": "cf5b93aa0ff84180aeb898e759a8d1fd",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 1676.4398572931366,
-        "Y": -456.91299315791082
+        "X": 1570.5048382455896,
+        "Y": -547.80981442624329
       },
       {
-        "ShowGeometry": true,
         "Name": "Watch",
+        "ShowGeometry": true,
         "Id": "5d2bfc25c27b4288870959716a29c9d9",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 1676.4398572931366,
-        "Y": -332.91299315791082
+        "X": 1570.5048382455896,
+        "Y": -396.80981442624329
       },
       {
-        "ShowGeometry": true,
         "Name": "Watch",
+        "ShowGeometry": true,
         "Id": "767a5b0f370d421cbb5649ba14da6fef",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 1676.4398572931366,
-        "Y": -208.91299315791082
+        "X": 1570.5048382455896,
+        "Y": -245.80981442624329
       },
       {
-        "ShowGeometry": true,
         "Name": "Watch",
+        "ShowGeometry": true,
         "Id": "fb71acea61d84772922761557bb1a7ed",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 808.92817066911618,
-        "Y": -656.93332396312042
+        "X": 621.06454930458426,
+        "Y": -811.58059885927355
       },
       {
-        "ShowGeometry": true,
         "Name": "Watch",
+        "ShowGeometry": true,
         "Id": "1d09169f2d5044379757b32e790e0f44",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 808.92817066911618,
-        "Y": -532.93332396312042
+        "X": 621.06454930458426,
+        "Y": -660.58059885927446
       },
       {
-        "ShowGeometry": true,
         "Name": "Watch",
+        "ShowGeometry": true,
         "Id": "f3cd0cb6baa2480883c7613ada57d4a0",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 808.92817066911618,
-        "Y": -408.93332396312042
+        "X": 621.06454930458426,
+        "Y": -509.58059885927446
       },
       {
-        "ShowGeometry": true,
         "Name": "Watch",
+        "ShowGeometry": true,
         "Id": "533d09bb8e9b40f69b5f0e8bb8ef726e",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 775.164957516199,
-        "Y": -208.85362664079082
+        "X": 861.265791083787,
+        "Y": -245.59211055222454
       },
       {
-        "ShowGeometry": true,
         "Name": "Watch",
+        "ShowGeometry": true,
         "Id": "b5922743fe7148bfbe13d2b449b6588e",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 808.92817066911618,
-        "Y": -780.93332396312042
+        "X": 621.06454930458426,
+        "Y": -962.58059885927355
       },
       {
+        "Name": "Physical.GetInformation",
         "ShowGeometry": true,
-        "Name": "o|Physical.GetInformation",
         "Id": "278d437d5d9d4e40ba800172f2a54f18",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 449.92817066911618,
-        "Y": -708.93332396312042
+        "X": 256.06454930458426,
+        "Y": -879.58059885927355
       },
       {
+        "Name": "Physical.GetBehavior",
         "ShowGeometry": true,
-        "Name": "o|Physical.GetBehavior",
         "Id": "0bdb4f09fe0349488c97e0f59fd91831",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 450.164957516199,
-        "Y": -208.85362664079082
+        "X": 511.265791083787,
+        "Y": -245.59211055222454
       },
       {
-        "ShowGeometry": true,
         "Name": "Watch",
+        "ShowGeometry": true,
         "Id": "e361a391044c431fab2dab0d1317acc2",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 2834.11368012602,
-        "Y": -828.96522444297068
+        "X": 2866.7863859102549,
+        "Y": -1001.7079324406586
       },
       {
-        "ShowGeometry": true,
         "Name": "Watch",
+        "ShowGeometry": true,
         "Id": "ce406d5c35d9462aae1541753729e300",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 2278.9530670224976,
-        "Y": -828.86817219371994
+        "X": 2215.67595698778,
+        "Y": -1001.9532173210198
       },
       {
-        "ShowGeometry": true,
         "Name": "Watch",
+        "ShowGeometry": true,
         "Id": "0d7312fd3a9147e8983203dc068973d1",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 1676.4398572931366,
-        "Y": -828.91299315791082
+        "X": 1570.5048382455896,
+        "Y": -1001.8098144262403
       },
       {
-        "ShowGeometry": true,
         "Name": "Watch",
+        "ShowGeometry": true,
         "Id": "c1f247f542614119a4145701bbfa90e5",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 808.92817066911618,
-        "Y": -904.93332396312042
+        "X": 621.06454930458426,
+        "Y": -1113.5805988592736
       },
       {
+        "Name": "Material.SetThermal",
         "ShowGeometry": true,
-        "Name": "o|Material.SetThermal",
         "Id": "aad8c29742b14ec09a0fb600de23ebca",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 2687.00959861305,
-        "Y": 682.674632239229
+        "X": 2801.732367013507,
+        "Y": 926.72787509155432
       }
     ],
     "Annotations": [
       {
         "Id": "b8e229a25f014445afe2719de63093fb",
         "Title": "",
+        "DescriptionText": "",
+        "IsExpanded": true,
+        "WidthAdjustment": 0.0,
+        "HeightAdjustment": 0.0,
         "Nodes": [
           "0ce74e8d77074ab887a54d9661ef8c61",
           "af4e006ed04743b399289114ed2f0a71",
           "80b65818dd424f0d9ec181d06a587449",
           "db131f7a40294341bdd11828013a3dd5"
         ],
-        "Left": 3049.8760501410998,
-        "Top": 1408.9108945410499,
-        "Width": 484.0,
-        "Height": 403.0,
+        "HasNestedGroups": false,
+        "Left": 3107.85467385308,
+        "Top": 1887.5921240621958,
+        "Width": 544.0,
+        "Height": 503.99999999999977,
         "FontSize": 30.0,
-        "InitialTop": 1454.9108945410499,
-        "InitialHeight": 393.0,
-        "TextblockHeight": 36.0,
+        "InitialTop": 1953.5921240621958,
+        "InitialHeight": 446.99999999999977,
+        "TextblockHeight": 56.0,
         "Background": "#FFC1D676"
       },
       {
         "Id": "d30010a5c6e24c9c8578610593242792",
         "Title": "",
+        "DescriptionText": "",
+        "IsExpanded": true,
+        "WidthAdjustment": 0.0,
+        "HeightAdjustment": 0.0,
         "Nodes": [
           "a52b9696e60c43258b41db6b7de5bdcb",
           "646479962efc48e48a08dc79983bfea2",
@@ -4866,19 +5068,24 @@
           "5232d4cbc42f455396451ab85cec45b0",
           "c1ae0edf05ed47238c5f4b938cd25944"
         ],
-        "Left": 1388.9179682875163,
-        "Top": 1437.4091589333993,
-        "Width": 669.0,
-        "Height": 651.00000000000091,
+        "HasNestedGroups": false,
+        "Left": 1301.5055437103792,
+        "Top": 1891.8363247351538,
+        "Width": 790.0,
+        "Height": 805.99999999999977,
         "FontSize": 30.0,
-        "InitialTop": 1483.4091589333993,
-        "InitialHeight": 641.00000000000091,
-        "TextblockHeight": 36.0,
+        "InitialTop": 1957.8363247351538,
+        "InitialHeight": 748.99999999999977,
+        "TextblockHeight": 56.0,
         "Background": "#FFFFAA45"
       },
       {
         "Id": "812105f85dbb4a43b380938a5c9dfc06",
         "Title": "",
+        "DescriptionText": "",
+        "IsExpanded": true,
+        "WidthAdjustment": 0.0,
+        "HeightAdjustment": 0.0,
         "Nodes": [
           "ea5c1fb1c43444be9bb4b16b954e7641",
           "a8b170639cfc43c2a015c1232d35477e",
@@ -4886,25 +5093,30 @@
           "6fa3baba26e4453e806371a2f377d089",
           "5b270278354e4667857d43fac47c4295",
           "a057fe7b5c854061a6d782bc8a06f011",
-          "6dbe7a26264c4ce59c0cebdeb9ea9d3d",
-          "d16979c1d1084977922c0eaa8367b116",
-          "aa67b4af3b87485fb6f9e5f1783d5e89",
+          "d0b9e428457e4fe9976b334885ef6b47",
           "a3856953b45a40cf905015d89d9153c6",
-          "d0b9e428457e4fe9976b334885ef6b47"
+          "aa67b4af3b87485fb6f9e5f1783d5e89",
+          "6dbe7a26264c4ce59c0cebdeb9ea9d3d",
+          "d16979c1d1084977922c0eaa8367b116"
         ],
-        "Left": 2261.1296699714712,
-        "Top": 1444.4847111113795,
-        "Width": 657.28054590299871,
-        "Height": 651.4021954892396,
+        "HasNestedGroups": false,
+        "Left": 2191.5178604329481,
+        "Top": 1892.25072575386,
+        "Width": 817.011319756672,
+        "Height": 806.0,
         "FontSize": 30.0,
-        "InitialTop": 1490.4847111113795,
-        "InitialHeight": 641.4021954892396,
-        "TextblockHeight": 36.0,
+        "InitialTop": 1958.25072575386,
+        "InitialHeight": 749.0,
+        "TextblockHeight": 56.0,
         "Background": "#FFFFAA45"
       },
       {
         "Id": "4e9d9ad219db4da3965134a587dd2f60",
         "Title": "Create material: Steel (S275)",
+        "DescriptionText": "",
+        "IsExpanded": true,
+        "WidthAdjustment": 0.0,
+        "HeightAdjustment": 0.0,
         "Nodes": [
           "b46ef087f4f24bf2b8efca2d53d6f3c7",
           "9045820a66e94937beba50f2692f880a",
@@ -4940,19 +5152,24 @@
           "5e1d61b9d67941e9880777831c33b629",
           "aad8c29742b14ec09a0fb600de23ebca"
         ],
-        "Left": 0.0095986130453411533,
-        "Top": -0.32536776077074592,
-        "Width": 3497.0000000000073,
-        "Height": 1304.7066666666706,
+        "HasNestedGroups": false,
+        "Left": -0.26763298649303024,
+        "Top": -0.27212490844556214,
+        "Width": 3652.0,
+        "Height": 1779.6200000000003,
         "FontSize": 30.0,
-        "InitialTop": 45.674632239229254,
-        "InitialHeight": 1192.7066666666706,
-        "TextblockHeight": 36.0,
+        "InitialTop": 65.727875091554438,
+        "InitialHeight": 1618.6200000000003,
+        "TextblockHeight": 56.0,
         "Background": "#FFA4E1FF"
       },
       {
         "Id": "7d741475eb674a3c8c5f89d108ed5cf7",
         "Title": "",
+        "DescriptionText": "",
+        "IsExpanded": true,
+        "WidthAdjustment": 0.0,
+        "HeightAdjustment": 0.0,
         "Nodes": [
           "672cc7bf4d834c6c9a9bdbcaf327fa69",
           "1005d7a02bb544d8aa6b4eb49fa2e1c2",
@@ -4961,19 +5178,24 @@
           "e3a085e9503d4cf79a4987053d19baea",
           "5b76020d218348138bf39cb8701cbb64"
         ],
-        "Left": 3000.6868154729364,
-        "Top": -751.01058153019028,
-        "Width": 491.0,
-        "Height": 651.0,
+        "HasNestedGroups": false,
+        "Left": 3104.3273047315206,
+        "Top": -915.64005133640251,
+        "Width": 548.0,
+        "Height": 806.00000000000512,
         "FontSize": 30.0,
-        "InitialTop": -705.01058153019028,
-        "InitialHeight": 641.0,
-        "TextblockHeight": 36.0,
+        "InitialTop": -849.64005133640251,
+        "InitialHeight": 749.00000000000512,
+        "TextblockHeight": 56.0,
         "Background": "#FFC1D676"
       },
       {
         "Id": "02f9c5b0c8bc48cfad9f59d9022e4f08",
         "Title": "",
+        "DescriptionText": "",
+        "IsExpanded": true,
+        "WidthAdjustment": 0.0,
+        "HeightAdjustment": 0.0,
         "Nodes": [
           "b26b33952eb3488f89307daa1c73623f",
           "92c8c50ba1174706ac200432dc68d897",
@@ -4983,19 +5205,24 @@
           "a1f4f99c2b5a476a8d754e23236a5fe9",
           "a1b0da6bdebd4fe1997b01fbec15aa3f"
         ],
-        "Left": 2440.11368012602,
-        "Top": -874.96522444297068,
-        "Width": 482.0,
-        "Height": 775.0,
+        "HasNestedGroups": false,
+        "Left": 2469.7863859102549,
+        "Top": -1067.7079324406586,
+        "Width": 526.0,
+        "Height": 958.00000000000091,
         "FontSize": 30.0,
-        "InitialTop": -828.96522444297068,
-        "InitialHeight": 765.0,
-        "TextblockHeight": 36.0,
+        "InitialTop": -1001.7079324406586,
+        "InitialHeight": 901.00000000000091,
+        "TextblockHeight": 56.0,
         "Background": "#FFC1D676"
       },
       {
         "Id": "93b0c6e548ac43ac93d2e999f0c1ce38",
         "Title": "",
+        "DescriptionText": "",
+        "IsExpanded": true,
+        "WidthAdjustment": 0.0,
+        "HeightAdjustment": 0.0,
         "Nodes": [
           "056953e427f74b928f25be629f8f779b",
           "32db3c727c03403692deb3af0ce59f05",
@@ -5005,19 +5232,24 @@
           "4bb7d09ef49b4bc38a4328dcc56c5184",
           "7b0fecfe064a4b2ca15289f6d898189e"
         ],
-        "Left": 1879.9530670224974,
-        "Top": -874.86817219371994,
-        "Width": 491.00000000000023,
-        "Height": 775.0,
+        "HasNestedGroups": false,
+        "Left": 1814.67595698778,
+        "Top": -1067.9532173210198,
+        "Width": 553.0,
+        "Height": 957.99999999999909,
         "FontSize": 30.0,
-        "InitialTop": -828.86817219371994,
-        "InitialHeight": 765.0,
-        "TextblockHeight": 36.0,
+        "InitialTop": -1001.9532173210198,
+        "InitialHeight": 900.99999999999909,
+        "TextblockHeight": 56.0,
         "Background": "#FFC1D676"
       },
       {
         "Id": "01e73d296a4f47469c8eb98c7bc0f08d",
         "Title": "",
+        "DescriptionText": "",
+        "IsExpanded": true,
+        "WidthAdjustment": 0.0,
+        "HeightAdjustment": 0.0,
         "Nodes": [
           "486acab425084105a5b9f02178520ec6",
           "9aca148244fd4686b73211b7da25b9ab",
@@ -5027,19 +5259,24 @@
           "767a5b0f370d421cbb5649ba14da6fef",
           "78516402bf40445da9bedd6fdfc95a5d"
         ],
-        "Left": 1240.4398572931366,
-        "Top": -874.91299315791082,
-        "Width": 524.0,
-        "Height": 775.0,
+        "HasNestedGroups": false,
+        "Left": 1134.5048382455896,
+        "Top": -1067.8098144262403,
+        "Width": 581.0,
+        "Height": 957.999999999997,
         "FontSize": 30.0,
-        "InitialTop": -828.91299315791082,
-        "InitialHeight": 765.0,
-        "TextblockHeight": 36.0,
+        "InitialTop": -1001.8098144262403,
+        "InitialHeight": 900.999999999997,
+        "TextblockHeight": 56.0,
         "Background": "#FFC1D676"
       },
       {
         "Id": "dc152dec3e4143318e0a9273145b361c",
         "Title": "",
+        "DescriptionText": "",
+        "IsExpanded": true,
+        "WidthAdjustment": 0.0,
+        "HeightAdjustment": 0.0,
         "Nodes": [
           "278d437d5d9d4e40ba800172f2a54f18",
           "b5922743fe7148bfbe13d2b449b6588e",
@@ -5048,36 +5285,42 @@
           "f3cd0cb6baa2480883c7613ada57d4a0",
           "c1f247f542614119a4145701bbfa90e5"
         ],
-        "Left": 439.92817066911618,
-        "Top": -950.93332396312042,
-        "Width": 669.00000000000011,
-        "Height": 651.0,
+        "HasNestedGroups": false,
+        "Left": 246.06454930458426,
+        "Top": -1179.5805988592736,
+        "Width": 790.0,
+        "Height": 805.99999999999909,
         "FontSize": 30.0,
-        "InitialTop": -904.93332396312042,
-        "InitialHeight": 641.0,
-        "TextblockHeight": 36.0,
+        "InitialTop": -1113.5805988592736,
+        "InitialHeight": 748.99999999999909,
+        "TextblockHeight": 56.0,
         "Background": "#FFC1D676"
       },
       {
         "Id": "73990701327648ac9ab43f7246fdf377",
         "Title": "",
+        "DescriptionText": "",
+        "IsExpanded": true,
+        "WidthAdjustment": 0.0,
+        "HeightAdjustment": 0.0,
         "Nodes": [
           "0bdb4f09fe0349488c97e0f59fd91831",
           "533d09bb8e9b40f69b5f0e8bb8ef726e"
         ],
-        "Left": 440.164957516199,
-        "Top": -254.85362664079082,
-        "Width": 446.0,
-        "Height": 155.0,
+        "HasNestedGroups": false,
+        "Left": 501.265791083787,
+        "Top": -311.59211055222454,
+        "Width": 535.0,
+        "Height": 202.0,
         "FontSize": 30.0,
-        "InitialTop": -208.85362664079082,
+        "InitialTop": -245.59211055222454,
         "InitialHeight": 145.0,
-        "TextblockHeight": 36.0,
+        "TextblockHeight": 56.0,
         "Background": "#FFC1D676"
       }
     ],
-    "X": 341.24201254385622,
-    "Y": 278.52310867679279,
-    "Zoom": 0.27463140332637487
+    "X": 337.45904075560321,
+    "Y": 306.28114984336827,
+    "Zoom": 0.24810161934069644
   }
 }
