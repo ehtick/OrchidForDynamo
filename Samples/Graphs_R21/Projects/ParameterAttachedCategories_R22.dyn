@@ -1,0 +1,687 @@
+{
+  "Uuid": "2f75061e-93b1-4902-aabc-18413059021b",
+  "IsCustomNode": false,
+  "Description": null,
+  "Name": "ParameterAttachedCategories",
+  "ElementResolver": {
+    "ResolutionMap": {}
+  },
+  "Inputs": [],
+  "Outputs": [],
+  "Nodes": [
+    {
+      "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
+      "NodeType": "ExtensionNode",
+      "Id": "dd22544b8aa64ad5ba0c707a913aa8bd",
+      "Inputs": [
+        {
+          "Id": "a4e031b40c514d388f6db668ecef58ab",
+          "Name": "",
+          "Description": "Node to evaluate.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "ddf2d030b67846a88d403fb4ad6a4d13",
+          "Name": "",
+          "Description": "Watch contents.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Visualize the node's output"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "Orchid.RevitProject.Parameters.ProjectParameter.GetCategory@Revit.Elements.Element,bool",
+      "Id": "f444b3852e9e464eb3e87ae7a35a690d",
+      "Inputs": [
+        {
+          "Id": "00a7b96411a44b59970cb5faa71f04cb",
+          "Name": "parameter",
+          "Description": "User-defined parameter.\n\nElement",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "5b2101c145b94ea88cd91941fc7060c9",
+          "Name": "condense",
+          "Description": "Condense to shortest feasible output?\n\nbool\nDefault value : true",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "20f12112b6eb4770928bf7e5313a7a64",
+          "Name": "Category",
+          "Description": "Category.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Get the category(ies) bound to the parameter in the project.\n\nProjectParameter.GetCategory (parameter: Element, condense: bool = true): var[]..[]\n\nNamespace:\nOrchid.RevitProject.Parameters"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "Orchid.RevitProject.Parameters.ProjectParameter.ByName@string",
+      "Id": "5de82b6f38614d54bee05b2cd2e177ec",
+      "Inputs": [
+        {
+          "Id": "3a8ee5728c71466e9f3b5e1eaf2ed502",
+          "Name": "parameterName",
+          "Description": "Name of the User-defined parameter.\n\nstring",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "fc81e443f84d4044be96f6d19dc3a7b1",
+          "Name": "Parameter",
+          "Description": "User-defined parameter.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Get parameter by name. Note: This function handles only User-defined parameters, such as project, shared, and global parameters.\n\nProjectParameter.ByName (parameterName: string): Element\n\nNamespace:\nOrchid.RevitProject.Parameters"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "\"Occupant\";\n\"IfcExportAs[Type]\";",
+      "Id": "d7f9319e0e214e9d9c854889d739aa32",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "7e7f056fb7e244e0a617dbea74fefbc2",
+          "Name": "",
+          "Description": "Value of expression at line 1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "f03a7d40b9f54689ae4abe0437a769eb",
+          "Name": "",
+          "Description": "Value of expression at line 2",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Allows for DesignScript code to be authored directly"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "Orchid.RevitProject.Parameters.Definition.ByName@string",
+      "Id": "4117f8db1ab54a50a7ed1966837720fe",
+      "Inputs": [
+        {
+          "Id": "544fa961db2248819e4e10bd88482668",
+          "Name": "name",
+          "Description": "The name of the shared parameter.\n\nstring",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "0c5cd9f9d22545fcb178bd91477e9682",
+          "Name": "Definition",
+          "Description": "The parameter definition.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Get parameter definition by name.\n\nDefinition.ByName (name: string): Definition\n\nNamespace:\nOrchid.RevitProject.Parameters"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "Orchid.RevitProject.Parameters.Definition.GetCategory@Orchid.RevitProject.Parameters.Definition,bool",
+      "Id": "5e41d206c3de4a1db74517fbddebe8ee",
+      "Inputs": [
+        {
+          "Id": "fdfa680e038e42ba88d16b91237c62bb",
+          "Name": "definition",
+          "Description": "The parameter definition.\n\nDefinition",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "69dd04bfb1d641fd94708bfc33b7be08",
+          "Name": "condense",
+          "Description": "Condense to shortest feasible output?\n\nbool\nDefault value : true",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "72e49d345ce74c25bc8329d02038c448",
+          "Name": "Category",
+          "Description": "Category as Dynamo type.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Get the category(ies) bound to the parameter definition in the project.\n\nDefinition.GetCategory (definition: Definition, condense: bool = true): var[]..[]\n\nNamespace:\nOrchid.RevitProject.Parameters"
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
+      "NodeType": "ExtensionNode",
+      "Id": "caf7f144679b40f0bb18b22b86aa6200",
+      "Inputs": [
+        {
+          "Id": "71944c24d3024708a96ca2f59181348a",
+          "Name": "",
+          "Description": "Node to evaluate.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "940b94e1af12429fb596fabaeb46af65",
+          "Name": "",
+          "Description": "Watch contents.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Visualize the node's output"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "Revit.Elements.Category.ByName@string",
+      "Id": "2107f4b990ce47819654abf3d2891090",
+      "Inputs": [
+        {
+          "Id": "12526efa04c4415e93420fa072132702",
+          "Name": "name",
+          "Description": "The built in category name.\n\nstring",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "43a88aff3b494100bcd85c5a434e4137",
+          "Name": "Category",
+          "Description": "Category",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Gets a Revit category by the built-in category name.\n\nCategory.ByName (name: string): Category"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "Orchid.RevitProject.Parameters.ProjectParameter.GetCategory@string,bool",
+      "Id": "9d5fd16426ec44a8916c12f7c4cfe383",
+      "Inputs": [
+        {
+          "Id": "b6053ff5a9c2457585ed54add9fcd216",
+          "Name": "parameterName",
+          "Description": "The name of the user-defined parameter.\n\nstring",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "81aba4458d97462ba9b3a95d808ddfe3",
+          "Name": "condense",
+          "Description": "Condense to shortest feasible output?\n\nbool\nDefault value : true",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "bc7c891e8287493e8b0fce07af8eda92",
+          "Name": "Category",
+          "Description": "Category.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Get the category(ies) bound to the parameter in the project.\n\nProjectParameter.GetCategory (parameterName: string, condense: bool = true): var[]..[]\n\nNamespace:\nOrchid.RevitProject.Parameters"
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
+      "NodeType": "ExtensionNode",
+      "Id": "e56249315d604d5dbc1687e3b9ba12b2",
+      "Inputs": [
+        {
+          "Id": "31b8de52869745f39d249369ff3d86e9",
+          "Name": "",
+          "Description": "Node to evaluate.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "3a08ff055abc4f18943636aea064e863",
+          "Name": "",
+          "Description": "Watch contents.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Visualize the node's output"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "[\"Doors\", \"Walls\"];",
+      "Id": "ee2c5fa07757440ca51e9be6fbb136b5",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "8ef0d8b52ec24c1a9d728650f4d46224",
+          "Name": "",
+          "Description": "Value of expression at line 1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Allows for DesignScript code to be authored directly"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "Orchid.RevitProject.Parameters.SharedParameter.AddIFC@Revit.Application.Document[],Revit.Elements.Category[],bool",
+      "Id": "213dbd4b92f94fddb9e769aff4ef967f",
+      "Inputs": [
+        {
+          "Id": "1cb4c022011943bbaa73c7dcd4323bca",
+          "Name": "document",
+          "Description": "Project document (rvt).\n\nDocument[]\nDefault value : null",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "d24b94fc01f544598b3edb8ae4ebd5ec",
+          "Name": "category",
+          "Description": "Category(ies) the parameter applies to. If no category is supplied, all possible categories are selected.\n\nCategory[]\nDefault value : null",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "7253cc0cd73241f1ab45ba0c8a102fc0",
+          "Name": "condense",
+          "Description": "Condense to shortest feasible output?\n\nbool\nDefault value : true",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "8f6f4dc2d9cf41f28d0c8d92149a635f",
+          "Name": "Parameter",
+          "Description": "Shared parameter.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Add basic IFC type and instance shared parameters in the project (IfcExportAs, IfcExportType, IfcDescription, IFC CAD Layer). Parameters are set with the same settings pr. group and attached the same provided category(ies). Note: If the parameter exists is the category binding being updated, and tooltip is being added if exsist!\n\nSharedParameter.AddIFC (document: Document[] = null, category: Category[] = null, condense: bool = true): var[]..[]\n\nNamespace:\nOrchid.RevitProject.Parameters"
+    }
+  ],
+  "Connectors": [
+    {
+      "Start": "20f12112b6eb4770928bf7e5313a7a64",
+      "End": "a4e031b40c514d388f6db668ecef58ab",
+      "Id": "fbca4992b6a24a14b555432d85b51db3"
+    },
+    {
+      "Start": "fc81e443f84d4044be96f6d19dc3a7b1",
+      "End": "00a7b96411a44b59970cb5faa71f04cb",
+      "Id": "69fa6998bde74df2b6e42cc357e9d910"
+    },
+    {
+      "Start": "f03a7d40b9f54689ae4abe0437a769eb",
+      "End": "3a8ee5728c71466e9f3b5e1eaf2ed502",
+      "Id": "07f5071f489c4dce83854116742d913e"
+    },
+    {
+      "Start": "f03a7d40b9f54689ae4abe0437a769eb",
+      "End": "b6053ff5a9c2457585ed54add9fcd216",
+      "Id": "4f80b909e793403cb025becb6d16c132"
+    },
+    {
+      "Start": "f03a7d40b9f54689ae4abe0437a769eb",
+      "End": "544fa961db2248819e4e10bd88482668",
+      "Id": "c21fd26030e548f68e012a5019e1ec49"
+    },
+    {
+      "Start": "0c5cd9f9d22545fcb178bd91477e9682",
+      "End": "fdfa680e038e42ba88d16b91237c62bb",
+      "Id": "0fae3f780eaf4ac99e656d575f45abff"
+    },
+    {
+      "Start": "72e49d345ce74c25bc8329d02038c448",
+      "End": "71944c24d3024708a96ca2f59181348a",
+      "Id": "7686349372bc43f8babb257ec5e6227d"
+    },
+    {
+      "Start": "43a88aff3b494100bcd85c5a434e4137",
+      "End": "d24b94fc01f544598b3edb8ae4ebd5ec",
+      "Id": "8c4c6b1a880e405e833f7b2cd656389a"
+    },
+    {
+      "Start": "bc7c891e8287493e8b0fce07af8eda92",
+      "End": "31b8de52869745f39d249369ff3d86e9",
+      "Id": "d68b0a83d2374c03b15dc5d1069d8aa7"
+    },
+    {
+      "Start": "8ef0d8b52ec24c1a9d728650f4d46224",
+      "End": "12526efa04c4415e93420fa072132702",
+      "Id": "9ce124c6fcf94bde84d8b33c23023371"
+    }
+  ],
+  "Dependencies": [],
+  "NodeLibraryDependencies": [
+    {
+      "Name": "Orchid",
+      "Version": "212.4.0.5794",
+      "ReferenceType": "Package",
+      "Nodes": [
+        "f444b3852e9e464eb3e87ae7a35a690d",
+        "5de82b6f38614d54bee05b2cd2e177ec",
+        "4117f8db1ab54a50a7ed1966837720fe",
+        "5e41d206c3de4a1db74517fbddebe8ee",
+        "9d5fd16426ec44a8916c12f7c4cfe383",
+        "213dbd4b92f94fddb9e769aff4ef967f"
+      ]
+    }
+  ],
+  "Thumbnail": "",
+  "GraphDocumentationURL": null,
+  "ExtensionWorkspaceData": [
+    {
+      "ExtensionGuid": "28992e1d-abb9-417f-8b1b-05e053bee670",
+      "Name": "Properties",
+      "Version": "2.12",
+      "Data": {}
+    },
+    {
+      "ExtensionGuid": "DFBD9CC0-DB40-457A-939E-8C8555555A9D",
+      "Name": "Generative Design",
+      "Version": "1.10",
+      "Data": {}
+    }
+  ],
+  "Author": "None provided",
+  "Linting": {
+    "activeLinter": "None",
+    "activeLinterId": "7b75fb44-43fd-4631-a878-29f4d5d8399a",
+    "warningCount": 0,
+    "errorCount": 0
+  },
+  "Bindings": [],
+  "View": {
+    "Dynamo": {
+      "ScaleFactor": 1.0,
+      "HasRunWithoutCrash": true,
+      "IsVisibleInDynamoLibrary": true,
+      "Version": "2.12.1.8246",
+      "RunType": "Manual",
+      "RunPeriod": "1000"
+    },
+    "Camera": {
+      "Name": "Background Preview",
+      "EyeX": -17.0,
+      "EyeY": 24.0,
+      "EyeZ": 50.0,
+      "LookX": 12.0,
+      "LookY": -13.0,
+      "LookZ": -58.0,
+      "UpX": 0.0,
+      "UpY": 1.0,
+      "UpZ": 0.0
+    },
+    "NodeViews": [
+      {
+        "ShowGeometry": true,
+        "Name": "Watch",
+        "Id": "dd22544b8aa64ad5ba0c707a913aa8bd",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1021.50913676754,
+        "Y": 53.4682222232757
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "o|ProjectParameter.GetCategory",
+        "Id": "f444b3852e9e464eb3e87ae7a35a690d",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 647.509136767539,
+        "Y": 53.4682222232757
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "o|ProjectParameter.ByName",
+        "Id": "5de82b6f38614d54bee05b2cd2e177ec",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 296.31155270750025,
+        "Y": 53.468222223275689
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Code Block",
+        "Id": "d7f9319e0e214e9d9c854889d739aa32",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 9.696868739567833,
+        "Y": 334.19046927030149
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "o|Definition.ByName",
+        "Id": "4117f8db1ab54a50a7ed1966837720fe",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 296.833919781034,
+        "Y": 348.08764459343
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "o|Definition.GetCategory",
+        "Id": "5e41d206c3de4a1db74517fbddebe8ee",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 647.509136767539,
+        "Y": 348.08764459343
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Watch",
+        "Id": "caf7f144679b40f0bb18b22b86aa6200",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1021.50913676754,
+        "Y": 348.08764459343
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Category.ByName",
+        "Id": "2107f4b990ce47819654abf3d2891090",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": -639.33179396512617,
+        "Y": 358.71481479718079
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "o|ProjectParameter.GetCategory",
+        "Id": "9d5fd16426ec44a8916c12f7c4cfe383",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 647.509136767539,
+        "Y": 642.707066963584
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Watch",
+        "Id": "e56249315d604d5dbc1687e3b9ba12b2",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1021.50913676754,
+        "Y": 642.707066963584
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Code Block",
+        "Id": "ee2c5fa07757440ca51e9be6fbb136b5",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": true,
+        "X": -926.33179396512594,
+        "Y": 362.92814813051348
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "o|SharedParameter.AddIFC",
+        "Id": "213dbd4b92f94fddb9e769aff4ef967f",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": -331.331793965126,
+        "Y": 332.71481479718034
+      }
+    ],
+    "Annotations": [
+      {
+        "Id": "e4148c62254848d08c25b894012493bf",
+        "Title": "",
+        "Nodes": [
+          "d7f9319e0e214e9d9c854889d739aa32",
+          "5de82b6f38614d54bee05b2cd2e177ec",
+          "dd22544b8aa64ad5ba0c707a913aa8bd",
+          "f444b3852e9e464eb3e87ae7a35a690d",
+          "9d5fd16426ec44a8916c12f7c4cfe383",
+          "e56249315d604d5dbc1687e3b9ba12b2",
+          "4117f8db1ab54a50a7ed1966837720fe",
+          "5e41d206c3de4a1db74517fbddebe8ee",
+          "caf7f144679b40f0bb18b22b86aa6200"
+        ],
+        "Left": -0.303131260432167,
+        "Top": 0.46822222327568852,
+        "Width": 1241.8122680279721,
+        "Height": 920.23884474030831,
+        "FontSize": 36.0,
+        "InitialTop": 53.468222223275689,
+        "InitialHeight": 734.23884474030831,
+        "TextblockHeight": 43.0,
+        "Background": "#FFC1D676"
+      },
+      {
+        "Id": "2701504aa4f04eaf8adfd1b9852d5335",
+        "Title": "Add IFC parameters",
+        "Nodes": [
+          "2107f4b990ce47819654abf3d2891090",
+          "ee2c5fa07757440ca51e9be6fbb136b5",
+          "213dbd4b92f94fddb9e769aff4ef967f"
+        ],
+        "Left": -936.33179396512594,
+        "Top": 279.71481479718034,
+        "Width": 856.0,
+        "Height": 198.0,
+        "FontSize": 36.0,
+        "InitialTop": 332.71481479718034,
+        "InitialHeight": 175.21333333333314,
+        "TextblockHeight": 43.0,
+        "Background": "#FFC1D676"
+      }
+    ],
+    "X": 700.97466423342507,
+    "Y": 152.61781912487135,
+    "Zoom": 0.72433513413303563
+  }
+}

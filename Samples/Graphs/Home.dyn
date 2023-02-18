@@ -1,5 +1,5 @@
 {
-  "Uuid": "3b8f8910-ba50-49a7-8441-47a1424ef90f",
+  "Uuid": "6f61fe79-f57d-44f7-b82c-7998184aaec7",
   "IsCustomNode": false,
   "Description": "",
   "Name": "Home",
@@ -13,11 +13,11 @@
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
       "NodeType": "FunctionNode",
       "FunctionSignature": "Orchid.RevitProject.Common.Document.Current",
-      "Id": "b67e96f433224c3b9cc4304e95122dca",
+      "Id": "fc893780ebef4ac7b208bb824fe09e6a",
       "Inputs": [],
       "Outputs": [
         {
-          "Id": "57d4f4fa8d9a430d8f78f52580a2220d",
+          "Id": "60901be99a2b4e98a3db7ff9443b5ef1",
           "Name": "Document",
           "Description": "Project document (rvt).",
           "UsingDefaultValue": false,
@@ -28,17 +28,99 @@
       ],
       "Replication": "Auto",
       "Description": "Get current (project) document. If you need a family document instead, please find the node \"FamilyDocument.Current\"!\n\nDocument.Current: Document"
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
+      "NodeType": "ExtensionNode",
+      "Id": "72aebf591e48403683b859900bcef26b",
+      "Inputs": [
+        {
+          "Id": "c1858fca3565410caa6d90bfd663aa2b",
+          "Name": "",
+          "Description": "Node to show output from",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "329bf6faf2ea495dafc84cd6545bdc1a",
+          "Name": "",
+          "Description": "Node output",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Visualize the node's output"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "Orchid.RevitProject.Common.Document.Name@Revit.Application.Document,bool",
+      "Id": "42c219f9859540fa93d29b649ce74be0",
+      "Inputs": [
+        {
+          "Id": "0653dc0f3a2744bcab41e3fb4d2cf450",
+          "Name": "document",
+          "Description": "Project document (rvt).\n\nDocument\nDefault value : null",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "bdc0cc6f9b6843d0bbf7c971bb5b185a",
+          "Name": "withExtension",
+          "Description": "Include extension? default is set to false!\n\nbool\nDefault value : false",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "0055be2e28db414487734132c855050e",
+          "Name": "string",
+          "Description": "The name of the document.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Get the current document name.\n\nDocument.Name (document: Document = null, withExtension: bool = false): string"
     }
   ],
-  "Connectors": [],
+  "Connectors": [
+    {
+      "Start": "60901be99a2b4e98a3db7ff9443b5ef1",
+      "End": "0653dc0f3a2744bcab41e3fb4d2cf450",
+      "Id": "e6848f4f4c784cbd9b8a328a9c28e460",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "0055be2e28db414487734132c855050e",
+      "End": "c1858fca3565410caa6d90bfd663aa2b",
+      "Id": "30535f7d01624acd9129a3feac2e413c",
+      "IsHidden": "False"
+    }
+  ],
   "Dependencies": [],
   "NodeLibraryDependencies": [
     {
       "Name": "Orchid",
-      "Version": "212.4.0.5792",
+      "Version": "216.3.0.5792",
       "ReferenceType": "Package",
       "Nodes": [
-        "b67e96f433224c3b9cc4304e95122dca"
+        "fc893780ebef4ac7b208bb824fe09e6a",
+        "42c219f9859540fa93d29b649ce74be0"
       ]
     }
   ],
@@ -48,13 +130,13 @@
     {
       "ExtensionGuid": "28992e1d-abb9-417f-8b1b-05e053bee670",
       "Name": "Properties",
-      "Version": "2.12",
+      "Version": "2.16",
       "Data": {}
     },
     {
       "ExtensionGuid": "DFBD9CC0-DB40-457A-939E-8C8555555A9D",
       "Name": "Generative Design",
-      "Version": "1.10",
+      "Version": "3.0",
       "Data": {}
     }
   ],
@@ -71,7 +153,7 @@
       "ScaleFactor": 1.0,
       "HasRunWithoutCrash": true,
       "IsVisibleInDynamoLibrary": true,
-      "Version": "2.12.1.8246",
+      "Version": "2.16.1.2727",
       "RunType": "Automatic",
       "RunPeriod": "1000"
     },
@@ -87,21 +169,42 @@
       "UpY": 1.0,
       "UpZ": 0.0
     },
+    "ConnectorPins": [],
     "NodeViews": [
       {
+        "Name": "Document.Current",
         "ShowGeometry": true,
-        "Name": "o|Document.Current",
-        "Id": "b67e96f433224c3b9cc4304e95122dca",
+        "Id": "fc893780ebef4ac7b208bb824fe09e6a",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 281.0,
-        "Y": 382.0
+        "X": 214.25,
+        "Y": 363.5
+      },
+      {
+        "Name": "Watch",
+        "ShowGeometry": true,
+        "Id": "72aebf591e48403683b859900bcef26b",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 871.25,
+        "Y": 363.5
+      },
+      {
+        "Name": "Document.Name",
+        "ShowGeometry": true,
+        "Id": "42c219f9859540fa93d29b649ce74be0",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 523.25,
+        "Y": 363.5
       }
     ],
     "Annotations": [],
-    "X": 0.0,
-    "Y": 0.0,
+    "X": 148.0,
+    "Y": 58.5,
     "Zoom": 1.0
   }
 }

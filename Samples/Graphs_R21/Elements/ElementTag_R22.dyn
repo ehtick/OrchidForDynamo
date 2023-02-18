@@ -1,0 +1,377 @@
+{
+  "Uuid": "3c9d0464-8643-5ffe-96e5-ab1769818209",
+  "IsCustomNode": false,
+  "Description": "",
+  "Name": "ElementTags",
+  "ElementResolver": {
+    "ResolutionMap": {
+      "List.g": {
+        "Key": "DSCore.List",
+        "Value": "DSCoreNodes.dll"
+      },
+      "Element": {
+        "Key": "Revit.Elements.Element",
+        "Value": "RevitNodes.dll"
+      }
+    }
+  },
+  "Inputs": [],
+  "Outputs": [],
+  "Nodes": [
+    {
+      "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
+      "NodeType": "ExtensionNode",
+      "Id": "8fb3b73ad4ae464a8dc60e20e397bc90",
+      "Inputs": [
+        {
+          "Id": "ee16b22a3d7a43769608f67b682033a3",
+          "Name": "",
+          "Description": "Node to evaluate.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "0a80d1cb93c2485c8ec43ed8d75bcb3e",
+          "Name": "",
+          "Description": "Watch contents.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Visualize the node's output"
+    },
+    {
+      "ConcreteType": "DSRevitNodesUI.ElementsOfCategory, DSRevitNodesUI",
+      "NodeType": "ExtensionNode",
+      "Id": "739533c2aee24812903994f8fe42e4a1",
+      "Inputs": [
+        {
+          "Id": "e4e436c97283410a8893a02dd0473706",
+          "Name": "Category",
+          "Description": "The Category",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "e255986687864919a6a319fa928738db",
+          "Name": "Elements",
+          "Description": "An element type.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Get all elements of the specified category from the model."
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "Revit.Elements.Category.ByName@string",
+      "Id": "057fc5dd470e44f6b38164d4453313aa",
+      "Inputs": [
+        {
+          "Id": "8bc7cded19d64a51af24971fcb9314f0",
+          "Name": "name",
+          "Description": "The built in category name.\n\nstring",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "fd76f81cc43c4104b028516e1d84b534",
+          "Name": "Category",
+          "Description": "Category",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Gets a Revit category by the built-in category name.\n\nCategory.ByName (name: string): Category"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "\"Doors\";",
+      "Id": "97c606ece8774d7c8bfa6ef4436f5809",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "41728aa888d04c12a1447d6e833e4759",
+          "Name": "",
+          "Description": "Value of expression at line 1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Allows for DesignScript code to be authored directly"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "Orchid.RevitProject.Elements.Element.GetTag@Revit.Elements.Element,Revit.Elements.Element,bool",
+      "Id": "f6687a22703e408c9bb3d979b47cc696",
+      "Inputs": [
+        {
+          "Id": "7cfb890d9f764968b1c63de12f00e841",
+          "Name": "element",
+          "Description": "Element who is hosting a tag.\n\nElement",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "6f8b848fb93b430a9853ebdd8500dc3b",
+          "Name": "view",
+          "Description": "View as Dynamo type.\n\nElement\nDefault value : null",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "ed3d7435853a4780bf2ecd93676cafaa",
+          "Name": "condense",
+          "Description": "Condense to shortest feasible output?\n\nbool\nDefault value : true",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "e93e3e38bcb04500a20255fbed9aa731",
+          "Name": "Tag",
+          "Description": "Tag as Dynamo type.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Get a element tag in a view.\n\nElement.GetTag (element: Element, view: Element = null, condense: bool = true): var[]..[]\n\nNamespace:\nOrchid.RevitProject.Elements"
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
+      "NodeType": "ExtensionNode",
+      "Id": "b7767a7427c14f6494703a64aab4f571",
+      "Inputs": [
+        {
+          "Id": "978260791e6b4f619bc280723f4fa31f",
+          "Name": "",
+          "Description": "Node to show output from",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "8c27e0f4e33f4cae9bd572858ee1e2f3",
+          "Name": "",
+          "Description": "Node output",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Visualize the node's output"
+    }
+  ],
+  "Connectors": [
+    {
+      "Start": "e255986687864919a6a319fa928738db",
+      "End": "ee16b22a3d7a43769608f67b682033a3",
+      "Id": "4bf019abf2a742f6894814dc94bd6315"
+    },
+    {
+      "Start": "e255986687864919a6a319fa928738db",
+      "End": "7cfb890d9f764968b1c63de12f00e841",
+      "Id": "efe37ad837b5473faec1787ad99503c1"
+    },
+    {
+      "Start": "fd76f81cc43c4104b028516e1d84b534",
+      "End": "e4e436c97283410a8893a02dd0473706",
+      "Id": "d12ab20b600146739537bc585189de53"
+    },
+    {
+      "Start": "41728aa888d04c12a1447d6e833e4759",
+      "End": "8bc7cded19d64a51af24971fcb9314f0",
+      "Id": "8e1e47b5034e4b4e9f2c94d351cce911"
+    },
+    {
+      "Start": "e93e3e38bcb04500a20255fbed9aa731",
+      "End": "978260791e6b4f619bc280723f4fa31f",
+      "Id": "1da6d38f122e4bc492ee067cb2ac0a11"
+    }
+  ],
+  "Dependencies": [],
+  "NodeLibraryDependencies": [
+    {
+      "Name": "Orchid",
+      "Version": "212.4.0.5794",
+      "ReferenceType": "Package",
+      "Nodes": [
+        "f6687a22703e408c9bb3d979b47cc696"
+      ]
+    }
+  ],
+  "Thumbnail": "",
+  "GraphDocumentationURL": null,
+  "ExtensionWorkspaceData": [
+    {
+      "ExtensionGuid": "28992e1d-abb9-417f-8b1b-05e053bee670",
+      "Name": "Properties",
+      "Version": "2.12",
+      "Data": {}
+    },
+    {
+      "ExtensionGuid": "DFBD9CC0-DB40-457A-939E-8C8555555A9D",
+      "Name": "Generative Design",
+      "Version": "1.10",
+      "Data": {}
+    }
+  ],
+  "Author": "None provided",
+  "Linting": {
+    "activeLinter": "None",
+    "activeLinterId": "7b75fb44-43fd-4631-a878-29f4d5d8399a",
+    "warningCount": 0,
+    "errorCount": 0
+  },
+  "Bindings": [],
+  "View": {
+    "Dynamo": {
+      "ScaleFactor": 1.0,
+      "HasRunWithoutCrash": true,
+      "IsVisibleInDynamoLibrary": true,
+      "Version": "2.12.1.8246",
+      "RunType": "Manual",
+      "RunPeriod": "1000"
+    },
+    "Camera": {
+      "Name": "Background Preview",
+      "EyeX": -17.0,
+      "EyeY": 24.0,
+      "EyeZ": 50.0,
+      "LookX": 12.0,
+      "LookY": -13.0,
+      "LookZ": -58.0,
+      "UpX": 0.0,
+      "UpY": 1.0,
+      "UpZ": 0.0
+    },
+    "NodeViews": [
+      {
+        "ShowGeometry": true,
+        "Name": "Watch",
+        "Id": "8fb3b73ad4ae464a8dc60e20e397bc90",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 960.42329842421623,
+        "Y": -105.44034998295729
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "All Elements of Category",
+        "Id": "739533c2aee24812903994f8fe42e4a1",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 459.49325962051046,
+        "Y": 53.192223782447059
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Category.ByName",
+        "Id": "057fc5dd470e44f6b38164d4453313aa",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 189.42802193029254,
+        "Y": 53.192223782447059
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Code Block",
+        "Id": "97c606ece8774d7c8bfa6ef4436f5809",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 10.362784240074689,
+        "Y": 57.4055571157804
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "o|Element.GetTag",
+        "Id": "f6687a22703e408c9bb3d979b47cc696",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 695.55849731072828,
+        "Y": 115.4807668066251
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Watch",
+        "Id": "b7767a7427c14f6494703a64aab4f571",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 960.42329842421623,
+        "Y": 188.55965001704271
+      }
+    ],
+    "Annotations": [
+      {
+        "Id": "cdcc54207f314958869cbc7cf8aca7b2",
+        "Title": "Get tag",
+        "Nodes": [
+          "739533c2aee24812903994f8fe42e4a1",
+          "057fc5dd470e44f6b38164d4453313aa",
+          "97c606ece8774d7c8bfa6ef4436f5809",
+          "f6687a22703e408c9bb3d979b47cc696"
+        ],
+        "Left": 0.36278424007468857,
+        "Top": 0.19222378244705851,
+        "Width": 900.1957130706536,
+        "Height": 260.288543024178,
+        "FontSize": 36.0,
+        "InitialTop": 53.192223782447059,
+        "InitialHeight": 322.0,
+        "TextblockHeight": 43.0,
+        "Background": "#FFC1D676"
+      }
+    ],
+    "X": 17.17225697556573,
+    "Y": 404.77526397469842,
+    "Zoom": 1.2378664582079357
+  }
+}
