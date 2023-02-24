@@ -2,7 +2,7 @@
   "Uuid": "3c9d0464-8643-5ffe-96e5-ab1769818209",
   "IsCustomNode": false,
   "Description": "",
-  "Name": "Load families_R23",
+  "Name": "Load families",
   "ElementResolver": {
     "ResolutionMap": {
       "Directory": {
@@ -20,6 +20,7 @@
       "Id": "53c465b9ba82454a96b490348aa7218d",
       "Name": "Creator Build",
       "Type": "string",
+      "Type2": "string",
       "Value": "\"2022.0406.0\"",
       "Description": "Creates a string.",
       "SelectedIndex": 0
@@ -28,6 +29,7 @@
       "Id": "a6843be9051e4d509c7993fd68ed88ba",
       "Name": "Boolean",
       "Type": "boolean",
+      "Type2": "boolean",
       "Value": "true",
       "Description": "Selection between a true and false.",
       "SelectedIndex": 0
@@ -36,6 +38,7 @@
       "Id": "04f7247183b14f45b71863058508016d",
       "Name": "Directory Path",
       "Type": "string",
+      "Type2": "string",
       "Value": "..\\testSet",
       "Description": "Creates a string.",
       "SelectedIndex": 0
@@ -44,6 +47,7 @@
       "Id": "15559b4476ed40eeb19cd054c9c087d2",
       "Name": "String",
       "Type": "string",
+      "Type2": "string",
       "Value": "*.rfa",
       "Description": "Creates a string.",
       "SelectedIndex": 0
@@ -54,7 +58,7 @@
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
       "NodeType": "FunctionNode",
-      "FunctionSignature": "Orchid.Common.DataStream.Await@var,var[]..[]",
+      "FunctionSignature": "Orchid.Common.DataStream.Await@var,var[]",
       "Id": "6c930f3ac8a74f429bc2a22779ec0070",
       "Inputs": [
         {
@@ -69,7 +73,7 @@
         {
           "Id": "bf1a2076b21149bc940fda23ceb53a6e",
           "Name": "waitFor",
-          "Description": "Data object to wait for.\n\nvar[]..[]",
+          "Description": "Data object to wait for.\n\nvar[]",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -88,7 +92,7 @@
         }
       ],
       "Replication": "Auto",
-      "Description": "Await a data stream before passing another data stream.\n\nDataStream.Await (pass: var, waitFor: var[]..[]): var[]..[]\n\nNamespace: Orchid.Common"
+      "Description": "Await a data stream before passing another data stream.\n\nDataStream.Await (pass: var, waitFor: var[]): var[]..[]"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
@@ -136,7 +140,7 @@
         }
       ],
       "Replication": "Auto",
-      "Description": "Set family formula by parameter name. Note: If no family types exists, then a default family type will be created named as the familyDocument.\n\nFormula.Set (familyDocument: Document = null, parameterName: string, value: string): var[]..[]\n\nNamespace: Orchid.RevitFamily"
+      "Description": "Set family formula by parameter name. Note: If no family types exists, then a default family type will be created named as the familyDocument.\n\nFormula.Set (familyDocument: Document = null, parameterName: string, value: string): var[]..[]"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
@@ -161,7 +165,7 @@
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
       "NodeType": "FunctionNode",
-      "FunctionSignature": "Orchid.Common.DataStream.Await@var,var[]..[]",
+      "FunctionSignature": "Orchid.Common.DataStream.Await@var,var[]",
       "Id": "7ab8dc7b54d3404594fe18e0b01330a2",
       "Inputs": [
         {
@@ -176,7 +180,7 @@
         {
           "Id": "dc11a27c33d0461a9fe6ef3723816af6",
           "Name": "waitFor",
-          "Description": "Data object to wait for.\n\nvar[]..[]",
+          "Description": "Data object to wait for.\n\nvar[]",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -195,7 +199,7 @@
         }
       ],
       "Replication": "Auto",
-      "Description": "Await a data stream before passing another data stream.\n\nDataStream.Await (pass: var, waitFor: var[]..[]): var[]..[]\n\nNamespace: Orchid.Common"
+      "Description": "Await a data stream before passing another data stream.\n\nDataStream.Await (pass: var, waitFor: var[]): var[]..[]"
     },
     {
       "ConcreteType": "CoreNodeModels.Input.StringInput, CoreNodeModels",
@@ -220,7 +224,7 @@
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
       "NodeType": "FunctionNode",
-      "FunctionSignature": "Orchid.RevitFamily.SharedParameter.Add@Revit.Application.Document,string[],string,string,bool,bool,bool",
+      "FunctionSignature": "Orchid.RevitFamily.SharedParameter.Add@Revit.Application.Document,string[],string,Revit.Elements.GroupType,bool,bool,bool",
       "Id": "18461ce5ab5248a0a31033da39f4afd2",
       "Inputs": [
         {
@@ -252,8 +256,8 @@
         },
         {
           "Id": "e5c1f941e22343ad88b0501dc6a0c6f3",
-          "Name": "group",
-          "Description": "BuiltIn Parameter Group.\n\nstring",
+          "Name": "groupType",
+          "Description": "Grouptype as Dynamo type.\n\nGroupType",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -299,12 +303,12 @@
         }
       ],
       "Replication": "Auto",
-      "Description": "Add shared (family) parameter by name, from current loaded shared parameter file.\n\nSharedParameter.Add (familyDocument: Document = null, parameterName: string[], groupName: string, group: string, instance: bool = false, reporting: bool = false, condense: bool = true): var[]..[]\n\nNamespace: Orchid.RevitFamily"
+      "Description": "Add shared (family) parameter by name, from current loaded shared parameter file.\n\nSharedParameter.Add (familyDocument: Document = null, parameterName: string[], groupName: string, groupType: GroupType, instance: bool = false, reporting: bool = false, condense: bool = true): var[]..[]"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
       "NodeType": "CodeBlockNode",
-      "Code": "//Parameter name\n\"Creator Build\";\n//SP Parameter group\n\"Sheet & Project\";\n//Parameter group\n\"PG_ADSK_MODEL_PROPERTIES\";\n//Instances\ntrue;",
+      "Code": "//Parameter name\n\"Creator Build\";\n//SP Parameter group\n\"Sheet & Project\";\n//GroupType\n\"AdskModelProperties\";\n//Instances\ntrue;",
       "Id": "5c38d5e8f7174fc0bdf0e71ebe8a2e7e",
       "Inputs": [],
       "Outputs": [
@@ -423,7 +427,7 @@
         }
       ],
       "Replication": "Auto",
-      "Description": "Get the files in a directory and its subdirectories. Use string for extension type, default is * for all files! If files are are readonly but not hidden, are they included. If files are both hidden or readonly files (and thereby system files) are they left out.\n\nDirectory.Contents (directory: string, searchString: string = \"*\", deepSearch: bool = false, condense: bool = true): var[]..[]\n\nNamespace: Orchid.Common"
+      "Description": "Get the files in a directory and its subdirectories. Use string for extension type, default is * for all files! If files are are readonly but not hidden, are they included. If files are both hidden or readonly files (and thereby system files) are they left out.\n\nDirectory.Contents (directory: string, searchString: string = \"*\", deepSearch: bool = false, condense: bool = true): var[]..[]"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
@@ -453,7 +457,7 @@
         }
       ],
       "Replication": "Auto",
-      "Description": "Open documents in background.\n\nDocument.BackgroundOpen (file: string): Document\n\nNamespace: Orchid.RevitProject.Common"
+      "Description": "Open documents in background.\n\nDocument.BackgroundOpen (file: string): Document"
     },
     {
       "ConcreteType": "CoreNodeModels.Input.StringInput, CoreNodeModels",
@@ -523,7 +527,7 @@
         }
       ],
       "Replication": "Auto",
-      "Description": "Load family by family document, existing family will be overwritten.\n\nFamily.Load (familyDocument: Document): Family\n\nNamespace: Orchid.RevitProject.Elements"
+      "Description": "Load family by family document, existing family will be overwritten.\n\nFamily.Load (familyDocument: Document): Family"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
@@ -562,12 +566,12 @@
         }
       ],
       "Replication": "Auto",
-      "Description": "Close document.\n\nDocument.Close (document: Document, save: bool = false): string\n\nNamespace: Orchid.RevitProject.Common"
+      "Description": "Close document.\n\nDocument.Close (document: Document, save: bool = false): string"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
       "NodeType": "FunctionNode",
-      "FunctionSignature": "Orchid.Common.DataStream.Await@var,var[]..[]",
+      "FunctionSignature": "Orchid.Common.DataStream.Await@var,var[]",
       "Id": "8d2a223d8a284e26931758fe2eb7e35a",
       "Inputs": [
         {
@@ -582,7 +586,7 @@
         {
           "Id": "c7aa6b90ac604248af56a62c3a192389",
           "Name": "waitFor",
-          "Description": "Data object to wait for.\n\nvar[]..[]",
+          "Description": "Data object to wait for.\n\nvar[]",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -601,7 +605,7 @@
         }
       ],
       "Replication": "Auto",
-      "Description": "Await a data stream before passing another data stream.\n\nDataStream.Await (pass: var, waitFor: var[]..[]): var[]..[]\n\nNamespace: Orchid.Common"
+      "Description": "Await a data stream before passing another data stream.\n\nDataStream.Await (pass: var, waitFor: var[]): var[]..[]"
     }
   ],
   "Connectors": [
@@ -730,7 +734,7 @@
   "NodeLibraryDependencies": [
     {
       "Name": "Orchid",
-      "Version": "213.0.1.8259",
+      "Version": "216.3.0.5799",
       "ReferenceType": "Package",
       "Nodes": [
         "6c930f3ac8a74f429bc2a22779ec0070",
@@ -745,7 +749,7 @@
       ]
     }
   ],
-  "Thumbnail": null,
+  "Thumbnail": "",
   "GraphDocumentationURL": null,
   "ExtensionWorkspaceData": [
     {
@@ -774,7 +778,7 @@
       "ScaleFactor": 1.0,
       "HasRunWithoutCrash": true,
       "IsVisibleInDynamoLibrary": true,
-      "Version": "2.13.1.3887",
+      "Version": "2.16.1.2727",
       "RunType": "Manual",
       "RunPeriod": "1000"
     },
@@ -960,11 +964,11 @@
         "HasNestedGroups": false,
         "Left": 2517.0623401843259,
         "Top": 113.4257122233754,
-        "Width": 1200.1951784991707,
+        "Width": 1205.1951784991707,
         "Height": 274.89210000429694,
         "FontSize": 14.0,
         "InitialTop": 163.4257122233754,
-        "InitialHeight": 145.00000000000003,
+        "InitialHeight": 237.89210000429694,
         "TextblockHeight": 40.0,
         "Background": "#FFC1D676"
       },
@@ -984,11 +988,11 @@
         "HasNestedGroups": false,
         "Left": 1820.9621407561942,
         "Top": 113.16471268739318,
-        "Width": 594.00000000000023,
+        "Width": 599.00000000000023,
         "Height": 508.0,
         "FontSize": 14.0,
         "InitialTop": 163.16471268739318,
-        "InitialHeight": 480.0,
+        "InitialHeight": 471.0,
         "TextblockHeight": 40.0,
         "Background": "#FFC1D676"
       },
@@ -1006,7 +1010,7 @@
         "HasNestedGroups": false,
         "Left": 999.51198876918068,
         "Top": 299.86159628740285,
-        "Width": 726.00000000000011,
+        "Width": 731.00000000000011,
         "Height": 402.99999999999994,
         "FontSize": 30.0,
         "InitialTop": 365.86159628740285,
@@ -1035,13 +1039,13 @@
         "Height": 476.0,
         "FontSize": 14.0,
         "InitialTop": 50.104093053332576,
-        "InitialHeight": 439.7543441576928,
+        "InitialHeight": 439.0,
         "TextblockHeight": 40.0,
         "Background": "#FFC1D676"
       }
     ],
-    "X": 26.21341385052764,
-    "Y": 355.40904685392366,
-    "Zoom": 0.39457377287049922
+    "X": 37.246481431088682,
+    "Y": 348.12601075121017,
+    "Zoom": 0.26823395551971574
   }
 }

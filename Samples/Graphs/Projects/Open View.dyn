@@ -6,19 +6,29 @@
   "ElementResolver": {
     "ResolutionMap": {}
   },
-  "Inputs": [],
+  "Inputs": [
+    {
+      "Id": "312b2632070442c19ff2a46de3db6b99",
+      "Name": "Views",
+      "Type": "selection",
+      "Type2": "dropdownSelection",
+      "Value": "{3D}",
+      "Description": "All views available in the current document.",
+      "SelectedIndex": 15
+    }
+  ],
   "Outputs": [],
   "Nodes": [
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
       "NodeType": "FunctionNode",
-      "FunctionSignature": "Orchid.RevitProject.Common.Document.OpenView@Revit.Elements.Element",
+      "FunctionSignature": "Orchid.RevitProject.Common.Document.OpenView@Revit.Elements.Views.View",
       "Id": "6105c7256dc84cfea8756d3a3159de7b",
       "Inputs": [
         {
           "Id": "e2db35dbd5614df8b3e16f2eb23abd6f",
           "Name": "view",
-          "Description": "View to open.\n\nElement",
+          "Description": "View to open.\n\nView",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -37,7 +47,7 @@
         }
       ],
       "Replication": "Auto",
-      "Description": "Open view in the active document.\n\nDocument.OpenView (view: Element): Element\n\nNamespace:\nOrchid.RevitProject.Common"
+      "Description": "Open view in the active document.\n\nDocument.OpenView (view: View): Element"
     },
     {
       "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
@@ -66,11 +76,11 @@
         }
       ],
       "Replication": "Disabled",
-      "Description": "Visualize the output of node."
+      "Description": "Visualize the node's output"
     },
     {
       "ConcreteType": "DSRevitNodesUI.Views, DSRevitNodesUI",
-      "SelectedIndex": 0,
+      "SelectedIndex": 15,
       "SelectedString": "{3D}",
       "NodeType": "ExtensionNode",
       "Id": "312b2632070442c19ff2a46de3db6b99",
@@ -94,32 +104,57 @@
     {
       "Start": "701866f8481340008b63888da13f0464",
       "End": "5e944545f279402e8a512979a926245d",
-      "Id": "48083584aff64d3eae14eeaf6c8c1b73"
+      "Id": "48083584aff64d3eae14eeaf6c8c1b73",
+      "IsHidden": "False"
     },
     {
       "Start": "5f910d93aa2844ee8d8eae78902fd85d",
       "End": "e2db35dbd5614df8b3e16f2eb23abd6f",
-      "Id": "8161ac4d8b1049b3842c4ec8d0fbb6cc"
+      "Id": "8161ac4d8b1049b3842c4ec8d0fbb6cc",
+      "IsHidden": "False"
     }
   ],
   "Dependencies": [],
   "NodeLibraryDependencies": [
     {
       "Name": "Orchid",
-      "Version": "203.3.0.8042",
+      "Version": "216.3.0.5799",
       "ReferenceType": "Package",
       "Nodes": [
         "6105c7256dc84cfea8756d3a3159de7b"
       ]
     }
   ],
+  "Thumbnail": null,
+  "GraphDocumentationURL": null,
+  "ExtensionWorkspaceData": [
+    {
+      "ExtensionGuid": "28992e1d-abb9-417f-8b1b-05e053bee670",
+      "Name": "Properties",
+      "Version": "2.16",
+      "Data": {}
+    },
+    {
+      "ExtensionGuid": "DFBD9CC0-DB40-457A-939E-8C8555555A9D",
+      "Name": "Generative Design",
+      "Version": "3.0",
+      "Data": {}
+    }
+  ],
+  "Author": "None provided",
+  "Linting": {
+    "activeLinter": "None",
+    "activeLinterId": "7b75fb44-43fd-4631-a878-29f4d5d8399a",
+    "warningCount": 0,
+    "errorCount": 0
+  },
   "Bindings": [],
   "View": {
     "Dynamo": {
       "ScaleFactor": 1.0,
       "HasRunWithoutCrash": true,
       "IsVisibleInDynamoLibrary": true,
-      "Version": "2.3.1.11775",
+      "Version": "2.16.1.2727",
       "RunType": "Manual",
       "RunPeriod": "1000"
     },
@@ -135,10 +170,11 @@
       "UpY": 1.0,
       "UpZ": 0.0
     },
+    "ConnectorPins": [],
     "NodeViews": [
       {
-        "ShowGeometry": true,
         "Name": "Document.OpenView",
+        "ShowGeometry": true,
         "Id": "6105c7256dc84cfea8756d3a3159de7b",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
@@ -147,8 +183,8 @@
         "Y": 394.17305149146847
       },
       {
-        "ShowGeometry": true,
         "Name": "Watch",
+        "ShowGeometry": true,
         "Id": "d3e82b59bb024f10bfe0849fc5d3362f",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
@@ -157,8 +193,8 @@
         "Y": 394.17305149146847
       },
       {
-        "ShowGeometry": true,
         "Name": "Views",
+        "ShowGeometry": true,
         "Id": "312b2632070442c19ff2a46de3db6b99",
         "IsSetAsInput": true,
         "IsSetAsOutput": false,
@@ -168,8 +204,8 @@
       }
     ],
     "Annotations": [],
-    "X": -1307.5164990595581,
-    "Y": -344.36505149233585,
-    "Zoom": 1.9099876695437723
+    "X": -533.67432187398958,
+    "Y": -24.245076985744788,
+    "Zoom": 0.97681890344024513
   }
 }

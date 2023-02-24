@@ -39,7 +39,7 @@
       "Type2": "dropdownSelection",
       "Value": "View \"3D View: {3D}\"",
       "Description": "Dropdown for Worksets in document",
-      "SelectedIndex": 211
+      "SelectedIndex": 210
     }
   ],
   "Outputs": [],
@@ -510,7 +510,7 @@
     },
     {
       "ConcreteType": "Orchid.E.RevitProject.Common.Workset, OrchidRE",
-      "SelectedIndex": 211,
+      "SelectedIndex": 210,
       "SelectedString": "View \"3D View: {3D}\"",
       "NodeType": "ExtensionNode",
       "Id": "9905e0b47cc444bba0063950487b4d1b",
@@ -528,27 +528,6 @@
       ],
       "Replication": "Disabled",
       "Description": "Dropdown for Worksets in document"
-    },
-    {
-      "ConcreteType": "Orchid.E.RevitProject.Common.UserWorkset, OrchidRE",
-      "SelectedIndex": 1,
-      "SelectedString": "Shell and Core",
-      "NodeType": "ExtensionNode",
-      "Id": "e353d14643034f87b0cef3ba7a0e8294",
-      "Inputs": [],
-      "Outputs": [
-        {
-          "Id": "f059885dc65843f08e4600528157d5c0",
-          "Name": "Workset",
-          "Description": "The selected Workset",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        }
-      ],
-      "Replication": "Disabled",
-      "Description": "Dropdown for user Worksets in document"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
@@ -1476,7 +1455,7 @@
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
       "NodeType": "FunctionNode",
-      "FunctionSignature": "Orchid.RevitProject.Elements.Element.ByCategory@Revit.Application.Document,var[],bool",
+      "FunctionSignature": "Orchid.RevitProject.Elements.Element.ByCategory@Revit.Application.Document,Revit.Elements.Category[],bool",
       "Id": "2e2b139a1847483caea5fd467df957bc",
       "Inputs": [
         {
@@ -1491,7 +1470,7 @@
         {
           "Id": "f93bfce2d6c7472b8697c1afddc114bf",
           "Name": "category",
-          "Description": "Category.\n\nvar[]\nDefault value : null",
+          "Description": "Category.\n\nCategory[]\nDefault value : null",
           "UsingDefaultValue": true,
           "Level": 2,
           "UseLevels": false,
@@ -1528,7 +1507,7 @@
         }
       ],
       "Replication": "Auto",
-      "Description": "Get all elements by category in document, return element grouped by category.\n\nElement.ByCategory (document: Document = null, category: var[] = null, condense: bool = true): var[]..[]"
+      "Description": "Get all elements by category in document, return element grouped by category.\n\nElement.ByCategory (document: Document = null, category: Category[] = null, condense: bool = true): var[]..[]"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
@@ -1563,13 +1542,13 @@
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
       "NodeType": "FunctionNode",
-      "FunctionSignature": "Orchid.Common.DataStream.Await@var,var[]",
+      "FunctionSignature": "Orchid.Common.DataStream.Await@var[]..[],var[]..[]",
       "Id": "68859bb6fa4e42b78d6da832e76d4188",
       "Inputs": [
         {
           "Id": "c41131d7c09240abb0467291c588924b",
           "Name": "pass",
-          "Description": "Data to pass.\n\nvar",
+          "Description": "Data to pass.\n\nvar[]..[]",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -1578,7 +1557,7 @@
         {
           "Id": "ad0923369c694455838cf4c7a3eac15b",
           "Name": "waitFor",
-          "Description": "Data object to wait for.\n\nvar[]",
+          "Description": "Data object to wait for.\n\nvar[]..[]",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -1597,7 +1576,7 @@
         }
       ],
       "Replication": "Auto",
-      "Description": "Await a data stream before passing another data stream.\n\nDataStream.Await (pass: var, waitFor: var[]): var[]..[]"
+      "Description": "Await a data stream before passing another data stream.\n\nDataStream.Await (pass: var[]..[], waitFor: var[]..[]): var[]..[]"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
@@ -1929,12 +1908,6 @@
       "IsHidden": "False"
     },
     {
-      "Start": "f059885dc65843f08e4600528157d5c0",
-      "End": "2f86a51eaeeb4f1e9ed6a380af7cdd06",
-      "Id": "69faa4de63df465e84d159a3fb10da16",
-      "IsHidden": "False"
-    },
-    {
       "Start": "f39fc2c8aed44b01814ab26ca2a0ca30",
       "End": "a9f51dc5387748578b8a02df4e0290ae",
       "Id": "64fe7cea61014f52bc7531cbceab929f",
@@ -2155,7 +2128,7 @@
   "NodeLibraryDependencies": [
     {
       "Name": "Orchid",
-      "Version": "216.3.0.5794",
+      "Version": "216.3.0.5799",
       "ReferenceType": "Package",
       "Nodes": [
         "b105ebb16f6644fa96c411dfa67ac927",
@@ -2165,7 +2138,6 @@
         "79434599fd7d4b0ab81cf49968307f45",
         "962c18ba25004d3387fca87165c385c1",
         "9905e0b47cc444bba0063950487b4d1b",
-        "e353d14643034f87b0cef3ba7a0e8294",
         "07d7db660162458da0ee4ed98730ccea",
         "dd2236b095f4495b85375a9c755c8a5b",
         "dede549810994403a47c87bb96774f00",
@@ -2370,16 +2342,6 @@
         "Y": 779.50406347397711
       },
       {
-        "Name": "UserWorksets",
-        "ShowGeometry": true,
-        "Id": "e353d14643034f87b0cef3ba7a0e8294",
-        "IsSetAsInput": false,
-        "IsSetAsOutput": false,
-        "Excluded": false,
-        "X": 1716.1371230144364,
-        "Y": 624.63253413499808
-      },
-      {
         "Name": "Workset.ById",
         "ShowGeometry": true,
         "Id": "07d7db660162458da0ee4ed98730ccea",
@@ -2500,7 +2462,7 @@
         "Y": 1351.237588199172
       },
       {
-        "Name": "Workset.All",
+        "Name": "Workset.InDocument",
         "ShowGeometry": true,
         "Id": "2e93335fcf52487d8bfcb60c0065ceef",
         "IsSetAsInput": false,
@@ -2901,7 +2863,7 @@
         "Height": 990.0,
         "FontSize": 30.0,
         "InitialTop": 1210.639442095242,
-        "InitialHeight": 847.81916953274549,
+        "InitialHeight": 884.66563747436976,
         "TextblockHeight": 56.0,
         "Background": "#FFA4E1FF"
       },
@@ -2943,8 +2905,7 @@
         "Nodes": [
           "9905e0b47cc444bba0063950487b4d1b",
           "173b9d869ac545768b18aebdae934127",
-          "705c853761d74fd285687586176006cb",
-          "e353d14643034f87b0cef3ba7a0e8294"
+          "705c853761d74fd285687586176006cb"
         ],
         "HasNestedGroups": false,
         "Left": 1706.1371230144364,
@@ -2980,7 +2941,7 @@
         "Height": 515.77280325755964,
         "FontSize": 30.0,
         "InitialTop": 1925.6389243719368,
-        "InitialHeight": 338.77280325755964,
+        "InitialHeight": 458.77280325755964,
         "TextblockHeight": 56.0,
         "Background": "#FFC1D676"
       },
@@ -3038,10 +2999,29 @@
         "InitialHeight": 145.0,
         "TextblockHeight": 56.0,
         "Background": "#FFFFAA45"
+      },
+      {
+        "Id": "ea62040e8d7340979df9d5f889edba1b",
+        "Title": "File: LinkedProject",
+        "DescriptionText": null,
+        "IsExpanded": true,
+        "WidthAdjustment": 0.0,
+        "HeightAdjustment": 0.0,
+        "Nodes": [],
+        "HasNestedGroups": false,
+        "Left": -0.14732567265957641,
+        "Top": -60.130958254688437,
+        "Width": 0.0,
+        "Height": 0.0,
+        "FontSize": 36.0,
+        "InitialTop": 0.0,
+        "InitialHeight": 0.0,
+        "TextblockHeight": 0.0,
+        "Background": "#FFC1D676"
       }
     ],
-    "X": 26.332557041190224,
-    "Y": 58.436554996650685,
-    "Zoom": 0.36775287943245055
+    "X": 30.053087778563111,
+    "Y": 86.554934475925464,
+    "Zoom": 0.36034302511403105
   }
 }

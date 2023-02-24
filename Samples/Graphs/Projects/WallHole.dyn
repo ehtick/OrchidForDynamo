@@ -17,7 +17,7 @@
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
       "NodeType": "FunctionNode",
-      "FunctionSignature": "Orchid.Common.Geometry.OcSolid.Intersect@Orchid.Common.Geometry.OcSolid,Revit.Elements.Element[],bool",
+      "FunctionSignature": "Orchid.Geometry.OcSolid.Intersect@Orchid.Geometry.OcSolid,Revit.Elements.Element[],bool",
       "Id": "12e8d723218340389735b27c6616ff6f",
       "Inputs": [
         {
@@ -60,7 +60,7 @@
         }
       ],
       "Replication": "Auto",
-      "Description": "Get elements intersecting with a OcSolid.\n\nOcSolid.Intersect (ocSolid: OcSolid, elements: Element[], condense: bool = true): var[]..[]\n\nNamespace:\nOrchid.Common.Geometry"
+      "Description": "Get elements intersecting with a OcSolid.\n\nOcSolid.Intersect (ocSolid: OcSolid, elements: Element[], condense: bool = true): var[]..[]"
     },
     {
       "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
@@ -89,12 +89,12 @@
         }
       ],
       "Replication": "Disabled",
-      "Description": "Visualize the output of node."
+      "Description": "Visualize the node's output"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
       "NodeType": "FunctionNode",
-      "FunctionSignature": "Orchid.Common.Geometry.Form.OcSolid@Revit.Elements.Element,bool",
+      "FunctionSignature": "Orchid.Geometry.Form.OcSolid@Revit.Elements.Element,bool",
       "Id": "a538fbc9a9b142a285de6d94e588ce48",
       "Inputs": [
         {
@@ -128,7 +128,7 @@
         }
       ],
       "Replication": "Auto",
-      "Description": "Get Orchid solid from solid and void form.\n\nForm.OcSolid (form: Element, condense: bool = true): var[]..[]\n\nNamespace:\nOrchid.Common.Geometry"
+      "Description": "Get Orchid solid from solid and void form.\n\nForm.OcSolid (form: Element, condense: bool = true): var[]..[]"
     },
     {
       "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
@@ -157,12 +157,12 @@
         }
       ],
       "Replication": "Disabled",
-      "Description": "Visualize the output of node."
+      "Description": "Visualize the node's output"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
       "NodeType": "FunctionNode",
-      "FunctionSignature": "Orchid.Common.Geometry.OcSolid.Intersect@Orchid.Common.Geometry.OcSolid,bool",
+      "FunctionSignature": "Orchid.Geometry.OcSolid.Intersect@Orchid.Geometry.OcSolid,bool",
       "Id": "5f5ff73418754224a400b099e13f5819",
       "Inputs": [
         {
@@ -196,18 +196,18 @@
         }
       ],
       "Replication": "Auto",
-      "Description": "Get elements intersecting with a OcSolid.\n\nOcSolid.Intersect (ocSolid: OcSolid, condense: bool = true): var[]..[]\n\nNamespace:\nOrchid.Common.Geometry"
+      "Description": "Get elements intersecting with a OcSolid.\n\nOcSolid.Intersect (ocSolid: OcSolid, condense: bool = true): var[]..[]"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
       "NodeType": "FunctionNode",
-      "FunctionSignature": "Orchid.RevitProject.Elements.Element.ByCategory@Orchid.RevitProject.Common.Document,var[],bool",
+      "FunctionSignature": "Orchid.RevitProject.Elements.Element.ByCategory@Revit.Application.Document,Revit.Elements.Category[],bool",
       "Id": "db630e7a26ab4f218d4efbee5a07a174",
       "Inputs": [
         {
           "Id": "4edddf3a004b4d2bad904eeceda121fe",
           "Name": "document",
-          "Description": "Document (rvt) as Orchid document.\n\nDocument\nDefault value : null",
+          "Description": "Project document (rvt).\n\nDocument\nDefault value : null",
           "UsingDefaultValue": true,
           "Level": 2,
           "UseLevels": false,
@@ -216,7 +216,7 @@
         {
           "Id": "0eb0fc7c0cd648efae07cfbf0e898b51",
           "Name": "category",
-          "Description": "Category.\n\nvar[]\nDefault value : null",
+          "Description": "Category.\n\nCategory[]\nDefault value : null",
           "UsingDefaultValue": true,
           "Level": 2,
           "UseLevels": false,
@@ -253,7 +253,7 @@
         }
       ],
       "Replication": "Auto",
-      "Description": "Get all elements by category in document, return element grouped by category.\n\nElement.ByCategory (document: Document = null, category: var[] = null, condense: bool = true): var[]..[]\n\nNamespace:\nOrchid.RevitProject.Elements"
+      "Description": "Get all elements by category in document, return element grouped by category.\n\nElement.ByCategory (document: Document = null, category: Category[] = null, condense: bool = true): var[]..[]"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
@@ -288,20 +288,11 @@
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
       "NodeType": "FunctionNode",
-      "FunctionSignature": "Orchid.Common.Geometry.Form.Get@Orchid.RevitProject.Common.Document,bool",
+      "FunctionSignature": "Orchid.Geometry.Form.Get@bool",
       "Id": "c86b90892f814d91aa4ea403ba998157",
       "Inputs": [
         {
           "Id": "1d45bf6105014fbb97a2cad07037d399",
-          "Name": "document",
-          "Description": "Document (rvt) as Orchid document.\n\nDocument\nDefault value : null",
-          "UsingDefaultValue": true,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        },
-        {
-          "Id": "056ec301147e41a6b7cc73a56a024f69",
           "Name": "condense",
           "Description": "Condense to shortest feasible output?\n\nbool\nDefault value : true",
           "UsingDefaultValue": true,
@@ -322,7 +313,7 @@
         }
       ],
       "Replication": "Auto",
-      "Description": "Get Form element in document.\n\nForm.Get (document: Document = null, condense: bool = true): var[]..[]\n\nNamespace:\nOrchid.Common.Geometry"
+      "Description": "Get Form element in current document.\n\nForm.Get (condense: bool = true): var[]..[]"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
@@ -347,7 +338,7 @@
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
       "NodeType": "FunctionNode",
-      "FunctionSignature": "Orchid.Common.Geometry.Solid.Intersect@Autodesk.DesignScript.Geometry.Solid,Revit.Elements.Element[],bool",
+      "FunctionSignature": "Orchid.Geometry.Solid.Intersect@Autodesk.DesignScript.Geometry.Solid,Revit.Elements.Element[],bool",
       "Id": "19b5fd164fbf408db444fc665be6d611",
       "Inputs": [
         {
@@ -390,7 +381,7 @@
         }
       ],
       "Replication": "Auto",
-      "Description": "Get elements intersecting with a solid.\n\nSolid.Intersect (solid: Solid, elements: Element[], condense: bool = true): var[]..[]\n\nNamespace:\nOrchid.Common.Geometry"
+      "Description": "Get elements intersecting with a solid.\n\nSolid.Intersect (solid: Solid, elements: Element[], condense: bool = true): var[]..[]"
     },
     {
       "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
@@ -419,7 +410,7 @@
         }
       ],
       "Replication": "Disabled",
-      "Description": "Visualize the output of node."
+      "Description": "Visualize the node's output"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
@@ -430,7 +421,7 @@
         {
           "Id": "e84bf0f4b67e42a8975f709978b5be2c",
           "Name": "family",
-          "Description": "List of families as Dynamo type.\n\nFamily[]",
+          "Description": "List of families.\n\nFamily[]",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -450,7 +441,7 @@
         {
           "Id": "51da697833484b3a82c1a11e53781057",
           "Name": "Document",
-          "Description": "Document as Revit type.",
+          "Description": "Project document (rvt).",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -458,7 +449,7 @@
         }
       ],
       "Replication": "Auto",
-      "Description": "Edit family document.\n\nFamily.Edit (family: Family[], condense: bool = true): var[]..[]\n\nNamespace:\nOrchid.RevitProject.Elements"
+      "Description": "Edit family document.\n\nFamily.Edit (family: Family[], condense: bool = true): var[]..[]"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
@@ -493,7 +484,7 @@
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
       "NodeType": "FunctionNode",
-      "FunctionSignature": "Orchid.Common.Geometry.Form.Solid@Revit.Elements.Element,bool",
+      "FunctionSignature": "Orchid.Geometry.Form.Solid@Revit.Elements.Element,bool",
       "Id": "45342fee09c44bdaadd0e681fc19d076",
       "Inputs": [
         {
@@ -527,12 +518,12 @@
         }
       ],
       "Replication": "Auto",
-      "Description": "Get Dynamo solid from solid and void form.\n\nForm.Solid (form: Element, condense: bool = true): var[]..[]\n\nNamespace:\nOrchid.Common.Geometry"
+      "Description": "Get Dynamo solid from solid and void form.\n\nForm.Solid (form: Element, condense: bool = true): var[]..[]"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
       "NodeType": "FunctionNode",
-      "FunctionSignature": "Orchid.Common.Geometry.Solid.Intersect@Autodesk.DesignScript.Geometry.Solid,bool",
+      "FunctionSignature": "Orchid.Geometry.Solid.Intersect@Autodesk.DesignScript.Geometry.Solid,bool",
       "Id": "6e271be4d60445bc81793283c3a08295",
       "Inputs": [
         {
@@ -566,7 +557,7 @@
         }
       ],
       "Replication": "Auto",
-      "Description": "Get elements intersecting with a solid.\n\nSolid.Intersect (solid: Solid, condense: bool = true): var[]..[]\n\nNamespace:\nOrchid.Common.Geometry"
+      "Description": "Get elements intersecting with a solid.\n\nSolid.Intersect (solid: Solid, condense: bool = true): var[]..[]"
     },
     {
       "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
@@ -595,7 +586,7 @@
         }
       ],
       "Replication": "Disabled",
-      "Description": "Visualize the output of node."
+      "Description": "Visualize the node's output"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
@@ -653,8 +644,8 @@
       "Inputs": [
         {
           "Id": "fca3fd3f0e5447b8ba6539f67d9da452",
-          "Name": "str",
-          "Description": "String to search in.\n\nstring",
+          "Name": "string",
+          "Description": "String to search in\n\nstring",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -663,7 +654,7 @@
         {
           "Id": "85e928baf0df4a0f8bc8d52bbb8a3b26",
           "Name": "searchFor",
-          "Description": "Substring to search for.\n\nstring",
+          "Description": "Substring to search for\n\nstring",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -672,7 +663,7 @@
         {
           "Id": "6e0566a1a90544c09fa065a568589581",
           "Name": "ignoreCase",
-          "Description": "Whether or not comparison takes case into account.\n\nbool\nDefault value : false",
+          "Description": "Whether or not comparison takes case into account\n\nbool\nDefault value : false",
           "UsingDefaultValue": true,
           "Level": 2,
           "UseLevels": false,
@@ -683,7 +674,7 @@
         {
           "Id": "35f2ccc50f0945d985be46d36559bbba",
           "Name": "bool",
-          "Description": "Whether the string contains the substring.",
+          "Description": "Whether the string contains the substring",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -691,7 +682,7 @@
         }
       ],
       "Replication": "Auto",
-      "Description": "Determines if the given string contains the given substring.\n\nString.Contains (str: string, searchFor: string, ignoreCase: bool = false): bool"
+      "Description": "Determines if the given string contains the given substring.\n\nString.Contains (string: string, searchFor: string, ignoreCase: bool = false): bool"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
@@ -746,7 +737,7 @@
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
       "NodeType": "FunctionNode",
-      "FunctionSignature": "Orchid.Common.DataStream.Await@var,var[]..[]",
+      "FunctionSignature": "Orchid.Common.DataStream.Await@var,var[]",
       "Id": "0b52cd665fb44d4da5c55d52e032f376",
       "Inputs": [
         {
@@ -761,7 +752,7 @@
         {
           "Id": "b04e99b2d3974fa6ab618694cd50408f",
           "Name": "waitFor",
-          "Description": "Data object to wait for.\n\nvar[]..[]",
+          "Description": "Data object to wait for.\n\nvar[]",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -780,18 +771,18 @@
         }
       ],
       "Replication": "Auto",
-      "Description": "Await a data stream before passing another data stream.\n\nDataStream.Await (pass: var, waitFor: var[]..[]): var[]..[]\n\nNamespace:\nOrchid.Common"
+      "Description": "Await a data stream before passing another data stream.\n\nDataStream.Await (pass: var, waitFor: var[]): var[]..[]"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
       "NodeType": "FunctionNode",
-      "FunctionSignature": "Orchid.RevitProject.Common.Document.Close@Orchid.RevitProject.Common.Document,bool",
+      "FunctionSignature": "Orchid.RevitProject.Common.Document.Close@Revit.Application.Document,bool",
       "Id": "b1f84e5dc04043abbd9a75db7f816466",
       "Inputs": [
         {
           "Id": "bb575eb689d64147a84364b1cbe1b73f",
           "Name": "document",
-          "Description": "Document (rvt) as Orchid document.\n\nDocument",
+          "Description": "Project document (rvt).\n\nDocument",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -819,18 +810,18 @@
         }
       ],
       "Replication": "Auto",
-      "Description": "Close document.\n\nDocument.Close (document: Document, save: bool = false): string\n\nNamespace:\nOrchid.RevitProject.Common"
+      "Description": "Close document.\n\nDocument.Close (document: Document, save: bool = false): string"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
       "NodeType": "FunctionNode",
-      "FunctionSignature": "Orchid.RevitProject.Elements.Element.ByCategory@Orchid.RevitProject.Common.Document,var[],bool",
+      "FunctionSignature": "Orchid.RevitProject.Elements.Element.ByCategory@Revit.Application.Document,Revit.Elements.Category[],bool",
       "Id": "d2371cff89574a29aef53526360ae717",
       "Inputs": [
         {
           "Id": "3bc74a605ff6469cac521092b0e46a44",
           "Name": "document",
-          "Description": "Document (rvt) as Orchid document.\n\nDocument\nDefault value : null",
+          "Description": "Project document (rvt).\n\nDocument\nDefault value : null",
           "UsingDefaultValue": true,
           "Level": 2,
           "UseLevels": false,
@@ -839,7 +830,7 @@
         {
           "Id": "1659c2b6c9114d1396e36e12d064ce0b",
           "Name": "category",
-          "Description": "Category.\n\nvar[]\nDefault value : null",
+          "Description": "Category.\n\nCategory[]\nDefault value : null",
           "UsingDefaultValue": true,
           "Level": 2,
           "UseLevels": false,
@@ -876,7 +867,7 @@
         }
       ],
       "Replication": "Auto",
-      "Description": "Get all elements by category in document, return element grouped by category.\n\nElement.ByCategory (document: Document = null, category: var[] = null, condense: bool = true): var[]..[]\n\nNamespace:\nOrchid.RevitProject.Elements"
+      "Description": "Get all elements by category in document, return element grouped by category.\n\nElement.ByCategory (document: Document = null, category: Category[] = null, condense: bool = true): var[]..[]"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
@@ -933,144 +924,171 @@
     {
       "Start": "fcd5ae65f22f4ff68565c7604fad810a",
       "End": "6f162f934df440bdb6bb2c954eb12bdc",
-      "Id": "4b2f85456d484b628c391c46a0d4bccb"
+      "Id": "4b2f85456d484b628c391c46a0d4bccb",
+      "IsHidden": "False"
     },
     {
       "Start": "c213e42c550f4681bfee0d50302734e3",
       "End": "d617e299755047c3add9cc40e21c65fb",
-      "Id": "cef217fab8b64384a016cdf8739ded84"
+      "Id": "cef217fab8b64384a016cdf8739ded84",
+      "IsHidden": "False"
     },
     {
       "Start": "c213e42c550f4681bfee0d50302734e3",
       "End": "c9e4ed1d2c894c919bac770f4bfa8a32",
-      "Id": "8fc7edcbce2e45b28f544f2d016e76ef"
+      "Id": "8fc7edcbce2e45b28f544f2d016e76ef",
+      "IsHidden": "False"
     },
     {
       "Start": "5498e883bd7648aab6231a2e66784e12",
       "End": "530b90ab20924fd7b44b299dd92dfc00",
-      "Id": "f302bdefcbfa4f119cbf486eaa9494ed"
+      "Id": "f302bdefcbfa4f119cbf486eaa9494ed",
+      "IsHidden": "False"
     },
     {
       "Start": "a9d59f4840ee4ce09eb1edac0f6e0eca",
       "End": "77616128472b4134b1d0eb3e0d73661f",
-      "Id": "33be2f7fdc8b49118a95cad7b2e8ed38"
+      "Id": "33be2f7fdc8b49118a95cad7b2e8ed38",
+      "IsHidden": "False"
     },
     {
       "Start": "a9d59f4840ee4ce09eb1edac0f6e0eca",
       "End": "f948b5e9b35f4ae7913176062c1c4b8f",
-      "Id": "ac2175e769714f05ab3b88c395687d16"
+      "Id": "ac2175e769714f05ab3b88c395687d16",
+      "IsHidden": "False"
     },
     {
       "Start": "31768f6ef19e47aabf84283dff596aba",
       "End": "0eb0fc7c0cd648efae07cfbf0e898b51",
-      "Id": "f1dc6c32f53d4c74a27c0f3d02d3d89a"
+      "Id": "f1dc6c32f53d4c74a27c0f3d02d3d89a",
+      "IsHidden": "False"
     },
     {
       "Start": "9a939fcf958447389a8e1ac1d352a031",
       "End": "ad727515e2f74e6a9ae327ed46a2a4ab",
-      "Id": "4b161d1617d74e8697f8d109ad30fa40"
+      "Id": "4b161d1617d74e8697f8d109ad30fa40",
+      "IsHidden": "False"
     },
     {
       "Start": "9a939fcf958447389a8e1ac1d352a031",
       "End": "cd957983374947198a06f8ef47b59f6d",
-      "Id": "6ec954e3d65d4867bf52842e4a940d47"
+      "Id": "6ec954e3d65d4867bf52842e4a940d47",
+      "IsHidden": "False"
     },
     {
       "Start": "dcf3a4fa80cf40339ad7564d13dd5879",
       "End": "2c215dc433634ac0a22f475f98ee8005",
-      "Id": "d206cb344af64a8e9d785c78721e0e11"
+      "Id": "d206cb344af64a8e9d785c78721e0e11",
+      "IsHidden": "False"
     },
     {
       "Start": "f178ee3911cd4611a167d6d9f7e61ddb",
       "End": "ad5a5932a82a4c7eb946aa1d865f0093",
-      "Id": "c5377e0bf283452a9d921453da47d891"
+      "Id": "c5377e0bf283452a9d921453da47d891",
+      "IsHidden": "False"
     },
     {
       "Start": "51da697833484b3a82c1a11e53781057",
       "End": "1d45bf6105014fbb97a2cad07037d399",
-      "Id": "d0928cff69684187bee204cd04001953"
+      "Id": "d0928cff69684187bee204cd04001953",
+      "IsHidden": "False"
     },
     {
       "Start": "51da697833484b3a82c1a11e53781057",
       "End": "c7b86be0680d464db693951ca5fd5473",
-      "Id": "7d81e190c21b45509c3fef5921de5e4f"
+      "Id": "7d81e190c21b45509c3fef5921de5e4f",
+      "IsHidden": "False"
     },
     {
       "Start": "21e8af0de0ca40dc8803e19e4a2d33f8",
       "End": "e84bf0f4b67e42a8975f709978b5be2c",
-      "Id": "71bb67681f334ff89a05e96d3ff5ec41"
+      "Id": "71bb67681f334ff89a05e96d3ff5ec41",
+      "IsHidden": "False"
     },
     {
       "Start": "49c2ebd0d8534f9992977653ea935995",
       "End": "684ed8ea990f4f9792e0668ee4b685df",
-      "Id": "5df07723cb90483488d9b135c9f364b8"
+      "Id": "5df07723cb90483488d9b135c9f364b8",
+      "IsHidden": "False"
     },
     {
       "Start": "49c2ebd0d8534f9992977653ea935995",
       "End": "44212038355b405daaef1e5a5dae6e36",
-      "Id": "81074d5c36c9479b8f9785df1bdb0717"
+      "Id": "81074d5c36c9479b8f9785df1bdb0717",
+      "IsHidden": "False"
     },
     {
       "Start": "49c2ebd0d8534f9992977653ea935995",
       "End": "b04e99b2d3974fa6ab618694cd50408f",
-      "Id": "444951edd6b74dccb5f469b5b5f2cc4e"
+      "Id": "444951edd6b74dccb5f469b5b5f2cc4e",
+      "IsHidden": "False"
     },
     {
       "Start": "a452e2919f4b4ac8a2b33917abdb2b04",
       "End": "cf9630ffa98941569e2592b08ee4ce95",
-      "Id": "46c63216718a4ddc855260fa77e85f37"
+      "Id": "46c63216718a4ddc855260fa77e85f37",
+      "IsHidden": "False"
     },
     {
       "Start": "2eac91025bf8431a8a5296750f0b8c82",
       "End": "fb63269f7eaa4fe587809d5355b80370",
-      "Id": "0b2042ea57984e4ca4331d89277cc573"
+      "Id": "0b2042ea57984e4ca4331d89277cc573",
+      "IsHidden": "False"
     },
     {
       "Start": "35f2ccc50f0945d985be46d36559bbba",
       "End": "d44f07a588484325a2496aa6ddd4e724",
-      "Id": "5c62b30b775544e3bf63bdcba62fb4fb"
+      "Id": "5c62b30b775544e3bf63bdcba62fb4fb",
+      "IsHidden": "False"
     },
     {
       "Start": "bb0ee5dbdfc9439daa6d1f350ebc02f9",
       "End": "fca3fd3f0e5447b8ba6539f67d9da452",
-      "Id": "3dbcc01cef9844d0a3ba5f76de5a1872"
+      "Id": "3dbcc01cef9844d0a3ba5f76de5a1872",
+      "IsHidden": "False"
     },
     {
       "Start": "b8fcfd1996104722808aa9e9c6c1ec0a",
       "End": "85e928baf0df4a0f8bc8d52bbb8a3b26",
-      "Id": "cbf1a799d7a441dd870ed5e63b8040f1"
+      "Id": "cbf1a799d7a441dd870ed5e63b8040f1",
+      "IsHidden": "False"
     },
     {
       "Start": "32b282055b2441e6a0c88c6ffbf3dd12",
       "End": "bb575eb689d64147a84364b1cbe1b73f",
-      "Id": "f211c1f1f4ef4fcfaac0b50138afb628"
+      "Id": "f211c1f1f4ef4fcfaac0b50138afb628",
+      "IsHidden": "False"
     },
     {
       "Start": "5f98e949f9704bf1b4f44e1b7984560e",
       "End": "4ac440660d4e4217a1bb2cb458ef9f3a",
-      "Id": "fe02d95fe0134eb4b976899ea4a4981e"
+      "Id": "fe02d95fe0134eb4b976899ea4a4981e",
+      "IsHidden": "False"
     },
     {
       "Start": "5f98e949f9704bf1b4f44e1b7984560e",
       "End": "584a754814524d96a7c48a7fb4ec1442",
-      "Id": "09e3dc8c58bc4b02941573a18f9dd25e"
+      "Id": "09e3dc8c58bc4b02941573a18f9dd25e",
+      "IsHidden": "False"
     },
     {
       "Start": "bd75f37a830c4c4fbba0254a65303103",
       "End": "1659c2b6c9114d1396e36e12d064ce0b",
-      "Id": "8aa08bc8422e4152b28c457937476b88"
+      "Id": "8aa08bc8422e4152b28c457937476b88",
+      "IsHidden": "False"
     },
     {
       "Start": "858cffa93ae64ad5aa617869684d0f1a",
       "End": "530490a5c6bb41e29160878c4e5f77f1",
-      "Id": "3ccb107351024466b33638c368febfa3"
+      "Id": "3ccb107351024466b33638c368febfa3",
+      "IsHidden": "False"
     }
   ],
   "Dependencies": [],
   "NodeLibraryDependencies": [
     {
       "Name": "Orchid",
-      "Version": "203.3.0.8042",
+      "Version": "216.3.0.5799",
       "ReferenceType": "Package",
       "Nodes": [
         "12e8d723218340389735b27c6616ff6f",
@@ -1088,13 +1106,36 @@
       ]
     }
   ],
+  "Thumbnail": null,
+  "GraphDocumentationURL": null,
+  "ExtensionWorkspaceData": [
+    {
+      "ExtensionGuid": "28992e1d-abb9-417f-8b1b-05e053bee670",
+      "Name": "Properties",
+      "Version": "2.16",
+      "Data": {}
+    },
+    {
+      "ExtensionGuid": "DFBD9CC0-DB40-457A-939E-8C8555555A9D",
+      "Name": "Generative Design",
+      "Version": "3.0",
+      "Data": {}
+    }
+  ],
+  "Author": "None provided",
+  "Linting": {
+    "activeLinter": "None",
+    "activeLinterId": "7b75fb44-43fd-4631-a878-29f4d5d8399a",
+    "warningCount": 0,
+    "errorCount": 0
+  },
   "Bindings": [],
   "View": {
     "Dynamo": {
       "ScaleFactor": 1.0,
       "HasRunWithoutCrash": true,
       "IsVisibleInDynamoLibrary": true,
-      "Version": "2.3.1.11775",
+      "Version": "2.16.1.2727",
       "RunType": "Manual",
       "RunPeriod": "1000"
     },
@@ -1110,10 +1151,11 @@
       "UpY": 0.84712192138220332,
       "UpZ": -0.39744429750134197
     },
+    "ConnectorPins": [],
     "NodeViews": [
       {
-        "ShowGeometry": true,
         "Name": "OcSolid.Intersect",
+        "ShowGeometry": true,
         "Id": "12e8d723218340389735b27c6616ff6f",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
@@ -1122,8 +1164,8 @@
         "Y": -12137.36126062708
       },
       {
-        "ShowGeometry": true,
         "Name": "Watch",
+        "ShowGeometry": true,
         "Id": "f0492761e6a943ccb7f0cdac2bcb7485",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
@@ -1132,8 +1174,8 @@
         "Y": -12137.36126062708
       },
       {
-        "ShowGeometry": true,
         "Name": "Form.OcSolid",
+        "ShowGeometry": true,
         "Id": "a538fbc9a9b142a285de6d94e588ce48",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
@@ -1142,8 +1184,8 @@
         "Y": -12222.36126062708
       },
       {
-        "ShowGeometry": true,
         "Name": "Watch",
+        "ShowGeometry": true,
         "Id": "a208070803f240a4898ae4d94107331e",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
@@ -1152,8 +1194,8 @@
         "Y": -12307.36126062708
       },
       {
-        "ShowGeometry": true,
         "Name": "OcSolid.Intersect",
+        "ShowGeometry": true,
         "Id": "5f5ff73418754224a400b099e13f5819",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
@@ -1162,8 +1204,8 @@
         "Y": -12307.36126062708
       },
       {
-        "ShowGeometry": true,
         "Name": "Element.ByCategory",
+        "ShowGeometry": true,
         "Id": "db630e7a26ab4f218d4efbee5a07a174",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
@@ -1172,8 +1214,8 @@
         "Y": -12335.818726746631
       },
       {
-        "ShowGeometry": true,
         "Name": "Category.ByName",
+        "ShowGeometry": true,
         "Id": "e60c10cc39644c8897ba56abd74d4203",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
@@ -1182,8 +1224,8 @@
         "Y": -12309.818726746631
       },
       {
-        "ShowGeometry": true,
         "Name": "Form.Get",
+        "ShowGeometry": true,
         "Id": "c86b90892f814d91aa4ea403ba998157",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
@@ -1192,8 +1234,8 @@
         "Y": -12447.110706206899
       },
       {
-        "ShowGeometry": true,
         "Name": "Code Block",
+        "ShowGeometry": true,
         "Id": "a1161cd6caf7432eb68ea67310ce4e59",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
@@ -1202,8 +1244,8 @@
         "Y": -12305.605393413291
       },
       {
-        "ShowGeometry": true,
         "Name": "Solid.Intersect",
+        "ShowGeometry": true,
         "Id": "19b5fd164fbf408db444fc665be6d611",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
@@ -1212,8 +1254,8 @@
         "Y": -12595.380340558349
       },
       {
-        "ShowGeometry": true,
         "Name": "Watch",
+        "ShowGeometry": true,
         "Id": "25902672b3fa4a3abdd5b191b0c24b20",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
@@ -1222,8 +1264,8 @@
         "Y": -12595.380340558349
       },
       {
-        "ShowGeometry": true,
         "Name": "Family.Edit",
+        "ShowGeometry": true,
         "Id": "571c1ebf92f24596afb6b1162eb6bdaf",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
@@ -1232,8 +1274,8 @@
         "Y": -12446.97299397831
       },
       {
-        "ShowGeometry": true,
         "Name": "FamilyInstance.GetFamily",
+        "ShowGeometry": true,
         "Id": "98a6a0916de44adeae2b1070dd484fda",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
@@ -1242,8 +1284,8 @@
         "Y": -12446.97299397831
       },
       {
-        "ShowGeometry": true,
         "Name": "Form.Solid",
+        "ShowGeometry": true,
         "Id": "45342fee09c44bdaadd0e681fc19d076",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
@@ -1252,8 +1294,8 @@
         "Y": -12680.380340558349
       },
       {
-        "ShowGeometry": true,
         "Name": "Solid.Intersect",
+        "ShowGeometry": true,
         "Id": "6e271be4d60445bc81793283c3a08295",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
@@ -1262,8 +1304,8 @@
         "Y": -12765.380340558349
       },
       {
-        "ShowGeometry": true,
         "Name": "Watch",
+        "ShowGeometry": true,
         "Id": "9f4ee4981a8c415694c955aa6c3ae0b2",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
@@ -1272,8 +1314,8 @@
         "Y": -12765.380340558349
       },
       {
-        "ShowGeometry": true,
         "Name": "List.FilterByBoolMask",
+        "ShowGeometry": true,
         "Id": "75cd129c129a40898e2a7d8ee730993a",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
@@ -1282,8 +1324,8 @@
         "Y": -12446.97299397831
       },
       {
-        "ShowGeometry": true,
         "Name": "String.Contains",
+        "ShowGeometry": true,
         "Id": "ae09a7c0a81c4cc1b08c658b9bf12e1b",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
@@ -1292,8 +1334,8 @@
         "Y": -12355.268428450039
       },
       {
-        "ShowGeometry": true,
         "Name": "Element.Name",
+        "ShowGeometry": true,
         "Id": "c341e94d197a41f5b9f543cd7f0fb54c",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
@@ -1302,8 +1344,8 @@
         "Y": -12388.01085078068
       },
       {
-        "ShowGeometry": true,
         "Name": "Code Block",
+        "ShowGeometry": true,
         "Id": "558e30776a1c4ef0999a0c6007e4f7e1",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
@@ -1312,8 +1354,8 @@
         "Y": -12278.82096974872
       },
       {
-        "ShowGeometry": true,
         "Name": "DataStream.Await",
+        "ShowGeometry": true,
         "Id": "0b52cd665fb44d4da5c55d52e032f376",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
@@ -1322,8 +1364,8 @@
         "Y": -13019.012191532609
       },
       {
-        "ShowGeometry": true,
         "Name": "Document.Close",
+        "ShowGeometry": true,
         "Id": "b1f84e5dc04043abbd9a75db7f816466",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
@@ -1332,8 +1374,8 @@
         "Y": -13019.012191532609
       },
       {
-        "ShowGeometry": true,
         "Name": "Element.ByCategory",
+        "ShowGeometry": true,
         "Id": "d2371cff89574a29aef53526360ae717",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
@@ -1342,8 +1384,8 @@
         "Y": -12447.215416308951
       },
       {
-        "ShowGeometry": true,
         "Name": "Category.ByName",
+        "ShowGeometry": true,
         "Id": "5cc6eeda7e0c4595b758358e6ace764d",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
@@ -1352,8 +1394,8 @@
         "Y": -12421.215416308951
       },
       {
-        "ShowGeometry": true,
         "Name": "Code Block",
+        "ShowGeometry": true,
         "Id": "2e723256348f4b16a66c69b0e022115a",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
@@ -1366,6 +1408,10 @@
       {
         "Id": "17465dd29adb40ae8a2ff93e577b2029",
         "Title": "find host elements (OcSolid)",
+        "DescriptionText": null,
+        "IsExpanded": true,
+        "WidthAdjustment": 0.0,
+        "HeightAdjustment": 0.0,
         "Nodes": [
           "12e8d723218340389735b27c6616ff6f",
           "a538fbc9a9b142a285de6d94e588ce48",
@@ -1373,38 +1419,48 @@
           "a208070803f240a4898ae4d94107331e",
           "5f5ff73418754224a400b099e13f5819"
         ],
+        "HasNestedGroups": false,
         "Left": 3265.3428734838681,
-        "Top": -12360.36126062708,
-        "Width": 726.53297544652014,
-        "Height": 368.0,
+        "Top": -12380.36126062708,
+        "Width": 874.53297544652014,
+        "Height": 440.0,
         "FontSize": 36.0,
         "InitialTop": -12307.36126062708,
         "InitialHeight": 315.0,
-        "TextblockHeight": 43.0,
+        "TextblockHeight": 63.0,
         "Background": "#FFFFAA45"
       },
       {
         "Id": "5fbce078c80649a9bfe1e2b7bf4c581e",
         "Title": "filter for valid holes",
+        "DescriptionText": null,
+        "IsExpanded": true,
+        "WidthAdjustment": 0.0,
+        "HeightAdjustment": 0.0,
         "Nodes": [
           "db630e7a26ab4f218d4efbee5a07a174",
           "e60c10cc39644c8897ba56abd74d4203",
           "a1161cd6caf7432eb68ea67310ce4e59",
           "c86b90892f814d91aa4ea403ba998157"
         ],
+        "HasNestedGroups": false,
         "Left": 2465.5178001287504,
-        "Top": -12500.110706206899,
-        "Width": 681.712214667004,
-        "Height": 309.29197946026761,
+        "Top": -12520.110706206899,
+        "Width": 687.712214667004,
+        "Height": 381.29197946026761,
         "FontSize": 36.0,
         "InitialTop": -12447.110706206899,
         "InitialHeight": 286.505312793608,
-        "TextblockHeight": 43.0,
+        "TextblockHeight": 63.0,
         "Background": "#FFA4E1FF"
       },
       {
         "Id": "d25c553dcb0649b7bc869c693013d886",
         "Title": "find host elements (Solid)",
+        "DescriptionText": null,
+        "IsExpanded": true,
+        "WidthAdjustment": 0.0,
+        "HeightAdjustment": 0.0,
         "Nodes": [
           "19b5fd164fbf408db444fc665be6d611",
           "45342fee09c44bdaadd0e681fc19d076",
@@ -1412,19 +1468,24 @@
           "9f4ee4981a8c415694c955aa6c3ae0b2",
           "6e271be4d60445bc81793283c3a08295"
         ],
+        "HasNestedGroups": false,
         "Left": 3265.3758489303882,
-        "Top": -12818.380340558349,
-        "Width": 726.5,
-        "Height": 368.0,
+        "Top": -12838.380340558349,
+        "Width": 874.5,
+        "Height": 440.0,
         "FontSize": 36.0,
         "InitialTop": -12765.380340558349,
         "InitialHeight": 315.0,
-        "TextblockHeight": 43.0,
+        "TextblockHeight": 63.0,
         "Background": "#FFA4E1FF"
       },
       {
         "Id": "f617f4a02de143909bf533fa9054b3f0",
         "Title": "Get hole elements as document (family edit)",
+        "DescriptionText": null,
+        "IsExpanded": true,
+        "WidthAdjustment": 0.0,
+        "HeightAdjustment": 0.0,
         "Nodes": [
           "75cd129c129a40898e2a7d8ee730993a",
           "ae09a7c0a81c4cc1b08c658b9bf12e1b",
@@ -1436,36 +1497,42 @@
           "98a6a0916de44adeae2b1070dd484fda",
           "558e30776a1c4ef0999a0c6007e4f7e1"
         ],
+        "HasNestedGroups": false,
         "Left": 0.15498122270855674,
-        "Top": -12500.215416308951,
-        "Width": 2327.0003240560068,
-        "Height": 323.39444656023079,
+        "Top": -12520.215416308951,
+        "Width": 2331.0003240560068,
+        "Height": 383.39444656023079,
         "FontSize": 36.0,
         "InitialTop": -12447.215416308951,
         "InitialHeight": 313.39444656023079,
-        "TextblockHeight": 43.0,
+        "TextblockHeight": 63.0,
         "Background": "#FFA4E1FF"
       },
       {
         "Id": "bbe11b5c8ccb4475b4f4f89e99e9a6ca",
         "Title": "close document",
+        "DescriptionText": null,
+        "IsExpanded": true,
+        "WidthAdjustment": 0.0,
+        "HeightAdjustment": 0.0,
         "Nodes": [
           "0b52cd665fb44d4da5c55d52e032f376",
           "b1f84e5dc04043abbd9a75db7f816466"
         ],
+        "HasNestedGroups": false,
         "Left": 3534.1328613385685,
-        "Top": -13072.012191532609,
-        "Width": 495.09819805117968,
-        "Height": 172.0,
+        "Top": -13092.012191532609,
+        "Width": 502.09819805117968,
+        "Height": 235.0,
         "FontSize": 36.0,
         "InitialTop": -13019.012191532609,
         "InitialHeight": 145.0,
-        "TextblockHeight": 43.0,
+        "TextblockHeight": 63.0,
         "Background": "#FFC1D676"
       }
     ],
-    "X": 26.076386277716292,
-    "Y": 5338.76139159714,
-    "Zoom": 0.38637331140600528
+    "X": 92.549362994421472,
+    "Y": 3144.9163407530555,
+    "Zoom": 0.21358877161012779
   }
 }

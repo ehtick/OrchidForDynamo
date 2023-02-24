@@ -47,7 +47,7 @@
         {
           "Id": "00a7b96411a44b59970cb5faa71f04cb",
           "Name": "parameter",
-          "Description": "User-defined parameter.\n\nElement",
+          "Description": "Project parameter.\n\nElement",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -75,7 +75,7 @@
         }
       ],
       "Replication": "Auto",
-      "Description": "Get the category(ies) bound to the parameter in the project.\n\nProjectParameter.GetCategory (parameter: Element, condense: bool = true): var[]..[]\n\nNamespace:\nOrchid.RevitProject.Parameters"
+      "Description": "Get the category(ies) bound to the parameter in the project.\n\nProjectParameter.GetCategory (parameter: Element, condense: bool = true): var[]..[]"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
@@ -86,7 +86,7 @@
         {
           "Id": "3a8ee5728c71466e9f3b5e1eaf2ed502",
           "Name": "parameterName",
-          "Description": "Name of the User-defined parameter.\n\nstring",
+          "Description": "Name of the Project parameter.\n\nstring",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -96,8 +96,8 @@
       "Outputs": [
         {
           "Id": "fc81e443f84d4044be96f6d19dc3a7b1",
-          "Name": "Parameter",
-          "Description": "User-defined parameter.",
+          "Name": "ParameterElement",
+          "Description": "Project parameter element.",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -105,7 +105,7 @@
         }
       ],
       "Replication": "Auto",
-      "Description": "Get parameter by name. Note: This function handles only User-defined parameters, such as project, shared, and global parameters.\n\nProjectParameter.ByName (parameterName: string): Element\n\nNamespace:\nOrchid.RevitProject.Parameters"
+      "Description": "Get parameter by name. Note: This function handles only Project parameters, such as project, shared, and global parameters.\n\nProjectParameter.ByName (parameterName: string): Element"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
@@ -164,7 +164,7 @@
         }
       ],
       "Replication": "Auto",
-      "Description": "Get parameter definition by name.\n\nDefinition.ByName (name: string): Definition\n\nNamespace:\nOrchid.RevitProject.Parameters"
+      "Description": "Get parameter definition by name.\n\nDefinition.ByName (name: string): Definition"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
@@ -175,7 +175,7 @@
         {
           "Id": "fdfa680e038e42ba88d16b91237c62bb",
           "Name": "definition",
-          "Description": "The parameter definition.\n\nDefinition",
+          "Description": "Definition",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -184,7 +184,7 @@
         {
           "Id": "69dd04bfb1d641fd94708bfc33b7be08",
           "Name": "condense",
-          "Description": "Condense to shortest feasible output?\n\nbool\nDefault value : true",
+          "Description": "bool\nDefault value : true",
           "UsingDefaultValue": true,
           "Level": 2,
           "UseLevels": false,
@@ -194,8 +194,8 @@
       "Outputs": [
         {
           "Id": "72e49d345ce74c25bc8329d02038c448",
-          "Name": "Category",
-          "Description": "Category as Dynamo type.",
+          "Name": "var[]..[]",
+          "Description": "var[]..[]",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -203,7 +203,7 @@
         }
       ],
       "Replication": "Auto",
-      "Description": "Get the category(ies) bound to the parameter definition in the project.\n\nDefinition.GetCategory (definition: Definition, condense: bool = true): var[]..[]\n\nNamespace:\nOrchid.RevitProject.Parameters"
+      "Description": "Definition.GetCategory (definition: Definition, condense: bool = true): var[]..[]"
     },
     {
       "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
@@ -273,7 +273,7 @@
         {
           "Id": "b6053ff5a9c2457585ed54add9fcd216",
           "Name": "parameterName",
-          "Description": "The name of the user-defined parameter.\n\nstring",
+          "Description": "The name of the Project parameter.\n\nstring",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -301,7 +301,7 @@
         }
       ],
       "Replication": "Auto",
-      "Description": "Get the category(ies) bound to the parameter in the project.\n\nProjectParameter.GetCategory (parameterName: string, condense: bool = true): var[]..[]\n\nNamespace:\nOrchid.RevitProject.Parameters"
+      "Description": "Get the category(ies) bound to the parameter in the project.\n\nProjectParameter.GetCategory (parameterName: string, condense: bool = true): var[]..[]"
     },
     {
       "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
@@ -389,8 +389,8 @@
       "Outputs": [
         {
           "Id": "8f6f4dc2d9cf41f28d0c8d92149a635f",
-          "Name": "Parameter",
-          "Description": "Shared parameter.",
+          "Name": "ParameterElement",
+          "Description": "Shared parameter element.",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -398,66 +398,76 @@
         }
       ],
       "Replication": "Auto",
-      "Description": "Add basic IFC type and instance shared parameters in the project (IfcExportAs, IfcExportType, IfcDescription, IFC CAD Layer). Parameters are set with the same settings pr. group and attached the same provided category(ies). Note: If the parameter exists is the category binding being updated, and tooltip is being added if exsist!\n\nSharedParameter.AddIFC (document: Document[] = null, category: Category[] = null, condense: bool = true): var[]..[]\n\nNamespace:\nOrchid.RevitProject.Parameters"
+      "Description": "Add basic IFC type and instance shared parameters in the project (IfcExportAs, IfcExportType, IfcDescription, IFC CAD Layer). Parameters are set with the same settings pr. group and attached the same provided category(ies). Note: If the parameter exists is the category binding being updated, and tooltip is being added if exsist!\n\nSharedParameter.AddIFC (document: Document[] = null, category: Category[] = null, condense: bool = true): var[]..[]"
     }
   ],
   "Connectors": [
     {
       "Start": "20f12112b6eb4770928bf7e5313a7a64",
       "End": "a4e031b40c514d388f6db668ecef58ab",
-      "Id": "fbca4992b6a24a14b555432d85b51db3"
+      "Id": "fbca4992b6a24a14b555432d85b51db3",
+      "IsHidden": "False"
     },
     {
       "Start": "fc81e443f84d4044be96f6d19dc3a7b1",
       "End": "00a7b96411a44b59970cb5faa71f04cb",
-      "Id": "69fa6998bde74df2b6e42cc357e9d910"
+      "Id": "69fa6998bde74df2b6e42cc357e9d910",
+      "IsHidden": "False"
     },
     {
       "Start": "f03a7d40b9f54689ae4abe0437a769eb",
       "End": "3a8ee5728c71466e9f3b5e1eaf2ed502",
-      "Id": "07f5071f489c4dce83854116742d913e"
+      "Id": "07f5071f489c4dce83854116742d913e",
+      "IsHidden": "False"
     },
     {
       "Start": "f03a7d40b9f54689ae4abe0437a769eb",
       "End": "b6053ff5a9c2457585ed54add9fcd216",
-      "Id": "4f80b909e793403cb025becb6d16c132"
+      "Id": "4f80b909e793403cb025becb6d16c132",
+      "IsHidden": "False"
     },
     {
       "Start": "f03a7d40b9f54689ae4abe0437a769eb",
       "End": "544fa961db2248819e4e10bd88482668",
-      "Id": "c21fd26030e548f68e012a5019e1ec49"
+      "Id": "c21fd26030e548f68e012a5019e1ec49",
+      "IsHidden": "False"
     },
     {
       "Start": "0c5cd9f9d22545fcb178bd91477e9682",
       "End": "fdfa680e038e42ba88d16b91237c62bb",
-      "Id": "0fae3f780eaf4ac99e656d575f45abff"
+      "Id": "0fae3f780eaf4ac99e656d575f45abff",
+      "IsHidden": "False"
     },
     {
       "Start": "72e49d345ce74c25bc8329d02038c448",
       "End": "71944c24d3024708a96ca2f59181348a",
-      "Id": "7686349372bc43f8babb257ec5e6227d"
+      "Id": "7686349372bc43f8babb257ec5e6227d",
+      "IsHidden": "False"
     },
     {
       "Start": "43a88aff3b494100bcd85c5a434e4137",
       "End": "d24b94fc01f544598b3edb8ae4ebd5ec",
-      "Id": "8c4c6b1a880e405e833f7b2cd656389a"
+      "Id": "8c4c6b1a880e405e833f7b2cd656389a",
+      "IsHidden": "False"
     },
     {
       "Start": "bc7c891e8287493e8b0fce07af8eda92",
       "End": "31b8de52869745f39d249369ff3d86e9",
-      "Id": "d68b0a83d2374c03b15dc5d1069d8aa7"
+      "Id": "d68b0a83d2374c03b15dc5d1069d8aa7",
+      "IsHidden": "False"
     },
     {
       "Start": "8ef0d8b52ec24c1a9d728650f4d46224",
       "End": "12526efa04c4415e93420fa072132702",
-      "Id": "9ce124c6fcf94bde84d8b33c23023371"
+      "Id": "9ce124c6fcf94bde84d8b33c23023371",
+      "IsHidden": "False"
     }
   ],
   "Dependencies": [],
   "NodeLibraryDependencies": [
     {
       "Name": "Orchid",
-      "Version": "212.3.0.8333",
+      "Version": "216.3.0.5799",
       "ReferenceType": "Package",
       "Nodes": [
         "f444b3852e9e464eb3e87ae7a35a690d",
@@ -498,7 +508,7 @@
       "ScaleFactor": 1.0,
       "HasRunWithoutCrash": true,
       "IsVisibleInDynamoLibrary": true,
-      "Version": "2.12.1.8246",
+      "Version": "2.16.1.2727",
       "RunType": "Manual",
       "RunPeriod": "1000"
     },
@@ -514,10 +524,11 @@
       "UpY": 1.0,
       "UpZ": 0.0
     },
+    "ConnectorPins": [],
     "NodeViews": [
       {
-        "ShowGeometry": true,
         "Name": "Watch",
+        "ShowGeometry": true,
         "Id": "dd22544b8aa64ad5ba0c707a913aa8bd",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
@@ -526,8 +537,8 @@
         "Y": 53.4682222232757
       },
       {
-        "ShowGeometry": true,
         "Name": "ProjectParameter.GetCategory",
+        "ShowGeometry": true,
         "Id": "f444b3852e9e464eb3e87ae7a35a690d",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
@@ -536,8 +547,8 @@
         "Y": 53.4682222232757
       },
       {
-        "ShowGeometry": true,
         "Name": "ProjectParameter.ByName",
+        "ShowGeometry": true,
         "Id": "5de82b6f38614d54bee05b2cd2e177ec",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
@@ -546,8 +557,8 @@
         "Y": 53.468222223275689
       },
       {
-        "ShowGeometry": true,
         "Name": "Code Block",
+        "ShowGeometry": true,
         "Id": "d7f9319e0e214e9d9c854889d739aa32",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
@@ -556,8 +567,8 @@
         "Y": 334.19046927030149
       },
       {
-        "ShowGeometry": true,
         "Name": "Definition.ByName",
+        "ShowGeometry": true,
         "Id": "4117f8db1ab54a50a7ed1966837720fe",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
@@ -566,8 +577,8 @@
         "Y": 348.08764459343
       },
       {
-        "ShowGeometry": true,
         "Name": "Definition.GetCategory",
+        "ShowGeometry": true,
         "Id": "5e41d206c3de4a1db74517fbddebe8ee",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
@@ -576,8 +587,8 @@
         "Y": 348.08764459343
       },
       {
-        "ShowGeometry": true,
         "Name": "Watch",
+        "ShowGeometry": true,
         "Id": "caf7f144679b40f0bb18b22b86aa6200",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
@@ -586,8 +597,8 @@
         "Y": 348.08764459343
       },
       {
-        "ShowGeometry": true,
         "Name": "Category.ByName",
+        "ShowGeometry": true,
         "Id": "2107f4b990ce47819654abf3d2891090",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
@@ -596,8 +607,8 @@
         "Y": 358.71481479718079
       },
       {
-        "ShowGeometry": true,
         "Name": "ProjectParameter.GetCategory",
+        "ShowGeometry": true,
         "Id": "9d5fd16426ec44a8916c12f7c4cfe383",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
@@ -606,8 +617,8 @@
         "Y": 642.707066963584
       },
       {
-        "ShowGeometry": true,
         "Name": "Watch",
+        "ShowGeometry": true,
         "Id": "e56249315d604d5dbc1687e3b9ba12b2",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
@@ -616,8 +627,8 @@
         "Y": 642.707066963584
       },
       {
-        "ShowGeometry": true,
         "Name": "Code Block",
+        "ShowGeometry": true,
         "Id": "ee2c5fa07757440ca51e9be6fbb136b5",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
@@ -626,8 +637,8 @@
         "Y": 362.92814813051348
       },
       {
-        "ShowGeometry": true,
         "Name": "SharedParameter.AddIFC",
+        "ShowGeometry": true,
         "Id": "213dbd4b92f94fddb9e769aff4ef967f",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
@@ -640,6 +651,10 @@
       {
         "Id": "e4148c62254848d08c25b894012493bf",
         "Title": "",
+        "DescriptionText": null,
+        "IsExpanded": true,
+        "WidthAdjustment": 0.0,
+        "HeightAdjustment": 0.0,
         "Nodes": [
           "d7f9319e0e214e9d9c854889d739aa32",
           "5de82b6f38614d54bee05b2cd2e177ec",
@@ -651,37 +666,43 @@
           "5e41d206c3de4a1db74517fbddebe8ee",
           "caf7f144679b40f0bb18b22b86aa6200"
         ],
+        "HasNestedGroups": false,
         "Left": -0.303131260432167,
-        "Top": 0.46822222327568852,
-        "Width": 1241.8122680279721,
-        "Height": 920.23884474030831,
+        "Top": -19.531777776724311,
+        "Width": 1308.8122680279721,
+        "Height": 824.23884474030831,
         "FontSize": 36.0,
         "InitialTop": 53.468222223275689,
         "InitialHeight": 734.23884474030831,
-        "TextblockHeight": 43.0,
+        "TextblockHeight": 63.0,
         "Background": "#FFC1D676"
       },
       {
         "Id": "2701504aa4f04eaf8adfd1b9852d5335",
         "Title": "Add IFC parameters",
+        "DescriptionText": null,
+        "IsExpanded": true,
+        "WidthAdjustment": 0.0,
+        "HeightAdjustment": 0.0,
         "Nodes": [
           "2107f4b990ce47819654abf3d2891090",
           "ee2c5fa07757440ca51e9be6fbb136b5",
           "213dbd4b92f94fddb9e769aff4ef967f"
         ],
+        "HasNestedGroups": false,
         "Left": -936.33179396512594,
-        "Top": 279.71481479718034,
-        "Width": 856.0,
-        "Height": 198.0,
+        "Top": 259.71481479718034,
+        "Width": 910.0,
+        "Height": 270.0,
         "FontSize": 36.0,
         "InitialTop": 332.71481479718034,
         "InitialHeight": 175.21333333333314,
-        "TextblockHeight": 43.0,
+        "TextblockHeight": 63.0,
         "Background": "#FFC1D676"
       }
     ],
-    "X": 700.97466423342507,
-    "Y": 152.61781912487135,
-    "Zoom": 0.72433513413303563
+    "X": 231.55198426476863,
+    "Y": 237.71354726819945,
+    "Zoom": 0.60749570184841284
   }
 }

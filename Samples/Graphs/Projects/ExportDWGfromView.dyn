@@ -28,6 +28,14 @@
       "Orchid.Common.Revit.Format": {
         "Key": "Orchid.Common.Revit",
         "Value": "OrchidRB.dll"
+      },
+      "Orchid.AdeskApp.Revit.Format": {
+        "Key": "Orchid.AdeskApp.Revit",
+        "Value": "OrchidRB.dll"
+      },
+      "Orchid.AdeskApp.Revit": {
+        "Key": "Orchid.AdeskApp.Revit",
+        "Value": "OrchidRB.dll"
       }
     }
   },
@@ -85,12 +93,12 @@
     {
       "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
       "NodeType": "CodeBlockNode",
-      "Code": "// View to find\n\"EXPORT DWG\";",
+      "Code": "// View to find\n\"DTU_Export DWG\";",
       "Id": "70b903996d084c4aa7b57b7811deb7d4",
       "Inputs": [],
       "Outputs": [
         {
-          "Id": "f677c741c8514b33a63d34cc7db509d8",
+          "Id": "bf9a1289309b4655a940a372ca51c02a",
           "Name": "",
           "Description": "Value of expression at line 2",
           "UsingDefaultValue": false,
@@ -178,7 +186,7 @@
         }
       ],
       "Replication": "Auto",
-      "Description": "Determines if the given string contains any of the given substrings.\n\nString.Contains (string: string, searchFor: string[], ignoreCase: bool = false): bool\n\nNamespace:\nOrchid.Common"
+      "Description": "Determines if the given string contains any of the given substrings.\n\nString.Contains (string: string, searchFor: string[], ignoreCase: bool = false): bool"
     },
     {
       "ConcreteType": "CoreNodeModels.Input.BoolSelector, CoreNodeModels",
@@ -228,7 +236,7 @@
         }
       ],
       "Replication": "Auto",
-      "Description": "Get view by name.\n\nViewType.ByName (name: string): var[]..[]\n\nNamespace:\nOrchid.RevitProject.Views"
+      "Description": "Get view type by name.\n\nViewType.ByName (name: string): var[]..[]"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
@@ -287,7 +295,7 @@
         }
       ],
       "Replication": "Auto",
-      "Description": "All view by viewType in current document.\n\nView.ByType (viewType: var, condense: bool = true): var[]..[]\n\nNamespace:\nOrchid.RevitProject.Views"
+      "Description": "All view by viewType in current document.\n\nView.ByType (viewType: var, condense: bool = true): var[]..[]"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
@@ -376,7 +384,7 @@
         }
       ],
       "Replication": "Auto",
-      "Description": "Get the full path of the document.\n\nDocument.Path (document: Document = null, withExtension: bool = true): string\n\nNamespace:\nOrchid.RevitProject.Common"
+      "Description": "Get the full path of the document.\n\nDocument.Path (document: Document = null, withExtension: bool = true): string"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
@@ -396,7 +404,7 @@
         }
       ],
       "Replication": "Auto",
-      "Description": "Get current (project) document. If you need a family document instead, please find the node \"FamilyDocument.Current\"!\n\nDocument.Current: Document\n\nNamespace:\nOrchid.RevitProject.Common"
+      "Description": "Get current (project) document. If you need a family document instead, please find the node \"FamilyDocument.Current\"!\n\nDocument.Current: Document"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
@@ -609,27 +617,7 @@
         }
       ],
       "Replication": "Auto",
-      "Description": "Export to DWG.\n\nDocument.ExportDWG (document: Document = null, option: Element = null, view: View[] = null, file: string = null, overwrite: bool = true): string\n\nNamespace:\nOrchid.RevitProject.Common"
-    },
-    {
-      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
-      "NodeType": "FunctionNode",
-      "FunctionSignature": "Orchid.RevitProject.Common.ExportOption.DWG",
-      "Id": "ec1de3f7bd5640109a2a8fcd5a196728",
-      "Inputs": [],
-      "Outputs": [
-        {
-          "Id": "4e661f9f0ed44a9da2f24be9137675b7",
-          "Name": "Option",
-          "Description": "DWG/DXF export option.",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        }
-      ],
-      "Replication": "Auto",
-      "Description": "Get all dwg and dxf export option.\n\nExportOption.DWG ( ): Element[]\n\nNamespace:\nOrchid.RevitProject.Common"
+      "Description": "Export to DWG.\n\nDocument.ExportDWG (document: Document = null, option: Element = null, view: View[] = null, file: string = null, overwrite: bool = true): string"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
@@ -707,7 +695,7 @@
         }
       ],
       "Replication": "Auto",
-      "Description": "Delete elements. Note: If a wall element is a member of a stacked wall, will this element lead to the entire stacked wall will be deleted. The other stacked wall members will return false.\n\nElement.Delete (element: Element[]): string\n\nNamespace:\nOrchid.RevitProject.Elements"
+      "Description": "Delete elements. Note: If a wall element is a member of a stacked wall, will this element lead to the entire stacked wall will be deleted. The other stacked wall members will return false.\n\nElement.Delete (element: Element[]): string"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
@@ -751,12 +739,12 @@
     {
       "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
       "NodeType": "CodeBlockNode",
-      "Code": "\"IBB 2000\";\ntrue;\n// filepaths\npath1 = \"C:\\\\ProgramData\\\\Autodesk\\\\RVT \";\npath2 = \"\\\\Libraries\\\\DanEDU\\\\Generic Project\\\\\";\nlayer = \"DanEDU Exportlayers Arkitekt.txt\";\nlines = \"DanEDU Linetypes.lin\";\nformat =  Orchid.Revit.Format;\nlayerMapping = path1 + format + path2 + layer;\nlineTypes =path1 + format + path2 + lines;",
+      "Code": "\"IBB 2000\";\n\n// merge files into one?\ntrue;\n\n// filepaths\npath1 = \"C:\\\\ProgramData\\\\Autodesk\\\\RVT \";\npath2 = \"\\\\Libraries\\\\DanEDU\\\\Generic Project\\\\\";\nlayer = \"DanEDU Exportlayers.txt\";\nlines = \"DanEDU Linetypes.lin\";\nformat =  Orchid.AdeskApp.Revit.Format;\nlayerMapping = path1 + format + path2 + layer;\nlineTypes =path1 + format + path2 + lines;\n\n// export using shared coordinate?\ntrue;\n// preserve coincident lines\ntrue;",
       "Id": "d3d89b92716743c7899926104dc303b5",
       "Inputs": [],
       "Outputs": [
         {
-          "Id": "a4a89acd95e0491688fd53743edbbc49",
+          "Id": "63e1aac05a5b4e81a7336f16bd4ca70f",
           "Name": "",
           "Description": "Value of expression at line 1",
           "UsingDefaultValue": false,
@@ -765,16 +753,16 @@
           "KeepListStructure": false
         },
         {
-          "Id": "638c580004c744b3a3f5b320d4d8d4f9",
+          "Id": "9a9ca928693443fdb1b0a2c3663bad8a",
           "Name": "",
-          "Description": "Value of expression at line 2",
+          "Description": "Value of expression at line 4",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
           "KeepListStructure": false
         },
         {
-          "Id": "91729871265146ff9132472255b331b6",
+          "Id": "62c92c073a5c4a55be734d04741f4be3",
           "Name": "",
           "Description": "path1",
           "UsingDefaultValue": false,
@@ -783,7 +771,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "e7fdb3f3586a491080336afa826dcadb",
+          "Id": "391bf60d3b5d4d38946a00d74c003f25",
           "Name": "",
           "Description": "path2",
           "UsingDefaultValue": false,
@@ -792,7 +780,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "22a0f39f442b4659ac6526d0c836e19f",
+          "Id": "72b3a964e9164f9e83d070b3b79890f8",
           "Name": "",
           "Description": "layer",
           "UsingDefaultValue": false,
@@ -801,7 +789,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "e1968c6e2ddb44439f1cde115f615946",
+          "Id": "ea254a1bd0aa40eba35dd1ee3e7538f8",
           "Name": "",
           "Description": "lines",
           "UsingDefaultValue": false,
@@ -810,7 +798,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "488196ed4a6e468691fc5c5975869972",
+          "Id": "8667a7c56b114ea1a6072373514a0745",
           "Name": "",
           "Description": "format",
           "UsingDefaultValue": false,
@@ -819,7 +807,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "7e920f017bd04f6b874cead068d00956",
+          "Id": "ece9732b84ff40e9927e84aedaefe386",
           "Name": "",
           "Description": "layerMapping",
           "UsingDefaultValue": false,
@@ -828,9 +816,27 @@
           "KeepListStructure": false
         },
         {
-          "Id": "1a371147b8a647d28650b3773826444f",
+          "Id": "5ab0cea27f984ec6802a354357a2027a",
           "Name": "",
           "Description": "lineTypes",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "d998a81c14014c208f73eb440beb8dd6",
+          "Name": "",
+          "Description": "Value of expression at line 16",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "ce9a1d8d37c044aa8d176c8eb84c170b",
+          "Name": "",
+          "Description": "Value of expression at line 18",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -843,11 +849,11 @@
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
       "NodeType": "FunctionNode",
-      "FunctionSignature": "Orchid.RevitProject.Common.ExportOption.CreateDWGOption@Revit.Application.Document,string,bool,string,string,string,string,string",
-      "Id": "74186058ba9f44d39a62ca0e19768305",
+      "FunctionSignature": "Orchid.RevitProject.Common.ExportOption.CreateAcadOption@Revit.Application.Document,string,string,string",
+      "Id": "75ed828310c646be8dea53c3e79221fe",
       "Inputs": [
         {
-          "Id": "b63b92983062409f978363e9b301c355",
+          "Id": "debd8d1a59424e739ee24facdaeac5b5",
           "Name": "document",
           "Description": "Project document (rvt).\n\nDocument\nDefault value : null",
           "UsingDefaultValue": true,
@@ -856,63 +862,27 @@
           "KeepListStructure": false
         },
         {
-          "Id": "5f4feeb980c646d0b06d54d4cdac743f",
+          "Id": "2de87cbe77ac4557babe15dd54e8021e",
           "Name": "name",
-          "Description": "DWG export option name.\n\nstring",
+          "Description": "DWG/DXF export option name.\n\nstring",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
           "KeepListStructure": false
         },
         {
-          "Id": "46946ea1b9e7445684be1ddd6dc55415",
-          "Name": "mergedViews",
-          "Description": "Whether to merge all views in one file (via XRefs). Default value is false for mergedViews.\n\nbool\nDefault value : false",
+          "Id": "e4a4d77c3f4043969c2bfe51206cddb5",
+          "Name": "propOverride",
+          "Description": "Property overrides. Default value is according to the Revit localization.\n\nstring\nDefault value : null",
           "UsingDefaultValue": true,
           "Level": 2,
           "UseLevels": false,
           "KeepListStructure": false
         },
         {
-          "Id": "59939314feda4107ad56325015ba18a8",
-          "Name": "fileVersion",
-          "Description": "ACADVersion::Default Default value is ACADVersion.Default.\n\nstring\nDefault value : null",
-          "UsingDefaultValue": true,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        },
-        {
-          "Id": "c6c7b65df23740ef88a901e912abb36b",
-          "Name": "lineScaling",
-          "Description": "The scaling mode for the line type. Default value is LineScaling.ViewScale.\n\nstring\nDefault value : null",
-          "UsingDefaultValue": true,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        },
-        {
-          "Id": "0e53a3cdcc724741a3c8e1bff1f60b32",
+          "Id": "0735b1e1ab7b4ff48ebec63626d1573a",
           "Name": "layerMapping",
           "Description": "Layer mapping name. Default value is according to the Revit localization.\n\nstring\nDefault value : null",
-          "UsingDefaultValue": true,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        },
-        {
-          "Id": "8fc5286ad1f04a1fb490412a08f2f449",
-          "Name": "linetypesFile",
-          "Description": "Path to linetypes file.\n\nstring\nDefault value : null",
-          "UsingDefaultValue": true,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        },
-        {
-          "Id": "141a30093b2b4292bd91ac9a66263ea1",
-          "Name": "hatchPatternsFile",
-          "Description": "Path to hatch patterns file.\n\nstring\nDefault value : null",
           "UsingDefaultValue": true,
           "Level": 2,
           "UseLevels": false,
@@ -921,9 +891,9 @@
       ],
       "Outputs": [
         {
-          "Id": "40380ea13a5a463b96c27fe0d9806cd9",
+          "Id": "8258da7ea52a44c7b75cabc6c317b2b7",
           "Name": "Option",
-          "Description": "DWG export option.",
+          "Description": "DWG/DXF export option.",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -931,161 +901,447 @@
         }
       ],
       "Replication": "Auto",
-      "Description": "Create dwg export option. LayerMapping builtin values. AIA, CP83, BS1192, and ISO13567.\n\nExportOption.CreateDWGOption (document: Document = null, name: string, mergedViews: bool = false, fileVersion: string = null, lineScaling: string = null, layerMapping: string = null, linetypesFile: string = null, hatchPatternsFile: string = null): Element\n\nNamespace:\nOrchid.RevitProject.Common"
+      "Description": "Create DWG/DXF export option.\n\nExportOption.CreateAcadOption (document: Document = null, name: string, propOverride: string = null, layerMapping: string = null): Element"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "Orchid.RevitProject.Common.ExportOption.AcadOptionSettings@Revit.Application.Document,Revit.Elements.Element,string,string,string,DSCore.Color,string,string,string,string,bool",
+      "Id": "daed4b8076c24b6297ecf5b0b9d45fca",
+      "Inputs": [
+        {
+          "Id": "d9d67214c8a64e4d841abc65cf9d432b",
+          "Name": "document",
+          "Description": "Project document (rvt).\n\nDocument\nDefault value : null",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "959623191fe14bf58bff9bc80eabd6f3",
+          "Name": "option",
+          "Description": "DWG/DXF export option.\n\nElement",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "3e1c43bb06fc4dcab12435ea16d95fa8",
+          "Name": "lineScaling",
+          "Description": "The scaling mode for the line type. Default value is LineScaling.ViewScale.\n\nstring\nDefault value : null",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "0bd6bf01d8bc4707aed61008b13abc24",
+          "Name": "linetypesFile",
+          "Description": "Path to linetypes file.\n\nstring\nDefault value : null",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "148592aae018482f895e03db2a8ab090",
+          "Name": "hatchPatternsFile",
+          "Description": "Path to hatch patterns file.\n\nstring\nDefault value : null",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "071d5de44f69428c98a9e28a91178053",
+          "Name": "hatchBackgroundColor",
+          "Description": "Set hatch background color. Default is white.\n\nColor\nDefault value : null",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "49247e0b23b04d00a08ff49abc78a2d5",
+          "Name": "textTreatment",
+          "Description": "Text behavior when exported.\n\nstring\nDefault value : null",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "17018ad4ac804eb5a53a1c10a88a6feb",
+          "Name": "colorMode",
+          "Description": "Export colors as.\n\nstring\nDefault value : null",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "cd3abf328559432481426c5e794b0c48",
+          "Name": "exportOfSolids",
+          "Description": "string\nDefault value : null",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "637c98f68d974dcd9525b9490d0b8cca",
+          "Name": "targetUnit",
+          "Description": "string\nDefault value : null",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "b0a73b5eaf894cac954c93f6d7838a4c",
+          "Name": "sharedCoordinate",
+          "Description": "bool\nDefault value : false",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "f75173ba70e3473ca66dcb1e28f4d64b",
+          "Name": "Option",
+          "Description": "DWG/DXF export option.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Set Lines, Patterns, Text & Fonts, Colors, Solids, and Units & Coordinates in DWG/DXF export option.\n\nExportOption.AcadOptionSettings (document: Document = null, option: Element, lineScaling: string = null, linetypesFile: string = null, hatchPatternsFile: string = null, hatchBackgroundColor: Color = null, textTreatment: string = null, colorMode: string = null, exportOfSolids: string = null, targetUnit: string = null, sharedCoordinate: bool = false): Element"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "Orchid.RevitProject.Common.ExportOption.AcadOptionGenerel@Revit.Application.Document,Revit.Elements.Element,bool,string,bool,bool,bool,bool,bool,string",
+      "Id": "4a552b60bc9a49989010eecc380f5062",
+      "Inputs": [
+        {
+          "Id": "011efdc98d9c44c2937567a3a6aee714",
+          "Name": "document",
+          "Description": "Project document (rvt).\n\nDocument\nDefault value : null",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "a3ada626157642a3aaacfc6b3b97cdcf",
+          "Name": "option",
+          "Description": "DWG/DXF export option.\n\nElement",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "a0ff228098f04dd29a398a2a836144b4",
+          "Name": "exportingAreas",
+          "Description": "bool\nDefault value : false",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "e5e5b06218c5414a8a2cf09c82610250",
+          "Name": "nonplotSuffix",
+          "Description": "string\nDefault value : null",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "7f507c298e8d432db31e0816c3e79ec2",
+          "Name": "hideScopeBox",
+          "Description": "bool\nDefault value : true",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "f682e03e959a4eefb3ec6843426f5404",
+          "Name": "hideReferencePlane",
+          "Description": "bool\nDefault value : true",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "3dbb2761873449b58a3b0342cb8592a7",
+          "Name": "hideUnreferenceViewTags",
+          "Description": "bool\nDefault value : true",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "093289c300304924b39b3e2cb7ad3902",
+          "Name": "preserveCoincidentLines",
+          "Description": "bool\nDefault value : false",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "c50fc5ed8dc04e7cb38a61f875ff72ac",
+          "Name": "mergedViews",
+          "Description": "bool\nDefault value : false",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "00c7fa82a5284e6db1d8aa41c8772512",
+          "Name": "fileVersion",
+          "Description": "string\nDefault value : null",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "9043ddff9efa44ffad3e402036476ab7",
+          "Name": "Option",
+          "Description": "DWG/DXF export option.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Set General in DWG/DXF export option.\n\nExportOption.AcadOptionGenerel (document: Document = null, option: Element, exportingAreas: bool = false, nonplotSuffix: string = null, hideScopeBox: bool = true, hideReferencePlane: bool = true, hideUnreferenceViewTags: bool = true, preserveCoincidentLines: bool = false, mergedViews: bool = false, fileVersion: string = null): Element"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "Orchid.RevitProject.Common.ExportOption.AcadOptions",
+      "Id": "68f4db0eea7a4aae81acc79db8f4ed45",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "6058847ff4c64aaf94d0074733b563a8",
+          "Name": "Option",
+          "Description": "DWG/DXF export option.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Get all DWG/DXF export option.\n\nExportOption.AcadOptions ( ): Element[]"
     }
   ],
   "Connectors": [
     {
       "Start": "3f3a6c697feb4628a95452e3e26c54b3",
       "End": "d3469e0295554b0eacd2f3e8ee7b2528",
-      "Id": "bfd3a4d0ffcd4f3198c7a4de4ae73876"
+      "Id": "bfd3a4d0ffcd4f3198c7a4de4ae73876",
+      "IsHidden": "False"
     },
     {
       "Start": "3f3a6c697feb4628a95452e3e26c54b3",
       "End": "70ee4f16993c46a581a1c71bb7a65ffd",
-      "Id": "2b3c910064dc4ebe913825d80ad92ad2"
+      "Id": "2b3c910064dc4ebe913825d80ad92ad2",
+      "IsHidden": "False"
     },
     {
-      "Start": "f677c741c8514b33a63d34cc7db509d8",
+      "Start": "bf9a1289309b4655a940a372ca51c02a",
       "End": "b859ff571054486a9bde1b9ccba2d30a",
-      "Id": "2e7a1d3cb8c640f091cfb154e127a85e"
+      "Id": "cf7592ba86f246758877c590134d28b3",
+      "IsHidden": "False"
     },
     {
       "Start": "a851797a220f4c729889b0c23c269650",
       "End": "9ff01eb6c11c4e98924b6ced177241f1",
-      "Id": "52a224eab2ba4165be8395499176d4a8"
+      "Id": "52a224eab2ba4165be8395499176d4a8",
+      "IsHidden": "False"
     },
     {
       "Start": "254f5cef376044548c0c245b44f1fb7c",
       "End": "38897607515346028be447229d8db765",
-      "Id": "83467aeca5d748f99950bab2d4e733a7"
+      "Id": "83467aeca5d748f99950bab2d4e733a7",
+      "IsHidden": "False"
     },
     {
       "Start": "c6f1213eee7341f78f9a642ef41ccf31",
       "End": "bc21d438b5154587b282c396ffa69b8d",
-      "Id": "e1d4561d12174fa3b082570c2022e933"
+      "Id": "e1d4561d12174fa3b082570c2022e933",
+      "IsHidden": "False"
     },
     {
       "Start": "18a0d623f78b4dbeb79e8339c982ffc7",
       "End": "29cd3103c0bc47109d824159bcd218ba",
-      "Id": "5f6ea604c8b34a63aa729083d838e06e"
+      "Id": "5f6ea604c8b34a63aa729083d838e06e",
+      "IsHidden": "False"
     },
     {
       "Start": "2a2cac9cb4504ef9a9cc8dac179ad798",
       "End": "3966bd31d27b451dbcb1235f2b5a0b9c",
-      "Id": "fa5dc5dc384842929448dc666fd304ae"
+      "Id": "fa5dc5dc384842929448dc666fd304ae",
+      "IsHidden": "False"
     },
     {
       "Start": "cebb3b3efcd54716ad423b074f6056bf",
       "End": "e57b5eb5de834dbda5f7ee48edde3bc7",
-      "Id": "db7725f1075e47acad7b1f06b960a907"
+      "Id": "db7725f1075e47acad7b1f06b960a907",
+      "IsHidden": "False"
     },
     {
       "Start": "cebb3b3efcd54716ad423b074f6056bf",
       "End": "d943dc832fd54917adf8eab05c54894f",
-      "Id": "77d27b290901417e9c963191ac7b53d2"
+      "Id": "77d27b290901417e9c963191ac7b53d2",
+      "IsHidden": "False"
     },
     {
       "Start": "bda5ae1c74ae4640910c9a23e4cec931",
       "End": "f00542454dea4487a910fc8b4de0aaee",
-      "Id": "9da968a8c4d1446282f3c33e2a3a2345"
+      "Id": "9da968a8c4d1446282f3c33e2a3a2345",
+      "IsHidden": "False"
     },
     {
       "Start": "d76b77acc6694d938aa8e08bfdf1709e",
       "End": "52c82ab735894f6384fc9acc87b90fe0",
-      "Id": "245ee6cbc11b487ba02c6dddec615f13"
+      "Id": "245ee6cbc11b487ba02c6dddec615f13",
+      "IsHidden": "False"
     },
     {
       "Start": "8a23c9277410497d82e6fa6e56549da3",
       "End": "33ea1511c9ec47afa464d9e50e93f02e",
-      "Id": "c40d23d81f8f481da819ec59f22c88e1"
+      "Id": "c40d23d81f8f481da819ec59f22c88e1",
+      "IsHidden": "False"
     },
     {
       "Start": "8a23c9277410497d82e6fa6e56549da3",
       "End": "a459a1ebec8c491eb3cf28bcf7370c9f",
-      "Id": "c959cef26a5d4df0a97446c8ce0d8830"
+      "Id": "c959cef26a5d4df0a97446c8ce0d8830",
+      "IsHidden": "False"
     },
     {
       "Start": "41a44a80901b4f33b013c34a9ebdc68b",
       "End": "37fb5fca8f744024861b0a087a02515b",
-      "Id": "b3af3d197f774afea973cadb0d282716"
+      "Id": "b3af3d197f774afea973cadb0d282716",
+      "IsHidden": "False"
     },
     {
       "Start": "41a44a80901b4f33b013c34a9ebdc68b",
       "End": "b612d92e07b840249dee362a127219d0",
-      "Id": "fc128bda7f274c5db728be7de45b61cd"
+      "Id": "fc128bda7f274c5db728be7de45b61cd",
+      "IsHidden": "False"
     },
     {
       "Start": "693157c11e9a431b925df838c21faae7",
       "End": "74a3e1158d79491aac6bd43ccb2da0f1",
-      "Id": "a121ccf548574a5caa1c34f23838c568"
+      "Id": "a121ccf548574a5caa1c34f23838c568",
+      "IsHidden": "False"
     },
     {
       "Start": "693157c11e9a431b925df838c21faae7",
       "End": "8a40f3efc8c549ebb1cd84d47e995df0",
-      "Id": "6a6390948b7a44bb8496deb3ef3a3805"
+      "Id": "6a6390948b7a44bb8496deb3ef3a3805",
+      "IsHidden": "False"
     },
     {
       "Start": "dcd46a70696d4e46ab1d42cc33ad5c48",
       "End": "716e08b4ff3c4403bb86db170e4a3531",
-      "Id": "7544720c82e54df2934af71d69d225a8"
+      "Id": "7544720c82e54df2934af71d69d225a8",
+      "IsHidden": "False"
     },
     {
       "Start": "37e2d9baca544ff898a023d65346dda9",
       "End": "43a6d2d0d6d84bfba8a2e3133495e7c0",
-      "Id": "4903077996bd4de7aaec62101c1ef6d3"
-    },
-    {
-      "Start": "4e661f9f0ed44a9da2f24be9137675b7",
-      "End": "fce4f6a180d34cfc9607191f3fc2ae53",
-      "Id": "541b9ba393e24592ad6f9a8d415ca7ba"
-    },
-    {
-      "Start": "4e661f9f0ed44a9da2f24be9137675b7",
-      "End": "4f7f45181b334eddbb3d2a7ba52ff20f",
-      "Id": "61a1d8abb070417e82e914d70e0aae9e"
+      "Id": "4903077996bd4de7aaec62101c1ef6d3",
+      "IsHidden": "False"
     },
     {
       "Start": "a3eac1c2e9bd461f84c6003cfc811e7e",
       "End": "ad2d7da1532c451096ac62cfebb2d735",
-      "Id": "0221bc7e40c1493980e9e1fa978c2a24"
+      "Id": "0221bc7e40c1493980e9e1fa978c2a24",
+      "IsHidden": "False"
     },
     {
       "Start": "b74b3c9e1aaa43b3b1a095c1b82b0bb3",
       "End": "b5e7d71859da408aa5ea767a14c0a97a",
-      "Id": "2db146c0e42f4166a2618fa49a05dc3e"
+      "Id": "2db146c0e42f4166a2618fa49a05dc3e",
+      "IsHidden": "False"
     },
     {
-      "Start": "a4a89acd95e0491688fd53743edbbc49",
-      "End": "5f4feeb980c646d0b06d54d4cdac743f",
-      "Id": "f5e0717455fc4630966a19e8a4185fd9"
+      "Start": "63e1aac05a5b4e81a7336f16bd4ca70f",
+      "End": "2de87cbe77ac4557babe15dd54e8021e",
+      "Id": "72e076b7496d4057b4de2d81802bc0ae",
+      "IsHidden": "False"
     },
     {
-      "Start": "638c580004c744b3a3f5b320d4d8d4f9",
-      "End": "46946ea1b9e7445684be1ddd6dc55415",
-      "Id": "b8f9d039b65d44508458dba86f8c393d"
+      "Start": "ece9732b84ff40e9927e84aedaefe386",
+      "End": "0735b1e1ab7b4ff48ebec63626d1573a",
+      "Id": "b44a2d02833d4991b3c91c3a245f72e7",
+      "IsHidden": "False"
     },
     {
-      "Start": "7e920f017bd04f6b874cead068d00956",
-      "End": "0e53a3cdcc724741a3c8e1bff1f60b32",
-      "Id": "9b16605eb66e4702b185cc3484586c14"
+      "Start": "5ab0cea27f984ec6802a354357a2027a",
+      "End": "0bd6bf01d8bc4707aed61008b13abc24",
+      "Id": "bd5a8b9640454204bd2e591e2f04439c",
+      "IsHidden": "False"
     },
     {
-      "Start": "1a371147b8a647d28650b3773826444f",
-      "End": "141a30093b2b4292bd91ac9a66263ea1",
-      "Id": "997c05a0a7a34a90911aa1782e02712d"
+      "Start": "8258da7ea52a44c7b75cabc6c317b2b7",
+      "End": "959623191fe14bf58bff9bc80eabd6f3",
+      "Id": "90cfae7f67404bd6957f30233f61c336",
+      "IsHidden": "False"
     },
     {
-      "Start": "40380ea13a5a463b96c27fe0d9806cd9",
+      "Start": "f75173ba70e3473ca66dcb1e28f4d64b",
+      "End": "a3ada626157642a3aaacfc6b3b97cdcf",
+      "Id": "ef5fda53c4094ac4bfbe861075eda82f",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "f75173ba70e3473ca66dcb1e28f4d64b",
       "End": "19e561e1f1ac41e899769a5e7422549c",
-      "Id": "b8ec550bf6fa423187d8c2e597ee8c17"
+      "Id": "212f062ac5414f5baa9e7563de8a9486",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "6058847ff4c64aaf94d0074733b563a8",
+      "End": "fce4f6a180d34cfc9607191f3fc2ae53",
+      "Id": "0fafb0cbad4c4872bc65f95836b01a4a",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "6058847ff4c64aaf94d0074733b563a8",
+      "End": "4f7f45181b334eddbb3d2a7ba52ff20f",
+      "Id": "b47ce7c70b334895ad4226413f1dcd86",
+      "IsHidden": "False"
     }
   ],
   "Dependencies": [],
   "NodeLibraryDependencies": [
     {
       "Name": "Orchid",
-      "Version": "206.5.0.8318",
+      "Version": "216.3.0.5799",
       "ReferenceType": "Package",
       "Nodes": [
         "f11c34ffbff94bedb593a6328c800110",
@@ -1094,20 +1350,36 @@
         "94a58d4b6f6747c3ae3c3ef9238f4ae5",
         "b118431985324696a82ec47bcecff208",
         "a2fa45427ccc49a08e11d174fdbe8cdc",
-        "ec1de3f7bd5640109a2a8fcd5a196728",
-        "592f220308bc4ebf97d3b66e327410f1"
+        "592f220308bc4ebf97d3b66e327410f1",
+        "75ed828310c646be8dea53c3e79221fe",
+        "daed4b8076c24b6297ecf5b0b9d45fca",
+        "4a552b60bc9a49989010eecc380f5062",
+        "68f4db0eea7a4aae81acc79db8f4ed45"
       ]
     },
     {
-      "Name": "Orchid",
-      "Version": "212.3.0.8334",
-      "ReferenceType": "Package",
+      "Name": "LLYN.B205B_K01_F02 - Kopi (2).rvt",
+      "ReferenceType": "External",
       "Nodes": [
-        "74186058ba9f44d39a62ca0e19768305"
+        "94a58d4b6f6747c3ae3c3ef9238f4ae5"
+      ]
+    },
+    {
+      "Name": "DanEDU Exportlayers.txt",
+      "ReferenceType": "External",
+      "Nodes": [
+        "d3d89b92716743c7899926104dc303b5"
+      ]
+    },
+    {
+      "Name": "DanEDU Linetypes.lin",
+      "ReferenceType": "External",
+      "Nodes": [
+        "d3d89b92716743c7899926104dc303b5"
       ]
     }
   ],
-  "Thumbnail": null,
+  "Thumbnail": "",
   "GraphDocumentationURL": null,
   "ExtensionWorkspaceData": [
     {
@@ -1136,7 +1408,7 @@
       "ScaleFactor": 1.0,
       "HasRunWithoutCrash": true,
       "IsVisibleInDynamoLibrary": true,
-      "Version": "2.12.1.8246",
+      "Version": "2.16.1.2727",
       "RunType": "Manual",
       "RunPeriod": "1000"
     },
@@ -1152,242 +1424,267 @@
       "UpY": 1.0,
       "UpZ": 0.0
     },
+    "ConnectorPins": [],
     "NodeViews": [
       {
-        "ShowGeometry": true,
         "Name": "List.FilterByBoolMask",
+        "ShowGeometry": true,
         "Id": "419a79a4d5554644bb21a1178a176bb5",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 1418.4799640020694,
-        "Y": 121.39850262373801
+        "X": 1580.919172025297,
+        "Y": 913.61849479761258
       },
       {
-        "ShowGeometry": true,
         "Name": "Code Block",
+        "ShowGeometry": true,
         "Id": "70b903996d084c4aa7b57b7811deb7d4",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 848.136087197049,
-        "Y": 205.024563684025
+        "X": 920.919172025297,
+        "Y": 973.10099479761288
       },
       {
-        "ShowGeometry": true,
         "Name": "Element.Name",
+        "ShowGeometry": true,
         "Id": "72ba6c52e6784b75a674727024b729b4",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 820.136087197049,
-        "Y": 52.6634691417901
+        "X": 920.919172025297,
+        "Y": 824.61849479761258
       },
       {
-        "ShowGeometry": true,
         "Name": "String.Contains",
+        "ShowGeometry": true,
         "Id": "f11c34ffbff94bedb593a6328c800110",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 1105.3080255995594,
-        "Y": 192.28938581665776
+        "X": 1238.919172025297,
+        "Y": 947.61849479761258
       },
       {
-        "ShowGeometry": true,
         "Name": "Boolean",
+        "ShowGeometry": true,
         "Id": "66238f9bfb0348618d653bf833c3ff83",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 888.136087197049,
-        "Y": 311.450726043654
+        "X": 920.919172025297,
+        "Y": 1130.6184947976126
       },
       {
-        "ShowGeometry": true,
         "Name": "ViewType.ByName",
+        "ShowGeometry": true,
         "Id": "b710f60d8faf4c53a4eb4764c8722783",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 241.79221039202935,
-        "Y": 121.39850262373801
+        "X": 288.91917202529703,
+        "Y": 869.11849479761258
       },
       {
-        "ShowGeometry": true,
         "Name": "Code Block",
+        "ShowGeometry": true,
         "Id": "3f8e472fb6554e1bbafe3248f64d8023",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 9.6202719895193241,
-        "Y": 125.39850262373801
+        "X": 9.91917202529703,
+        "Y": 868.94599479761268
       },
       {
-        "ShowGeometry": true,
         "Name": "View.ByType",
+        "ShowGeometry": true,
         "Id": "4d44e921e7f846cf8dc8fa2ce5467706",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 534.96414879453937,
-        "Y": 121.39850262373801
+        "X": 606.919172025297,
+        "Y": 869.11849479761258
       },
       {
-        "ShowGeometry": true,
         "Name": "Element.Name",
+        "ShowGeometry": true,
         "Id": "fec0388d310c40608792d6200b07b229",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 1693.2112063749255,
-        "Y": 746.844101671117
+        "X": 1866.8503960231092,
+        "Y": 1770.613125362851
       },
       {
-        "ShowGeometry": true,
         "Name": "Boolean",
+        "ShowGeometry": true,
         "Id": "8c466b02369644f7b2c4cd9e1518bb63",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 2009.6772650414812,
-        "Y": 216.8195265891469
+        "X": 2238.33573509651,
+        "Y": 960.14484410283751
       },
       {
-        "ShowGeometry": true,
         "Name": "Document.Path",
+        "ShowGeometry": true,
         "Id": "94a58d4b6f6747c3ae3c3ef9238f4ae5",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 1380.8218039173689,
-        "Y": 580.09950013566413
+        "X": 1518.8503960231092,
+        "Y": 1533.863125362851
       },
       {
-        "ShowGeometry": true,
         "Name": "Document.Current",
+        "ShowGeometry": true,
         "Id": "b118431985324696a82ec47bcecff208",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 1110.4324014598151,
-        "Y": 580.09950013566413
+        "X": 1209.8503960231092,
+        "Y": 1466.824375362851
       },
       {
-        "ShowGeometry": true,
         "Name": "FileSystem.DirectoryName",
+        "ShowGeometry": true,
         "Id": "62b0915318844c97a7d1388f21d9c567",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 1693.2112063749255,
-        "Y": 642.865134236724
+        "X": 1866.8503960231092,
+        "Y": 1623.113125362851
       },
       {
-        "ShowGeometry": true,
         "Name": "Code Block",
+        "ShowGeometry": true,
         "Id": "05c124fa1da940b7aabd232997ac97d1",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 2005.6006088324755,
-        "Y": 691.234101671117
+        "X": 2237.8503960231092,
+        "Y": 1678.613125362851
       },
       {
-        "ShowGeometry": true,
         "Name": "FileSystem.FileName",
+        "ShowGeometry": true,
         "Id": "c25dcc4c2e5647c2a437e59e22583424",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 1693.2112063749255,
-        "Y": 512.886166802331
+        "X": 1866.8503960231092,
+        "Y": 1444.613125362851
       },
       {
-        "ShowGeometry": true,
         "Name": "Code Block",
+        "ShowGeometry": true,
         "Id": "dea8c88bb9004651be5c8454d28b6eb0",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 2005.6006088324755,
-        "Y": 574.708512211172
+        "X": 2237.8503960231092,
+        "Y": 1501.613125362851
       },
       {
-        "ShowGeometry": true,
         "Name": "Document.ExportDWG",
+        "ShowGeometry": true,
         "Id": "a2fa45427ccc49a08e11d174fdbe8cdc",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 2236.0470468183439,
-        "Y": 113.13916430111487
+        "X": 2532.33573509651,
+        "Y": 824.14484410283751
       },
       {
-        "ShowGeometry": true,
-        "Name": "ExportOption.DWG",
-        "Id": "ec1de3f7bd5640109a2a8fcd5a196728",
-        "IsSetAsInput": false,
-        "IsSetAsOutput": false,
-        "Excluded": false,
-        "X": 9.6318107814784639,
-        "Y": -267.074116378892
-      },
-      {
-        "ShowGeometry": true,
         "Name": "List.FilterByBoolMask",
+        "ShowGeometry": true,
         "Id": "23effada4a6e4da19770aa2b477cb259",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 737.296906657719,
-        "Y": -267.074116378892
+        "X": 890.51252763338289,
+        "Y": -275.60568301768171
       },
       {
-        "ShowGeometry": true,
         "Name": "Element.Delete",
+        "ShowGeometry": true,
         "Id": "592f220308bc4ebf97d3b66e327410f1",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 985.129454595839,
-        "Y": -267.074116378892
+        "X": 1225.5125276333829,
+        "Y": -275.60568301768171
       },
       {
-        "ShowGeometry": true,
         "Name": "Code Block",
+        "ShowGeometry": true,
         "Id": "94e4c5c5d2db49e5af98aad4fecaa706",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 277.46435871959886,
-        "Y": -182.9595974295091
+        "X": 381.51252763338289,
+        "Y": -258.12318301768164
       },
       {
-        "ShowGeometry": true,
         "Name": "Code Block",
+        "ShowGeometry": true,
         "Id": "d3d89b92716743c7899926104dc303b5",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 1290.1266784454585,
-        "Y": -338.65915587128779
+        "X": 9.9235203087255286,
+        "Y": 72.938864476292821
       },
       {
+        "Name": "ExportOption.CreateAcadOption",
         "ShowGeometry": true,
-        "Name": "ExportOption.CreateDWGOption",
-        "Id": "74186058ba9f44d39a62ca0e19768305",
+        "Id": "75ed828310c646be8dea53c3e79221fe",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 1813.7520589085641,
-        "Y": -354.79248920462112
+        "X": 576.92352030872553,
+        "Y": 201.25136447629282
+      },
+      {
+        "Name": "ExportOption.AcadOptionSettings",
+        "ShowGeometry": true,
+        "Id": "daed4b8076c24b6297ecf5b0b9d45fca",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 988.92352030872553,
+        "Y": 167.25136447629282
+      },
+      {
+        "Name": "ExportOption.AcadOptionGenerel",
+        "ShowGeometry": true,
+        "Id": "4a552b60bc9a49989010eecc380f5062",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": true,
+        "X": 1415.9235203087255,
+        "Y": 133.25136447629282
+      },
+      {
+        "Name": "ExportOption.AcadOptions",
+        "ShowGeometry": true,
+        "Id": "68f4db0eea7a4aae81acc79db8f4ed45",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": true,
+        "X": 9.5125276333828879,
+        "Y": -266.86443301768168
       }
     ],
     "Annotations": [
       {
         "Id": "61cb0a5603e14938b10e755549c7aff0",
         "Title": "Get view by name in model",
+        "DescriptionText": null,
+        "IsExpanded": true,
+        "WidthAdjustment": 0.0,
+        "HeightAdjustment": 0.0,
         "Nodes": [
           "419a79a4d5554644bb21a1178a176bb5",
           "70b903996d084c4aa7b57b7811deb7d4",
@@ -1398,19 +1695,24 @@
           "3f8e472fb6554e1bbafe3248f64d8023",
           "4d44e921e7f846cf8dc8fa2ce5467706"
         ],
-        "Left": -0.37972801048067595,
-        "Top": -0.33653085820989759,
-        "Width": 1599.85969201255,
-        "Height": 379.78725690186388,
+        "HasNestedGroups": false,
+        "Left": -0.0808279747029701,
+        "Top": 751.61849479761258,
+        "Width": 1826.0,
+        "Height": 511.0,
         "FontSize": 36.0,
-        "InitialTop": 52.6634691417901,
-        "InitialHeight": 403.78725690186388,
-        "TextblockHeight": 43.0,
+        "InitialTop": 824.61849479761258,
+        "InitialHeight": 451.0,
+        "TextblockHeight": 63.0,
         "Background": "#FFA4E1FF"
       },
       {
         "Id": "0cebf0c9a3a94b14b782a32190e3da9d",
         "Title": "Path",
+        "DescriptionText": null,
+        "IsExpanded": true,
+        "WidthAdjustment": 0.0,
+        "HeightAdjustment": 0.0,
         "Nodes": [
           "fec0388d310c40608792d6200b07b229",
           "94a58d4b6f6747c3ae3c3ef9238f4ae5",
@@ -1420,72 +1722,109 @@
           "c25dcc4c2e5647c2a437e59e22583424",
           "dea8c88bb9004651be5c8454d28b6eb0"
         ],
-        "Left": 1100.4324014598151,
-        "Top": 459.886166802331,
-        "Width": 1110.1682073726606,
-        "Height": 379.95793486878597,
+        "HasNestedGroups": false,
+        "Left": 1199.8503960231092,
+        "Top": 1371.613125362851,
+        "Width": 1279.0,
+        "Height": 531.0,
         "FontSize": 36.0,
-        "InitialTop": 512.886166802331,
-        "InitialHeight": 378.95793486878597,
-        "TextblockHeight": 43.0,
+        "InitialTop": 1444.613125362851,
+        "InitialHeight": 471.0,
+        "TextblockHeight": 63.0,
         "Background": "#FFBB87C6"
       },
       {
         "Id": "5f7c407b76c64491968fd6ad0a8394b7",
         "Title": "DWG",
+        "DescriptionText": null,
+        "IsExpanded": true,
+        "WidthAdjustment": 0.0,
+        "HeightAdjustment": 0.0,
         "Nodes": [
           "8c466b02369644f7b2c4cd9e1518bb63",
           "a2fa45427ccc49a08e11d174fdbe8cdc"
         ],
-        "Left": 1999.6772650414812,
-        "Top": 60.139164301114874,
-        "Width": 460.36978177686274,
-        "Height": 250.0,
+        "HasNestedGroups": false,
+        "Left": 2228.33573509651,
+        "Top": 751.14484410283751,
+        "Width": 552.0,
+        "Height": 340.99999999999989,
         "FontSize": 36.0,
-        "InitialTop": 113.13916430111487,
-        "InitialHeight": 248.68036228803203,
-        "TextblockHeight": 43.0,
+        "InitialTop": 824.14484410283751,
+        "InitialHeight": 280.99999999999989,
+        "TextblockHeight": 63.0,
         "Background": "#FFC1D676"
       },
       {
         "Id": "17f3a0cc2ec045349c268182f823ed6e",
         "Title": "Delete \"BIPS 2005\" export settings",
+        "DescriptionText": null,
+        "IsExpanded": true,
+        "WidthAdjustment": 0.0,
+        "HeightAdjustment": 0.0,
         "Nodes": [
-          "ec1de3f7bd5640109a2a8fcd5a196728",
           "23effada4a6e4da19770aa2b477cb259",
           "592f220308bc4ebf97d3b66e327410f1",
-          "94e4c5c5d2db49e5af98aad4fecaa706"
+          "94e4c5c5d2db49e5af98aad4fecaa706",
+          "68f4db0eea7a4aae81acc79db8f4ed45"
         ],
-        "Left": -0.36818921852153608,
-        "Top": -320.074116378892,
-        "Width": 1200.4976438143606,
-        "Height": 240.11451894938287,
+        "HasNestedGroups": false,
+        "Left": -0.48747236661711213,
+        "Top": -348.60568301768171,
+        "Width": 1449.0,
+        "Height": 240.0,
         "FontSize": 36.0,
-        "InitialTop": -267.074116378892,
-        "InitialHeight": 229.11451894938287,
-        "TextblockHeight": 43.0,
+        "InitialTop": -275.60568301768171,
+        "InitialHeight": 162.48250000000007,
+        "TextblockHeight": 63.0,
         "Background": "#FFFF7BAC"
       },
       {
         "Id": "00464ed51810485ca75cad823272c00c",
         "Title": "Set \"IBB 2000\" export settings",
+        "DescriptionText": null,
+        "IsExpanded": true,
+        "WidthAdjustment": 0.0,
+        "HeightAdjustment": 0.0,
         "Nodes": [
           "d3d89b92716743c7899926104dc303b5",
-          "74186058ba9f44d39a62ca0e19768305"
+          "75ed828310c646be8dea53c3e79221fe",
+          "4a552b60bc9a49989010eecc380f5062",
+          "daed4b8076c24b6297ecf5b0b9d45fca"
         ],
-        "Left": 1280.1266784454585,
-        "Top": -407.79248920462112,
-        "Width": 819.62538046310578,
-        "Height": 328.0,
+        "HasNestedGroups": false,
+        "Left": -0.0764796912744714,
+        "Top": -0.061135523707179118,
+        "Width": 1748.0,
+        "Height": 644.3125,
         "FontSize": 36.0,
-        "InitialTop": -354.79248920462112,
-        "InitialHeight": 148.0,
-        "TextblockHeight": 43.0,
+        "InitialTop": 72.938864476292821,
+        "InitialHeight": 273.3125,
+        "TextblockHeight": 63.0,
         "Background": "#FFA4E1FF"
+      },
+      {
+        "Id": "bbfc425889244045935ad1979c5c6ae6",
+        "Title": "File: any DTU building file",
+        "DescriptionText": null,
+        "IsExpanded": true,
+        "WidthAdjustment": 0.0,
+        "HeightAdjustment": 0.0,
+        "Nodes": [],
+        "HasNestedGroups": false,
+        "Left": 0.12813026888019863,
+        "Top": -59.987062459065584,
+        "Width": 0.0,
+        "Height": 0.0,
+        "FontSize": 36.0,
+        "InitialTop": 0.0,
+        "InitialHeight": 0.0,
+        "TextblockHeight": 0.0,
+        "Background": "#FFC1D676"
       }
     ],
-    "X": 25.663750579357778,
-    "Y": 394.06427206786145,
-    "Zoom": 0.45074083408102078
+    "X": 173.78386877378,
+    "Y": 150.01585433561291,
+    "Zoom": 0.43546219011715082
   }
 }

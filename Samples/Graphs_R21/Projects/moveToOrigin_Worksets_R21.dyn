@@ -90,7 +90,7 @@
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
       "NodeType": "FunctionNode",
-      "FunctionSignature": "Orchid.RevitProject.Views.View.ModelAll@Revit.Application.Document,bool",
+      "FunctionSignature": "Orchid.RevitProject.Views.View.Model@Revit.Application.Document,bool",
       "Id": "dc4d83b1f6494713859baa7be98fb62c",
       "Inputs": [
         {
@@ -124,7 +124,7 @@
         }
       ],
       "Replication": "Auto",
-      "Description": "All model view in document. Ordered by type and name.\n\nView.ModelAll (document: Document = null, condense: bool = true): var[]..[]\n\nNamespace:\nOrchid.RevitProject.Views"
+      "Description": "All model view in document. Ordered by type and name.\n\nView.Model (document: Document = null, condense: bool = true): var[]..[]\n\nNamespace:\nOrchid.RevitProject.Views"
     },
     {
       "ConcreteType": "CoreNodeModels.FromObject, CoreNodeModels",
@@ -365,7 +365,7 @@
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
       "NodeType": "FunctionNode",
-      "FunctionSignature": "Orchid.Common.Geometry.Point.Reverse@Autodesk.DesignScript.Geometry.Point",
+      "FunctionSignature": "Orchid.Geometry.Point.Reverse@Autodesk.DesignScript.Geometry.Point",
       "Id": "d3e8481799ea410b9256f8db43b02ab2",
       "Inputs": [
         {
@@ -390,7 +390,7 @@
         }
       ],
       "Replication": "Auto",
-      "Description": "Get the reverse of the point. Essentially this negates the X, Y, and Z components of the Point.\n\nPoint.Reverse (point: Point): Point\n\nNamespace:\nOrchid.Common.Geometry"
+      "Description": "Get the reverse of the point. Essentially this negates the X, Y, and Z components of the Point.\n\nPoint.Reverse (point: Point): Point\n\nNamespace:\nOrchid.Geometry"
     },
     {
       "ConcreteType": "Dynamo.Nodes.DSModelElementSelection, DSRevitNodesUI",
@@ -1023,7 +1023,7 @@
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
       "NodeType": "FunctionNode",
-      "FunctionSignature": "Orchid.RevitProject.Common.RevisionCloud.All",
+      "FunctionSignature": "Orchid.RevitProject.Common.RevisionCloud.InDocument",
       "Id": "f1e081a8c7d3489fa56c9052c6c02cdb",
       "Inputs": [],
       "Outputs": [
@@ -1038,7 +1038,7 @@
         }
       ],
       "Replication": "Auto",
-      "Description": "Get all revision clouds in the current document.\n\nRevisionCloud.All ( ): RevisionCloud[]\n\nNamespace:\nOrchid.RevitProject.Common"
+      "Description": "Get all revision clouds in the current document.\n\nRevisionCloud.InDocument ( ): RevisionCloud[]\n\nNamespace:\nOrchid.RevitProject.Common"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
@@ -1327,7 +1327,7 @@
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
       "NodeType": "FunctionNode",
-      "FunctionSignature": "Orchid.RevitProject.Datums.Grid.All@bool",
+      "FunctionSignature": "Orchid.RevitProject.Datums.Grid.InDocument@bool",
       "Id": "20d88557998644d79944fc88d9787f80",
       "Inputs": [
         {
@@ -1352,12 +1352,12 @@
         }
       ],
       "Replication": "Auto",
-      "Description": "Get all grid in the document.\n\nGrid.All (condense: bool = true): var[]..[]\n\nNamespace:\nOrchid.RevitProject.Datums"
+      "Description": "Get all grid in the document.\n\nGrid.InDocument (condense: bool = true): var[]..[]\n\nNamespace:\nOrchid.RevitProject.Datums"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
       "NodeType": "FunctionNode",
-      "FunctionSignature": "Orchid.RevitProject.Datums.ReferencePlane.All",
+      "FunctionSignature": "Orchid.RevitProject.Datums.ReferencePlane.InDocument",
       "Id": "b3b9ec9d2dcd41008ec8886c7f92483a",
       "Inputs": [],
       "Outputs": [
@@ -1372,12 +1372,12 @@
         }
       ],
       "Replication": "Auto",
-      "Description": "Get all reference plane.\n\nReferencePlane.All ( ): Element[]\n\nNamespace:\nOrchid.RevitProject.Datums"
+      "Description": "Get all reference plane.\n\nReferencePlane.InDocument ( ): Element[]\n\nNamespace:\nOrchid.RevitProject.Datums"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
       "NodeType": "FunctionNode",
-      "FunctionSignature": "Orchid.RevitProject.Datums.Level.All",
+      "FunctionSignature": "Orchid.RevitProject.Datums.Level.InDocument",
       "Id": "1ac8d058a1e34843a8d3bd6eee3f805c",
       "Inputs": [],
       "Outputs": [
@@ -1392,12 +1392,12 @@
         }
       ],
       "Replication": "Auto",
-      "Description": "Get all levels.\n\nLevel.All ( ): Element[]\n\nNamespace:\nOrchid.RevitProject.Datums"
+      "Description": "Get all levels.\n\nLevel.InDocument ( ): Element[]\n\nNamespace:\nOrchid.RevitProject.Datums"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
       "NodeType": "FunctionNode",
-      "FunctionSignature": "Orchid.RevitProject.Elements.Types.ByName@string",
+      "FunctionSignature": "Orchid.RevitProject.Elements.Class.ByName@string",
       "Id": "0fd51d12826d4353931cddeb43bf5afd",
       "Inputs": [
         {
@@ -1422,7 +1422,7 @@
         }
       ],
       "Replication": "Auto",
-      "Description": "Get a type from the revit assembly by name.\n\nTypes.ByName (name: string): var\n\nNamespace:\nOrchid.RevitProject.Elements"
+      "Description": "Get a type from the revit assembly by name.\n\nClass.ByName (name: string): var\n\nNamespace:\nOrchid.RevitProject.Elements"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
@@ -1864,7 +1864,7 @@
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
       "NodeType": "FunctionNode",
-      "FunctionSignature": "Orchid.RevitProject.Elements.Sweep.All",
+      "FunctionSignature": "Orchid.RevitProject.Elements.Sweep.InDocument",
       "Id": "ab31ac158cdf4286b49906542a7dd8f3",
       "Inputs": [],
       "Outputs": [
@@ -1879,7 +1879,7 @@
         }
       ],
       "Replication": "Auto",
-      "Description": "Get all sweep in current document.\n\nSweep.All ( ): Element[]\n\nNamespace:\nOrchid.RevitProject.Elements"
+      "Description": "Get all sweep in current document.\n\nSweep.InDocument ( ): Element[]\n\nNamespace:\nOrchid.RevitProject.Elements"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
@@ -2097,7 +2097,7 @@
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
       "NodeType": "FunctionNode",
-      "FunctionSignature": "Orchid.RevitProject.Common.Workset.All",
+      "FunctionSignature": "Orchid.RevitProject.Common.Workset.InDocument",
       "Id": "66c18676ad0a46bab136dbeada92c18c",
       "Inputs": [],
       "Outputs": [
@@ -2112,7 +2112,7 @@
         }
       ],
       "Replication": "Auto",
-      "Description": "Get all workset in the current document.\n\nWorkset.All ( ): Workset[]\n\nNamespace:\nOrchid.RevitProject.Common"
+      "Description": "Get all workset in the current document.\n\nWorkset.InDocument ( ): Workset[]\n\nNamespace:\nOrchid.RevitProject.Common"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
@@ -2622,7 +2622,7 @@
       },
       {
         "ShowGeometry": true,
-        "Name": "o|View.ModelAll",
+        "Name": "o|View.Model",
         "Id": "dc4d83b1f6494713859baa7be98fb62c",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
@@ -2892,7 +2892,7 @@
       },
       {
         "ShowGeometry": true,
-        "Name": "o|RevisionCloud.All",
+        "Name": "o|RevisionCloud.InDocument",
         "Id": "f1e081a8c7d3489fa56c9052c6c02cdb",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
@@ -2982,7 +2982,7 @@
       },
       {
         "ShowGeometry": true,
-        "Name": "o|Grid.All",
+        "Name": "o|Grid.InDocument",
         "Id": "20d88557998644d79944fc88d9787f80",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
@@ -2992,7 +2992,7 @@
       },
       {
         "ShowGeometry": true,
-        "Name": "o|ReferencePlane.All",
+        "Name": "o|ReferencePlane.InDocument",
         "Id": "b3b9ec9d2dcd41008ec8886c7f92483a",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
@@ -3002,7 +3002,7 @@
       },
       {
         "ShowGeometry": true,
-        "Name": "o|Level.All",
+        "Name": "o|Level.InDocument",
         "Id": "1ac8d058a1e34843a8d3bd6eee3f805c",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
@@ -3012,7 +3012,7 @@
       },
       {
         "ShowGeometry": true,
-        "Name": "o|Types.ByName",
+        "Name": "o|Class.ByName",
         "Id": "0fd51d12826d4353931cddeb43bf5afd",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
@@ -3142,7 +3142,7 @@
       },
       {
         "ShowGeometry": true,
-        "Name": "o|Sweep.All",
+        "Name": "o|Sweep.InDocument",
         "Id": "ab31ac158cdf4286b49906542a7dd8f3",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
@@ -3212,7 +3212,7 @@
       },
       {
         "ShowGeometry": true,
-        "Name": "o|Workset.All",
+        "Name": "o|Workset.InDocument",
         "Id": "66c18676ad0a46bab136dbeada92c18c",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
