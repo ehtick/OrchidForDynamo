@@ -2,7 +2,7 @@
   "Uuid": "3c9d0464-8643-5ffe-96e5-ab1769818209",
   "IsCustomNode": false,
   "Description": "",
-  "Name": "Purge",
+  "Name": "Purge Background",
   "ElementResolver": {
     "ResolutionMap": {
       "Directory": {
@@ -66,7 +66,7 @@
       "Name": "Directory Path",
       "Type": "string",
       "Type2": "string",
-      "Value": "..\\testSet",
+      "Value": "%userprofile%\\Programming\\Testing\\Data\\testSet",
       "Description": "Creates a string.",
       "SelectedIndex": 0
     },
@@ -271,13 +271,13 @@
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
       "NodeType": "FunctionNode",
-      "FunctionSignature": "Orchid.Common.DataStream.Await@var,var[]",
+      "FunctionSignature": "Orchid.Common.DataStream.Await@var[]..[],var[]..[]",
       "Id": "596ebd2bfcf14944813bbca3e6e5bb9a",
       "Inputs": [
         {
           "Id": "e4e980563d794db099b5b1093d66e52b",
           "Name": "pass",
-          "Description": "Data to pass.\n\nvar",
+          "Description": "Data to pass.\n\nvar[]..[]",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -286,7 +286,7 @@
         {
           "Id": "fe243d44d97240e6841726c3053d453c",
           "Name": "waitFor",
-          "Description": "Data object to wait for.\n\nvar[]",
+          "Description": "Data object to wait for.\n\nvar[]..[]",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -305,18 +305,18 @@
         }
       ],
       "Replication": "Auto",
-      "Description": "Await a data stream before passing another data stream.\n\nDataStream.Await (pass: var, waitFor: var[]): var[]..[]"
+      "Description": "Await a data stream before passing another data stream.\n\nDataStream.Await (pass: var[]..[], waitFor: var[]..[]): var[]..[]"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
       "NodeType": "FunctionNode",
-      "FunctionSignature": "Orchid.Common.DataStream.Await@var,var[]",
+      "FunctionSignature": "Orchid.Common.DataStream.Await@var[]..[],var[]..[]",
       "Id": "de566d20229a4f00aff9dcff9e9b09ea",
       "Inputs": [
         {
           "Id": "3e58f72cbbef4148a09fede8d196bd59",
           "Name": "pass",
-          "Description": "Data to pass.\n\nvar",
+          "Description": "Data to pass.\n\nvar[]..[]",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -325,7 +325,7 @@
         {
           "Id": "086dcd1a88f4499da8415097f5774089",
           "Name": "waitFor",
-          "Description": "Data object to wait for.\n\nvar[]",
+          "Description": "Data object to wait for.\n\nvar[]..[]",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -344,46 +344,7 @@
         }
       ],
       "Replication": "Auto",
-      "Description": "Await a data stream before passing another data stream.\n\nDataStream.Await (pass: var, waitFor: var[]): var[]..[]"
-    },
-    {
-      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
-      "NodeType": "FunctionNode",
-      "FunctionSignature": "Orchid.RevitProject.Common.Document.Purge@Revit.Application.Document,bool",
-      "Id": "e1f7fa363a014614a36e1b657e9c744e",
-      "Inputs": [
-        {
-          "Id": "ab31d53d5f9d4289b10874ad013ab6a5",
-          "Name": "document",
-          "Description": "Project document (rvt).\n\nDocument\nDefault value : null",
-          "UsingDefaultValue": true,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        },
-        {
-          "Id": "eb083f6e00c0416f8709e7dd95964ed1",
-          "Name": "completely",
-          "Description": "Includes purging for a comprehensive purge!\n\nbool\nDefault value : false",
-          "UsingDefaultValue": true,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        }
-      ],
-      "Outputs": [
-        {
-          "Id": "595c370e8e4c4cf3ac04557528a91940",
-          "Name": "void",
-          "Description": "void",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        }
-      ],
-      "Replication": "Auto",
-      "Description": "Purge document. Set \"completely\" to true for a comprehensive purge! Note: \"Completely\" purges view templates, parameters, parameter filters and line styles/patterns. Furthermore, materials and materials assets are purged that are used in \"peripheral\" elements and settings. This function(completely) may take a while since it is evaluating many objects in the document!\n\nDocument.Purge (document: Document = null, completely: bool = false): void"
+      "Description": "Await a data stream before passing another data stream.\n\nDataStream.Await (pass: var[]..[], waitFor: var[]..[]): var[]..[]"
     },
     {
       "ConcreteType": "CoreNodeModels.Input.BoolSelector, CoreNodeModels",
@@ -515,7 +476,7 @@
     {
       "ConcreteType": "CoreNodeModels.Input.StringInput, CoreNodeModels",
       "NodeType": "StringInputNode",
-      "InputValue": "..\\testSet",
+      "InputValue": "%userprofile%\\Programming\\Testing\\Data\\testSet",
       "Id": "69c5b2aa245841db900e8e9163405dd4",
       "Inputs": [],
       "Outputs": [
@@ -551,6 +512,45 @@
       ],
       "Replication": "Disabled",
       "Description": "Creates a string."
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "Orchid.RevitFamily.FamilyDocument.Purge@Revit.Application.Document,bool",
+      "Id": "5f93de26372f4984aa336a4874349dc6",
+      "Inputs": [
+        {
+          "Id": "2579c676cb5445c785008be9fe36cbef",
+          "Name": "familyDocument",
+          "Description": "Family document (rfa).\n\nDocument\nDefault value : null",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "28c85ef3ee2a44659fd510690d4429c0",
+          "Name": "completely",
+          "Description": "Includes purging for a comprehensive purge!\n\nbool\nDefault value : false",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "1c74b6a0e7ef44758df6954f46cc04ee",
+          "Name": "void",
+          "Description": "void",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Purge family document. Set \"completely\" to true for a comprehensive purge! Note: \"Completely\" purges line styles and imported categories. Furthermore, materials and materials assets are purged that are used in \"peripheral\" elements and settings.\n\nFamilyDocument.Purge (familyDocument: Document = null, completely: bool = false): void"
     }
   ],
   "Connectors": [
@@ -597,15 +597,9 @@
       "IsHidden": "False"
     },
     {
-      "Start": "595c370e8e4c4cf3ac04557528a91940",
-      "End": "fe243d44d97240e6841726c3053d453c",
-      "Id": "3190a744c644473194c8f7bf92e11c3d",
-      "IsHidden": "False"
-    },
-    {
       "Start": "4fd408c944504e4a95dc0b3deacbd888",
-      "End": "eb083f6e00c0416f8709e7dd95964ed1",
-      "Id": "646ffa65848443a18b27eb3d358d6997",
+      "End": "28c85ef3ee2a44659fd510690d4429c0",
+      "Id": "5e7f15c9f848442886ce34ad43ec209e",
       "IsHidden": "False"
     },
     {
@@ -616,8 +610,8 @@
     },
     {
       "Start": "148d420c39d1478f966023c584b9572d",
-      "End": "ab31d53d5f9d4289b10874ad013ab6a5",
-      "Id": "160ed5293af84979bbf156c37651f49a",
+      "End": "2579c676cb5445c785008be9fe36cbef",
+      "Id": "ea78610f2dd44c1994d74873c722e458",
       "IsHidden": "False"
     },
     {
@@ -649,26 +643,32 @@
       "End": "d9db8f67a7384adea5a1cf39b6c21ae7",
       "Id": "3a894b21addc43b9ae4784b7aaa247dc",
       "IsHidden": "False"
+    },
+    {
+      "Start": "1c74b6a0e7ef44758df6954f46cc04ee",
+      "End": "fe243d44d97240e6841726c3053d453c",
+      "Id": "15f9327334cf467495b27a255cd92311",
+      "IsHidden": "False"
     }
   ],
   "Dependencies": [],
   "NodeLibraryDependencies": [
     {
       "Name": "Orchid",
-      "Version": "216.3.0.5799",
+      "Version": "216.3.0.5794",
       "ReferenceType": "Package",
       "Nodes": [
         "99169d05feab4316b27f7d53e5878ecc",
         "55865afbbc4e4578a114a0144729d5f9",
         "596ebd2bfcf14944813bbca3e6e5bb9a",
         "de566d20229a4f00aff9dcff9e9b09ea",
-        "e1f7fa363a014614a36e1b657e9c744e",
         "5e125c40893343d2a499e293d70f33fe",
-        "fe82b55c78244244a327b79f7f40eddf"
+        "fe82b55c78244244a327b79f7f40eddf",
+        "5f93de26372f4984aa336a4874349dc6"
       ]
     }
   ],
-  "Thumbnail": null,
+  "Thumbnail": "",
   "GraphDocumentationURL": null,
   "ExtensionWorkspaceData": [
     {
@@ -695,7 +695,7 @@
   "View": {
     "Dynamo": {
       "ScaleFactor": 1.0,
-      "HasRunWithoutCrash": false,
+      "HasRunWithoutCrash": true,
       "IsVisibleInDynamoLibrary": true,
       "Version": "2.16.1.2727",
       "RunType": "Manual",
@@ -722,8 +722,8 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 2337.2587678765412,
-        "Y": 126.11451523366429
+        "X": 2692.0773947911321,
+        "Y": 363.85765331330049
       },
       {
         "Name": "Boolean",
@@ -732,8 +732,8 @@
         "IsSetAsInput": true,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 2002.2587678765412,
-        "Y": 249.11451523366406
+        "X": 2385.0773947911321,
+        "Y": 554.85765331330037
       },
       {
         "Name": "FileSystem.DeleteFile",
@@ -742,8 +742,8 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 2650.2587678765412,
-        "Y": 126.11451523366429
+        "X": 3017.0773947911321,
+        "Y": 363.85765331330049
       },
       {
         "Name": "String",
@@ -752,8 +752,8 @@
         "IsSetAsInput": true,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 2002.2587678765412,
-        "Y": 165.11451523366429
+        "X": 2385.0773947911321,
+        "Y": 407.85765331330049
       },
       {
         "Name": "Document.Close",
@@ -762,8 +762,8 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 1638.536290809453,
-        "Y": 197.46951365752909
+        "X": 2041.0773947911323,
+        "Y": 264.85765331330037
       },
       {
         "Name": "Boolean",
@@ -772,8 +772,8 @@
         "IsSetAsInput": true,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 1346.536290809453,
-        "Y": 277.46951365752909
+        "X": 1734.0773947911323,
+        "Y": 370.85765331330037
       },
       {
         "Name": "DataStream.Await",
@@ -782,8 +782,8 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 1346.536290809453,
-        "Y": 143.46951365752909
+        "X": 1734.0773947911323,
+        "Y": 192.8576533133004
       },
       {
         "Name": "DataStream.Await",
@@ -792,18 +792,8 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 2002.2349937756208,
-        "Y": 28.858440905035195
-      },
-      {
-        "Name": "Document.Purge",
-        "ShowGeometry": true,
-        "Id": "e1f7fa363a014614a36e1b657e9c744e",
-        "IsSetAsInput": false,
-        "IsSetAsOutput": false,
-        "Excluded": false,
-        "X": 1038.2152267069682,
-        "Y": 258.70428691595009
+        "X": 2385.0773947911321,
+        "Y": 230.85765331330043
       },
       {
         "Name": "Boolean",
@@ -812,8 +802,8 @@
         "IsSetAsInput": true,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 852.5652910979411,
-        "Y": 319.56062601435121
+        "X": 1070.0773947911323,
+        "Y": 260.85765331330037
       },
       {
         "Name": "Document.BackgroundOpen",
@@ -822,8 +812,8 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 558.38649117958084,
-        "Y": 109.15430423214423
+        "X": 668.07739479113206,
+        "Y": 187.85765331330035
       },
       {
         "Name": "Directory.Contents",
@@ -832,8 +822,8 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 245.38649117958084,
-        "Y": 109.15430423214423
+        "X": 343.07739479113206,
+        "Y": 187.85765331330029
       },
       {
         "Name": "Boolean",
@@ -842,8 +832,8 @@
         "IsSetAsInput": true,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 10.386491179581071,
-        "Y": 196.15430423214423
+        "X": 10.077394791132122,
+        "Y": 386.85765331330037
       },
       {
         "Name": "Directory Path",
@@ -852,8 +842,8 @@
         "IsSetAsInput": true,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 10.386491179581071,
-        "Y": 29.937589983418206
+        "X": 10.077394791132122,
+        "Y": 50.35765331330029
       },
       {
         "Name": "String",
@@ -862,8 +852,18 @@
         "IsSetAsInput": true,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 10.386491179581071,
-        "Y": 113.15430423214423
+        "X": 10.077394791132122,
+        "Y": 238.85765331330029
+      },
+      {
+        "Name": "FamilyDocument.Purge",
+        "ShowGeometry": true,
+        "Id": "5f93de26372f4984aa336a4874349dc6",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1364.0773947911323,
+        "Y": 226.8576533133004
       }
     ],
     "Annotations": [
@@ -882,13 +882,13 @@
           "de566d20229a4f00aff9dcff9e9b09ea"
         ],
         "HasNestedGroups": false,
-        "Left": 1992.2349937756208,
-        "Top": -37.141559094964805,
-        "Width": 901.02377410092049,
-        "Height": 418.25607432862887,
+        "Left": 2375.0773947911321,
+        "Top": 164.85765331330043,
+        "Width": 885.0,
+        "Height": 522.0,
         "FontSize": 30.0,
-        "InitialTop": 28.858440905035195,
-        "InitialHeight": 365.25607432862887,
+        "InitialTop": 230.85765331330043,
+        "InitialHeight": 468.99999999999994,
         "TextblockHeight": 56.0,
         "Background": "#FFFFB8D8"
       },
@@ -905,13 +905,13 @@
           "596ebd2bfcf14944813bbca3e6e5bb9a"
         ],
         "HasNestedGroups": false,
-        "Left": 1336.536290809453,
-        "Top": 93.469513657529092,
-        "Width": 536.0,
-        "Height": 316.0,
+        "Left": 1724.0773947911323,
+        "Top": 142.8576533133004,
+        "Width": 550.99999999999977,
+        "Height": 360.0,
         "FontSize": 14.0,
-        "InitialTop": 143.46951365752909,
-        "InitialHeight": 279.0,
+        "InitialTop": 192.8576533133004,
+        "InitialHeight": 323.0,
         "TextblockHeight": 40.0,
         "Background": "#FFC1D676"
       },
@@ -923,17 +923,17 @@
         "WidthAdjustment": 0.0,
         "HeightAdjustment": 0.0,
         "Nodes": [
-          "e1f7fa363a014614a36e1b657e9c744e",
-          "1df7313165e246388eae1237019ee19f"
+          "1df7313165e246388eae1237019ee19f",
+          "5f93de26372f4984aa336a4874349dc6"
         ],
         "HasNestedGroups": false,
-        "Left": 842.5652910979411,
-        "Top": 192.70428691595009,
-        "Width": 424.64993560902712,
-        "Height": 258.85633909840112,
+        "Left": 1060.0773947911323,
+        "Top": 160.8576533133004,
+        "Width": 564.0,
+        "Height": 231.99999999999997,
         "FontSize": 30.0,
-        "InitialTop": 258.70428691595009,
-        "InitialHeight": 205.85633909840112,
+        "InitialTop": 226.8576533133004,
+        "InitialHeight": 178.99999999999997,
         "TextblockHeight": 56.0,
         "Background": "#FFC1D676"
       },
@@ -952,19 +952,38 @@
           "3ab06e6ad9444e6eafe5059a672e121e"
         ],
         "HasNestedGroups": false,
-        "Left": 0.38649117958107126,
-        "Top": -20.062410016581794,
-        "Width": 849.99999999999977,
-        "Height": 361.216714248726,
+        "Left": 0.077394791132121554,
+        "Top": 0.35765331330028971,
+        "Width": 960.0,
+        "Height": 518.50000000000011,
         "FontSize": 14.0,
-        "InitialTop": 29.937589983418206,
-        "InitialHeight": 311.216714248726,
+        "InitialTop": 50.35765331330029,
+        "InitialHeight": 481.50000000000011,
         "TextblockHeight": 40.0,
+        "Background": "#FFC1D676"
+      },
+      {
+        "Id": "1794c1d0639244a0b28aa94e8a364e31",
+        "Title": "File: defaultProject",
+        "DescriptionText": null,
+        "IsExpanded": true,
+        "WidthAdjustment": 0.0,
+        "HeightAdjustment": 0.0,
+        "Nodes": [],
+        "HasNestedGroups": false,
+        "Left": 0.17309319814305013,
+        "Top": -59.93499353197835,
+        "Width": 0.0,
+        "Height": 0.0,
+        "FontSize": 36.0,
+        "InitialTop": 0.0,
+        "InitialHeight": 0.0,
+        "TextblockHeight": 0.0,
         "Background": "#FFC1D676"
       }
     ],
-    "X": -57.286799905284056,
-    "Y": 359.84041231032614,
-    "Zoom": 0.5240638325078959
+    "X": 29.920428045250759,
+    "Y": 360.34778860023971,
+    "Zoom": 0.45970584403599007
   }
 }

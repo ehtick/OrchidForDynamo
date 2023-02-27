@@ -45,7 +45,7 @@
       "Id": "3a70c1f1bf4c4711a40d791ae5f6fed8",
       "Name": "String",
       "Type": "string",
-      "Value": ".\\defaultBuilding.rvt",
+      "Value": "%userprofile%\\Programming\\Testing\\Data\\2021_Data\\defaultBuilding.rvt",
       "Description": "Creates a string."
     },
     {
@@ -117,13 +117,13 @@
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
       "NodeType": "FunctionNode",
-      "FunctionSignature": "Orchid.IfcExport.IFC.Export@var,var,Revit.Elements.Element,Revit.Elements.Element,string,bool",
+      "FunctionSignature": "Orchid.IfcExport.IFC.Export@Revit.Application.Document,var,Revit.Elements.Views.View,Revit.Elements.Element,string,bool",
       "Id": "8b7d25d842084aa396810ad599978fb7",
       "Inputs": [
         {
           "Id": "00157e73bbfc489f93c01092f6215b43",
           "Name": "document",
-          "Description": "Project document (rvt).\n\nvar\nDefault value : null",
+          "Description": "Project document (rvt).\n\nDocument\nDefault value : null",
           "UsingDefaultValue": true,
           "Level": 2,
           "UseLevels": false,
@@ -141,7 +141,7 @@
         {
           "Id": "23c0258b11c34ba9b5c8f9f84f628848",
           "Name": "view",
-          "Description": "View as Dynamo type.\n\nElement\nDefault value : null",
+          "Description": "View as Dynamo type.\n\nView\nDefault value : null",
           "UsingDefaultValue": true,
           "Level": 2,
           "UseLevels": false,
@@ -187,7 +187,7 @@
         }
       ],
       "Replication": "Auto",
-      "Description": "Export to IFC. Note: The export function includes a default IFC export setting!\n\nIFC.Export (document: var = null, setting: var = null, view: Element = null, phase: Element = null, file: string = null, overwrite: bool = true): string\n\nNamespace:\nOrchid.RevitProject.Common"
+      "Description": "Export to IFC. Note: The export function includes a default IFC export setting! For further information visit: https://github.com/Autodesk/revit-ifc\n\nIFC.Export (document: Document = null, setting: var = null, view: View = null, phase: Element = null, file: string = null, overwrite: bool = true): string"
     },
     {
       "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
@@ -474,18 +474,18 @@
         }
       ],
       "Replication": "Auto",
-      "Description": "Set advanced IFC export setting.\n\nIFC.SettingAdvanced (setting: var, exportParts: bool = false, exportSolid: bool = false, activeViewGeometry: bool = false, familyAndType: bool = false, roomBoundary: bool = false, siteElevation: bool = false, storeGuid: bool = false, boundingBox: bool = false, triangulation: bool = false, typeNameOnly: bool = false, visibleRevitName: bool = false): var\n\nNamespace:\nOrchid.RevitProject.Common"
+      "Description": "Set advanced IFC export setting. For further information visit: https://github.com/Autodesk/revit-ifc\n\nIFC.SettingAdvanced (setting: var, exportParts: bool = false, exportSolid: bool = false, activeViewGeometry: bool = false, familyAndType: bool = false, roomBoundary: bool = false, siteElevation: bool = false, storeGuid: bool = false, boundingBox: bool = false, triangulation: bool = false, typeNameOnly: bool = false, visibleRevitName: bool = false): var"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
       "NodeType": "FunctionNode",
-      "FunctionSignature": "Orchid.Common.DataStream.Await@var,var[]..[]",
+      "FunctionSignature": "Orchid.Common.DataStream.Await@var[]..[],var[]..[]",
       "Id": "85353f4502c34376931f0b0b3ab84ee3",
       "Inputs": [
         {
           "Id": "815f7dbe3d0c4d4992631f76fd5269cf",
           "Name": "pass",
-          "Description": "Data to pass.\n\nvar",
+          "Description": "Data to pass.\n\nvar[]..[]",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -513,7 +513,7 @@
         }
       ],
       "Replication": "Auto",
-      "Description": "Await a data stream before passing another data stream.\n\nDataStream.Await (pass: var, waitFor: var[]..[]): var[]..[]\n\nNamespace:\nOrchid.Common"
+      "Description": "Await a data stream before passing another data stream.\n\nDataStream.Await (pass: var[]..[], waitFor: var[]..[]): var[]..[]"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
@@ -552,7 +552,7 @@
         }
       ],
       "Replication": "Auto",
-      "Description": "Close document.\n\nDocument.Close (document: Document, save: bool = false): string\n\nNamespace:\nOrchid.RevitProject.Common"
+      "Description": "Close document.\n\nDocument.Close (document: Document, save: bool = false): string"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
@@ -582,7 +582,7 @@
         }
       ],
       "Replication": "Auto",
-      "Description": "Ifc export setting by name in the document.\n\nIFC.SettingByName (name: string = \"<In-Session Setup>\"): var\n\nNamespace:\nOrchid.RevitProject.Common"
+      "Description": "IFC export setting by name in the document. For further information visit: https://github.com/Autodesk/revit-ifc\n\nIFC.SettingByName (name: string = \"<In-Session Setup>\"): var"
     },
     {
       "ConcreteType": "Orchid.E.IfcExport.Setting, OrchidIE",
@@ -603,7 +603,7 @@
         }
       ],
       "Replication": "Disabled",
-      "Description": "Dropdown for IFC export setting\n\nNamespace:\nOrchid.RevitProject.Common"
+      "Description": "Dropdown for IFC export setting"
     },
     {
       "ConcreteType": "CoreNodeModels.Input.BoolSelector, CoreNodeModels",
@@ -628,13 +628,13 @@
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
       "NodeType": "FunctionNode",
-      "FunctionSignature": "Orchid.IfcExport.IFC.Export@var,var,Revit.Elements.Element,Revit.Elements.Element,string,bool",
+      "FunctionSignature": "Orchid.IfcExport.IFC.Export@Revit.Application.Document,var,Revit.Elements.Views.View,Revit.Elements.Element,string,bool",
       "Id": "923a4730f3d94f8d89461de63c61393d",
       "Inputs": [
         {
           "Id": "e18bad20a21c4c4f93735a2bbebc9a83",
           "Name": "document",
-          "Description": "Project document (rvt).\n\nvar\nDefault value : null",
+          "Description": "Project document (rvt).\n\nDocument\nDefault value : null",
           "UsingDefaultValue": true,
           "Level": 2,
           "UseLevels": false,
@@ -652,7 +652,7 @@
         {
           "Id": "c1f3e6554ad64cf2a8775fe9ccadecf1",
           "Name": "view",
-          "Description": "View as Dynamo type.\n\nElement\nDefault value : null",
+          "Description": "View as Dynamo type.\n\nView\nDefault value : null",
           "UsingDefaultValue": true,
           "Level": 2,
           "UseLevels": false,
@@ -698,7 +698,7 @@
         }
       ],
       "Replication": "Auto",
-      "Description": "Export to IFC. Note: The export function includes a default IFC export setting!\n\nIFC.Export (document: var = null, setting: var = null, view: Element = null, phase: Element = null, file: string = null, overwrite: bool = true): string\n\nNamespace:\nOrchid.RevitProject.Common"
+      "Description": "Export to IFC. Note: The export function includes a default IFC export setting! For further information visit: https://github.com/Autodesk/revit-ifc\n\nIFC.Export (document: Document = null, setting: var = null, view: View = null, phase: Element = null, file: string = null, overwrite: bool = true): string"
     },
     {
       "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
@@ -753,13 +753,13 @@
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
       "NodeType": "FunctionNode",
-      "FunctionSignature": "Orchid.IfcExport.IFC.Export@var,var,Revit.Elements.Element,Revit.Elements.Element,string,bool",
+      "FunctionSignature": "Orchid.IfcExport.IFC.Export@Revit.Application.Document,var,Revit.Elements.Views.View,Revit.Elements.Element,string,bool",
       "Id": "d0fdd6d4fd9548ea91b2483e76ab3e7f",
       "Inputs": [
         {
           "Id": "476526e954294381a1db61a53a1aa020",
           "Name": "document",
-          "Description": "Project document (rvt).\n\nvar\nDefault value : null",
+          "Description": "Project document (rvt).\n\nDocument\nDefault value : null",
           "UsingDefaultValue": true,
           "Level": 2,
           "UseLevels": false,
@@ -777,7 +777,7 @@
         {
           "Id": "b05a82bb4b5f486bb38606f55988c612",
           "Name": "view",
-          "Description": "View as Dynamo type.\n\nElement\nDefault value : null",
+          "Description": "View as Dynamo type.\n\nView\nDefault value : null",
           "UsingDefaultValue": true,
           "Level": 2,
           "UseLevels": false,
@@ -823,7 +823,7 @@
         }
       ],
       "Replication": "Auto",
-      "Description": "Export to IFC. Note: The export function includes a default IFC export setting!\n\nIFC.Export (document: var = null, setting: var = null, view: Element = null, phase: Element = null, file: string = null, overwrite: bool = true): string\n\nNamespace:\nOrchid.RevitProject.Common"
+      "Description": "Export to IFC. Note: The export function includes a default IFC export setting! For further information visit: https://github.com/Autodesk/revit-ifc\n\nIFC.Export (document: Document = null, setting: var = null, view: View = null, phase: Element = null, file: string = null, overwrite: bool = true): string"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
@@ -934,7 +934,7 @@
         }
       ],
       "Replication": "Auto",
-      "Description": "Set Property sets IFC export setting.\n\nIFC.SettingProperty (setting: var, revitProperty: bool = false, commonProperty: bool = true, baseQuantities: bool = false, exportSchedules: bool = false, specificSchedules: bool = false, userProperty: bool = false, userPropertyFile: string = null, parameterMapping: bool = false, parameterMappingFile: string = null): var\n\nNamespace:\nOrchid.RevitProject.Common"
+      "Description": "Set Property sets IFC export setting. For further information visit: https://github.com/Autodesk/revit-ifc\n\nIFC.SettingProperty (setting: var, revitProperty: bool = false, commonProperty: bool = true, baseQuantities: bool = false, exportSchedules: bool = false, specificSchedules: bool = false, userProperty: bool = false, userPropertyFile: string = null, parameterMapping: bool = false, parameterMappingFile: string = null): var"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
@@ -964,7 +964,7 @@
         }
       ],
       "Replication": "Auto",
-      "Description": "Open documents in background.\n\nDocument.BackgroundOpen (file: string): Document\n\nNamespace:\nOrchid.RevitProject.Common"
+      "Description": "Open documents in background.\n\nDocument.BackgroundOpen (file: string): Document"
     },
     {
       "ConcreteType": "CoreNodeModels.Input.BoolSelector, CoreNodeModels",
@@ -989,7 +989,7 @@
     {
       "ConcreteType": "CoreNodeModels.Input.StringInput, CoreNodeModels",
       "NodeType": "StringInputNode",
-      "InputValue": ".\\defaultBuilding.rvt",
+      "InputValue": "%userprofile%\\Programming\\Testing\\Data\\2021_Data\\defaultBuilding.rvt",
       "Id": "3a70c1f1bf4c4711a40d791ae5f6fed8",
       "Inputs": [],
       "Outputs": [
@@ -1025,7 +1025,7 @@
         }
       ],
       "Replication": "Disabled",
-      "Description": "Dropdown for IFC file type\n\nNamespace:\nOrchid.RevitProject.Common"
+      "Description": "Dropdown for IFC file type"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
@@ -1045,7 +1045,7 @@
         }
       ],
       "Replication": "Auto",
-      "Description": "All Ifc file type in the document.\n\nIFC.FileTypes ( ): string[]\n\nNamespace:\nOrchid.RevitProject.Common"
+      "Description": "All Ifc file type in the document. For further information visit: https://github.com/Autodesk/revit-ifc\n\nIFC.FileTypes ( ): string[]"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
@@ -1075,7 +1075,7 @@
         }
       ],
       "Replication": "Auto",
-      "Description": "Ifc file type by name in the document.\n\nIFC.FileTypeByName (name: string = \"Ifc\"): string\n\nNamespace:\nOrchid.RevitProject.Common"
+      "Description": "Ifc file type by name in the document. For further information visit: https://github.com/Autodesk/revit-ifc\n\nIFC.FileTypeByName (name: string = \"Ifc\"): string"
     },
     {
       "ConcreteType": "CoreNodeModels.Input.StringInput, CoreNodeModels",
@@ -1136,7 +1136,7 @@
         }
       ],
       "Replication": "Disabled",
-      "Description": "Dropdown for IFC export versions\n\nNamespace:\nOrchid.RevitProject.Common"
+      "Description": "Dropdown for IFC export versions"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
@@ -1156,7 +1156,7 @@
         }
       ],
       "Replication": "Auto",
-      "Description": "All Ifc version in the document.\n\nIFC.Versions ( ): string[]\n\nNamespace:\nOrchid.RevitProject.Common"
+      "Description": "All Ifc version in the document. For further information visit: https://github.com/Autodesk/revit-ifc\n\nIFC.Versions ( ): string[]"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
@@ -1186,7 +1186,7 @@
         }
       ],
       "Replication": "Auto",
-      "Description": "Ifc version by name in the document.\n\nIFC.VersionByName (name: string = \"Default\"): string\n\nNamespace:\nOrchid.RevitProject.Common"
+      "Description": "Ifc version by name in the document. For further information visit: https://github.com/Autodesk/revit-ifc\n\nIFC.VersionByName (name: string = \"Default\"): string"
     },
     {
       "ConcreteType": "CoreNodeModels.Input.StringInput, CoreNodeModels",
@@ -1227,7 +1227,7 @@
         }
       ],
       "Replication": "Disabled",
-      "Description": "Dropdown for IFC export setting\n\nNamespace:\nOrchid.RevitProject.Common"
+      "Description": "Dropdown for IFC export setting"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
@@ -1247,7 +1247,7 @@
         }
       ],
       "Replication": "Auto",
-      "Description": "All Ifc export setting in the document.\n\nIFC.Settings ( ): var[]\n\nNamespace:\nOrchid.RevitProject.Common"
+      "Description": "All Ifc export setting in the document. For further information visit: https://github.com/Autodesk/revit-ifc\n\nIFC.Settings ( ): var[]"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
@@ -1277,7 +1277,7 @@
         }
       ],
       "Replication": "Auto",
-      "Description": "Ifc export setting by name in the document.\n\nIFC.SettingByName (name: string = \"<In-Session Setup>\"): var\n\nNamespace:\nOrchid.RevitProject.Common"
+      "Description": "IFC export setting by name in the document. For further information visit: https://github.com/Autodesk/revit-ifc\n\nIFC.SettingByName (name: string = \"<In-Session Setup>\"): var"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
@@ -1352,7 +1352,7 @@
         }
       ],
       "Replication": "Auto",
-      "Description": "Set additional content and level of detail IFC export setting.\n\nIFC.SettingAdditional (setting: var, export2Dplan: bool = false, linkedFiles: bool = false, visibleElements: bool = false, roomsInView: bool = false, levelOfDetail: int = 2): var\n\nNamespace:\nOrchid.RevitProject.Common"
+      "Description": "Set additional content and level of detail IFC export setting. For further information visit: https://github.com/Autodesk/revit-ifc\n\nIFC.SettingAdditional (setting: var, export2Dplan: bool = false, linkedFiles: bool = false, visibleElements: bool = false, roomsInView: bool = false, levelOfDetail: int = 2): var"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
@@ -1382,7 +1382,7 @@
         }
       ],
       "Replication": "Auto",
-      "Description": "Create Ifc export setting based on default export setting in the document.\n\nIFC.CreateSetting (name: string): var\n\nNamespace:\nOrchid.RevitProject.Common"
+      "Description": "Create IFC export setting based on default export setting in the document. For further information visit: https://github.com/Autodesk/revit-ifc\n\nIFC.CreateSetting (name: string): var"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
@@ -1421,7 +1421,7 @@
         }
       ],
       "Replication": "Auto",
-      "Description": "Duplicate Ifc export setting in the document.\n\nIFC.DuplicateSetting (setting: var, name: string): var\n\nNamespace:\nOrchid.RevitProject.Common"
+      "Description": "Duplicate IFC export setting in the document. For further information visit: https://github.com/Autodesk/revit-ifc\n\nIFC.DuplicateSetting (setting: var, name: string): var"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
@@ -1460,7 +1460,7 @@
         }
       ],
       "Replication": "Auto",
-      "Description": "Rename Ifc export setting in the document. Note: Built-In Settings can not be renamed. In case of a provided Built-in setting is the setting being duplicated!\n\nIFC.RenameSetting (setting: var, name: string): var\n\nNamespace:\nOrchid.RevitProject.Common"
+      "Description": "Rename IFC export setting in the document. Note: Built-In Settings can not be renamed. In case of a provided Built-in setting is the setting being duplicated! For further information visit: https://github.com/Autodesk/revit-ifc\n\nIFC.RenameSetting (setting: var, name: string): var"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
@@ -1490,7 +1490,7 @@
         }
       ],
       "Replication": "Auto",
-      "Description": "Remove Ifc export setting by name in the document. Note: Built-In Settings can not be removed.\n\nIFC.RemoveSetting (name: string): bool\n\nNamespace:\nOrchid.RevitProject.Common"
+      "Description": "Remove IFC export setting by name in the document. Note: Built-In Settings can not be removed. For further information visit: https://github.com/Autodesk/revit-ifc\n\nIFC.RemoveSetting (name: string): bool"
     },
     {
       "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
@@ -1618,7 +1618,7 @@
         }
       ],
       "Replication": "Disabled",
-      "Description": "Dropdown for IFC Level Of Detail\n\nNamespace:\nOrchid.RevitProject.Common"
+      "Description": "Dropdown for IFC Level Of Detail"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
@@ -1648,7 +1648,7 @@
         }
       ],
       "Replication": "Auto",
-      "Description": "Import Ifc export setting by json file.\n\nIFC.ImportSetting (file: string): var\n\nNamespace:\nOrchid.RevitProject.Common"
+      "Description": "Import IFC export setting by json file. For further information visit: https://github.com/Autodesk/revit-ifc\n\nIFC.ImportSetting (file: string): var"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
@@ -1678,7 +1678,7 @@
         }
       ],
       "Replication": "Auto",
-      "Description": "Ifc export setting by name in the document.\n\nIFC.SettingByName (name: string = \"<In-Session Setup>\"): var\n\nNamespace:\nOrchid.RevitProject.Common"
+      "Description": "IFC export setting by name in the document. For further information visit: https://github.com/Autodesk/revit-ifc\n\nIFC.SettingByName (name: string = \"<In-Session Setup>\"): var"
     },
     {
       "ConcreteType": "CoreNodeModels.Input.StringInput, CoreNodeModels",
@@ -1802,7 +1802,7 @@
         }
       ],
       "Replication": "Auto",
-      "Description": "Set general IFC export setting.\n\nIFC.SettingGeneral (setting: var, ifcVersion: string = null, ifcFileType: string = null, spaceBoundary: int = 1, projectOrigin: int = 0, splitByLevel: bool = false, includeSteel: bool = true): var\n\nNamespace:\nOrchid.RevitProject.Common"
+      "Description": "Set general IFC export setting. For further information visit: https://github.com/Autodesk/revit-ifc\n\nIFC.SettingGeneral (setting: var, ifcVersion: string = null, ifcFileType: string = null, spaceBoundary: int = 1, projectOrigin: int = 0, splitByLevel: bool = false, includeSteel: bool = true): var"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
@@ -1861,7 +1861,7 @@
         }
       ],
       "Replication": "Disabled",
-      "Description": "Dropdown for IFC export versions\n\nNamespace:\nOrchid.RevitProject.Common"
+      "Description": "Dropdown for IFC export versions"
     },
     {
       "ConcreteType": "Orchid.E.IfcExport.SitePlacement, OrchidIE",
@@ -1882,7 +1882,7 @@
         }
       ],
       "Replication": "Disabled",
-      "Description": "Dropdown for IFC Project Origin\n\nNamespace:\nOrchid.RevitProject.Common"
+      "Description": "Dropdown for IFC Project Origin"
     },
     {
       "ConcreteType": "Orchid.E.IfcExport.SpaceBoundary, OrchidIE",
@@ -1903,7 +1903,7 @@
         }
       ],
       "Replication": "Disabled",
-      "Description": "Dropdown for IFC Space Boundaries\n\nNamespace:\nOrchid.RevitProject.Common"
+      "Description": "Dropdown for IFC Space Boundaries"
     },
     {
       "ConcreteType": "Orchid.E.IfcExport.FileType, OrchidIE",
@@ -1924,7 +1924,7 @@
         }
       ],
       "Replication": "Disabled",
-      "Description": "Dropdown for IFC file type\n\nNamespace:\nOrchid.RevitProject.Common"
+      "Description": "Dropdown for IFC file type"
     },
     {
       "ConcreteType": "CoreNodeModels.Input.BoolSelector, CoreNodeModels",
@@ -1974,7 +1974,7 @@
         }
       ],
       "Replication": "Auto",
-      "Description": "Ifc export setting by name in the document.\n\nIFC.SettingByName (name: string = \"<In-Session Setup>\"): var\n\nNamespace:\nOrchid.RevitProject.Common"
+      "Description": "IFC export setting by name in the document. For further information visit: https://github.com/Autodesk/revit-ifc\n\nIFC.SettingByName (name: string = \"<In-Session Setup>\"): var"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
@@ -2160,7 +2160,7 @@
         }
       ],
       "Replication": "Auto",
-      "Description": "Get the directory of the document.\n\nDocument.Directory (document: Document = null): string\n\nNamespace:\nOrchid.RevitProject.Common"
+      "Description": "Get the directory of the document.\n\nDocument.Directory (document: Document = null): string"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
@@ -2190,7 +2190,7 @@
         }
       ],
       "Replication": "Auto",
-      "Description": "Get the directory of the document.\n\nDocument.Directory (document: Document = null): string\n\nNamespace:\nOrchid.RevitProject.Common"
+      "Description": "Get the directory of the document.\n\nDocument.Directory (document: Document = null): string"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
@@ -2229,7 +2229,7 @@
         }
       ],
       "Replication": "Auto",
-      "Description": "Remove subfolders from directory path by integer value.\n\nDirectory.SubPath (directory: string, remove: int): string\n\nNamespace:\nOrchid.Common"
+      "Description": "Remove subfolders from directory path by integer value.\n\nDirectory.SubPath (directory: string, remove: int): string"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
@@ -2270,7 +2270,7 @@
         }
       ],
       "Replication": "Disabled",
-      "Description": "Dropdown for phases\n\nNamespace:\nOrchid.RevitProject.Common"
+      "Description": "Dropdown for phases"
     }
   ],
   "Connectors": [
@@ -2802,8 +2802,8 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 1087.5827863926852,
-        "Y": 846.74152381517706
+        "X": 1125.99835507861,
+        "Y": 846.763589036829
       },
       {
         "ShowGeometry": true,
@@ -2822,8 +2822,8 @@
         "IsSetAsInput": true,
         "IsSetAsOutput": false,
         "Excluded": true,
-        "X": 870.34563020229041,
-        "Y": 846.76358903682853
+        "X": 870.34563020229,
+        "Y": 846.763589036829
       },
       {
         "ShowGeometry": true,
@@ -2832,8 +2832,8 @@
         "IsSetAsInput": true,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 1034.3324538652955,
-        "Y": 1266.1391539082315
+        "X": 1034.3324538653,
+        "Y": 1266.13915390823
       },
       {
         "ShowGeometry": true,
@@ -2842,8 +2842,8 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 1048.3324538652955,
-        "Y": 1377.2385175698414
+        "X": 1094.3324538653,
+        "Y": 1377.23851756984
       },
       {
         "ShowGeometry": true,
@@ -2852,8 +2852,8 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 994.33245386529563,
-        "Y": 1487.9297960395716
+        "X": 994.332453865296,
+        "Y": 1487.92979603957
       },
       {
         "ShowGeometry": true,
@@ -2882,8 +2882,8 @@
         "IsSetAsInput": true,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 1627.0011627133526,
-        "Y": 1266.1391539082315
+        "X": 1627.00116271335,
+        "Y": 1266.13915390823
       },
       {
         "ShowGeometry": true,
@@ -2892,8 +2892,8 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 1732.0011627133526,
-        "Y": 1377.2385175698414
+        "X": 1778.00116271335,
+        "Y": 1377.23851756984
       },
       {
         "ShowGeometry": true,
@@ -2902,8 +2902,8 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 1678.0011627133526,
-        "Y": 1487.9297960395716
+        "X": 1678.00116271335,
+        "Y": 1487.92979603957
       },
       {
         "ShowGeometry": true,
@@ -2922,8 +2922,8 @@
         "IsSetAsInput": true,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 2911.0267530415226,
-        "Y": 1266.1391539082315
+        "X": 2911.02675304152,
+        "Y": 1266.13915390823
       },
       {
         "ShowGeometry": true,
@@ -2932,8 +2932,8 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 2995.0267530415226,
-        "Y": 1377.2385175698414
+        "X": 3056.02675304152,
+        "Y": 1377.23851756984
       },
       {
         "ShowGeometry": true,
@@ -2942,8 +2942,8 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 2956.0267530415226,
-        "Y": 1487.9297960395716
+        "X": 2956.02675304152,
+        "Y": 1487.92979603957
       },
       {
         "ShowGeometry": true,
@@ -3279,7 +3279,7 @@
         ],
         "Left": 2679.61079618603,
         "Top": 0.31641812033735306,
-        "Width": 789.15331643508671,
+        "Width": 627.15331643508671,
         "Height": 419.75614302162666,
         "FontSize": 30.0,
         "InitialTop": 46.316418120337353,
@@ -3297,8 +3297,8 @@
         ],
         "Left": 2679.8502659031506,
         "Top": -364.89793250294042,
-        "Width": 539.67147543979218,
-        "Height": 285.36796041473389,
+        "Width": 327.67147543979218,
+        "Height": 270.36796041473389,
         "FontSize": 30.0,
         "InitialTop": -318.89793250294042,
         "InitialHeight": 275.36796041473389,
@@ -3334,12 +3334,12 @@
           "3a70c1f1bf4c4711a40d791ae5f6fed8",
           "43401501a4b64a3abd15686702940b1e"
         ],
-        "Left": 860.34563020229041,
-        "Top": 800.74152381517706,
-        "Width": 1335.9486247615782,
-        "Height": 339.74694408531411,
+        "Left": 860.34563020229,
+        "Top": 800.74152381517729,
+        "Width": 1335.9486247615787,
+        "Height": 339.74694408531388,
         "FontSize": 30.0,
-        "InitialTop": 846.74152381517706,
+        "InitialTop": 846.74152381517729,
         "InitialHeight": 312.51244151156504,
         "TextblockHeight": 36.0,
         "Background": "#FFFFB8D8"
@@ -3390,11 +3390,11 @@
           "b0bee4f08adf4076a4bf3c2c53c4a268"
         ],
         "Left": 860.42021604232468,
-        "Top": 1220.1391539082315,
-        "Width": 359.91223782297084,
+        "Top": 1220.13915390823,
+        "Width": 359.91223782297538,
         "Height": 360.79064213134006,
         "FontSize": 30.0,
-        "InitialTop": 1266.1391539082315,
+        "InitialTop": 1266.13915390823,
         "InitialHeight": 366.79064213134006,
         "TextblockHeight": 36.0,
         "Background": "#FFFFB8D8"
@@ -3409,11 +3409,11 @@
           "d0de001c204f4db0a8b3b0428d0dbf23"
         ],
         "Left": 1540.6374703218826,
-        "Top": 1220.1391539082315,
-        "Width": 359.36369239147007,
+        "Top": 1220.13915390823,
+        "Width": 359.36369239146734,
         "Height": 360.79064213134006,
         "FontSize": 30.0,
-        "InitialTop": 1266.1391539082315,
+        "InitialTop": 1266.13915390823,
         "InitialHeight": 366.79064213134006,
         "TextblockHeight": 36.0,
         "Background": "#FFFFB8D8"
@@ -3428,11 +3428,11 @@
           "ebf2250e96884268969f3d6cabbec722"
         ],
         "Left": 2679.9816813326829,
-        "Top": 1220.1391539082315,
-        "Width": 480.04507170883971,
+        "Top": 1220.13915390823,
+        "Width": 480.045071708837,
         "Height": 360.79064213134006,
         "FontSize": 30.0,
-        "InitialTop": 1266.1391539082315,
+        "InitialTop": 1266.13915390823,
         "InitialHeight": 366.79064213134006,
         "TextblockHeight": 36.0,
         "Background": "#FFFFB8D8"
@@ -3571,7 +3571,7 @@
       }
     ],
     "X": 258.14473510354367,
-    "Y": 240.55197876181643,
+    "Y": 258.97327919991471,
     "Zoom": 0.38656064507690191
   }
 }

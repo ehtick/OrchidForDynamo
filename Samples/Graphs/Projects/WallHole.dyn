@@ -286,36 +286,6 @@
       "Description": "Gets a Revit category by the built-in category name.\n\nCategory.ByName (name: string): Category"
     },
     {
-      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
-      "NodeType": "FunctionNode",
-      "FunctionSignature": "Orchid.Geometry.Form.Get@bool",
-      "Id": "c86b90892f814d91aa4ea403ba998157",
-      "Inputs": [
-        {
-          "Id": "1d45bf6105014fbb97a2cad07037d399",
-          "Name": "condense",
-          "Description": "Condense to shortest feasible output?\n\nbool\nDefault value : true",
-          "UsingDefaultValue": true,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        }
-      ],
-      "Outputs": [
-        {
-          "Id": "9a939fcf958447389a8e1ac1d352a031",
-          "Name": "Form",
-          "Description": "Form element as Dynamo type.",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        }
-      ],
-      "Replication": "Auto",
-      "Description": "Get Form element in current document.\n\nForm.Get (condense: bool = true): var[]..[]"
-    },
-    {
       "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
       "NodeType": "CodeBlockNode",
       "Code": "\"Walls\";",
@@ -737,13 +707,13 @@
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
       "NodeType": "FunctionNode",
-      "FunctionSignature": "Orchid.Common.DataStream.Await@var,var[]",
+      "FunctionSignature": "Orchid.Common.DataStream.Await@var[]..[],var[]..[]",
       "Id": "0b52cd665fb44d4da5c55d52e032f376",
       "Inputs": [
         {
           "Id": "c7b86be0680d464db693951ca5fd5473",
           "Name": "pass",
-          "Description": "Data to pass.\n\nvar",
+          "Description": "Data to pass.\n\nvar[]..[]",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -752,7 +722,7 @@
         {
           "Id": "b04e99b2d3974fa6ab618694cd50408f",
           "Name": "waitFor",
-          "Description": "Data object to wait for.\n\nvar[]",
+          "Description": "Data object to wait for.\n\nvar[]..[]",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -771,7 +741,7 @@
         }
       ],
       "Replication": "Auto",
-      "Description": "Await a data stream before passing another data stream.\n\nDataStream.Await (pass: var, waitFor: var[]): var[]..[]"
+      "Description": "Await a data stream before passing another data stream.\n\nDataStream.Await (pass: var[]..[], waitFor: var[]..[]): var[]..[]"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
@@ -918,6 +888,45 @@
       ],
       "Replication": "Disabled",
       "Description": "Allows for DesignScript code to be authored directly"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "Orchid.Geometry.Form.Get@Revit.Application.Document,bool",
+      "Id": "5c51589bc9bc4e55a19b2197bf205acb",
+      "Inputs": [
+        {
+          "Id": "34e297c37f834d71b18bd5da702db7f5",
+          "Name": "document",
+          "Description": "Document.\n\nDocument\nDefault value : null",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "d99de6f821ab4c58becb96e9ca285c13",
+          "Name": "condense",
+          "Description": "Condense to shortest feasible output?\n\nbool\nDefault value : true",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "f7608dbda7b34171a21888307db11057",
+          "Name": "Form",
+          "Description": "Form element as Dynamo type.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Get Form element in document.\n\nForm.Get (document: Document = null, condense: bool = true): var[]..[]"
     }
   ],
   "Connectors": [
@@ -964,18 +973,6 @@
       "IsHidden": "False"
     },
     {
-      "Start": "9a939fcf958447389a8e1ac1d352a031",
-      "End": "ad727515e2f74e6a9ae327ed46a2a4ab",
-      "Id": "4b161d1617d74e8697f8d109ad30fa40",
-      "IsHidden": "False"
-    },
-    {
-      "Start": "9a939fcf958447389a8e1ac1d352a031",
-      "End": "cd957983374947198a06f8ef47b59f6d",
-      "Id": "6ec954e3d65d4867bf52842e4a940d47",
-      "IsHidden": "False"
-    },
-    {
       "Start": "dcf3a4fa80cf40339ad7564d13dd5879",
       "End": "2c215dc433634ac0a22f475f98ee8005",
       "Id": "d206cb344af64a8e9d785c78721e0e11",
@@ -989,14 +986,14 @@
     },
     {
       "Start": "51da697833484b3a82c1a11e53781057",
-      "End": "1d45bf6105014fbb97a2cad07037d399",
-      "Id": "d0928cff69684187bee204cd04001953",
+      "End": "c7b86be0680d464db693951ca5fd5473",
+      "Id": "7d81e190c21b45509c3fef5921de5e4f",
       "IsHidden": "False"
     },
     {
       "Start": "51da697833484b3a82c1a11e53781057",
-      "End": "c7b86be0680d464db693951ca5fd5473",
-      "Id": "7d81e190c21b45509c3fef5921de5e4f",
+      "End": "34e297c37f834d71b18bd5da702db7f5",
+      "Id": "7efb34cb3c8f463e8b3fff130c97179e",
       "IsHidden": "False"
     },
     {
@@ -1082,31 +1079,43 @@
       "End": "530490a5c6bb41e29160878c4e5f77f1",
       "Id": "3ccb107351024466b33638c368febfa3",
       "IsHidden": "False"
+    },
+    {
+      "Start": "f7608dbda7b34171a21888307db11057",
+      "End": "ad727515e2f74e6a9ae327ed46a2a4ab",
+      "Id": "2cc96c7a9f2a4c20af38150b01321248",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "f7608dbda7b34171a21888307db11057",
+      "End": "cd957983374947198a06f8ef47b59f6d",
+      "Id": "cab111969c4a418d885f69682a9f3b2d",
+      "IsHidden": "False"
     }
   ],
   "Dependencies": [],
   "NodeLibraryDependencies": [
     {
       "Name": "Orchid",
-      "Version": "216.3.0.5799",
+      "Version": "216.3.0.5794",
       "ReferenceType": "Package",
       "Nodes": [
         "12e8d723218340389735b27c6616ff6f",
         "a538fbc9a9b142a285de6d94e588ce48",
         "5f5ff73418754224a400b099e13f5819",
         "db630e7a26ab4f218d4efbee5a07a174",
-        "c86b90892f814d91aa4ea403ba998157",
         "19b5fd164fbf408db444fc665be6d611",
         "571c1ebf92f24596afb6b1162eb6bdaf",
         "45342fee09c44bdaadd0e681fc19d076",
         "6e271be4d60445bc81793283c3a08295",
         "0b52cd665fb44d4da5c55d52e032f376",
         "b1f84e5dc04043abbd9a75db7f816466",
-        "d2371cff89574a29aef53526360ae717"
+        "d2371cff89574a29aef53526360ae717",
+        "5c51589bc9bc4e55a19b2197bf205acb"
       ]
     }
   ],
-  "Thumbnail": null,
+  "Thumbnail": "",
   "GraphDocumentationURL": null,
   "ExtensionWorkspaceData": [
     {
@@ -1160,8 +1169,8 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 3554.3758489303882,
-        "Y": -12137.36126062708
+        "X": 3944.1101718889454,
+        "Y": -11641.509208529387
       },
       {
         "Name": "Watch",
@@ -1170,8 +1179,8 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 3852.8758489303882,
-        "Y": -12137.36126062708
+        "X": 4277.1101718889458,
+        "Y": -11654.509208529387
       },
       {
         "Name": "Form.OcSolid",
@@ -1180,8 +1189,8 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 3275.3428734838681,
-        "Y": -12222.36126062708
+        "X": 3614.1101718889449,
+        "Y": -11730.509208529387
       },
       {
         "Name": "Watch",
@@ -1190,8 +1199,8 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 3852.8758489303882,
-        "Y": -12307.36126062708
+        "X": 4277.1101718889458,
+        "Y": -11806.509208529387
       },
       {
         "Name": "OcSolid.Intersect",
@@ -1200,8 +1209,8 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 3554.3758489303882,
-        "Y": -12307.36126062708
+        "X": 3944.1101718889454,
+        "Y": -11819.509208529387
       },
       {
         "Name": "Element.ByCategory",
@@ -1210,8 +1219,8 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 2902.2300147957544,
-        "Y": -12335.818726746631
+        "X": 3251.5610813904509,
+        "Y": -12026.862761055865
       },
       {
         "Name": "Category.ByName",
@@ -1220,18 +1229,8 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 2633.5519901523112,
-        "Y": -12309.818726746631
-      },
-      {
-        "Name": "Form.Get",
-        "ShowGeometry": true,
-        "Id": "c86b90892f814d91aa4ea403ba998157",
-        "IsSetAsInput": false,
-        "IsSetAsOutput": false,
-        "Excluded": false,
-        "X": 2924.2300147957544,
-        "Y": -12447.110706206899
+        "X": 2936.56108139045,
+        "Y": -11992.862761055865
       },
       {
         "Name": "Code Block",
@@ -1240,8 +1239,8 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 2475.5178001287504,
-        "Y": -12305.605393413291
+        "X": 2682.56108139045,
+        "Y": -11993.035261055866
       },
       {
         "Name": "Solid.Intersect",
@@ -1250,8 +1249,8 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 3554.3758489303882,
-        "Y": -12595.380340558349
+        "X": 3930.0536916876877,
+        "Y": -12198.900017073531
       },
       {
         "Name": "Watch",
@@ -1260,8 +1259,8 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 3852.8758489303882,
-        "Y": -12595.380340558349
+        "X": 4263.0536916876881,
+        "Y": -12198.900017073531
       },
       {
         "Name": "Family.Edit",
@@ -1270,8 +1269,8 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 2076.1553052787153,
-        "Y": -12446.97299397831
+        "X": 2319.0536916876877,
+        "Y": -12395.670561233337
       },
       {
         "Name": "FamilyInstance.GetFamily",
@@ -1280,8 +1279,8 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 1764.2431310298234,
-        "Y": -12446.97299397831
+        "X": 1953.0536916876877,
+        "Y": -12395.670561233337
       },
       {
         "Name": "Form.Solid",
@@ -1290,8 +1289,8 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 3275.3758489303882,
-        "Y": -12680.380340558349
+        "X": 3614.0536916876877,
+        "Y": -12506.496749466518
       },
       {
         "Name": "Solid.Intersect",
@@ -1300,8 +1299,8 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 3554.3758489303882,
-        "Y": -12765.380340558349
+        "X": 3930.0536916876877,
+        "Y": -12506.496749466518
       },
       {
         "Name": "Watch",
@@ -1310,8 +1309,8 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 3852.8758489303882,
-        "Y": -12765.380340558349
+        "X": 4263.0536916876881,
+        "Y": -12506.496749466518
       },
       {
         "Name": "List.FilterByBoolMask",
@@ -1320,8 +1319,8 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 1530.7686147186664,
-        "Y": -12446.97299397831
+        "X": 1618.0536916876877,
+        "Y": -12395.670561233337
       },
       {
         "Name": "String.Contains",
@@ -1330,8 +1329,8 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 1210.5110370493076,
-        "Y": -12355.268428450039
+        "X": 1297.0536916876877,
+        "Y": -12361.670561233337
       },
       {
         "Name": "Element.Name",
@@ -1340,8 +1339,8 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 912.20422030132841,
-        "Y": -12388.01085078068
+        "X": 984.05369168768766,
+        "Y": -12426.670561233337
       },
       {
         "Name": "Code Block",
@@ -1350,8 +1349,8 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 953.20422030132841,
-        "Y": -12278.82096974872
+        "X": 984.05369168768766,
+        "Y": -12279.188061233339
       },
       {
         "Name": "DataStream.Await",
@@ -1360,8 +1359,8 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": true,
-        "X": 3544.1328613385685,
-        "Y": -13019.012191532609
+        "X": 3909.5731206914975,
+        "Y": -12850.860471217244
       },
       {
         "Name": "Document.Close",
@@ -1370,8 +1369,8 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 3802.2310593897482,
-        "Y": -13019.012191532609
+        "X": 4216.573120691497,
+        "Y": -12850.860471217244
       },
       {
         "Name": "Element.ByCategory",
@@ -1380,8 +1379,8 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 588.15498122270833,
-        "Y": -12447.215416308951
+        "X": 643.05369168768766,
+        "Y": -12411.170561233337
       },
       {
         "Name": "Category.ByName",
@@ -1390,8 +1389,8 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 280.15498122270833,
-        "Y": -12421.215416308951
+        "X": 328.05369168768766,
+        "Y": -12377.170561233337
       },
       {
         "Name": "Code Block",
@@ -1400,8 +1399,18 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 10.154981222708557,
-        "Y": -12417.00208297561
+        "X": 10.05369168768766,
+        "Y": -12377.343061233338
+      },
+      {
+        "Name": "Form.Get",
+        "ShowGeometry": true,
+        "Id": "5c51589bc9bc4e55a19b2197bf205acb",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 3273.5610813904509,
+        "Y": -12205.993407555665
       }
     ],
     "Annotations": [
@@ -1420,13 +1429,13 @@
           "5f5ff73418754224a400b099e13f5819"
         ],
         "HasNestedGroups": false,
-        "Left": 3265.3428734838681,
-        "Top": -12380.36126062708,
-        "Width": 874.53297544652014,
-        "Height": 440.0,
+        "Left": 3604.1101718889449,
+        "Top": -11892.509208529387,
+        "Width": 810.00000000000091,
+        "Height": 448.0,
         "FontSize": 36.0,
-        "InitialTop": -12307.36126062708,
-        "InitialHeight": 315.0,
+        "InitialTop": -11819.509208529387,
+        "InitialHeight": 323.0,
         "TextblockHeight": 63.0,
         "Background": "#FFFFAA45"
       },
@@ -1441,16 +1450,16 @@
           "db630e7a26ab4f218d4efbee5a07a174",
           "e60c10cc39644c8897ba56abd74d4203",
           "a1161cd6caf7432eb68ea67310ce4e59",
-          "c86b90892f814d91aa4ea403ba998157"
+          "5c51589bc9bc4e55a19b2197bf205acb"
         ],
         "HasNestedGroups": false,
-        "Left": 2465.5178001287504,
-        "Top": -12520.110706206899,
-        "Width": 687.712214667004,
-        "Height": 381.29197946026761,
+        "Left": 2672.56108139045,
+        "Top": -12278.993407555665,
+        "Width": 830.00000000000091,
+        "Height": 449.1306464997997,
         "FontSize": 36.0,
-        "InitialTop": -12447.110706206899,
-        "InitialHeight": 286.505312793608,
+        "InitialTop": -12205.993407555665,
+        "InitialHeight": 330.29197946030945,
         "TextblockHeight": 63.0,
         "Background": "#FFA4E1FF"
       },
@@ -1469,13 +1478,13 @@
           "6e271be4d60445bc81793283c3a08295"
         ],
         "HasNestedGroups": false,
-        "Left": 3265.3758489303882,
-        "Top": -12838.380340558349,
-        "Width": 874.5,
-        "Height": 440.0,
+        "Left": 3604.0536916876877,
+        "Top": -12579.496749466518,
+        "Width": 796.00000000000045,
+        "Height": 577.59673239298718,
         "FontSize": 36.0,
-        "InitialTop": -12765.380340558349,
-        "InitialHeight": 315.0,
+        "InitialTop": -12506.496749466518,
+        "InitialHeight": 452.59673239298718,
         "TextblockHeight": 63.0,
         "Background": "#FFA4E1FF"
       },
@@ -1498,13 +1507,13 @@
           "558e30776a1c4ef0999a0c6007e4f7e1"
         ],
         "HasNestedGroups": false,
-        "Left": 0.15498122270855674,
-        "Top": -12520.215416308951,
-        "Width": 2331.0003240560068,
-        "Height": 383.39444656023079,
+        "Left": 0.053691687687660306,
+        "Top": -12499.670561233337,
+        "Width": 2574.0,
+        "Height": 362.48249999999825,
         "FontSize": 36.0,
-        "InitialTop": -12447.215416308951,
-        "InitialHeight": 313.39444656023079,
+        "InitialTop": -12426.670561233337,
+        "InitialHeight": 292.48249999999825,
         "TextblockHeight": 63.0,
         "Background": "#FFA4E1FF"
       },
@@ -1520,19 +1529,38 @@
           "b1f84e5dc04043abbd9a75db7f816466"
         ],
         "HasNestedGroups": false,
-        "Left": 3534.1328613385685,
-        "Top": -13092.012191532609,
-        "Width": 502.09819805117968,
+        "Left": 3899.5731206914975,
+        "Top": -12923.860471217244,
+        "Width": 550.99999999999955,
         "Height": 235.0,
         "FontSize": 36.0,
-        "InitialTop": -13019.012191532609,
+        "InitialTop": -12850.860471217244,
         "InitialHeight": 145.0,
         "TextblockHeight": 63.0,
         "Background": "#FFC1D676"
+      },
+      {
+        "Id": "597700a165d04b08b2ac8245f19eead6",
+        "Title": "File: WallHole",
+        "DescriptionText": null,
+        "IsExpanded": true,
+        "WidthAdjustment": 0.0,
+        "HeightAdjustment": 0.0,
+        "Nodes": [],
+        "HasNestedGroups": false,
+        "Left": 0.1771390221218212,
+        "Top": -12559.916471706772,
+        "Width": 0.0,
+        "Height": 0.0,
+        "FontSize": 36.0,
+        "InitialTop": 0.0,
+        "InitialHeight": 0.0,
+        "TextblockHeight": 0.0,
+        "Background": "#FFC1D676"
       }
     ],
-    "X": 92.549362994421472,
-    "Y": 3144.9163407530555,
-    "Zoom": 0.21358877161012779
+    "X": 29.940400428218002,
+    "Y": 4590.6907000495721,
+    "Zoom": 0.33645647959494096
   }
 }
