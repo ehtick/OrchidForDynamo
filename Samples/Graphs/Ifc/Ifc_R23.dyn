@@ -88,7 +88,7 @@
       "Name": "String",
       "Type": "string",
       "Type2": "string",
-      "Value": ".\\defaultBuilding.rvt",
+      "Value": "%userprofile%\\Programming\\Testing\\Data\\2023_Data\\defaultBuilding.rvt",
       "Description": "Creates a string.",
       "SelectedIndex": 0
     },
@@ -178,7 +178,7 @@
       "Name": "String",
       "Type": "string",
       "Type2": "string",
-      "Value": "..\\testIFCexport.json",
+      "Value": "%userprofile%\\Programming\\Testing\\Data\\testIFCexport.json",
       "Description": "Creates a string.",
       "SelectedIndex": 0
     },
@@ -235,6 +235,24 @@
       "Value": "IFC4 Design Transfer View",
       "Description": "Dropdown for IFC export versions",
       "SelectedIndex": 8
+    },
+    {
+      "Id": "840283afc55c47cf9150e83db4f0d69f",
+      "Name": "String",
+      "Type": "string",
+      "Type2": "string",
+      "Value": "%userprofile%\\Programming\\Testing\\Data\\DanEDU IFC export.txt",
+      "Description": "Creates a string.",
+      "SelectedIndex": 0
+    },
+    {
+      "Id": "c8cbf29ce62945ee93dfd14be114335b",
+      "Name": "String",
+      "Type": "string",
+      "Type2": "string",
+      "Value": "%userprofile%\\Programming\\Testing\\Data\\2023_Data\\Test",
+      "Description": "Creates a string.",
+      "SelectedIndex": 0
     }
   ],
   "Outputs": [],
@@ -242,13 +260,13 @@
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
       "NodeType": "FunctionNode",
-      "FunctionSignature": "Orchid.IfcExport.IFC.Export@var,var,Revit.Elements.Views.View,string,bool",
+      "FunctionSignature": "Orchid.IfcExport.IFC.Export@Revit.Application.Document,var,Revit.Elements.Views.View,string,bool",
       "Id": "8b7d25d842084aa396810ad599978fb7",
       "Inputs": [
         {
           "Id": "00157e73bbfc489f93c01092f6215b43",
           "Name": "document",
-          "Description": "Project document (rvt).\n\nvar\nDefault value : null",
+          "Description": "Project document (rvt).\n\nDocument\nDefault value : null",
           "UsingDefaultValue": true,
           "Level": 2,
           "UseLevels": false,
@@ -303,7 +321,7 @@
         }
       ],
       "Replication": "Auto",
-      "Description": "Export to IFC. Note: The export function includes a default IFC export setting! For further information visit: https://github.com/Autodesk/revit-ifc\n\nIFC.Export (document: var = null, setting: var = null, view: View = null, file: string = null, overwrite: bool = true): string"
+      "Description": "Export to IFC. Note: The export function includes a default IFC export setting! For further information visit: https://github.com/Autodesk/revit-ifc\n\nIFC.Export (document: Document = null, setting: var = null, view: View = null, file: string = null, overwrite: bool = true): string"
     },
     {
       "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
@@ -654,13 +672,13 @@
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
       "NodeType": "FunctionNode",
-      "FunctionSignature": "Orchid.Common.DataStream.Await@var,var[]",
+      "FunctionSignature": "Orchid.Common.DataStream.Await@var[]..[],var[]..[]",
       "Id": "85353f4502c34376931f0b0b3ab84ee3",
       "Inputs": [
         {
           "Id": "815f7dbe3d0c4d4992631f76fd5269cf",
           "Name": "pass",
-          "Description": "Data to pass.\n\nvar",
+          "Description": "Data to pass.\n\nvar[]..[]",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -669,7 +687,7 @@
         {
           "Id": "970ce738f9644af9a5e7b0a24762fe85",
           "Name": "waitFor",
-          "Description": "Data object to wait for.\n\nvar[]",
+          "Description": "Data object to wait for.\n\nvar[]..[]",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -688,7 +706,7 @@
         }
       ],
       "Replication": "Auto",
-      "Description": "Await a data stream before passing another data stream.\n\nDataStream.Await (pass: var, waitFor: var[]): var[]..[]"
+      "Description": "Await a data stream before passing another data stream.\n\nDataStream.Await (pass: var[]..[], waitFor: var[]..[]): var[]..[]"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
@@ -803,13 +821,13 @@
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
       "NodeType": "FunctionNode",
-      "FunctionSignature": "Orchid.IfcExport.IFC.Export@var,var,Revit.Elements.Views.View,string,bool",
+      "FunctionSignature": "Orchid.IfcExport.IFC.Export@Revit.Application.Document,var,Revit.Elements.Views.View,string,bool",
       "Id": "923a4730f3d94f8d89461de63c61393d",
       "Inputs": [
         {
           "Id": "e18bad20a21c4c4f93735a2bbebc9a83",
           "Name": "document",
-          "Description": "Project document (rvt).\n\nvar\nDefault value : null",
+          "Description": "Project document (rvt).\n\nDocument\nDefault value : null",
           "UsingDefaultValue": true,
           "Level": 2,
           "UseLevels": false,
@@ -864,7 +882,7 @@
         }
       ],
       "Replication": "Auto",
-      "Description": "Export to IFC. Note: The export function includes a default IFC export setting! For further information visit: https://github.com/Autodesk/revit-ifc\n\nIFC.Export (document: var = null, setting: var = null, view: View = null, file: string = null, overwrite: bool = true): string"
+      "Description": "Export to IFC. Note: The export function includes a default IFC export setting! For further information visit: https://github.com/Autodesk/revit-ifc\n\nIFC.Export (document: Document = null, setting: var = null, view: View = null, file: string = null, overwrite: bool = true): string"
     },
     {
       "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
@@ -919,13 +937,13 @@
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
       "NodeType": "FunctionNode",
-      "FunctionSignature": "Orchid.IfcExport.IFC.Export@var,var,Revit.Elements.Views.View,string,bool",
+      "FunctionSignature": "Orchid.IfcExport.IFC.Export@Revit.Application.Document,var,Revit.Elements.Views.View,string,bool",
       "Id": "d0fdd6d4fd9548ea91b2483e76ab3e7f",
       "Inputs": [
         {
           "Id": "476526e954294381a1db61a53a1aa020",
           "Name": "document",
-          "Description": "Project document (rvt).\n\nvar\nDefault value : null",
+          "Description": "Project document (rvt).\n\nDocument\nDefault value : null",
           "UsingDefaultValue": true,
           "Level": 2,
           "UseLevels": false,
@@ -980,7 +998,7 @@
         }
       ],
       "Replication": "Auto",
-      "Description": "Export to IFC. Note: The export function includes a default IFC export setting! For further information visit: https://github.com/Autodesk/revit-ifc\n\nIFC.Export (document: var = null, setting: var = null, view: View = null, file: string = null, overwrite: bool = true): string"
+      "Description": "Export to IFC. Note: The export function includes a default IFC export setting! For further information visit: https://github.com/Autodesk/revit-ifc\n\nIFC.Export (document: Document = null, setting: var = null, view: View = null, file: string = null, overwrite: bool = true): string"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
@@ -1146,7 +1164,7 @@
     {
       "ConcreteType": "CoreNodeModels.Input.StringInput, CoreNodeModels",
       "NodeType": "StringInputNode",
-      "InputValue": ".\\defaultBuilding.rvt",
+      "InputValue": "%userprofile%\\Programming\\Testing\\Data\\2023_Data\\defaultBuilding.rvt",
       "Id": "3a70c1f1bf4c4711a40d791ae5f6fed8",
       "Inputs": [],
       "Outputs": [
@@ -1860,7 +1878,7 @@
     {
       "ConcreteType": "CoreNodeModels.Input.StringInput, CoreNodeModels",
       "NodeType": "StringInputNode",
-      "InputValue": "..\\testIFCexport.json",
+      "InputValue": "%userprofile%\\Programming\\Testing\\Data\\testIFCexport.json",
       "Id": "5f3d22fa063d449ba97a0ab6e3a80522",
       "Inputs": [],
       "Outputs": [
@@ -1953,7 +1971,7 @@
       "Inputs": [],
       "Outputs": [
         {
-          "Id": "b10f8f7888324e9f87fb7a256b379c5e",
+          "Id": "6fa9b82d32c54e49a03cf63b27692cd1",
           "Name": "",
           "Description": "Value of expression at line 1",
           "UsingDefaultValue": false,
@@ -1962,7 +1980,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "1f12484173534f528a086944db28d1cb",
+          "Id": "7053406bcb474313b1e0cc1a77205394",
           "Name": "",
           "Description": "Value of expression at line 2",
           "UsingDefaultValue": false,
@@ -1971,7 +1989,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "04b1350c72d04cf89e3cee6563013f47",
+          "Id": "88392f8f9af94b44bb606559c9e281e5",
           "Name": "",
           "Description": "Value of expression at line 3",
           "UsingDefaultValue": false,
@@ -2408,6 +2426,117 @@
       ],
       "Replication": "Disabled",
       "Description": "Dropdown for IFC exchange requirements"
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Input.StringInput, CoreNodeModels",
+      "NodeType": "StringInputNode",
+      "InputValue": "TestExport",
+      "Id": "1f108771ac3d4f84a463cf9e81ed35b4",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "e86a654706764c5eb1d4a35d06ff6c6d",
+          "Name": "",
+          "Description": "String",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Creates a string."
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Input.StringInput, CoreNodeModels",
+      "NodeType": "StringInputNode",
+      "InputValue": "%userprofile%\\Programming\\Testing\\Data\\DanEDU IFC export.txt",
+      "Id": "840283afc55c47cf9150e83db4f0d69f",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "45ef38419a654a51935cfa4e1c7dd15d",
+          "Name": "",
+          "Description": "String",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Creates a string."
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "Orchid.IfcExport.IFC.CreateSetting@string",
+      "Id": "341769fe847647d5b1b84fac3bf0a121",
+      "Inputs": [
+        {
+          "Id": "0e8fd05b2f744350a1480a875f661410",
+          "Name": "name",
+          "Description": "IFC setting name.\n\nstring",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "aeaa0ae6356b4332a5b4d86138758dbe",
+          "Name": "Setting",
+          "Description": "IFC export setting.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Create IFC export setting based on default export setting in the document. For further information visit: https://github.com/Autodesk/revit-ifc\n\nIFC.CreateSetting (name: string): var"
+    },
+    {
+      "ConcreteType": "Orchid.E.IfcExport.Setting, OrchidIE",
+      "SelectedIndex": 1,
+      "SelectedString": "IFC 2x3 Coordination View 2.0",
+      "NodeType": "ExtensionNode",
+      "Id": "311f78ddf47c4a80bc3cc999d0e781ae",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "b02a0953f3124f46a2f3664bc471f210",
+          "Name": "Name",
+          "Description": "The selected Name",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Dropdown for IFC export setting"
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Input.StringInput, CoreNodeModels",
+      "NodeType": "StringInputNode",
+      "InputValue": "%userprofile%\\Programming\\Testing\\Data\\2023_Data\\Test",
+      "Id": "c8cbf29ce62945ee93dfd14be114335b",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "263da9698dcd4955ae7182e0c832485f",
+          "Name": "",
+          "Description": "String",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Creates a string."
     }
   ],
   "Connectors": [
@@ -2433,12 +2562,6 @@
       "Start": "c6656e82cd7a4209a73f78eb6fcaaf83",
       "End": "d1a1e19d3c434b74a7a07db33fe83548",
       "Id": "79edfa94078a42419cdb7865037f261f",
-      "IsHidden": "False"
-    },
-    {
-      "Start": "d11b5ec917b44f4aa288921d967ea544",
-      "End": "f2c63e2fc296478bb325cf9116d6b425",
-      "Id": "1c9c9ce71131435d816712b9ae6bfad3",
       "IsHidden": "False"
     },
     {
@@ -2652,7 +2775,7 @@
       "IsHidden": "False"
     },
     {
-      "Start": "b10f8f7888324e9f87fb7a256b379c5e",
+      "Start": "6fa9b82d32c54e49a03cf63b27692cd1",
       "End": "44f97781d07f4407a4f1d32f52550aa1",
       "Id": "6df0909854034087b34aecd8e0b1caaa",
       "IsHidden": "False"
@@ -2667,12 +2790,6 @@
       "Start": "4f507556fa3340d0a074b13586518e71",
       "End": "a6936204b9cf47c18e00f0ad7f304aff",
       "Id": "a53124a45ee04761aa0c32a7106a48e8",
-      "IsHidden": "False"
-    },
-    {
-      "Start": "3f3088a3264d4d3b8e9532948ac14c58",
-      "End": "96358c52570c40a1904ee0b7c2a35da8",
-      "Id": "1c71841e7af845b89a4dc98f3a96483d",
       "IsHidden": "False"
     },
     {
@@ -2740,13 +2857,31 @@
       "End": "c73471f5439a4c33b2852b4474533cd8",
       "Id": "7a2471790d6f4d79aa4fcf3724d8917c",
       "IsHidden": "False"
+    },
+    {
+      "Start": "e86a654706764c5eb1d4a35d06ff6c6d",
+      "End": "0e8fd05b2f744350a1480a875f661410",
+      "Id": "b07fb20e45644dcb9a2367bd3aab7d65",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "45ef38419a654a51935cfa4e1c7dd15d",
+      "End": "96358c52570c40a1904ee0b7c2a35da8",
+      "Id": "792d6fa7327b4e34884633ee444238c3",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "263da9698dcd4955ae7182e0c832485f",
+      "End": "f2c63e2fc296478bb325cf9116d6b425",
+      "Id": "a6d063ad6e63482c9a0cbe1cf09dc002",
+      "IsHidden": "False"
     }
   ],
   "Dependencies": [],
   "NodeLibraryDependencies": [
     {
       "Name": "Orchid",
-      "Version": "216.3.0.8442",
+      "Version": "216.3.0.5794",
       "ReferenceType": "Package",
       "Nodes": [
         "8b7d25d842084aa396810ad599978fb7",
@@ -2786,7 +2921,9 @@
         "0aa3c8585b0147ba9e3404adb4161646",
         "4dd602c396ab4399b3a41c06b774c6af",
         "c81904d3bf20481a815e7d2621772b96",
-        "67b6adf862ef4b818b06fa9b9dc767b5"
+        "67b6adf862ef4b818b06fa9b9dc767b5",
+        "341769fe847647d5b1b84fac3bf0a121",
+        "311f78ddf47c4a80bc3cc999d0e781ae"
       ]
     },
     {
@@ -2851,8 +2988,8 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 3318.74811435754,
-        "Y": 66.1778293289494
+        "X": 3423.1839158771086,
+        "Y": 125.10439230310919
       },
       {
         "Name": "Watch",
@@ -2861,8 +2998,8 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 3618.16040656489,
-        "Y": 66.1778293289494
+        "X": 3747.18391587711,
+        "Y": 125.104392303109
       },
       {
         "Name": "Watch",
@@ -2871,8 +3008,8 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 3314.6785271285526,
-        "Y": -726.40618382015612
+        "X": 3366.2852753164093,
+        "Y": -241.98876718244736
       },
       {
         "Name": "Watch",
@@ -2881,8 +3018,8 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 3314.6785271285526,
-        "Y": -406.40618382016612
+        "X": 3837.18391587711,
+        "Y": -241.988767182447
       },
       {
         "Name": "Views",
@@ -2891,8 +3028,8 @@
         "IsSetAsInput": true,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 3029.76096091967,
-        "Y": 187.720453805894
+        "X": 3090.1839158771086,
+        "Y": 66.104392303109165
       },
       {
         "Name": "Boolean",
@@ -2901,8 +3038,8 @@
         "IsSetAsInput": true,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 3029.76096091967,
-        "Y": 339.853894899159
+        "X": 3090.1839158771086,
+        "Y": 402.10439230310914
       },
       {
         "Name": "Object.Type",
@@ -2911,8 +3048,8 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 3030.1785271285562,
-        "Y": -726.40618382016112
+        "X": 3090.3866347557087,
+        "Y": -241.98876718245214
       },
       {
         "Name": "Code Block",
@@ -2921,8 +3058,8 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 2711.5072628287307,
-        "Y": 815.005377943806
+        "X": 2767.7973834109453,
+        "Y": 814.69090799641936
       },
       {
         "Name": "IFC.SettingAdvanced",
@@ -2931,8 +3068,8 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 2624.6721426070803,
-        "Y": 66.367088520351388
+        "X": 2680.9622631892948,
+        "Y": 66.052618572964718
       },
       {
         "Name": "String",
@@ -2941,8 +3078,8 @@
         "IsSetAsInput": true,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 2389.5072628287307,
-        "Y": 906.005377943806
+        "X": 2445.7973834109453,
+        "Y": 905.69090799641936
       },
       {
         "Name": "DataStream.Await",
@@ -2991,8 +3128,8 @@
         "IsSetAsInput": true,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 2349.5645416060765,
-        "Y": 304.88162181661068
+        "X": 2405.8546621882911,
+        "Y": 304.567151869224
       },
       {
         "Name": "IFC.Export",
@@ -3041,8 +3178,8 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 1932.8992946115811,
-        "Y": 65.504613043294285
+        "X": 1982.3935071389408,
+        "Y": 65.988049639156472
       },
       {
         "Name": "Document.BackgroundOpen",
@@ -3061,8 +3198,8 @@
         "IsSetAsInput": true,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 1650.2363329844945,
-        "Y": 219.20872841806286
+        "X": 1649.3935071389408,
+        "Y": 187.98804963915649
       },
       {
         "Name": "String",
@@ -3351,7 +3488,7 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": -343.57317642558155,
+        "X": -328.32317642558155,
         "Y": 66.3958889971002
       },
       {
@@ -3361,7 +3498,7 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": -829.324512311382,
+        "X": -814.074512311382,
         "Y": 66.3958889971002
       },
       {
@@ -3371,8 +3508,8 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 2389.5072628287307,
-        "Y": 758.005377943806
+        "X": 2445.7973834109453,
+        "Y": 757.69090799641936
       },
       {
         "Name": "String",
@@ -3503,6 +3640,56 @@
         "Excluded": false,
         "X": 10.325011900790741,
         "Y": 324.93692987494092
+      },
+      {
+        "Name": "String",
+        "ShowGeometry": true,
+        "Id": "1f108771ac3d4f84a463cf9e81ed35b4",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": -563.78058446505179,
+        "Y": -240.68960691491304
+      },
+      {
+        "Name": "String",
+        "ShowGeometry": true,
+        "Id": "840283afc55c47cf9150e83db4f0d69f",
+        "IsSetAsInput": true,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1649.3935071389408,
+        "Y": 334.98804963915649
+      },
+      {
+        "Name": "IFC.CreateSetting",
+        "ShowGeometry": true,
+        "Id": "341769fe847647d5b1b84fac3bf0a121",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": -315.78058446505179,
+        "Y": -240.68960691491304
+      },
+      {
+        "Name": "IFC Settings",
+        "ShowGeometry": true,
+        "Id": "311f78ddf47c4a80bc3cc999d0e781ae",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": -738.074512311382,
+        "Y": 248.001301799295
+      },
+      {
+        "Name": "String",
+        "ShowGeometry": true,
+        "Id": "c8cbf29ce62945ee93dfd14be114335b",
+        "IsSetAsInput": true,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 3090.1839158771086,
+        "Y": 213.10439230310922
       }
     ],
     "Annotations": [
@@ -3517,16 +3704,17 @@
           "9960061785124fa9b40071f2be116819",
           "8b7d25d842084aa396810ad599978fb7",
           "b920195bf91c4c869643020c7c191575",
-          "9ec43b0556464bf7b5a820de87af613a"
+          "9ec43b0556464bf7b5a820de87af613a",
+          "c8cbf29ce62945ee93dfd14be114335b"
         ],
         "HasNestedGroups": false,
-        "Left": 3019.76096091967,
-        "Top": 0.17782932894940018,
-        "Width": 930.39944564521966,
-        "Height": 471.67606557020963,
+        "Left": 3080.1839158771086,
+        "Top": 0.10439230310916514,
+        "Width": 999.00000000000136,
+        "Height": 533.99999999999989,
         "FontSize": 30.0,
-        "InitialTop": 66.1778293289494,
-        "InitialHeight": 418.67606557020963,
+        "InitialTop": 66.104392303109165,
+        "InitialHeight": 481.0,
         "TextblockHeight": 56.0,
         "Background": "#FFC1D676"
       },
@@ -3543,13 +3731,13 @@
           "f5967c9620bc4302bade83ce47a1b72f"
         ],
         "HasNestedGroups": false,
-        "Left": 3020.1785271285562,
-        "Top": -792.40618382016112,
-        "Width": 431.49999999999636,
-        "Height": 521.999999999995,
+        "Left": 3080.3866347557087,
+        "Top": -307.98876718245214,
+        "Width": 998.79728112140128,
+        "Height": 202.00000000000514,
         "FontSize": 30.0,
-        "InitialTop": -726.40618382016112,
-        "InitialHeight": 464.999999999995,
+        "InitialTop": -241.98876718245214,
+        "InitialHeight": 145.00000000000477,
         "TextblockHeight": 56.0,
         "Background": "#FFB5B5B5"
       },
@@ -3565,12 +3753,12 @@
           "f0955b37175743ea9c5ab46e9a24da20"
         ],
         "HasNestedGroups": false,
-        "Left": 2339.5645416060765,
-        "Top": 0.36708852035138761,
+        "Left": 2395.8546621882911,
+        "Top": 0.052618572964718169,
         "Width": 585.10760100100379,
-        "Height": 590.0,
+        "Height": 578.0,
         "FontSize": 30.0,
-        "InitialTop": 66.367088520351388,
+        "InitialTop": 66.052618572964718,
         "InitialHeight": 383.51453329625929,
         "TextblockHeight": 56.0,
         "Background": "#FFC1D676"
@@ -3588,17 +3776,16 @@
           "af6c94ef52a345889cbf805bd1788189",
           "923a4730f3d94f8d89461de63c61393d",
           "f77f1b5cb5db46a5a6c5ad008a5813b6",
-          "3a70c1f1bf4c4711a40d791ae5f6fed8",
-          "43401501a4b64a3abd15686702940b1e"
+          "3a70c1f1bf4c4711a40d791ae5f6fed8"
         ],
         "HasNestedGroups": false,
         "Left": 939.97686340315886,
         "Top": 1299.688592302025,
         "Width": 1664.5737342166876,
-        "Height": 444.90996852648573,
+        "Height": 439.0000000000025,
         "FontSize": 30.0,
         "InitialTop": 1365.688592302025,
-        "InitialHeight": 459.90996852648573,
+        "InitialHeight": 324.14262657833365,
         "TextblockHeight": 56.0,
         "Background": "#FFFFB8D8"
       },
@@ -3635,16 +3822,17 @@
         "HeightAdjustment": 0.0,
         "Nodes": [
           "9571623c246b4667b3aedfdf6a73eccf",
-          "c1ce36497bc648e3a09831497597f0d3"
+          "c1ce36497bc648e3a09831497597f0d3",
+          "840283afc55c47cf9150e83db4f0d69f"
         ],
         "HasNestedGroups": false,
-        "Left": 1640.2363329844945,
-        "Top": -0.49538695670571542,
-        "Width": 604.66296162708682,
-        "Height": 520.0,
+        "Left": 1639.3935071389408,
+        "Top": -0.011950360843528074,
+        "Width": 654.99999999999977,
+        "Height": 531.00000000000011,
         "FontSize": 30.0,
-        "InitialTop": 65.504613043294285,
-        "InitialHeight": 298.70411537476855,
+        "InitialTop": 65.988049639156472,
+        "InitialHeight": 414.0,
         "TextblockHeight": 56.0,
         "Background": "#FFC1D676"
       },
@@ -3765,7 +3953,7 @@
         "Left": -219.894420132593,
         "Top": 1300.1024080365764,
         "Width": 1044.0208878588983,
-        "Height": 848.20771876487015,
+        "Height": 912.2077187648697,
         "FontSize": 30.0,
         "InitialTop": 1366.1024080365764,
         "InitialHeight": 795.20771876487015,
@@ -3781,16 +3969,17 @@
         "HeightAdjustment": 0.0,
         "Nodes": [
           "9ee2dfe4732344849c75201773262e9c",
-          "0451f486207348888d950a5c33132737"
+          "0451f486207348888d950a5c33132737",
+          "311f78ddf47c4a80bc3cc999d0e781ae"
         ],
         "HasNestedGroups": false,
-        "Left": -839.324512311382,
+        "Left": -824.074512311382,
         "Top": 0.39588899710020087,
         "Width": 723.75133588580047,
-        "Height": 224.0,
+        "Height": 379.60541280219479,
         "FontSize": 30.0,
         "InitialTop": 66.3958889971002,
-        "InitialHeight": 145.0,
+        "InitialHeight": 326.60541280219479,
         "TextblockHeight": 56.0,
         "Background": "#FFC1D676"
       },
@@ -3807,12 +3996,12 @@
           "ddf055a9962f42e8938460d059b8d017"
         ],
         "HasNestedGroups": false,
-        "Left": 2379.5072628287307,
-        "Top": 685.005377943806,
+        "Left": 2435.7973834109453,
+        "Top": 684.69090799641936,
         "Width": 546.0,
         "Height": 354.5,
         "FontSize": 36.0,
-        "InitialTop": 758.005377943806,
+        "InitialTop": 757.69090799641936,
         "InitialHeight": 293.0,
         "TextblockHeight": 63.0,
         "Background": "#FFA4E1FF"
@@ -3871,16 +4060,38 @@
         "Background": "#FFC1D676"
       },
       {
-        "Id": "43401501a4b64a3abd15686702940b1e",
-        "Title": "Can't run simultaneously in \r\nRevit versions below 2021",
+        "Id": "051100fcda50451e96adef8ff47859b5",
+        "Title": "Create a new IFC setting",
+        "DescriptionText": null,
+        "IsExpanded": true,
+        "WidthAdjustment": 0.0,
+        "HeightAdjustment": 0.0,
+        "Nodes": [
+          "341769fe847647d5b1b84fac3bf0a121",
+          "1f108771ac3d4f84a463cf9e81ed35b4"
+        ],
+        "HasNestedGroups": false,
+        "Left": -573.78058446505179,
+        "Top": -306.68960691491304,
+        "Width": 473.0,
+        "Height": 198.0,
+        "FontSize": 30.0,
+        "InitialTop": -240.68960691491304,
+        "InitialHeight": 145.0,
+        "TextblockHeight": 56.0,
+        "Background": "#FFC1D676"
+      },
+      {
+        "Id": "c001feb9240e472aafbb959679cd7fb9",
+        "Title": "File: defaultProject",
         "DescriptionText": null,
         "IsExpanded": true,
         "WidthAdjustment": 0.0,
         "HeightAdjustment": 0.0,
         "Nodes": [],
         "HasNestedGroups": false,
-        "Left": 1002.5358394282109,
-        "Top": 1688.5985608285107,
+        "Left": 0.055953654671100139,
+        "Top": -59.732065731344619,
         "Width": 0.0,
         "Height": 0.0,
         "FontSize": 36.0,
@@ -3890,8 +4101,8 @@
         "Background": "#FFC1D676"
       }
     ],
-    "X": 320.88681984129073,
-    "Y": 244.91153682160351,
-    "Zoom": 0.29585587458986989
+    "X": 279.06060968892439,
+    "Y": 162.07792425704736,
+    "Zoom": 0.3059432593974386
   }
 }
