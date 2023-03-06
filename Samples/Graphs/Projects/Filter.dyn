@@ -39,7 +39,7 @@
       "Name": "Boolean",
       "Type": "boolean",
       "Type2": "boolean",
-      "Value": "true",
+      "Value": "false",
       "Description": "Selection between a true and false.",
       "SelectedIndex": 0
     },
@@ -204,13 +204,13 @@
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
       "NodeType": "FunctionNode",
-      "FunctionSignature": "Orchid.RevitProject.Filters.ParameterFilter.AddRuleSet@Revit.Filter.ParameterFilterElement,Revit.Filter.FilterRule[],var[]..[],var[]..[],bool",
+      "FunctionSignature": "Orchid.RevitProject.Filters.ParameterFilter.AddRule@Revit.Filter.ParameterFilterElement,var[]..[],var[]..[],Revit.Filter.FilterRule[],bool",
       "Id": "5cea1ede6adc47289aef7479c000d0af",
       "Inputs": [
         {
           "Id": "81f3fa2d0a434a609895b9b8d9692551",
           "Name": "parameterFilter",
-          "Description": "ParameterFilter.\n\nParameterFilterElement",
+          "Description": "Parameter filter element.\n\nParameterFilterElement",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -218,8 +218,8 @@
         },
         {
           "Id": "c057b216dd5a4cc6a5d4b242fdc02e29",
-          "Name": "filterRule",
-          "Description": "rvtFilterRule.\n\nFilterRule[]",
+          "Name": "ruleTree",
+          "Description": "RuleTree as list.\n\nvar[]..[]",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -227,17 +227,17 @@
         },
         {
           "Id": "545c72ee94df4d49bc38c2279fe73e04",
-          "Name": "ruleTree",
-          "Description": "RuleTree.\n\nvar[]..[]",
-          "UsingDefaultValue": false,
+          "Name": "atIndex",
+          "Description": "The index of the rule(s) to be added. Default value (null) add the rule(s) to the end.\n\nvar[]..[]\nDefault value : null",
+          "UsingDefaultValue": true,
           "Level": 2,
           "UseLevels": false,
           "KeepListStructure": false
         },
         {
           "Id": "2760fc73719c49c584219842c88cc05a",
-          "Name": "attachedTo",
-          "Description": "The index the rule set is being attached to. Default value (null) attaches the set to the last index.\n\nvar[]..[]\nDefault value : null",
+          "Name": "filterRule",
+          "Description": "Filter rule(s).\n\nFilterRule[]",
           "UsingDefaultValue": true,
           "Level": 2,
           "UseLevels": false,
@@ -246,7 +246,7 @@
         {
           "Id": "dfb598adeaee4cfc978adced85a13f04",
           "Name": "andOr",
-          "Description": "True set an And filter, false set an Or filter!?\n\nbool\nDefault value : true",
+          "Description": "True set an AND filter, false set an OR filter!?\n\nbool\nDefault value : true",
           "UsingDefaultValue": true,
           "Level": 2,
           "UseLevels": false,
@@ -257,7 +257,7 @@
         {
           "Id": "de304e19de6b4b0999e7559d2cb05e5c",
           "Name": "ParameterFilter",
-          "Description": "ParameterFilter.",
+          "Description": "Parameter filter element.",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -265,18 +265,18 @@
         }
       ],
       "Replication": "Auto",
-      "Description": "Add filter rule set.\n\nParameterFilter.AddRuleSet (parameterFilter: ParameterFilterElement, filterRule: FilterRule[], ruleTree: var[]..[], attachedTo: var[]..[] = null, andOr: bool = true): ParameterFilterElement"
+      "Description": "Add filter rule(s) to the parameter filter element.\n\nParameterFilter.AddRule (parameterFilter: ParameterFilterElement, ruleTree: var[]..[], atIndex: var[]..[] = null, filterRule: FilterRule[], andOr: bool = true): ParameterFilterElement"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
       "NodeType": "FunctionNode",
-      "FunctionSignature": "Orchid.RevitProject.Filters.ParameterFilter.AddRuleSet@Revit.Filter.ParameterFilterElement,Revit.Filter.FilterRule[],var[]..[],var[]..[],bool",
+      "FunctionSignature": "Orchid.RevitProject.Filters.ParameterFilter.AddRule@Revit.Filter.ParameterFilterElement,var[]..[],var[]..[],Revit.Filter.FilterRule[],bool",
       "Id": "fd46894e0a604ad4a5c4ad4139e024f3",
       "Inputs": [
         {
           "Id": "9c821a682d5149a2b223f2a2ca4f68e3",
           "Name": "parameterFilter",
-          "Description": "ParameterFilter.\n\nParameterFilterElement",
+          "Description": "Parameter filter element.\n\nParameterFilterElement",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -284,8 +284,8 @@
         },
         {
           "Id": "5e60edbb6eaa4836a8d77124b8452807",
-          "Name": "filterRule",
-          "Description": "rvtFilterRule.\n\nFilterRule[]",
+          "Name": "ruleTree",
+          "Description": "RuleTree as list.\n\nvar[]..[]",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -293,17 +293,17 @@
         },
         {
           "Id": "ee1f3e7d9f804fcea4d776a755b46212",
-          "Name": "ruleTree",
-          "Description": "RuleTree.\n\nvar[]..[]",
-          "UsingDefaultValue": false,
+          "Name": "atIndex",
+          "Description": "The index of the rule(s) to be added. Default value (null) add the rule(s) to the end.\n\nvar[]..[]\nDefault value : null",
+          "UsingDefaultValue": true,
           "Level": 2,
           "UseLevels": false,
           "KeepListStructure": false
         },
         {
           "Id": "79b8b284892047db8365198dd391ccac",
-          "Name": "attachedTo",
-          "Description": "The index the rule set is being attached to. Default value (null) attaches the set to the last index.\n\nvar[]..[]\nDefault value : null",
+          "Name": "filterRule",
+          "Description": "Filter rule(s).\n\nFilterRule[]",
           "UsingDefaultValue": true,
           "Level": 2,
           "UseLevels": false,
@@ -312,7 +312,7 @@
         {
           "Id": "408120a1d52e49e190e43481883021f2",
           "Name": "andOr",
-          "Description": "True set an And filter, false set an Or filter!?\n\nbool\nDefault value : true",
+          "Description": "True set an AND filter, false set an OR filter!?\n\nbool\nDefault value : true",
           "UsingDefaultValue": true,
           "Level": 2,
           "UseLevels": false,
@@ -323,7 +323,7 @@
         {
           "Id": "d9f48e46da3e48378893bd3df9aa3019",
           "Name": "ParameterFilter",
-          "Description": "ParameterFilter.",
+          "Description": "Parameter filter element.",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -331,18 +331,18 @@
         }
       ],
       "Replication": "Auto",
-      "Description": "Add filter rule set.\n\nParameterFilter.AddRuleSet (parameterFilter: ParameterFilterElement, filterRule: FilterRule[], ruleTree: var[]..[], attachedTo: var[]..[] = null, andOr: bool = true): ParameterFilterElement"
+      "Description": "Add filter rule(s) to the parameter filter element.\n\nParameterFilter.AddRule (parameterFilter: ParameterFilterElement, ruleTree: var[]..[], atIndex: var[]..[] = null, filterRule: FilterRule[], andOr: bool = true): ParameterFilterElement"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
       "NodeType": "FunctionNode",
-      "FunctionSignature": "Orchid.RevitProject.Filters.ParameterFilter.AddRuleSet@Revit.Filter.ParameterFilterElement,Revit.Filter.FilterRule[],var[]..[],var[]..[],bool",
+      "FunctionSignature": "Orchid.RevitProject.Filters.ParameterFilter.AddRule@Revit.Filter.ParameterFilterElement,var[]..[],var[]..[],Revit.Filter.FilterRule[],bool",
       "Id": "085775c1347748e48cfdb2261e37ff57",
       "Inputs": [
         {
           "Id": "af288f290dc24758a700cf8a93bcefc2",
           "Name": "parameterFilter",
-          "Description": "ParameterFilter.\n\nParameterFilterElement",
+          "Description": "Parameter filter element.\n\nParameterFilterElement",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -350,8 +350,8 @@
         },
         {
           "Id": "73fe65164bb44ec88017311d1f122bb4",
-          "Name": "filterRule",
-          "Description": "rvtFilterRule.\n\nFilterRule[]",
+          "Name": "ruleTree",
+          "Description": "RuleTree as list.\n\nvar[]..[]",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -359,8 +359,8 @@
         },
         {
           "Id": "d79f0df61d2b4a1b824d65da918a7adc",
-          "Name": "ruleTree",
-          "Description": "RuleTree.\n\nvar[]..[]",
+          "Name": "atIndex",
+          "Description": "The index of the rule(s) to be added. Default value (null) add the rule(s) to the end.\n\nvar[]..[]\nDefault value : null (disabled)",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -368,8 +368,8 @@
         },
         {
           "Id": "1df64436fcd047778afd2c49960753c9",
-          "Name": "attachedTo",
-          "Description": "The index the rule set is being attached to. Default value (null) attaches the set to the last index.\n\nvar[]..[]\nDefault value : null",
+          "Name": "filterRule",
+          "Description": "Filter rule(s).\n\nFilterRule[]",
           "UsingDefaultValue": true,
           "Level": 2,
           "UseLevels": false,
@@ -378,7 +378,7 @@
         {
           "Id": "e11037526eb8445686c833e4ada29004",
           "Name": "andOr",
-          "Description": "True set an And filter, false set an Or filter!?\n\nbool\nDefault value : true",
+          "Description": "True set an AND filter, false set an OR filter!?\n\nbool\nDefault value : true",
           "UsingDefaultValue": true,
           "Level": 2,
           "UseLevels": false,
@@ -389,7 +389,7 @@
         {
           "Id": "c3d0209ecbbb4582ae5896e37cb75ee1",
           "Name": "ParameterFilter",
-          "Description": "ParameterFilter.",
+          "Description": "Parameter filter element.",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -397,7 +397,7 @@
         }
       ],
       "Replication": "Auto",
-      "Description": "Add filter rule set.\n\nParameterFilter.AddRuleSet (parameterFilter: ParameterFilterElement, filterRule: FilterRule[], ruleTree: var[]..[], attachedTo: var[]..[] = null, andOr: bool = true): ParameterFilterElement"
+      "Description": "Add filter rule(s) to the parameter filter element.\n\nParameterFilter.AddRule (parameterFilter: ParameterFilterElement, ruleTree: var[]..[], atIndex: var[]..[] = null, filterRule: FilterRule[], andOr: bool = true): ParameterFilterElement"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
@@ -408,7 +408,7 @@
         {
           "Id": "01d98f8efbef46e29e7f907bdd9c826c",
           "Name": "parameterFilter",
-          "Description": "ParameterFilter.\n\nParameterFilterElement",
+          "Description": "Parameter filter element.\n\nParameterFilterElement",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -419,7 +419,7 @@
         {
           "Id": "c754c399728844d2829d884ccd136a74",
           "Name": "RuleTree",
-          "Description": "rvtFilterRule tree list.",
+          "Description": "RuleTree as list.",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -427,7 +427,7 @@
         }
       ],
       "Replication": "Auto",
-      "Description": "Get filter rule tree.\n\nParameterFilter.RuleTree (parameterFilter: ParameterFilterElement): var[]..[]"
+      "Description": "Get parameter filter element rule tree.\n\nParameterFilter.RuleTree (parameterFilter: ParameterFilterElement): var[]..[]"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
@@ -438,7 +438,7 @@
         {
           "Id": "ff2a73131c8846718623fcb56e21d0cc",
           "Name": "parameterFilter",
-          "Description": "ParameterFilter.\n\nParameterFilterElement",
+          "Description": "Parameter filter element.\n\nParameterFilterElement",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -449,7 +449,7 @@
         {
           "Id": "f230c5d8923e419c89ef05171938c86f",
           "Name": "RuleTree",
-          "Description": "rvtFilterRule tree list.",
+          "Description": "RuleTree as list.",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -457,7 +457,7 @@
         }
       ],
       "Replication": "Auto",
-      "Description": "Get filter rule tree.\n\nParameterFilter.RuleTree (parameterFilter: ParameterFilterElement): var[]..[]"
+      "Description": "Get parameter filter element rule tree.\n\nParameterFilter.RuleTree (parameterFilter: ParameterFilterElement): var[]..[]"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
@@ -468,7 +468,7 @@
         {
           "Id": "a03752af43f2486dabdbd540b6d22271",
           "Name": "parameterFilter",
-          "Description": "ParameterFilter.\n\nParameterFilterElement",
+          "Description": "Parameter filter element.\n\nParameterFilterElement",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -479,7 +479,7 @@
         {
           "Id": "149be5e8bb10401189cae687a42c0b25",
           "Name": "RuleTree",
-          "Description": "rvtFilterRule tree list.",
+          "Description": "RuleTree as list.",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -487,7 +487,7 @@
         }
       ],
       "Replication": "Auto",
-      "Description": "Get filter rule tree.\n\nParameterFilter.RuleTree (parameterFilter: ParameterFilterElement): var[]..[]"
+      "Description": "Get parameter filter element rule tree.\n\nParameterFilter.RuleTree (parameterFilter: ParameterFilterElement): var[]..[]"
     },
     {
       "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
@@ -521,22 +521,12 @@
     {
       "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
       "NodeType": "CodeBlockNode",
-      "Code": "filterRule;\n[3];\n[3,2];",
+      "Code": "[3];\n[3,2];",
       "Id": "8ea6658abfd04a9081c561b344b37c5d",
-      "Inputs": [
-        {
-          "Id": "55dca3a01eb54e4880c6fd5416a8b6b3",
-          "Name": "filterRule",
-          "Description": "filterRule",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        }
-      ],
+      "Inputs": [],
       "Outputs": [
         {
-          "Id": "c48edc8f53c54676ab8d80970aab2095",
+          "Id": "fb179b56fe7e47dcaba5af80d4e4157b",
           "Name": "",
           "Description": "Value of expression at line 1",
           "UsingDefaultValue": false,
@@ -545,18 +535,9 @@
           "KeepListStructure": false
         },
         {
-          "Id": "0baf0890cdec4a539addc6cfd3d351b7",
+          "Id": "918c2977356f4becada1784530bb0206",
           "Name": "",
           "Description": "Value of expression at line 2",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        },
-        {
-          "Id": "9ad2401301c7492dbf77a594760eed91",
-          "Name": "",
-          "Description": "Value of expression at line 3",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -589,7 +570,7 @@
     {
       "ConcreteType": "CoreNodeModels.Input.BoolSelector, CoreNodeModels",
       "NodeType": "BooleanInputNode",
-      "InputValue": true,
+      "InputValue": false,
       "Id": "1be1ab01213e40488971f5730f68596f",
       "Inputs": [],
       "Outputs": [
@@ -667,7 +648,7 @@
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
       "NodeType": "FunctionNode",
-      "FunctionSignature": "Orchid.RevitProject.Filters.ParameterFilter.ByRule@string,Revit.Filter.FilterRule[],Revit.Elements.Category[],bool",
+      "FunctionSignature": "Orchid.RevitProject.Filters.ParameterFilter.Create@string,Revit.Filter.FilterRule[],Revit.Elements.Category[],bool",
       "Id": "bd67259c3a6942d880cc7cf80681e6e0",
       "Inputs": [
         {
@@ -682,7 +663,7 @@
         {
           "Id": "1a07685265764ac6ac9a0077bd441c7e",
           "Name": "filterRule",
-          "Description": "rvtFilterRule.\n\nFilterRule[]",
+          "Description": "Filter rule(s).\n\nFilterRule[]",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -700,7 +681,7 @@
         {
           "Id": "7f2597d4b6c047c698920f5d2f775f47",
           "Name": "andOr",
-          "Description": "True set an And filter, false set an Or filter!?\n\nbool\nDefault value : true",
+          "Description": "True set an AND filter, false set an OR filter!?\n\nbool\nDefault value : true",
           "UsingDefaultValue": true,
           "Level": 2,
           "UseLevels": false,
@@ -711,7 +692,7 @@
         {
           "Id": "4f246f95839a44d49e16f2a303ccb6e4",
           "Name": "ParameterFilter",
-          "Description": "ParameterFilter.",
+          "Description": "Parameter filter element.",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -719,28 +700,19 @@
         }
       ],
       "Replication": "Auto",
-      "Description": "Create a parameter filter by rule.\n\nParameterFilter.ByRule (name: string, filterRule: FilterRule[], category: Category[], andOr: bool = true): ParameterFilterElement"
+      "Description": "Create a parameter filter element by filter rule and logical filter.\n\nParameterFilter.Create (name: string, filterRule: FilterRule[], category: Category[], andOr: bool = true): ParameterFilterElement"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
       "NodeType": "FunctionNode",
-      "FunctionSignature": "Orchid.RevitProject.Filters.ParameterFilter.GetRule@Revit.Filter.ParameterFilterElement,bool",
+      "FunctionSignature": "Orchid.RevitProject.Filters.ParameterFilter.GetRule@Revit.Filter.ParameterFilterElement",
       "Id": "40228aac0daa438ab6aec20599df1bbc",
       "Inputs": [
         {
           "Id": "8e886f2853c64d6e9ff29eb05dce9a29",
           "Name": "parameterFilter",
-          "Description": "ParameterFilter.\n\nParameterFilterElement",
+          "Description": "Parameter filter element.\n\nParameterFilterElement",
           "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        },
-        {
-          "Id": "a51dfa05df1749a7bc9dbd4e4d957cc6",
-          "Name": "condense",
-          "Description": "Condense to shortest feasible output?\n\nbool\nDefault value : true",
-          "UsingDefaultValue": true,
           "Level": 2,
           "UseLevels": false,
           "KeepListStructure": false
@@ -758,7 +730,7 @@
         }
       ],
       "Replication": "Auto",
-      "Description": "Get filter rule by parameter filter.\n\nParameterFilter.GetRule (parameterFilter: ParameterFilterElement, condense: bool = true): var[]..[]"
+      "Description": "Get filter rule by parameter filter element.\n\nParameterFilter.GetRule (parameterFilter: ParameterFilterElement): FilterRule[]"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
@@ -768,7 +740,7 @@
       "Inputs": [],
       "Outputs": [
         {
-          "Id": "b6c32ee7b1b649e3a02f8b5748ca6812",
+          "Id": "2d2021eeeb134e9297a87ba4b344cdc0",
           "Name": "",
           "Description": "Value of expression at line 1",
           "UsingDefaultValue": false,
@@ -783,7 +755,7 @@
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
       "NodeType": "FunctionNode",
-      "FunctionSignature": "Orchid.RevitProject.Filters.ParameterFilter.ByRule@string,Revit.Filter.FilterRule[],Revit.Elements.Category[],bool",
+      "FunctionSignature": "Orchid.RevitProject.Filters.ParameterFilter.Create@string,Revit.Filter.FilterRule[],Revit.Elements.Category[],bool",
       "Id": "8afc2cb94f474c34824729584fb7df6d",
       "Inputs": [
         {
@@ -798,7 +770,7 @@
         {
           "Id": "7ed82ea13fed402f9b6f0c3d89f1c09a",
           "Name": "filterRule",
-          "Description": "rvtFilterRule.\n\nFilterRule[]",
+          "Description": "Filter rule(s).\n\nFilterRule[]",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -816,7 +788,7 @@
         {
           "Id": "1cfb664939f0486aadc1446bf916d17b",
           "Name": "andOr",
-          "Description": "True set an And filter, false set an Or filter!?\n\nbool\nDefault value : true",
+          "Description": "True set an AND filter, false set an OR filter!?\n\nbool\nDefault value : true",
           "UsingDefaultValue": true,
           "Level": 2,
           "UseLevels": false,
@@ -827,7 +799,7 @@
         {
           "Id": "d3ddc9e8a1904067a2127754143a5d37",
           "Name": "ParameterFilter",
-          "Description": "ParameterFilter.",
+          "Description": "Parameter filter element.",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -835,7 +807,7 @@
         }
       ],
       "Replication": "Auto",
-      "Description": "Create a parameter filter by rule.\n\nParameterFilter.ByRule (name: string, filterRule: FilterRule[], category: Category[], andOr: bool = true): ParameterFilterElement"
+      "Description": "Create a parameter filter element by filter rule and logical filter.\n\nParameterFilter.Create (name: string, filterRule: FilterRule[], category: Category[], andOr: bool = true): ParameterFilterElement"
     },
     {
       "ConcreteType": "CoreNodeModels.Input.BoolSelector, CoreNodeModels",
@@ -866,7 +838,7 @@
         {
           "Id": "0291671503d149e0b3a9b2f29a0c6ed3",
           "Name": "parameterFilter",
-          "Description": "ParameterFilter.\n\nParameterFilterElement",
+          "Description": "Parameter filter element.\n\nParameterFilterElement",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -877,7 +849,7 @@
         {
           "Id": "9416ee34ce6c4995b56b423e79e1bacd",
           "Name": "RuleTree",
-          "Description": "rvtFilterRule tree list.",
+          "Description": "RuleTree as list.",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -885,7 +857,7 @@
         }
       ],
       "Replication": "Auto",
-      "Description": "Get filter rule tree.\n\nParameterFilter.RuleTree (parameterFilter: ParameterFilterElement): var[]..[]"
+      "Description": "Get parameter filter element rule tree.\n\nParameterFilter.RuleTree (parameterFilter: ParameterFilterElement): var[]..[]"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
@@ -1349,7 +1321,7 @@
         {
           "Id": "b585e70e61d34e88b0b45f493a4cd76b",
           "Name": "ParameterFilter",
-          "Description": "ParameterFilter.",
+          "Description": "Parameter filter element.",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -1357,7 +1329,7 @@
         }
       ],
       "Replication": "Auto",
-      "Description": "All parameter filter in current document.\n\nParameterFilter.InDocument (condense: bool = true): var[]..[]"
+      "Description": "All parameter filter element(s) in current document.\n\nParameterFilter.InDocument (condense: bool = true): var[]..[]"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
@@ -1379,7 +1351,7 @@
         {
           "Id": "3755027bfa854c738048521ec775dec0",
           "Name": "ParameterFilter",
-          "Description": "ParameterFilter.",
+          "Description": "Parameter filter element.",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -1387,7 +1359,7 @@
         }
       ],
       "Replication": "Auto",
-      "Description": "Get parameter filter by name.\n\nParameterFilter.ByName (name: string): ParameterFilterElement"
+      "Description": "Get parameter filter element by name.\n\nParameterFilter.ByName (name: string): ParameterFilterElement"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
@@ -1431,7 +1403,7 @@
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
       "NodeType": "FunctionNode",
-      "FunctionSignature": "Orchid.RevitProject.Filters.ParameterFilter.ByRule@string,Revit.Filter.FilterRule[],Revit.Elements.Category[],bool",
+      "FunctionSignature": "Orchid.RevitProject.Filters.ParameterFilter.Create@string,Revit.Filter.FilterRule[],Revit.Elements.Category[],bool",
       "Id": "2e8925be540b449dbd354f6116d866fc",
       "Inputs": [
         {
@@ -1446,7 +1418,7 @@
         {
           "Id": "4457a98afe42424cafeb5aa6af4355a9",
           "Name": "filterRule",
-          "Description": "rvtFilterRule.\n\nFilterRule[]",
+          "Description": "Filter rule(s).\n\nFilterRule[]",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -1464,7 +1436,7 @@
         {
           "Id": "f777e6ec28ea43b38097e7006a57e761",
           "Name": "andOr",
-          "Description": "True set an And filter, false set an Or filter!?\n\nbool\nDefault value : true",
+          "Description": "True set an AND filter, false set an OR filter!?\n\nbool\nDefault value : true",
           "UsingDefaultValue": true,
           "Level": 2,
           "UseLevels": false,
@@ -1475,7 +1447,7 @@
         {
           "Id": "2cba4b89339641208df45d13fd619414",
           "Name": "ParameterFilter",
-          "Description": "ParameterFilter.",
+          "Description": "Parameter filter element.",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -1483,7 +1455,7 @@
         }
       ],
       "Replication": "Auto",
-      "Description": "Create a parameter filter by rule.\n\nParameterFilter.ByRule (name: string, filterRule: FilterRule[], category: Category[], andOr: bool = true): ParameterFilterElement"
+      "Description": "Create a parameter filter element by filter rule and logical filter.\n\nParameterFilter.Create (name: string, filterRule: FilterRule[], category: Category[], andOr: bool = true): ParameterFilterElement"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
@@ -2666,6 +2638,464 @@
       ],
       "Replication": "Disabled",
       "Description": "Allows for DesignScript code to be authored directly"
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
+      "NodeType": "ExtensionNode",
+      "Id": "0bb45043feac4fef8209df0bc46dada7",
+      "Inputs": [
+        {
+          "Id": "7a3d2365fbee4b34b3c65ebcbcb54d85",
+          "Name": "",
+          "Description": "Node to show output from",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "1047d40a053a47388672df63e0e6aa96",
+          "Name": "",
+          "Description": "Node output",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Visualize the node's output"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "Orchid.RevitProject.Filters.ParameterFilter.RemoveRule@Revit.Filter.ParameterFilterElement,var[]..[],var[]..[]",
+      "Id": "29f4f9e666bb4b84ac615b0ef1131eb2",
+      "Inputs": [
+        {
+          "Id": "fa0e9991cafe41489de58f24913c776c",
+          "Name": "parameterFilter",
+          "Description": "Parameter filter element.\n\nParameterFilterElement",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "dba545c21760481499d72e4239b5d8d1",
+          "Name": "ruleTree",
+          "Description": "RuleTree as list.\n\nvar[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "2d905f132e784d3198176e32b7f24c57",
+          "Name": "atIndex",
+          "Description": "The index of the rule(s) to be removed. Default value (null) remove the rule(s) at the end.\n\nvar[]..[]\nDefault value : null",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "49c4ac0e4c3f436b95573b06c8d0d890",
+          "Name": "ParameterFilter",
+          "Description": "Parameter filter element.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Remove filter rule(s) in the parameter filter element.\n\nParameterFilter.RemoveRule (parameterFilter: ParameterFilterElement, ruleTree: var[]..[], atIndex: var[]..[] = null): ParameterFilterElement"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "Orchid.RevitProject.Filters.ParameterFilter.ReplaceRule@Revit.Filter.ParameterFilterElement,var[]..[],var[]..[],Revit.Filter.FilterRule[],bool",
+      "Id": "1c845af9474244e39ceaa20c24fe3dd2",
+      "Inputs": [
+        {
+          "Id": "4550c3ecbfdc4a04bca9a35362629423",
+          "Name": "parameterFilter",
+          "Description": "Parameter filter element.\n\nParameterFilterElement",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "df90a9f3f791403e9455ccc68365b075",
+          "Name": "ruleTree",
+          "Description": "RuleTree as list.\n\nvar[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "c769c4ea632a418f95e6501f6a01acfb",
+          "Name": "atIndex",
+          "Description": "The index of the rule(s) to be replaced. Default value (null) replace the rule(s) at the end.\n\nvar[]..[]\nDefault value : null",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "b163d87944514cc998310274a2b8852a",
+          "Name": "filterRule",
+          "Description": "Filter rule(s).\n\nFilterRule[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "25f61752940d4952a0e38037a4214f4e",
+          "Name": "andOr",
+          "Description": "True set an AND filter, false set an OR filter!?\n\nbool\nDefault value : true",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "af6076abfefe4f878ff29a079bc1c716",
+          "Name": "ParameterFilter",
+          "Description": "Parameter filter element.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Replace filter rule(s) in the parameter filter element.\n\nParameterFilter.ReplaceRule (parameterFilter: ParameterFilterElement, ruleTree: var[]..[], atIndex: var[]..[] = null, filterRule: FilterRule[], andOr: bool = true): ParameterFilterElement"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "[3];\n[3,2];",
+      "Id": "0faaa11d3232450fac3348b14898b4f0",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "c929ee2eb0454e5e8eb72639aae9fdcd",
+          "Name": "",
+          "Description": "Value of expression at line 1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "287182f9f452433c88920c6b3516ae50",
+          "Name": "",
+          "Description": "Value of expression at line 2",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Allows for DesignScript code to be authored directly"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "Orchid.RevitProject.Filters.ParameterFilter.RuleTree@Revit.Filter.ParameterFilterElement",
+      "Id": "4b054479162f4b9bb2bb53c7219dff4b",
+      "Inputs": [
+        {
+          "Id": "a56a97bae94e472caa17072658752568",
+          "Name": "parameterFilter",
+          "Description": "Parameter filter element.\n\nParameterFilterElement",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "f6322af7fd5640a2a10d60a434eb42d8",
+          "Name": "RuleTree",
+          "Description": "RuleTree as list.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Get parameter filter element rule tree.\n\nParameterFilter.RuleTree (parameterFilter: ParameterFilterElement): var[]..[]"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "Orchid.RevitProject.Filters.ParameterFilter.RuleTree@Revit.Filter.ParameterFilterElement",
+      "Id": "4d66a6f269e64ebfb7973dba0bc1bb19",
+      "Inputs": [
+        {
+          "Id": "5f464b0c81c44352a6d8ff38d6856b17",
+          "Name": "parameterFilter",
+          "Description": "Parameter filter element.\n\nParameterFilterElement",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "2051f0c400864b1690b958a5f759afeb",
+          "Name": "RuleTree",
+          "Description": "RuleTree as list.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Get parameter filter element rule tree.\n\nParameterFilter.RuleTree (parameterFilter: ParameterFilterElement): var[]..[]"
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
+      "NodeType": "ExtensionNode",
+      "Id": "31808385eff44e60a99403b03c4c3c73",
+      "Inputs": [
+        {
+          "Id": "492b4fa1fd95406e8e6b254001eb3aed",
+          "Name": "",
+          "Description": "Node to show output from",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "f9659e97d36b4f47890c037512be8f9e",
+          "Name": "",
+          "Description": "Node output",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Visualize the node's output"
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
+      "NodeType": "ExtensionNode",
+      "Id": "7d7ed5f94aeb4953818758b8852c0f5d",
+      "Inputs": [
+        {
+          "Id": "e9704a14623347339747643cbac764c8",
+          "Name": "",
+          "Description": "Node to show output from",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "427cb40450e14025900d97c168f2715f",
+          "Name": "",
+          "Description": "Node output",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Visualize the node's output"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "2;",
+      "Id": "0684d386ca8049128afc4163c781ec6c",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "5971eb804d584a7da485d70ec3362152",
+          "Name": "",
+          "Description": "Value of expression at line 1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Allows for DesignScript code to be authored directly"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "Orchid.RevitProject.Filters.ParameterFilter.RuleTree@Revit.Filter.ParameterFilterElement",
+      "Id": "14a8a95fcfea4b748072c027e591ca18",
+      "Inputs": [
+        {
+          "Id": "a4e2f9923d9e429a8441e6378068de15",
+          "Name": "parameterFilter",
+          "Description": "Parameter filter element.\n\nParameterFilterElement",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "b42593a01dca4da7ad6a8ad2536d16f2",
+          "Name": "RuleTree",
+          "Description": "RuleTree as list.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Get parameter filter element rule tree.\n\nParameterFilter.RuleTree (parameterFilter: ParameterFilterElement): var[]..[]"
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
+      "NodeType": "ExtensionNode",
+      "Id": "c4daa7c0bac641259a4b1a97b605f69c",
+      "Inputs": [
+        {
+          "Id": "56cc3af5a23e411ba0d9e7a5da3cb75f",
+          "Name": "",
+          "Description": "Node to show output from",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "e63f2f8823d74b4384a59905f5eddbeb",
+          "Name": "",
+          "Description": "Node output",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Visualize the node's output"
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
+      "NodeType": "ExtensionNode",
+      "Id": "860ee67e0cbc421884b4a48748c445e8",
+      "Inputs": [
+        {
+          "Id": "ae63cf35117c435db39b575129811de3",
+          "Name": "",
+          "Description": "Node to show output from",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "011909c234d14e2d84c3c8594f14fa33",
+          "Name": "",
+          "Description": "Node output",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Visualize the node's output"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "Orchid.RevitProject.Filters.ParameterFilter.RuleTree@Revit.Filter.ParameterFilterElement",
+      "Id": "2cb4d71a75154103bf3edbdd674a68bd",
+      "Inputs": [
+        {
+          "Id": "45e431a2985c48c9a0620ebf79bac8a0",
+          "Name": "parameterFilter",
+          "Description": "Parameter filter element.\n\nParameterFilterElement",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "96fd559983bb408eb40e6735a148ac8f",
+          "Name": "RuleTree",
+          "Description": "RuleTree as list.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Get parameter filter element rule tree.\n\nParameterFilter.RuleTree (parameterFilter: ParameterFilterElement): var[]..[]"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "Orchid.RevitProject.Filters.ParameterFilter.ClearRules@Revit.Filter.ParameterFilterElement",
+      "Id": "ad5c8afd791449718df262e1c76b542d",
+      "Inputs": [
+        {
+          "Id": "f28d1088ced440ee8eab84fc811ae123",
+          "Name": "parameterFilter",
+          "Description": "Parameter filter element.\n\nParameterFilterElement",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "4ed7f6ef0e3742e7aa61d48c169db640",
+          "Name": "ParameterFilter",
+          "Description": "Parameter filter element.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Clear all rules attached to the parameter filter element.\n\nParameterFilter.ClearRules (parameterFilter: ParameterFilterElement): ParameterFilterElement"
     }
   ],
   "Connectors": [
@@ -2718,15 +3148,21 @@
       "IsHidden": "False"
     },
     {
+      "Start": "c3d0209ecbbb4582ae5896e37cb75ee1",
+      "End": "4550c3ecbfdc4a04bca9a35362629423",
+      "Id": "4f636764a9ed42ea81ffdf34abecde03",
+      "IsHidden": "False"
+    },
+    {
       "Start": "c754c399728844d2829d884ccd136a74",
       "End": "7b527191ad044c798ed2c2e91696335f",
       "Id": "7c724a0378144db78833ea7cfbe743f7",
       "IsHidden": "False"
     },
     {
-      "Start": "f230c5d8923e419c89ef05171938c86f",
-      "End": "ee1f3e7d9f804fcea4d776a755b46212",
-      "Id": "b642cc0ef8b74422bf6ff771d3525925",
+      "Start": "c754c399728844d2829d884ccd136a74",
+      "End": "df90a9f3f791403e9455ccc68365b075",
+      "Id": "6eea750216d643de95e6efcbdddaa7b4",
       "IsHidden": "False"
     },
     {
@@ -2736,9 +3172,9 @@
       "IsHidden": "False"
     },
     {
-      "Start": "149be5e8bb10401189cae687a42c0b25",
-      "End": "d79f0df61d2b4a1b824d65da918a7adc",
-      "Id": "a486947a801541599696be5b2c8e3283",
+      "Start": "f230c5d8923e419c89ef05171938c86f",
+      "End": "5e60edbb6eaa4836a8d77124b8452807",
+      "Id": "96a7c099fda14b67bd42899a087aac77",
       "IsHidden": "False"
     },
     {
@@ -2748,15 +3184,15 @@
       "IsHidden": "False"
     },
     {
-      "Start": "c48edc8f53c54676ab8d80970aab2095",
+      "Start": "149be5e8bb10401189cae687a42c0b25",
       "End": "73fe65164bb44ec88017311d1f122bb4",
-      "Id": "f321a096ee1a467ba625e3abebaa947a",
+      "Id": "054ad92f1f514e0e8b974e40dc0dab3b",
       "IsHidden": "False"
     },
     {
-      "Start": "0baf0890cdec4a539addc6cfd3d351b7",
-      "End": "1df64436fcd047778afd2c49960753c9",
-      "Id": "5b7b784492c44eceb629f88b77c7335c",
+      "Start": "fb179b56fe7e47dcaba5af80d4e4157b",
+      "End": "d79f0df61d2b4a1b824d65da918a7adc",
+      "Id": "1ef9aba2bf4c4d7b969b4de25c5c6074",
       "IsHidden": "False"
     },
     {
@@ -2779,20 +3215,32 @@
     },
     {
       "Start": "53066cc8f16a42f995dae70f6963a8e1",
-      "End": "5e60edbb6eaa4836a8d77124b8452807",
-      "Id": "b98d4b55b53e43fc8d6b1ec097120aea",
-      "IsHidden": "False"
-    },
-    {
-      "Start": "53066cc8f16a42f995dae70f6963a8e1",
       "End": "7ed82ea13fed402f9b6f0c3d89f1c09a",
       "Id": "3838c277902e40b392200b0ba8c08821",
       "IsHidden": "False"
     },
     {
-      "Start": "b6c32ee7b1b649e3a02f8b5748ca6812",
+      "Start": "53066cc8f16a42f995dae70f6963a8e1",
+      "End": "79b8b284892047db8365198dd391ccac",
+      "Id": "5c4475be54274793aeefe9ec1fc4bff2",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "2d2021eeeb134e9297a87ba4b344cdc0",
       "End": "52e68dc0cd694016a7af4558fc6d85b3",
       "Id": "83757ffaf42047a79c78d556bd9050c8",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "d3ddc9e8a1904067a2127754143a5d37",
+      "End": "45e431a2985c48c9a0620ebf79bac8a0",
+      "Id": "4b77bae5686c47f2b1960d1221bec717",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "d3ddc9e8a1904067a2127754143a5d37",
+      "End": "f28d1088ced440ee8eab84fc811ae123",
+      "Id": "fb0f657e54bb400299a22da728b1e42a",
       "IsHidden": "False"
     },
     {
@@ -2803,8 +3251,14 @@
     },
     {
       "Start": "9416ee34ce6c4995b56b423e79e1bacd",
-      "End": "545c72ee94df4d49bc38c2279fe73e04",
-      "Id": "2e3b8a9e1e1a49cdb43c812bd144a517",
+      "End": "c057b216dd5a4cc6a5d4b242fdc02e29",
+      "Id": "94999f8bddc74e38be1c9b209c76e571",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "9416ee34ce6c4995b56b423e79e1bacd",
+      "End": "7a3d2365fbee4b34b3c65ebcbcb54d85",
+      "Id": "d0ee329c96e84bcb88ada953cc17a08e",
       "IsHidden": "False"
     },
     {
@@ -2881,20 +3335,20 @@
     },
     {
       "Start": "43cdc4427cbd4ee1b578a76fe0283dfd",
-      "End": "c057b216dd5a4cc6a5d4b242fdc02e29",
-      "Id": "e9cffa1761184aeebc684aff81dedb25",
-      "IsHidden": "False"
-    },
-    {
-      "Start": "43cdc4427cbd4ee1b578a76fe0283dfd",
-      "End": "55dca3a01eb54e4880c6fd5416a8b6b3",
-      "Id": "45ba0bdb772f4a9b890f0b83a80951bb",
-      "IsHidden": "False"
-    },
-    {
-      "Start": "43cdc4427cbd4ee1b578a76fe0283dfd",
       "End": "1a07685265764ac6ac9a0077bd441c7e",
       "Id": "ac0759c5bbc84aab8f913a181d7ec029",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "43cdc4427cbd4ee1b578a76fe0283dfd",
+      "End": "2760fc73719c49c584219842c88cc05a",
+      "Id": "942ab770a6f541d2bc5b8407c90b31cb",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "43cdc4427cbd4ee1b578a76fe0283dfd",
+      "End": "1df64436fcd047778afd2c49960753c9",
+      "Id": "17158dd6e054405db7cd3e773949b9a5",
       "IsHidden": "False"
     },
     {
@@ -3096,6 +3550,12 @@
       "IsHidden": "False"
     },
     {
+      "Start": "69f7b2b8c07d43beacc81d5325b0bd3c",
+      "End": "a4e2f9923d9e429a8441e6378068de15",
+      "Id": "f56e0afdc1d14a6cb12298751d3681de",
+      "IsHidden": "False"
+    },
+    {
       "Start": "2f0fe7263abc40c199d718f5c676b9b7",
       "End": "8e704290101445a5a5c5c8e66d9ecb4c",
       "Id": "b7b915f5130d401187577dc9414d0924",
@@ -3105,6 +3565,12 @@
       "Start": "2f4c6cb2fce449b1b1ac6dc4e41da7ef",
       "End": "1ef6023e622d4459860f9fc5f405ab62",
       "Id": "3ae04789a0fa4e108bc2cfb4c5a08e45",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "2f4c6cb2fce449b1b1ac6dc4e41da7ef",
+      "End": "b163d87944514cc998310274a2b8852a",
+      "Id": "980bb241e50645319ca4a88dbb860ae5",
       "IsHidden": "False"
     },
     {
@@ -3172,13 +3638,73 @@
       "End": "e78b29942f144ddf81c4453136f161fd",
       "Id": "d149dfaee49b4d40a86126b539ce7a45",
       "IsHidden": "False"
+    },
+    {
+      "Start": "49c4ac0e4c3f436b95573b06c8d0d890",
+      "End": "5f464b0c81c44352a6d8ff38d6856b17",
+      "Id": "55e4f6c7b152480a8c5abfb7856e2ec3",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "af6076abfefe4f878ff29a079bc1c716",
+      "End": "a56a97bae94e472caa17072658752568",
+      "Id": "0ed55d48e5e84809bc21fe91484df888",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "af6076abfefe4f878ff29a079bc1c716",
+      "End": "fa0e9991cafe41489de58f24913c776c",
+      "Id": "4f62aaf08ce040b0aa33848266b6e85a",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "c929ee2eb0454e5e8eb72639aae9fdcd",
+      "End": "c769c4ea632a418f95e6501f6a01acfb",
+      "Id": "0e0060627c70455bb73994d54f3bae07",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "f6322af7fd5640a2a10d60a434eb42d8",
+      "End": "dba545c21760481499d72e4239b5d8d1",
+      "Id": "3950fce5d2844866b6aa655a4d77071d",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "f6322af7fd5640a2a10d60a434eb42d8",
+      "End": "e9704a14623347339747643cbac764c8",
+      "Id": "7aa53fec67464619834f4af20a5abf4a",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "2051f0c400864b1690b958a5f759afeb",
+      "End": "492b4fa1fd95406e8e6b254001eb3aed",
+      "Id": "cb642bd0a6404a328aeb60b12fa3e986",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "5971eb804d584a7da485d70ec3362152",
+      "End": "2d905f132e784d3198176e32b7f24c57",
+      "Id": "df85e54e315c4310a624ebc24e19cf90",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "b42593a01dca4da7ad6a8ad2536d16f2",
+      "End": "56cc3af5a23e411ba0d9e7a5da3cb75f",
+      "Id": "7e5a78ab6fb646509a125a350fdaf119",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "96fd559983bb408eb40e6735a148ac8f",
+      "End": "ae63cf35117c435db39b575129811de3",
+      "Id": "d0a3c139227447bd86db4937005e646b",
+      "IsHidden": "False"
     }
   ],
   "Dependencies": [],
   "NodeLibraryDependencies": [
     {
       "Name": "Orchid",
-      "Version": "216.3.0.5799",
+      "Version": "216.3.0.5812",
       "ReferenceType": "Package",
       "Nodes": [
         "37233f4f524344ae8f86c37c5752f73d",
@@ -3203,7 +3729,14 @@
         "e16e2a67d60542418fbffcc8055553f0",
         "81bdc913ab654995947c788382f8cc98",
         "66bc207dd02a43bd99a8738fc4f570c5",
-        "54be09673156424b8cfa9909b8090f42"
+        "54be09673156424b8cfa9909b8090f42",
+        "29f4f9e666bb4b84ac615b0ef1131eb2",
+        "1c845af9474244e39ceaa20c24fe3dd2",
+        "4b054479162f4b9bb2bb53c7219dff4b",
+        "4d66a6f269e64ebfb7973dba0bc1bb19",
+        "14a8a95fcfea4b748072c027e591ca18",
+        "2cb4d71a75154103bf3edbdd674a68bd",
+        "ad5c8afd791449718df262e1c76b542d"
       ]
     }
   ],
@@ -3234,25 +3767,25 @@
     {
       "NodeId": "bd67259c-3a69-42d8-80cc-7cf80681e6e0",
       "Binding": {
-        "ByRule_InClassDecl-1_InFunctionScope-1_Instance0_bd67259c-3a69-42d8-80cc-7cf80681e6e0": "PFNPQVAtRU5WOkVudmVsb3BlIHhtbG5zOnhzaT0iaHR0cDovL3d3dy53My5vcmcvMjAwMS9YTUxTY2hlbWEtaW5zdGFuY2UiIHhtbG5zOnhzZD0iaHR0cDovL3d3dy53My5vcmcvMjAwMS9YTUxTY2hlbWEiIHhtbG5zOlNPQVAtRU5DPSJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy9zb2FwL2VuY29kaW5nLyIgeG1sbnM6U09BUC1FTlY9Imh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3NvYXAvZW52ZWxvcGUvIiB4bWxuczpjbHI9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vc29hcC9lbmNvZGluZy9jbHIvMS4wIiBTT0FQLUVOVjplbmNvZGluZ1N0eWxlPSJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy9zb2FwL2VuY29kaW5nLyI+DQo8U09BUC1FTlY6Qm9keT4NCjxhMTpDYWxsU2l0ZV94MDAyQl9UcmFjZVNlcmlhbGlzZXJIZWxwZXIgaWQ9InJlZi0xIiB4bWxuczphMT0iaHR0cDovL3NjaGVtYXMubWljcm9zb2Z0LmNvbS9jbHIvbnNhc3NlbS9Qcm90b0NvcmUvUHJvdG9Db3JlJTJDJTIwVmVyc2lvbiUzRDIuMTYuMS4yNzI3JTJDJTIwQ3VsdHVyZSUzRG5ldXRyYWwlMkMlMjBQdWJsaWNLZXlUb2tlbiUzRG51bGwiPg0KPE51bWJlck9mRWxlbWVudHM+MTwvTnVtYmVyT2ZFbGVtZW50cz4NCjxCYXNlLTBfSGFzRGF0YT50cnVlPC9CYXNlLTBfSGFzRGF0YT4NCjxCYXNlLTBfRGF0YSBpZD0icmVmLTMiPlBGTlBRVkF0UlU1V09rVnVkbVZzYjNCbElIaHRiRzV6T25oemFUMGlhSFIwY0RvdkwzZDNkeTUzTXk1dmNtY3ZNakF3TVM5WVRVeFRZMmhsYldFdGFXNXpkR0Z1WTJVaUlIaHRiRzV6T25oelpEMGlhSFIwY0RvdkwzZDNkeTUzTXk1dmNtY3ZNakF3TVM5WVRVeFRZMmhsYldFaUlIaHRiRzV6T2xOUFFWQXRSVTVEUFNKb2RIUndPaTh2YzJOb1pXMWhjeTU0Yld4emIyRndMbTl5Wnk5emIyRndMMlZ1WTI5a2FXNW5MeUlnZUcxc2JuTTZVMDlCVUMxRlRsWTlJbWgwZEhBNkx5OXpZMmhsYldGekxuaHRiSE52WVhBdWIzSm5MM052WVhBdlpXNTJaV3h2Y0dVdklpQjRiV3h1Y3pwamJISTlJbWgwZEhBNkx5OXpZMmhsYldGekxtMXBZM0p2YzI5bWRDNWpiMjB2YzI5aGNDOWxibU52WkdsdVp5OWpiSEl2TVM0d0lpQlRUMEZRTFVWT1ZqcGxibU52WkdsdVoxTjBlV3hsUFNKb2RIUndPaTh2YzJOb1pXMWhjeTU0Yld4emIyRndMbTl5Wnk5emIyRndMMlZ1WTI5a2FXNW5MeUkrRFFvOFUwOUJVQzFGVGxZNlFtOWtlVDROQ2p4aE1UcFRaWEpwWVd4cGVtRmliR1ZKWkNCcFpEMGljbVZtTFRFaUlIaHRiRzV6T21FeFBTSm9kSFJ3T2k4dmMyTm9aVzFoY3k1dGFXTnliM052Wm5RdVkyOXRMMk5zY2k5dWMyRnpjMlZ0TDFKbGRtbDBVMlZ5ZG1salpYTXVVR1Z5YzJsemRHVnVZMlV2VW1WMmFYUlRaWEoyYVdObGN5VXlReVV5TUZabGNuTnBiMjRsTTBReUxqRTJMakV1TmpVeE1DVXlReVV5TUVOMWJIUjFjbVVsTTBSdVpYVjBjbUZzSlRKREpUSXdVSFZpYkdsalMyVjVWRzlyWlc0bE0wUnVkV3hzSWo0TkNqeHpkSEpwYm1kSlJDQnBaRDBpY21WbUxUTWlQbUZqTkRObU5qYzNMVGRqWkdZdE5HVTNOQzA0Tm1Fd0xUQmxaV00wWXpoa1pETXlZeTB3TURCaE5UVXpOand2YzNSeWFXNW5TVVErRFFvOGFXNTBTVVErTmpjM01UYzBQQzlwYm5SSlJENE5Dand2WVRFNlUyVnlhV0ZzYVhwaFlteGxTV1ErRFFvOEwxTlBRVkF0UlU1V09rSnZaSGsrRFFvOEwxTlBRVkF0UlU1V09rVnVkbVZzYjNCbFBnMEs8L0Jhc2UtMF9EYXRhPg0KPEJhc2UtMF9IYXNOZXN0ZWREYXRhPmZhbHNlPC9CYXNlLTBfSGFzTmVzdGVkRGF0YT4NCjwvYTE6Q2FsbFNpdGVfeDAwMkJfVHJhY2VTZXJpYWxpc2VySGVscGVyPg0KPC9TT0FQLUVOVjpCb2R5Pg0KPC9TT0FQLUVOVjpFbnZlbG9wZT4NCg=="
+        "Create_InClassDecl-1_InFunctionScope-1_Instance0_bd67259c-3a69-42d8-80cc-7cf80681e6e0": "PFNPQVAtRU5WOkVudmVsb3BlIHhtbG5zOnhzaT0iaHR0cDovL3d3dy53My5vcmcvMjAwMS9YTUxTY2hlbWEtaW5zdGFuY2UiIHhtbG5zOnhzZD0iaHR0cDovL3d3dy53My5vcmcvMjAwMS9YTUxTY2hlbWEiIHhtbG5zOlNPQVAtRU5DPSJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy9zb2FwL2VuY29kaW5nLyIgeG1sbnM6U09BUC1FTlY9Imh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3NvYXAvZW52ZWxvcGUvIiB4bWxuczpjbHI9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vc29hcC9lbmNvZGluZy9jbHIvMS4wIiBTT0FQLUVOVjplbmNvZGluZ1N0eWxlPSJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy9zb2FwL2VuY29kaW5nLyI+DQo8U09BUC1FTlY6Qm9keT4NCjxhMTpDYWxsU2l0ZV94MDAyQl9UcmFjZVNlcmlhbGlzZXJIZWxwZXIgaWQ9InJlZi0xIiB4bWxuczphMT0iaHR0cDovL3NjaGVtYXMubWljcm9zb2Z0LmNvbS9jbHIvbnNhc3NlbS9Qcm90b0NvcmUvUHJvdG9Db3JlJTJDJTIwVmVyc2lvbiUzRDIuMTYuMS4yNzI3JTJDJTIwQ3VsdHVyZSUzRG5ldXRyYWwlMkMlMjBQdWJsaWNLZXlUb2tlbiUzRG51bGwiPg0KPE51bWJlck9mRWxlbWVudHM+MTwvTnVtYmVyT2ZFbGVtZW50cz4NCjxCYXNlLTBfSGFzRGF0YT50cnVlPC9CYXNlLTBfSGFzRGF0YT4NCjxCYXNlLTBfRGF0YSBpZD0icmVmLTMiPlBGTlBRVkF0UlU1V09rVnVkbVZzYjNCbElIaHRiRzV6T25oemFUMGlhSFIwY0RvdkwzZDNkeTUzTXk1dmNtY3ZNakF3TVM5WVRVeFRZMmhsYldFdGFXNXpkR0Z1WTJVaUlIaHRiRzV6T25oelpEMGlhSFIwY0RvdkwzZDNkeTUzTXk1dmNtY3ZNakF3TVM5WVRVeFRZMmhsYldFaUlIaHRiRzV6T2xOUFFWQXRSVTVEUFNKb2RIUndPaTh2YzJOb1pXMWhjeTU0Yld4emIyRndMbTl5Wnk5emIyRndMMlZ1WTI5a2FXNW5MeUlnZUcxc2JuTTZVMDlCVUMxRlRsWTlJbWgwZEhBNkx5OXpZMmhsYldGekxuaHRiSE52WVhBdWIzSm5MM052WVhBdlpXNTJaV3h2Y0dVdklpQjRiV3h1Y3pwamJISTlJbWgwZEhBNkx5OXpZMmhsYldGekxtMXBZM0p2YzI5bWRDNWpiMjB2YzI5aGNDOWxibU52WkdsdVp5OWpiSEl2TVM0d0lpQlRUMEZRTFVWT1ZqcGxibU52WkdsdVoxTjBlV3hsUFNKb2RIUndPaTh2YzJOb1pXMWhjeTU0Yld4emIyRndMbTl5Wnk5emIyRndMMlZ1WTI5a2FXNW5MeUkrRFFvOFUwOUJVQzFGVGxZNlFtOWtlVDROQ2p4aE1UcFRaWEpwWVd4cGVtRmliR1ZKWkNCcFpEMGljbVZtTFRFaUlIaHRiRzV6T21FeFBTSm9kSFJ3T2k4dmMyTm9aVzFoY3k1dGFXTnliM052Wm5RdVkyOXRMMk5zY2k5dWMyRnpjMlZ0TDFKbGRtbDBVMlZ5ZG1salpYTXVVR1Z5YzJsemRHVnVZMlV2VW1WMmFYUlRaWEoyYVdObGN5VXlReVV5TUZabGNuTnBiMjRsTTBReUxqRTJMakV1TmpVeE1DVXlReVV5TUVOMWJIUjFjbVVsTTBSdVpYVjBjbUZzSlRKREpUSXdVSFZpYkdsalMyVjVWRzlyWlc0bE0wUnVkV3hzSWo0TkNqeHpkSEpwYm1kSlJDQnBaRDBpY21WbUxUTWlQamxpWmpBeVpXRXlMVGMyWWpndE5HRTBPQzA0Tmpsa0xXVmhaV0kzTnpJNE5HTTRaQzB3TURCaE5UVXpOand2YzNSeWFXNW5TVVErRFFvOGFXNTBTVVErTmpjM01UYzBQQzlwYm5SSlJENE5Dand2WVRFNlUyVnlhV0ZzYVhwaFlteGxTV1ErRFFvOEwxTlBRVkF0UlU1V09rSnZaSGsrRFFvOEwxTlBRVkF0UlU1V09rVnVkbVZzYjNCbFBnMEs8L0Jhc2UtMF9EYXRhPg0KPEJhc2UtMF9IYXNOZXN0ZWREYXRhPmZhbHNlPC9CYXNlLTBfSGFzTmVzdGVkRGF0YT4NCjwvYTE6Q2FsbFNpdGVfeDAwMkJfVHJhY2VTZXJpYWxpc2VySGVscGVyPg0KPC9TT0FQLUVOVjpCb2R5Pg0KPC9TT0FQLUVOVjpFbnZlbG9wZT4NCg=="
       }
     },
     {
       "NodeId": "8afc2cb9-4f47-4c34-8247-29584fb7df6d",
       "Binding": {
-        "ByRule_InClassDecl-1_InFunctionScope-1_Instance0_8afc2cb9-4f47-4c34-8247-29584fb7df6d": "PFNPQVAtRU5WOkVudmVsb3BlIHhtbG5zOnhzaT0iaHR0cDovL3d3dy53My5vcmcvMjAwMS9YTUxTY2hlbWEtaW5zdGFuY2UiIHhtbG5zOnhzZD0iaHR0cDovL3d3dy53My5vcmcvMjAwMS9YTUxTY2hlbWEiIHhtbG5zOlNPQVAtRU5DPSJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy9zb2FwL2VuY29kaW5nLyIgeG1sbnM6U09BUC1FTlY9Imh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3NvYXAvZW52ZWxvcGUvIiB4bWxuczpjbHI9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vc29hcC9lbmNvZGluZy9jbHIvMS4wIiBTT0FQLUVOVjplbmNvZGluZ1N0eWxlPSJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy9zb2FwL2VuY29kaW5nLyI+DQo8U09BUC1FTlY6Qm9keT4NCjxhMTpDYWxsU2l0ZV94MDAyQl9UcmFjZVNlcmlhbGlzZXJIZWxwZXIgaWQ9InJlZi0xIiB4bWxuczphMT0iaHR0cDovL3NjaGVtYXMubWljcm9zb2Z0LmNvbS9jbHIvbnNhc3NlbS9Qcm90b0NvcmUvUHJvdG9Db3JlJTJDJTIwVmVyc2lvbiUzRDIuMTYuMS4yNzI3JTJDJTIwQ3VsdHVyZSUzRG5ldXRyYWwlMkMlMjBQdWJsaWNLZXlUb2tlbiUzRG51bGwiPg0KPE51bWJlck9mRWxlbWVudHM+MTwvTnVtYmVyT2ZFbGVtZW50cz4NCjxCYXNlLTBfSGFzRGF0YT50cnVlPC9CYXNlLTBfSGFzRGF0YT4NCjxCYXNlLTBfRGF0YSBpZD0icmVmLTMiPlBGTlBRVkF0UlU1V09rVnVkbVZzYjNCbElIaHRiRzV6T25oemFUMGlhSFIwY0RvdkwzZDNkeTUzTXk1dmNtY3ZNakF3TVM5WVRVeFRZMmhsYldFdGFXNXpkR0Z1WTJVaUlIaHRiRzV6T25oelpEMGlhSFIwY0RvdkwzZDNkeTUzTXk1dmNtY3ZNakF3TVM5WVRVeFRZMmhsYldFaUlIaHRiRzV6T2xOUFFWQXRSVTVEUFNKb2RIUndPaTh2YzJOb1pXMWhjeTU0Yld4emIyRndMbTl5Wnk5emIyRndMMlZ1WTI5a2FXNW5MeUlnZUcxc2JuTTZVMDlCVUMxRlRsWTlJbWgwZEhBNkx5OXpZMmhsYldGekxuaHRiSE52WVhBdWIzSm5MM052WVhBdlpXNTJaV3h2Y0dVdklpQjRiV3h1Y3pwamJISTlJbWgwZEhBNkx5OXpZMmhsYldGekxtMXBZM0p2YzI5bWRDNWpiMjB2YzI5aGNDOWxibU52WkdsdVp5OWpiSEl2TVM0d0lpQlRUMEZRTFVWT1ZqcGxibU52WkdsdVoxTjBlV3hsUFNKb2RIUndPaTh2YzJOb1pXMWhjeTU0Yld4emIyRndMbTl5Wnk5emIyRndMMlZ1WTI5a2FXNW5MeUkrRFFvOFUwOUJVQzFGVGxZNlFtOWtlVDROQ2p4aE1UcFRaWEpwWVd4cGVtRmliR1ZKWkNCcFpEMGljbVZtTFRFaUlIaHRiRzV6T21FeFBTSm9kSFJ3T2k4dmMyTm9aVzFoY3k1dGFXTnliM052Wm5RdVkyOXRMMk5zY2k5dWMyRnpjMlZ0TDFKbGRtbDBVMlZ5ZG1salpYTXVVR1Z5YzJsemRHVnVZMlV2VW1WMmFYUlRaWEoyYVdObGN5VXlReVV5TUZabGNuTnBiMjRsTTBReUxqRTJMakV1TmpVeE1DVXlReVV5TUVOMWJIUjFjbVVsTTBSdVpYVjBjbUZzSlRKREpUSXdVSFZpYkdsalMyVjVWRzlyWlc0bE0wUnVkV3hzSWo0TkNqeHpkSEpwYm1kSlJDQnBaRDBpY21WbUxUTWlQbUZqTkRObU5qYzNMVGRqWkdZdE5HVTNOQzA0Tm1Fd0xUQmxaV00wWXpoa1pETXlZeTB3TURCaE5UVXpOVHd2YzNSeWFXNW5TVVErRFFvOGFXNTBTVVErTmpjM01UY3pQQzlwYm5SSlJENE5Dand2WVRFNlUyVnlhV0ZzYVhwaFlteGxTV1ErRFFvOEwxTlBRVkF0UlU1V09rSnZaSGsrRFFvOEwxTlBRVkF0UlU1V09rVnVkbVZzYjNCbFBnMEs8L0Jhc2UtMF9EYXRhPg0KPEJhc2UtMF9IYXNOZXN0ZWREYXRhPmZhbHNlPC9CYXNlLTBfSGFzTmVzdGVkRGF0YT4NCjwvYTE6Q2FsbFNpdGVfeDAwMkJfVHJhY2VTZXJpYWxpc2VySGVscGVyPg0KPC9TT0FQLUVOVjpCb2R5Pg0KPC9TT0FQLUVOVjpFbnZlbG9wZT4NCg=="
+        "Create_InClassDecl-1_InFunctionScope-1_Instance0_8afc2cb9-4f47-4c34-8247-29584fb7df6d": "PFNPQVAtRU5WOkVudmVsb3BlIHhtbG5zOnhzaT0iaHR0cDovL3d3dy53My5vcmcvMjAwMS9YTUxTY2hlbWEtaW5zdGFuY2UiIHhtbG5zOnhzZD0iaHR0cDovL3d3dy53My5vcmcvMjAwMS9YTUxTY2hlbWEiIHhtbG5zOlNPQVAtRU5DPSJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy9zb2FwL2VuY29kaW5nLyIgeG1sbnM6U09BUC1FTlY9Imh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3NvYXAvZW52ZWxvcGUvIiB4bWxuczpjbHI9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vc29hcC9lbmNvZGluZy9jbHIvMS4wIiBTT0FQLUVOVjplbmNvZGluZ1N0eWxlPSJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy9zb2FwL2VuY29kaW5nLyI+DQo8U09BUC1FTlY6Qm9keT4NCjxhMTpDYWxsU2l0ZV94MDAyQl9UcmFjZVNlcmlhbGlzZXJIZWxwZXIgaWQ9InJlZi0xIiB4bWxuczphMT0iaHR0cDovL3NjaGVtYXMubWljcm9zb2Z0LmNvbS9jbHIvbnNhc3NlbS9Qcm90b0NvcmUvUHJvdG9Db3JlJTJDJTIwVmVyc2lvbiUzRDIuMTYuMS4yNzI3JTJDJTIwQ3VsdHVyZSUzRG5ldXRyYWwlMkMlMjBQdWJsaWNLZXlUb2tlbiUzRG51bGwiPg0KPE51bWJlck9mRWxlbWVudHM+MTwvTnVtYmVyT2ZFbGVtZW50cz4NCjxCYXNlLTBfSGFzRGF0YT50cnVlPC9CYXNlLTBfSGFzRGF0YT4NCjxCYXNlLTBfRGF0YSBpZD0icmVmLTMiPlBGTlBRVkF0UlU1V09rVnVkbVZzYjNCbElIaHRiRzV6T25oemFUMGlhSFIwY0RvdkwzZDNkeTUzTXk1dmNtY3ZNakF3TVM5WVRVeFRZMmhsYldFdGFXNXpkR0Z1WTJVaUlIaHRiRzV6T25oelpEMGlhSFIwY0RvdkwzZDNkeTUzTXk1dmNtY3ZNakF3TVM5WVRVeFRZMmhsYldFaUlIaHRiRzV6T2xOUFFWQXRSVTVEUFNKb2RIUndPaTh2YzJOb1pXMWhjeTU0Yld4emIyRndMbTl5Wnk5emIyRndMMlZ1WTI5a2FXNW5MeUlnZUcxc2JuTTZVMDlCVUMxRlRsWTlJbWgwZEhBNkx5OXpZMmhsYldGekxuaHRiSE52WVhBdWIzSm5MM052WVhBdlpXNTJaV3h2Y0dVdklpQjRiV3h1Y3pwamJISTlJbWgwZEhBNkx5OXpZMmhsYldGekxtMXBZM0p2YzI5bWRDNWpiMjB2YzI5aGNDOWxibU52WkdsdVp5OWpiSEl2TVM0d0lpQlRUMEZRTFVWT1ZqcGxibU52WkdsdVoxTjBlV3hsUFNKb2RIUndPaTh2YzJOb1pXMWhjeTU0Yld4emIyRndMbTl5Wnk5emIyRndMMlZ1WTI5a2FXNW5MeUkrRFFvOFUwOUJVQzFGVGxZNlFtOWtlVDROQ2p4aE1UcFRaWEpwWVd4cGVtRmliR1ZKWkNCcFpEMGljbVZtTFRFaUlIaHRiRzV6T21FeFBTSm9kSFJ3T2k4dmMyTm9aVzFoY3k1dGFXTnliM052Wm5RdVkyOXRMMk5zY2k5dWMyRnpjMlZ0TDFKbGRtbDBVMlZ5ZG1salpYTXVVR1Z5YzJsemRHVnVZMlV2VW1WMmFYUlRaWEoyYVdObGN5VXlReVV5TUZabGNuTnBiMjRsTTBReUxqRTJMakV1TmpVeE1DVXlReVV5TUVOMWJIUjFjbVVsTTBSdVpYVjBjbUZzSlRKREpUSXdVSFZpYkdsalMyVjVWRzlyWlc0bE0wUnVkV3hzSWo0TkNqeHpkSEpwYm1kSlJDQnBaRDBpY21WbUxUTWlQamxpWmpBeVpXRXlMVGMyWWpndE5HRTBPQzA0Tmpsa0xXVmhaV0kzTnpJNE5HTTRaQzB3TURCaE5UVXpOVHd2YzNSeWFXNW5TVVErRFFvOGFXNTBTVVErTmpjM01UY3pQQzlwYm5SSlJENE5Dand2WVRFNlUyVnlhV0ZzYVhwaFlteGxTV1ErRFFvOEwxTlBRVkF0UlU1V09rSnZaSGsrRFFvOEwxTlBRVkF0UlU1V09rVnVkbVZzYjNCbFBnMEs8L0Jhc2UtMF9EYXRhPg0KPEJhc2UtMF9IYXNOZXN0ZWREYXRhPmZhbHNlPC9CYXNlLTBfSGFzTmVzdGVkRGF0YT4NCjwvYTE6Q2FsbFNpdGVfeDAwMkJfVHJhY2VTZXJpYWxpc2VySGVscGVyPg0KPC9TT0FQLUVOVjpCb2R5Pg0KPC9TT0FQLUVOVjpFbnZlbG9wZT4NCg=="
       }
     },
     {
       "NodeId": "2e8925be-540b-449d-bd35-4f6116d866fc",
       "Binding": {
-        "ByRule_InClassDecl-1_InFunctionScope-1_Instance0_2e8925be-540b-449d-bd35-4f6116d866fc": "PFNPQVAtRU5WOkVudmVsb3BlIHhtbG5zOnhzaT0iaHR0cDovL3d3dy53My5vcmcvMjAwMS9YTUxTY2hlbWEtaW5zdGFuY2UiIHhtbG5zOnhzZD0iaHR0cDovL3d3dy53My5vcmcvMjAwMS9YTUxTY2hlbWEiIHhtbG5zOlNPQVAtRU5DPSJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy9zb2FwL2VuY29kaW5nLyIgeG1sbnM6U09BUC1FTlY9Imh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3NvYXAvZW52ZWxvcGUvIiB4bWxuczpjbHI9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vc29hcC9lbmNvZGluZy9jbHIvMS4wIiBTT0FQLUVOVjplbmNvZGluZ1N0eWxlPSJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy9zb2FwL2VuY29kaW5nLyI+DQo8U09BUC1FTlY6Qm9keT4NCjxhMTpDYWxsU2l0ZV94MDAyQl9UcmFjZVNlcmlhbGlzZXJIZWxwZXIgaWQ9InJlZi0xIiB4bWxuczphMT0iaHR0cDovL3NjaGVtYXMubWljcm9zb2Z0LmNvbS9jbHIvbnNhc3NlbS9Qcm90b0NvcmUvUHJvdG9Db3JlJTJDJTIwVmVyc2lvbiUzRDIuMTYuMS4yNzI3JTJDJTIwQ3VsdHVyZSUzRG5ldXRyYWwlMkMlMjBQdWJsaWNLZXlUb2tlbiUzRG51bGwiPg0KPE51bWJlck9mRWxlbWVudHM+MTwvTnVtYmVyT2ZFbGVtZW50cz4NCjxCYXNlLTBfSGFzRGF0YT50cnVlPC9CYXNlLTBfSGFzRGF0YT4NCjxCYXNlLTBfRGF0YSBpZD0icmVmLTMiPlBGTlBRVkF0UlU1V09rVnVkbVZzYjNCbElIaHRiRzV6T25oemFUMGlhSFIwY0RvdkwzZDNkeTUzTXk1dmNtY3ZNakF3TVM5WVRVeFRZMmhsYldFdGFXNXpkR0Z1WTJVaUlIaHRiRzV6T25oelpEMGlhSFIwY0RvdkwzZDNkeTUzTXk1dmNtY3ZNakF3TVM5WVRVeFRZMmhsYldFaUlIaHRiRzV6T2xOUFFWQXRSVTVEUFNKb2RIUndPaTh2YzJOb1pXMWhjeTU0Yld4emIyRndMbTl5Wnk5emIyRndMMlZ1WTI5a2FXNW5MeUlnZUcxc2JuTTZVMDlCVUMxRlRsWTlJbWgwZEhBNkx5OXpZMmhsYldGekxuaHRiSE52WVhBdWIzSm5MM052WVhBdlpXNTJaV3h2Y0dVdklpQjRiV3h1Y3pwamJISTlJbWgwZEhBNkx5OXpZMmhsYldGekxtMXBZM0p2YzI5bWRDNWpiMjB2YzI5aGNDOWxibU52WkdsdVp5OWpiSEl2TVM0d0lpQlRUMEZRTFVWT1ZqcGxibU52WkdsdVoxTjBlV3hsUFNKb2RIUndPaTh2YzJOb1pXMWhjeTU0Yld4emIyRndMbTl5Wnk5emIyRndMMlZ1WTI5a2FXNW5MeUkrRFFvOFUwOUJVQzFGVGxZNlFtOWtlVDROQ2p4aE1UcFRaWEpwWVd4cGVtRmliR1ZKWkNCcFpEMGljbVZtTFRFaUlIaHRiRzV6T21FeFBTSm9kSFJ3T2k4dmMyTm9aVzFoY3k1dGFXTnliM052Wm5RdVkyOXRMMk5zY2k5dWMyRnpjMlZ0TDFKbGRtbDBVMlZ5ZG1salpYTXVVR1Z5YzJsemRHVnVZMlV2VW1WMmFYUlRaWEoyYVdObGN5VXlReVV5TUZabGNuTnBiMjRsTTBReUxqRTJMakV1TmpVeE1DVXlReVV5TUVOMWJIUjFjbVVsTTBSdVpYVjBjbUZzSlRKREpUSXdVSFZpYkdsalMyVjVWRzlyWlc0bE0wUnVkV3hzSWo0TkNqeHpkSEpwYm1kSlJDQnBaRDBpY21WbUxUTWlQbUZqTkRObU5qYzNMVGRqWkdZdE5HVTNOQzA0Tm1Fd0xUQmxaV00wWXpoa1pETXlZeTB3TURCaE5UVXpORHd2YzNSeWFXNW5TVVErRFFvOGFXNTBTVVErTmpjM01UY3lQQzlwYm5SSlJENE5Dand2WVRFNlUyVnlhV0ZzYVhwaFlteGxTV1ErRFFvOEwxTlBRVkF0UlU1V09rSnZaSGsrRFFvOEwxTlBRVkF0UlU1V09rVnVkbVZzYjNCbFBnMEs8L0Jhc2UtMF9EYXRhPg0KPEJhc2UtMF9IYXNOZXN0ZWREYXRhPmZhbHNlPC9CYXNlLTBfSGFzTmVzdGVkRGF0YT4NCjwvYTE6Q2FsbFNpdGVfeDAwMkJfVHJhY2VTZXJpYWxpc2VySGVscGVyPg0KPC9TT0FQLUVOVjpCb2R5Pg0KPC9TT0FQLUVOVjpFbnZlbG9wZT4NCg=="
+        "Create_InClassDecl-1_InFunctionScope-1_Instance0_2e8925be-540b-449d-bd35-4f6116d866fc": "PFNPQVAtRU5WOkVudmVsb3BlIHhtbG5zOnhzaT0iaHR0cDovL3d3dy53My5vcmcvMjAwMS9YTUxTY2hlbWEtaW5zdGFuY2UiIHhtbG5zOnhzZD0iaHR0cDovL3d3dy53My5vcmcvMjAwMS9YTUxTY2hlbWEiIHhtbG5zOlNPQVAtRU5DPSJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy9zb2FwL2VuY29kaW5nLyIgeG1sbnM6U09BUC1FTlY9Imh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3NvYXAvZW52ZWxvcGUvIiB4bWxuczpjbHI9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vc29hcC9lbmNvZGluZy9jbHIvMS4wIiBTT0FQLUVOVjplbmNvZGluZ1N0eWxlPSJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy9zb2FwL2VuY29kaW5nLyI+DQo8U09BUC1FTlY6Qm9keT4NCjxhMTpDYWxsU2l0ZV94MDAyQl9UcmFjZVNlcmlhbGlzZXJIZWxwZXIgaWQ9InJlZi0xIiB4bWxuczphMT0iaHR0cDovL3NjaGVtYXMubWljcm9zb2Z0LmNvbS9jbHIvbnNhc3NlbS9Qcm90b0NvcmUvUHJvdG9Db3JlJTJDJTIwVmVyc2lvbiUzRDIuMTYuMS4yNzI3JTJDJTIwQ3VsdHVyZSUzRG5ldXRyYWwlMkMlMjBQdWJsaWNLZXlUb2tlbiUzRG51bGwiPg0KPE51bWJlck9mRWxlbWVudHM+MTwvTnVtYmVyT2ZFbGVtZW50cz4NCjxCYXNlLTBfSGFzRGF0YT50cnVlPC9CYXNlLTBfSGFzRGF0YT4NCjxCYXNlLTBfRGF0YSBpZD0icmVmLTMiPlBGTlBRVkF0UlU1V09rVnVkbVZzYjNCbElIaHRiRzV6T25oemFUMGlhSFIwY0RvdkwzZDNkeTUzTXk1dmNtY3ZNakF3TVM5WVRVeFRZMmhsYldFdGFXNXpkR0Z1WTJVaUlIaHRiRzV6T25oelpEMGlhSFIwY0RvdkwzZDNkeTUzTXk1dmNtY3ZNakF3TVM5WVRVeFRZMmhsYldFaUlIaHRiRzV6T2xOUFFWQXRSVTVEUFNKb2RIUndPaTh2YzJOb1pXMWhjeTU0Yld4emIyRndMbTl5Wnk5emIyRndMMlZ1WTI5a2FXNW5MeUlnZUcxc2JuTTZVMDlCVUMxRlRsWTlJbWgwZEhBNkx5OXpZMmhsYldGekxuaHRiSE52WVhBdWIzSm5MM052WVhBdlpXNTJaV3h2Y0dVdklpQjRiV3h1Y3pwamJISTlJbWgwZEhBNkx5OXpZMmhsYldGekxtMXBZM0p2YzI5bWRDNWpiMjB2YzI5aGNDOWxibU52WkdsdVp5OWpiSEl2TVM0d0lpQlRUMEZRTFVWT1ZqcGxibU52WkdsdVoxTjBlV3hsUFNKb2RIUndPaTh2YzJOb1pXMWhjeTU0Yld4emIyRndMbTl5Wnk5emIyRndMMlZ1WTI5a2FXNW5MeUkrRFFvOFUwOUJVQzFGVGxZNlFtOWtlVDROQ2p4aE1UcFRaWEpwWVd4cGVtRmliR1ZKWkNCcFpEMGljbVZtTFRFaUlIaHRiRzV6T21FeFBTSm9kSFJ3T2k4dmMyTm9aVzFoY3k1dGFXTnliM052Wm5RdVkyOXRMMk5zY2k5dWMyRnpjMlZ0TDFKbGRtbDBVMlZ5ZG1salpYTXVVR1Z5YzJsemRHVnVZMlV2VW1WMmFYUlRaWEoyYVdObGN5VXlReVV5TUZabGNuTnBiMjRsTTBReUxqRTJMakV1TmpVeE1DVXlReVV5TUVOMWJIUjFjbVVsTTBSdVpYVjBjbUZzSlRKREpUSXdVSFZpYkdsalMyVjVWRzlyWlc0bE0wUnVkV3hzSWo0TkNqeHpkSEpwYm1kSlJDQnBaRDBpY21WbUxUTWlQamxpWmpBeVpXRXlMVGMyWWpndE5HRTBPQzA0Tmpsa0xXVmhaV0kzTnpJNE5HTTRaQzB3TURCaE5UVXpORHd2YzNSeWFXNW5TVVErRFFvOGFXNTBTVVErTmpjM01UY3lQQzlwYm5SSlJENE5Dand2WVRFNlUyVnlhV0ZzYVhwaFlteGxTV1ErRFFvOEwxTlBRVkF0UlU1V09rSnZaSGsrRFFvOEwxTlBRVkF0UlU1V09rVnVkbVZzYjNCbFBnMEs8L0Jhc2UtMF9EYXRhPg0KPEJhc2UtMF9IYXNOZXN0ZWREYXRhPmZhbHNlPC9CYXNlLTBfSGFzTmVzdGVkRGF0YT4NCjwvYTE6Q2FsbFNpdGVfeDAwMkJfVHJhY2VTZXJpYWxpc2VySGVscGVyPg0KPC9TT0FQLUVOVjpCb2R5Pg0KPC9TT0FQLUVOVjpFbnZlbG9wZT4NCg=="
       }
     },
     {
       "NodeId": "48bcf4c8-925b-41f4-9c33-5028c70b8325",
       "Binding": {
-        "ByRules_InClassDecl-1_InFunctionScope-1_Instance0_48bcf4c8-925b-41f4-9c33-5028c70b8325": "PFNPQVAtRU5WOkVudmVsb3BlIHhtbG5zOnhzaT0iaHR0cDovL3d3dy53My5vcmcvMjAwMS9YTUxTY2hlbWEtaW5zdGFuY2UiIHhtbG5zOnhzZD0iaHR0cDovL3d3dy53My5vcmcvMjAwMS9YTUxTY2hlbWEiIHhtbG5zOlNPQVAtRU5DPSJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy9zb2FwL2VuY29kaW5nLyIgeG1sbnM6U09BUC1FTlY9Imh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3NvYXAvZW52ZWxvcGUvIiB4bWxuczpjbHI9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vc29hcC9lbmNvZGluZy9jbHIvMS4wIiBTT0FQLUVOVjplbmNvZGluZ1N0eWxlPSJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy9zb2FwL2VuY29kaW5nLyI+DQo8U09BUC1FTlY6Qm9keT4NCjxhMTpDYWxsU2l0ZV94MDAyQl9UcmFjZVNlcmlhbGlzZXJIZWxwZXIgaWQ9InJlZi0xIiB4bWxuczphMT0iaHR0cDovL3NjaGVtYXMubWljcm9zb2Z0LmNvbS9jbHIvbnNhc3NlbS9Qcm90b0NvcmUvUHJvdG9Db3JlJTJDJTIwVmVyc2lvbiUzRDIuMTYuMS4yNzI3JTJDJTIwQ3VsdHVyZSUzRG5ldXRyYWwlMkMlMjBQdWJsaWNLZXlUb2tlbiUzRG51bGwiPg0KPE51bWJlck9mRWxlbWVudHM+MTwvTnVtYmVyT2ZFbGVtZW50cz4NCjxCYXNlLTBfSGFzRGF0YT50cnVlPC9CYXNlLTBfSGFzRGF0YT4NCjxCYXNlLTBfRGF0YSBpZD0icmVmLTMiPlBGTlBRVkF0UlU1V09rVnVkbVZzYjNCbElIaHRiRzV6T25oemFUMGlhSFIwY0RvdkwzZDNkeTUzTXk1dmNtY3ZNakF3TVM5WVRVeFRZMmhsYldFdGFXNXpkR0Z1WTJVaUlIaHRiRzV6T25oelpEMGlhSFIwY0RvdkwzZDNkeTUzTXk1dmNtY3ZNakF3TVM5WVRVeFRZMmhsYldFaUlIaHRiRzV6T2xOUFFWQXRSVTVEUFNKb2RIUndPaTh2YzJOb1pXMWhjeTU0Yld4emIyRndMbTl5Wnk5emIyRndMMlZ1WTI5a2FXNW5MeUlnZUcxc2JuTTZVMDlCVUMxRlRsWTlJbWgwZEhBNkx5OXpZMmhsYldGekxuaHRiSE52WVhBdWIzSm5MM052WVhBdlpXNTJaV3h2Y0dVdklpQjRiV3h1Y3pwamJISTlJbWgwZEhBNkx5OXpZMmhsYldGekxtMXBZM0p2YzI5bWRDNWpiMjB2YzI5aGNDOWxibU52WkdsdVp5OWpiSEl2TVM0d0lpQlRUMEZRTFVWT1ZqcGxibU52WkdsdVoxTjBlV3hsUFNKb2RIUndPaTh2YzJOb1pXMWhjeTU0Yld4emIyRndMbTl5Wnk5emIyRndMMlZ1WTI5a2FXNW5MeUkrRFFvOFUwOUJVQzFGVGxZNlFtOWtlVDROQ2p4aE1UcFRaWEpwWVd4cGVtRmliR1ZKWkNCcFpEMGljbVZtTFRFaUlIaHRiRzV6T21FeFBTSm9kSFJ3T2k4dmMyTm9aVzFoY3k1dGFXTnliM052Wm5RdVkyOXRMMk5zY2k5dWMyRnpjMlZ0TDFKbGRtbDBVMlZ5ZG1salpYTXVVR1Z5YzJsemRHVnVZMlV2VW1WMmFYUlRaWEoyYVdObGN5VXlReVV5TUZabGNuTnBiMjRsTTBReUxqRTJMakV1TmpVeE1DVXlReVV5TUVOMWJIUjFjbVVsTTBSdVpYVjBjbUZzSlRKREpUSXdVSFZpYkdsalMyVjVWRzlyWlc0bE0wUnVkV3hzSWo0TkNqeHpkSEpwYm1kSlJDQnBaRDBpY21WbUxUTWlQbUZqTkRObU5qYzNMVGRqWkdZdE5HVTNOQzA0Tm1Fd0xUQmxaV00wWXpoa1pETXlZeTB3TURCaE5UVXpNend2YzNSeWFXNW5TVVErRFFvOGFXNTBTVVErTmpjM01UY3hQQzlwYm5SSlJENE5Dand2WVRFNlUyVnlhV0ZzYVhwaFlteGxTV1ErRFFvOEwxTlBRVkF0UlU1V09rSnZaSGsrRFFvOEwxTlBRVkF0UlU1V09rVnVkbVZzYjNCbFBnMEs8L0Jhc2UtMF9EYXRhPg0KPEJhc2UtMF9IYXNOZXN0ZWREYXRhPmZhbHNlPC9CYXNlLTBfSGFzTmVzdGVkRGF0YT4NCjwvYTE6Q2FsbFNpdGVfeDAwMkJfVHJhY2VTZXJpYWxpc2VySGVscGVyPg0KPC9TT0FQLUVOVjpCb2R5Pg0KPC9TT0FQLUVOVjpFbnZlbG9wZT4NCg=="
+        "ByRules_InClassDecl-1_InFunctionScope-1_Instance0_48bcf4c8-925b-41f4-9c33-5028c70b8325": "PFNPQVAtRU5WOkVudmVsb3BlIHhtbG5zOnhzaT0iaHR0cDovL3d3dy53My5vcmcvMjAwMS9YTUxTY2hlbWEtaW5zdGFuY2UiIHhtbG5zOnhzZD0iaHR0cDovL3d3dy53My5vcmcvMjAwMS9YTUxTY2hlbWEiIHhtbG5zOlNPQVAtRU5DPSJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy9zb2FwL2VuY29kaW5nLyIgeG1sbnM6U09BUC1FTlY9Imh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3NvYXAvZW52ZWxvcGUvIiB4bWxuczpjbHI9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vc29hcC9lbmNvZGluZy9jbHIvMS4wIiBTT0FQLUVOVjplbmNvZGluZ1N0eWxlPSJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy9zb2FwL2VuY29kaW5nLyI+DQo8U09BUC1FTlY6Qm9keT4NCjxhMTpDYWxsU2l0ZV94MDAyQl9UcmFjZVNlcmlhbGlzZXJIZWxwZXIgaWQ9InJlZi0xIiB4bWxuczphMT0iaHR0cDovL3NjaGVtYXMubWljcm9zb2Z0LmNvbS9jbHIvbnNhc3NlbS9Qcm90b0NvcmUvUHJvdG9Db3JlJTJDJTIwVmVyc2lvbiUzRDIuMTYuMS4yNzI3JTJDJTIwQ3VsdHVyZSUzRG5ldXRyYWwlMkMlMjBQdWJsaWNLZXlUb2tlbiUzRG51bGwiPg0KPE51bWJlck9mRWxlbWVudHM+MTwvTnVtYmVyT2ZFbGVtZW50cz4NCjxCYXNlLTBfSGFzRGF0YT50cnVlPC9CYXNlLTBfSGFzRGF0YT4NCjxCYXNlLTBfRGF0YSBpZD0icmVmLTMiPlBGTlBRVkF0UlU1V09rVnVkbVZzYjNCbElIaHRiRzV6T25oemFUMGlhSFIwY0RvdkwzZDNkeTUzTXk1dmNtY3ZNakF3TVM5WVRVeFRZMmhsYldFdGFXNXpkR0Z1WTJVaUlIaHRiRzV6T25oelpEMGlhSFIwY0RvdkwzZDNkeTUzTXk1dmNtY3ZNakF3TVM5WVRVeFRZMmhsYldFaUlIaHRiRzV6T2xOUFFWQXRSVTVEUFNKb2RIUndPaTh2YzJOb1pXMWhjeTU0Yld4emIyRndMbTl5Wnk5emIyRndMMlZ1WTI5a2FXNW5MeUlnZUcxc2JuTTZVMDlCVUMxRlRsWTlJbWgwZEhBNkx5OXpZMmhsYldGekxuaHRiSE52WVhBdWIzSm5MM052WVhBdlpXNTJaV3h2Y0dVdklpQjRiV3h1Y3pwamJISTlJbWgwZEhBNkx5OXpZMmhsYldGekxtMXBZM0p2YzI5bWRDNWpiMjB2YzI5aGNDOWxibU52WkdsdVp5OWpiSEl2TVM0d0lpQlRUMEZRTFVWT1ZqcGxibU52WkdsdVoxTjBlV3hsUFNKb2RIUndPaTh2YzJOb1pXMWhjeTU0Yld4emIyRndMbTl5Wnk5emIyRndMMlZ1WTI5a2FXNW5MeUkrRFFvOFUwOUJVQzFGVGxZNlFtOWtlVDROQ2p4aE1UcFRaWEpwWVd4cGVtRmliR1ZKWkNCcFpEMGljbVZtTFRFaUlIaHRiRzV6T21FeFBTSm9kSFJ3T2k4dmMyTm9aVzFoY3k1dGFXTnliM052Wm5RdVkyOXRMMk5zY2k5dWMyRnpjMlZ0TDFKbGRtbDBVMlZ5ZG1salpYTXVVR1Z5YzJsemRHVnVZMlV2VW1WMmFYUlRaWEoyYVdObGN5VXlReVV5TUZabGNuTnBiMjRsTTBReUxqRTJMakV1TmpVeE1DVXlReVV5TUVOMWJIUjFjbVVsTTBSdVpYVjBjbUZzSlRKREpUSXdVSFZpYkdsalMyVjVWRzlyWlc0bE0wUnVkV3hzSWo0TkNqeHpkSEpwYm1kSlJDQnBaRDBpY21WbUxUTWlQamxpWmpBeVpXRXlMVGMyWWpndE5HRTBPQzA0Tmpsa0xXVmhaV0kzTnpJNE5HTTRaQzB3TURCaE5UVXpNend2YzNSeWFXNW5TVVErRFFvOGFXNTBTVVErTmpjM01UY3hQQzlwYm5SSlJENE5Dand2WVRFNlUyVnlhV0ZzYVhwaFlteGxTV1ErRFFvOEwxTlBRVkF0UlU1V09rSnZaSGsrRFFvOEwxTlBRVkF0UlU1V09rVnVkbVZzYjNCbFBnMEs8L0Jhc2UtMF9EYXRhPg0KPEJhc2UtMF9IYXNOZXN0ZWREYXRhPmZhbHNlPC9CYXNlLTBfSGFzTmVzdGVkRGF0YT4NCjwvYTE6Q2FsbFNpdGVfeDAwMkJfVHJhY2VTZXJpYWxpc2VySGVscGVyPg0KPC9TT0FQLUVOVjpCb2R5Pg0KPC9TT0FQLUVOVjpFbnZlbG9wZT4NCg=="
       }
     }
   ],
@@ -3320,34 +3853,34 @@
         "Y": 1178.1266317154364
       },
       {
-        "Name": "ParameterFilter.AddRuleSet",
+        "Name": "ParameterFilter.AddRule",
         "ShowGeometry": true,
         "Id": "5cea1ede6adc47289aef7479c000d0af",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 2261.2133168535156,
-        "Y": 486.38351202884189
+        "X": 2261.6168677654869,
+        "Y": 314.26241431267681
       },
       {
-        "Name": "ParameterFilter.AddRuleSet",
+        "Name": "ParameterFilter.AddRule",
         "ShowGeometry": true,
         "Id": "fd46894e0a604ad4a5c4ad4139e024f3",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 3041.2133168535183,
-        "Y": 376.19601202884206
+        "X": 3042.1780204824972,
+        "Y": 314.26241431267681
       },
       {
-        "Name": "ParameterFilter.AddRuleSet",
+        "Name": "ParameterFilter.AddRule",
         "ShowGeometry": true,
         "Id": "085775c1347748e48cfdb2261e37ff57",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 3821.2133168535183,
-        "Y": 320.94601202884206
+        "X": 3822.7391731995067,
+        "Y": 314.26241431267681
       },
       {
         "Name": "ParameterFilter.RuleTree",
@@ -3356,8 +3889,8 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 4230.2133168535183,
-        "Y": 320.94601202884206
+        "X": 4232.0197495580169,
+        "Y": 314.26241431267681
       },
       {
         "Name": "ParameterFilter.RuleTree",
@@ -3366,8 +3899,8 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 2670.2133168535156,
-        "Y": 596.57101202884189
+        "X": 2670.897444123997,
+        "Y": 423.77652628371675
       },
       {
         "Name": "ParameterFilter.RuleTree",
@@ -3376,8 +3909,8 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 3450.2133168535156,
-        "Y": 431.44601202884189
+        "X": 3451.4585968410065,
+        "Y": 423.77652628371675
       },
       {
         "Name": "Watch",
@@ -3386,8 +3919,8 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 4230.2133168535183,
-        "Y": 472.73555624788503
+        "X": 4232.0197495580169,
+        "Y": 469.1647667642369
       },
       {
         "Name": "Code Block",
@@ -3396,8 +3929,8 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 3450.2133168535156,
-        "Y": 257.60101202884186
+        "X": 3568.4585968410065,
+        "Y": 580.12672301504676
       },
       {
         "Name": "Boolean",
@@ -3406,8 +3939,8 @@
         "IsSetAsInput": true,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 2670.2133168535156,
-        "Y": 449.19601202884189
+        "X": 2747.897444123997,
+        "Y": 580.12672301504676
       },
       {
         "Name": "Boolean",
@@ -3416,8 +3949,8 @@
         "IsSetAsInput": true,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 3450.2133168535156,
-        "Y": 578.94601202884189
+        "X": 3528.4585968410065,
+        "Y": 739.06401893100679
       },
       {
         "Name": "Watch",
@@ -3426,8 +3959,8 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 3821.2133168535183,
-        "Y": 608.26652556445208
+        "X": 3822.7391731995067,
+        "Y": 604.729993552297
       },
       {
         "Name": "Watch",
@@ -3436,11 +3969,11 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 3041.2133168535183,
-        "Y": 666.021423226138
+        "X": 3042.1780204824972,
+        "Y": 604.729993552297
       },
       {
-        "Name": "ParameterFilter.ByRule",
+        "Name": "ParameterFilter.Create",
         "ShowGeometry": true,
         "Id": "bd67259c3a6942d880cc7cf80681e6e0",
         "IsSetAsInput": false,
@@ -3456,8 +3989,8 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 2653.6078662057325,
-        "Y": 1995.7899671082696
+        "X": 2654.0778387939226,
+        "Y": 1630.3127424220736
       },
       {
         "Name": "Code Block",
@@ -3466,18 +3999,18 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 2653.6078662057325,
-        "Y": 2172.7899671082696
+        "X": 2654.0778387939226,
+        "Y": 1807.3127424220736
       },
       {
-        "Name": "ParameterFilter.ByRule",
+        "Name": "ParameterFilter.Create",
         "ShowGeometry": true,
         "Id": "8afc2cb94f474c34824729584fb7df6d",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 3106.5503208274376,
-        "Y": 1849.6698331879425
+        "X": 3016.15735275251,
+        "Y": 1729.75394220311
       },
       {
         "Name": "Boolean",
@@ -3486,8 +4019,8 @@
         "IsSetAsInput": true,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 2653.6078662057325,
-        "Y": 2319.7899671082696
+        "X": 2654.0778387939226,
+        "Y": 1954.3127424220738
       },
       {
         "Name": "ParameterFilter.RuleTree",
@@ -3496,8 +4029,8 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 1890.2133168535158,
-        "Y": 554.38351202884189
+        "X": 1890.3362914069819,
+        "Y": 423.776526283717
       },
       {
         "Name": "Code Block",
@@ -3616,8 +4149,8 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 2548.1262381089336,
-        "Y": -375.45660715818542
+        "X": 2548.3762381089336,
+        "Y": -319.36363838883778
       },
       {
         "Name": "Watch",
@@ -3626,8 +4159,8 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 2548.1262381089336,
-        "Y": -216.19282315238445
+        "X": 2548.3762381089336,
+        "Y": -160.09985438303681
       },
       {
         "Name": "Watch",
@@ -3636,8 +4169,8 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 2548.1262381089336,
-        "Y": -689.96771094063445
+        "X": 2548.3762381089336,
+        "Y": -633.87474217128681
       },
       {
         "Name": "Parameter Filters",
@@ -3646,8 +4179,8 @@
         "IsSetAsInput": true,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 2168.6262381089336,
-        "Y": -375.45660715818542
+        "X": 2168.8762381089336,
+        "Y": -319.36363838883778
       },
       {
         "Name": "ParameterFilter.InDocument",
@@ -3656,8 +4189,8 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 2168.6262381089336,
-        "Y": -216.19282315238445
+        "X": 2168.8762381089336,
+        "Y": -160.09985438303681
       },
       {
         "Name": "ParameterFilter.ByName",
@@ -3666,8 +4199,8 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 2168.6262381089336,
-        "Y": -689.96771094063445
+        "X": 2168.8762381089336,
+        "Y": -633.87474217128681
       },
       {
         "Name": "DataStream.Await",
@@ -3676,11 +4209,11 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 1890.1262381089341,
-        "Y": -689.9677109406349
+        "X": 1890.3762381089341,
+        "Y": -633.87474217128727
       },
       {
-        "Name": "ParameterFilter.ByRule",
+        "Name": "ParameterFilter.Create",
         "ShowGeometry": true,
         "Id": "2e8925be540b449dbd354f6116d866fc",
         "IsSetAsInput": false,
@@ -3846,8 +4379,8 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 2946.1679774221993,
-        "Y": -525.86750181851266
+        "X": 2946.4179774221993,
+        "Y": -469.77453304916503
       },
       {
         "Name": "Object.ToDynamoType",
@@ -3856,8 +4389,8 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 3262.1679774221993,
-        "Y": -682.86750181851266
+        "X": 3262.4179774221993,
+        "Y": -626.774533049165
       },
       {
         "Name": "Watch",
@@ -3866,8 +4399,8 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 3600.1679774221993,
-        "Y": -682.86750181851266
+        "X": 3600.4179774221993,
+        "Y": -626.774533049165
       },
       {
         "Name": "Watch",
@@ -3876,8 +4409,8 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 3600.1679774221993,
-        "Y": -368.86750181851266
+        "X": 3600.4179774221993,
+        "Y": -312.77453304916503
       },
       {
         "Name": "Convert By Units",
@@ -4008,6 +4541,146 @@
         "Excluded": false,
         "X": 933.017553359608,
         "Y": 2166.7642728903838
+      },
+      {
+        "Name": "Watch",
+        "ShowGeometry": true,
+        "Id": "0bb45043feac4fef8209df0bc46dada7",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 2261.6168677654869,
+        "Y": 604.729993552297
+      },
+      {
+        "Name": "ParameterFilter.RemoveRule",
+        "ShowGeometry": true,
+        "Id": "29f4f9e666bb4b84ac615b0ef1131eb2",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 5243.96233951975,
+        "Y": 1113.33222548143
+      },
+      {
+        "Name": "ParameterFilter.ReplaceRule",
+        "ShowGeometry": true,
+        "Id": "1c845af9474244e39ceaa20c24fe3dd2",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 4463.9623395197541,
+        "Y": 1095.5417498186503
+      },
+      {
+        "Name": "Code Block",
+        "ShowGeometry": true,
+        "Id": "0faaa11d3232450fac3348b14898b4f0",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 4209.9623395197541,
+        "Y": 1163.3692498186504
+      },
+      {
+        "Name": "ParameterFilter.RuleTree",
+        "ShowGeometry": true,
+        "Id": "4b054479162f4b9bb2bb53c7219dff4b",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 4872.9623395197541,
+        "Y": 1077.7512741558662
+      },
+      {
+        "Name": "ParameterFilter.RuleTree",
+        "ShowGeometry": true,
+        "Id": "4d66a6f269e64ebfb7973dba0bc1bb19",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 5652.96233951975,
+        "Y": 1113.33222548143
+      },
+      {
+        "Name": "Watch",
+        "ShowGeometry": true,
+        "Id": "31808385eff44e60a99403b03c4c3c73",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 5652.96233951975,
+        "Y": 1270.23738445592
+      },
+      {
+        "Name": "Watch",
+        "ShowGeometry": true,
+        "Id": "7d7ed5f94aeb4953818758b8852c0f5d",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 5243.96233951975,
+        "Y": 1329.53560378241
+      },
+      {
+        "Name": "Code Block",
+        "ShowGeometry": true,
+        "Id": "0684d386ca8049128afc4163c781ec6c",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 4872.9623395197541,
+        "Y": 1225.1597254814344
+      },
+      {
+        "Name": "ParameterFilter.RuleTree",
+        "ShowGeometry": true,
+        "Id": "14a8a95fcfea4b748072c027e591ca18",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 2653.82783879392,
+        "Y": 2262.47449415045
+      },
+      {
+        "Name": "Watch",
+        "ShowGeometry": true,
+        "Id": "c4daa7c0bac641259a4b1a97b605f69c",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 2653.82783879392,
+        "Y": 2412.44345145238
+      },
+      {
+        "Name": "Watch",
+        "ShowGeometry": true,
+        "Id": "860ee67e0cbc421884b4a48748c445e8",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 3013.15735275251,
+        "Y": 2412.44345145238
+      },
+      {
+        "Name": "ParameterFilter.RuleTree",
+        "ShowGeometry": true,
+        "Id": "2cb4d71a75154103bf3edbdd674a68bd",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 3019.15735275251,
+        "Y": 2262.47449415045
+      },
+      {
+        "Name": "ParameterFilter.ClearRules",
+        "ShowGeometry": true,
+        "Id": "ad5c8afd791449718df262e1c76b542d",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": true,
+        "X": 3510.10638691882,
+        "Y": 1729.75394220311
       }
     ],
     "Annotations": [
@@ -4055,16 +4728,17 @@
           "1be1ab01213e40488971f5730f68596f",
           "04e9aa25b5544d719d8c02650436a545",
           "11986f82a5ae41eabb5ad8574f2152c9",
-          "a3153f488725418b8bb10ba86f82753a"
+          "a3153f488725418b8bb10ba86f82753a",
+          "0bb45043feac4fef8209df0bc46dada7"
         ],
         "HasNestedGroups": false,
-        "Left": 1880.2133168535158,
-        "Top": 191.60101202884186,
-        "Width": 2637.0000000000027,
-        "Height": 772.42041119729618,
+        "Left": 1880.3362914069819,
+        "Top": 248.26241431267681,
+        "Width": 2638.6834581510348,
+        "Height": 654.46757923962014,
         "FontSize": 30.0,
-        "InitialTop": 257.60101202884186,
-        "InitialHeight": 510.345,
+        "InitialTop": 314.26241431267681,
+        "InitialHeight": 569.80160461833,
         "TextblockHeight": 56.0,
         "Background": "#FFC1D676"
       },
@@ -4114,13 +4788,13 @@
           "027ed246648c4d2299c28f6030e5b6ac"
         ],
         "HasNestedGroups": false,
-        "Left": 2643.6078662057325,
-        "Top": 1747.6698331879425,
-        "Width": 746.94245462170511,
-        "Height": 704.12013392032713,
+        "Left": 2644.0778387939226,
+        "Top": 1528.3127424220736,
+        "Width": 656.07951395858754,
+        "Height": 558.00000000000023,
         "FontSize": 30.0,
-        "InitialTop": 1849.6698331879425,
-        "InitialHeight": 610.16642571190346,
+        "InitialTop": 1630.3127424220736,
+        "InitialHeight": 469.00000000000023,
         "TextblockHeight": 92.0,
         "Background": "#FFC1D676"
       },
@@ -4141,13 +4815,13 @@
           "fbb5c4cea954402293fc839e8b810197"
         ],
         "HasNestedGroups": false,
-        "Left": 1880.1262381089341,
-        "Top": -755.9677109406349,
+        "Left": 1880.3762381089341,
+        "Top": -699.87474217128727,
         "Width": 954.99999999999955,
         "Height": 837.77488778825045,
         "FontSize": 30.0,
-        "InitialTop": -689.9677109406349,
-        "InitialHeight": 483.77488778825,
+        "InitialTop": -633.87474217128727,
+        "InitialHeight": 618.77488778825045,
         "TextblockHeight": 56.0,
         "Background": "#FFA4E1FF"
       },
@@ -4221,13 +4895,13 @@
           "3a6831071c43487ca1d7723e64db47c1"
         ],
         "HasNestedGroups": false,
-        "Left": 2936.1679774221993,
-        "Top": -755.86750181851266,
+        "Left": 2936.4179774221993,
+        "Top": -699.774533049165,
         "Width": 951.0,
         "Height": 685.0,
         "FontSize": 36.0,
-        "InitialTop": -682.86750181851266,
-        "InitialHeight": 297.0,
+        "InitialTop": -626.774533049165,
+        "InitialHeight": 459.0,
         "TextblockHeight": 63.0,
         "Background": "#FFFFB8D8"
       },
@@ -4265,6 +4939,79 @@
         "Background": "#FF848484"
       },
       {
+        "Id": "fb756d0263dc4c98a388ba3e59e6da9b",
+        "Title": "Remove/Replace filter rule",
+        "DescriptionText": "",
+        "IsExpanded": true,
+        "WidthAdjustment": 0.0,
+        "HeightAdjustment": 0.0,
+        "Nodes": [
+          "29f4f9e666bb4b84ac615b0ef1131eb2",
+          "1c845af9474244e39ceaa20c24fe3dd2",
+          "0faaa11d3232450fac3348b14898b4f0",
+          "4b054479162f4b9bb2bb53c7219dff4b",
+          "4d66a6f269e64ebfb7973dba0bc1bb19",
+          "0684d386ca8049128afc4163c781ec6c",
+          "31808385eff44e60a99403b03c4c3c73",
+          "7d7ed5f94aeb4953818758b8852c0f5d"
+        ],
+        "HasNestedGroups": false,
+        "Left": 4199.9623395197541,
+        "Top": 1011.7512741558662,
+        "Width": 1739.9999999999955,
+        "Height": 615.78432962654369,
+        "FontSize": 30.0,
+        "InitialTop": 1077.7512741558662,
+        "InitialHeight": 396.78432962654369,
+        "TextblockHeight": 56.0,
+        "Background": "#FFA4E1FF"
+      },
+      {
+        "Id": "a6752bb73737499382f7387e685e937e",
+        "Title": "",
+        "DescriptionText": "",
+        "IsExpanded": true,
+        "WidthAdjustment": 0.0,
+        "HeightAdjustment": 0.0,
+        "Nodes": [
+          "14a8a95fcfea4b748072c027e591ca18",
+          "2cb4d71a75154103bf3edbdd674a68bd",
+          "860ee67e0cbc421884b4a48748c445e8",
+          "c4daa7c0bac641259a4b1a97b605f69c"
+        ],
+        "HasNestedGroups": false,
+        "Left": 2643.82783879392,
+        "Top": 2196.47449415045,
+        "Width": 656.32951395859027,
+        "Height": 513.96895730193,
+        "FontSize": 30.0,
+        "InitialTop": 2262.47449415045,
+        "InitialHeight": 294.96895730193,
+        "TextblockHeight": 56.0,
+        "Background": "#FFB5B5B5"
+      },
+      {
+        "Id": "2eeefabca9e6471ab2b1d633c5e995c8",
+        "Title": "Clear rules",
+        "DescriptionText": "",
+        "IsExpanded": true,
+        "WidthAdjustment": 0.0,
+        "HeightAdjustment": 0.0,
+        "Nodes": [
+          "ad5c8afd791449718df262e1c76b542d"
+        ],
+        "HasNestedGroups": false,
+        "Left": 3500.10638691882,
+        "Top": 1656.75394220311,
+        "Width": 329.0,
+        "Height": 205.0,
+        "FontSize": 36.0,
+        "InitialTop": 1729.75394220311,
+        "InitialHeight": 145.0,
+        "TextblockHeight": 63.0,
+        "Background": "#FFFFB8D8"
+      },
+      {
         "Id": "c45d8d8f5bed411598ebca347390f4d2",
         "Title": "File: defaultProject_param",
         "DescriptionText": null,
@@ -4284,8 +5031,8 @@
         "Background": "#FFC1D676"
       }
     ],
-    "X": 238.29045694858968,
-    "Y": 246.12819622986933,
-    "Zoom": 0.28525597806605768
+    "X": 193.79520767759377,
+    "Y": 269.77521139453654,
+    "Zoom": 0.2243192648049997
   }
 }
