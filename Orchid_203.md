@@ -5,6 +5,8 @@ The major number follows the Dynamo version, 203.x.x is usable in Dynamo +2.3.x.
   
 203.6.0  
 - Refactored layout.  
+- Nodes where the internal function can return an enumeration, is being refactored to do so.  
+- Nodes where enumerations values is replacing string values is updated to do so.  
   
 203.5.1  
 - Addition of guidance and helping files (/doc) for every node/function.  

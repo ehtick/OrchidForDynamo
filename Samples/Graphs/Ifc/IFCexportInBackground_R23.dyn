@@ -26,7 +26,7 @@
       "Type": "selection",
       "Type2": "dropdownSelection",
       "Value": "IFC2x3 Coordination View 2.0",
-      "Description": "Dropdown for IFC export setting",
+      "Description": "IFC export settings.",
       "SelectedIndex": 1
     },
     {
@@ -63,6 +63,15 @@
       "Type2": "boolean",
       "Value": "false",
       "Description": "Selection between a true and false.",
+      "SelectedIndex": 0
+    },
+    {
+      "Id": "a8f54666b8614c239554910b7bd9ad0c",
+      "Name": "String",
+      "Type": "string",
+      "Type2": "string",
+      "Value": "*.rfa",
+      "Description": "Creates a string.",
       "SelectedIndex": 0
     }
   ],
@@ -222,7 +231,7 @@
         }
       ],
       "Replication": "Disabled",
-      "Description": "Dropdown for IFC export setting"
+      "Description": "IFC export settings."
     },
     {
       "ConcreteType": "DSRevitNodesUI.Views, DSRevitNodesUI",
@@ -523,26 +532,6 @@
       "Description": "Creates a string."
     },
     {
-      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
-      "NodeType": "CodeBlockNode",
-      "Code": "\"*.rfa\";",
-      "Id": "16bd3f469a494edd8b4ed3543eebd0ab",
-      "Inputs": [],
-      "Outputs": [
-        {
-          "Id": "0630fb16523041c0a970b7c846f88233",
-          "Name": "",
-          "Description": "Value of expression at line 1",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        }
-      ],
-      "Replication": "Disabled",
-      "Description": "Allows for DesignScript code to be authored directly"
-    },
-    {
       "ConcreteType": "CoreNodeModels.Input.BoolSelector, CoreNodeModels",
       "NodeType": "BooleanInputNode",
       "InputValue": false,
@@ -756,6 +745,26 @@
       ],
       "Replication": "Auto",
       "Description": "Load family by family document, existing family will be overwritten.\n\nFamily.Load (familyDocument: Document): Family"
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Input.StringInput, CoreNodeModels",
+      "NodeType": "StringInputNode",
+      "InputValue": "*.rfa",
+      "Id": "a8f54666b8614c239554910b7bd9ad0c",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "c32572353cba4d9f918a8564288713eb",
+          "Name": "",
+          "Description": "String",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Creates a string."
     }
   ],
   "Connectors": [
@@ -844,12 +853,6 @@
       "IsHidden": "False"
     },
     {
-      "Start": "0630fb16523041c0a970b7c846f88233",
-      "End": "39ef2fdce2d44185a0143bc8b7061a04",
-      "Id": "a2d11d3da3eb41acb2c72bdc4f40fc43",
-      "IsHidden": "False"
-    },
-    {
       "Start": "e2456d69b4b14162a8f4163e3053a8de",
       "End": "50017e336d534faabd2d03a2cc4db4a9",
       "Id": "fbf8da57aa6a4731af34ab0ebc3fbc47",
@@ -889,6 +892,12 @@
       "Start": "e306454f4af047e09ca82e3745158485",
       "End": "7ceee4299c3846fc9e536b1ea42443d9",
       "Id": "d174edd4a10c44889637a971f39a4e26",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "c32572353cba4d9f918a8564288713eb",
+      "End": "39ef2fdce2d44185a0143bc8b7061a04",
+      "Id": "a510b1a7dfb94446aad6ef5501e20764",
       "IsHidden": "False"
     }
   ],
@@ -1096,18 +1105,8 @@
         "IsSetAsInput": true,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 9.9366892163149032,
-        "Y": 65.989379679347152
-      },
-      {
-        "Name": "Code Block",
-        "ShowGeometry": true,
-        "Id": "16bd3f469a494edd8b4ed3543eebd0ab",
-        "IsSetAsInput": false,
-        "IsSetAsOutput": false,
-        "Excluded": false,
-        "X": 9.9366892163149032,
-        "Y": 254.81687967934715
+        "X": 9.9366892163149,
+        "Y": 65.9893796793472
       },
       {
         "Name": "Boolean",
@@ -1116,8 +1115,8 @@
         "IsSetAsInput": true,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 9.9366892163149032,
-        "Y": 401.98937967934717
+        "X": 9.9366892163149,
+        "Y": 401.98937967934694
       },
       {
         "Name": "Document.BackgroundOpen",
@@ -1168,6 +1167,16 @@
         "Excluded": false,
         "X": 1049.9366892163148,
         "Y": 206.98937967934717
+      },
+      {
+        "Name": "String",
+        "ShowGeometry": true,
+        "Id": "a8f54666b8614c239554910b7bd9ad0c",
+        "IsSetAsInput": true,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 9.9366892163149,
+        "Y": 254.48937967934708
       }
     ],
     "Annotations": [
@@ -1233,21 +1242,21 @@
         "HeightAdjustment": 0.0,
         "Nodes": [
           "9326c391ab4148eb8858d8486a222446",
-          "16bd3f469a494edd8b4ed3543eebd0ab",
           "0bdec039755448a38cdc07991c4ce982",
           "d08b27d8d5a64bb1869b056235f5d174",
           "84cd93ef32ac4a5f9d0c1d156640d479",
           "80c187ea284244a5bbe4578a189479b8",
           "2e4e2c929ae24a27a8b57a9acc3a2c25",
-          "acfb034669be452bb15168fe53173ffc"
+          "acfb034669be452bb15168fe53173ffc",
+          "a8f54666b8614c239554910b7bd9ad0c"
         ],
         "HasNestedGroups": false,
-        "Left": -0.0633107836850968,
-        "Top": -0.010620320652847681,
+        "Left": -0.063310783685100347,
+        "Top": -0.010620320652805049,
         "Width": 1954.0,
-        "Height": 534.0,
+        "Height": 533.99999999999977,
         "FontSize": 30.0,
-        "InitialTop": 65.989379679347152,
+        "InitialTop": 65.9893796793472,
         "InitialHeight": 481.0,
         "TextblockHeight": 56.0,
         "Background": "#FFFFAA45"
