@@ -24,16 +24,8 @@ http://www.apache.org/licenses/LICENSE-2.0
 Inno Setup  
 https://github.com/jrsoftware/issrc/blob/master/license.txt  
   
-Iron Python  
-http://ironpython.net/  
-http://opensource.org/licenses/apache2.0.php  
-  
-IronPython Stubs  
-https://github.com/gtalarico/ironpython-stubs/blob/master/LICENSE.md  
-  
-Python  
-https://docs.python.org/2/license.html  
-https://docs.python.org/3/license.html  
+PDFsharp
+http://www.pdfsharp.net/Licensing.ashx
   
 Microsoft  
 https://www.microsoft.com/en-us/servicesagreement/  
@@ -44,12 +36,12 @@ https://msdn.microsoft.com/en-us/vstudio/hh857605
 Microsoft 2013 C Runtime DLLs, msvcp120.dll, msvcr120.dll  
 http://msdn.microsoft.com/en-us/vstudio/dn501987  
   
+MSBuild tasks  
+https://github.com/loresoft/msbuildtasks/blob/master/LICENSE  
+  
 Newtonsoft JSON  
 https://github.com/JamesNK/Newtonsoft.Json  
 https://github.com/JamesNK/Newtonsoft.Json/blob/master/LICENSE.md  
-  
-MSBuild tasks  
-https://github.com/loresoft/msbuildtasks/blob/master/LICENSE  
   
 NUnit  
 http://www.nunit.org/  
@@ -58,16 +50,3 @@ http://www.nunit.org/index.php?p=license&r=2.6.2
 Prism  
 http://msdn.microsoft.com/en-us/library/gg406140.aspx  
 http://msdn.microsoft.com/en-us/library/gg405489(PandP.40).aspx  
-  
-PDFsharp
-http://www.pdfsharp.net/Licensing.ashx
-
-Sigma Estimates  
-http://www.sigmaservice.net/licenseinformation/SIGMA_EULA.pdf  
-  
-Strusoft  
-https://strusoft.com  
-  
-The Building Coder  
-https://github.com/jeremytammik/the_building_coder_samples/blob/master/LICENSE  
-  

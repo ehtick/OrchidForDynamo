@@ -71,3 +71,5 @@ All content in this repository is part of the Orchid package.
 This work is licensed under the [Creative Commons Attribution-NoDerivatives 4.0 International](http://creativecommons.org/licenses/by-nd/4.0/) license (CC BY-ND 4.0).  
   
 In short terms does the CC BY-ND license state: This license allows for redistribution, commercial and non-commercial, as long as it is passed along unchanged and in whole, with credit to the author.  
+  
+In the event of violation of the license terms or any other harassment (including, of the author), it will block for the use of the Orchid solution for the user/company until a solution is found.  
