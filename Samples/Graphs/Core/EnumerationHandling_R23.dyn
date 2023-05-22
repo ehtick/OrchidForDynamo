@@ -2,7 +2,7 @@
   "Uuid": "52c48882-591e-44d4-a741-500ff6bcc7d3",
   "IsCustomNode": false,
   "Description": "",
-  "Name": "EnumerationHandling",
+  "Name": "EnumerationHandling_R23",
   "ElementResolver": {
     "ResolutionMap": {}
   },
@@ -914,6 +914,133 @@
       ],
       "Replication": "Disabled",
       "Description": "Visualize the node's output"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "Orchid.AdeskApp.Dynamo.EnumByName@string,string",
+      "Id": "2b81d3da0cab437d885e30bc81bad047",
+      "Inputs": [
+        {
+          "Id": "3a69cc27667a463c8bbc8afa54e92470",
+          "Name": "enumType",
+          "Description": "Name of the Revit enumeration type.\n\nstring",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "06d1b3df17504b0e89ef941939c99e7e",
+          "Name": "valueName",
+          "Description": "Name of the enumeration value.\n\nstring",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "b1eae332cfbf439ab2bcb01a30ae4730",
+          "Name": "Enum",
+          "Description": "Revit enumeration type.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Get Autodesk Revit enumeration value by name and enumeration type.\n\nDynamo.EnumByName (enumType: string, valueName: string): var[]..[]"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "\"ScheduleType\";\n\"RegularSchedule\";",
+      "Id": "c28688561752473abf2fb876e475278d",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "e5087a7f32974b15b23114e85b8f9bde",
+          "Name": "",
+          "Description": "Value of expression at line 1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "f8b3b372566740d189d5cea70e7fd506",
+          "Name": "",
+          "Description": "Value of expression at line 2",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Allows for DesignScript code to be authored directly"
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
+      "NodeType": "ExtensionNode",
+      "Id": "6f5defb0d983483099be51592cc02293",
+      "Inputs": [
+        {
+          "Id": "74f0c853975d4ca5945dd99d4c70f717",
+          "Name": "",
+          "Description": "Node to show output from",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "9695f3107d90441fbaa339e048d185f0",
+          "Name": "",
+          "Description": "Node output",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Visualize the node's output"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "DSCore.Object.Type@var",
+      "Id": "29efcc90098f4efcb32892f0b6e7779d",
+      "Inputs": [
+        {
+          "Id": "c16403bafb424496b5872a5269db7fd5",
+          "Name": "object",
+          "Description": "Object to query type\n\nvar",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "07165f6a233641eb8efa2f3bfdcdc84b",
+          "Name": "string",
+          "Description": "Type of object.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Returns the type of object represented as string.\n\nObject.Type (object: var): string"
     }
   ],
   "Connectors": [
@@ -1066,13 +1193,37 @@
       "End": "f88773e4aa4d4e9a8801d9cd16a98000",
       "Id": "67c584ecb4c84f96ad2cac86f0c23d73",
       "IsHidden": "False"
+    },
+    {
+      "Start": "b1eae332cfbf439ab2bcb01a30ae4730",
+      "End": "c16403bafb424496b5872a5269db7fd5",
+      "Id": "9c4063f3e1894458bc1061e623352787",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "e5087a7f32974b15b23114e85b8f9bde",
+      "End": "3a69cc27667a463c8bbc8afa54e92470",
+      "Id": "c033e72c97614da4b0bf3131568be534",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "f8b3b372566740d189d5cea70e7fd506",
+      "End": "06d1b3df17504b0e89ef941939c99e7e",
+      "Id": "b8e9f1bf07c7463894fa118efe19853d",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "07165f6a233641eb8efa2f3bfdcdc84b",
+      "End": "74f0c853975d4ca5945dd99d4c70f717",
+      "Id": "3ddad793af914c7d9ee4514249c737e7",
+      "IsHidden": "False"
     }
   ],
   "Dependencies": [],
   "NodeLibraryDependencies": [
     {
       "Name": "Orchid",
-      "Version": "216.3.0.5820",
+      "Version": "216.3.0.5889",
       "ReferenceType": "Package",
       "Nodes": [
         "577c024370e344a9870a17417795b0fd",
@@ -1086,7 +1237,8 @@
         "202f52d13c904caa8215695381038eeb",
         "7a1ce45230f840df8050f23010dc4dae",
         "97fbde1f03ac4cf198d099afd5c5932c",
-        "fa6e6e32ffe74b60a58c6866e5f35acb"
+        "fa6e6e32ffe74b60a58c6866e5f35acb",
+        "2b81d3da0cab437d885e30bc81bad047"
       ]
     }
   ],
@@ -1436,6 +1588,46 @@
         "Excluded": false,
         "X": 2477.2793351580408,
         "Y": 1069.2044645138651
+      },
+      {
+        "Name": "Dynamo.EnumByName",
+        "ShowGeometry": true,
+        "Id": "2b81d3da0cab437d885e30bc81bad047",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 335.32043355066776,
+        "Y": 1592.8003937464755
+      },
+      {
+        "Name": "Code Block",
+        "ShowGeometry": true,
+        "Id": "c28688561752473abf2fb876e475278d",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 10.320433550667758,
+        "Y": 1601.4553937464757
+      },
+      {
+        "Name": "Watch",
+        "ShowGeometry": true,
+        "Id": "6f5defb0d983483099be51592cc02293",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 980.32043355066776,
+        "Y": 1592.8003937464755
+      },
+      {
+        "Name": "Object.Type",
+        "ShowGeometry": true,
+        "Id": "29efcc90098f4efcb32892f0b6e7779d",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 678.32043355066776,
+        "Y": 1592.8003937464755
       }
     ],
     "Annotations": [
@@ -1460,7 +1652,7 @@
         "Height": 387.97743848417122,
         "FontSize": 36.0,
         "InitialTop": 573.28532051169975,
-        "InitialHeight": 324.97743848417076,
+        "InitialHeight": 327.97743848417122,
         "TextblockHeight": 63.0,
         "Background": "#FFA4E1FF"
       },
@@ -1485,7 +1677,7 @@
         "Height": 390.77037880760724,
         "FontSize": 36.0,
         "InitialTop": 73.49623931903875,
-        "InitialHeight": 327.77037880760736,
+        "InitialHeight": 330.77037880760724,
         "TextblockHeight": 63.0,
         "Background": "#FFC1D676"
       },
@@ -1510,7 +1702,7 @@
         "Height": 418.34509116806,
         "FontSize": 36.0,
         "InitialTop": 1069.21032246116,
-        "InitialHeight": 355.34509116806385,
+        "InitialHeight": 358.34509116806,
         "TextblockHeight": 63.0,
         "Background": "#FFFFAA45"
       },
@@ -1535,7 +1727,7 @@
         "Height": 383.40051379003182,
         "FontSize": 36.0,
         "InitialTop": 73.273579752594173,
-        "InitialHeight": 320.40051379003194,
+        "InitialHeight": 323.40051379003182,
         "TextblockHeight": 63.0,
         "Background": "#FFB5B5B5"
       },
@@ -1560,7 +1752,7 @@
         "Height": 389.35300840187006,
         "FontSize": 36.0,
         "InitialTop": 573.42648040284189,
-        "InitialHeight": 316.35300840186983,
+        "InitialHeight": 329.35300840187006,
         "TextblockHeight": 63.0,
         "Background": "#FFB5B5B5"
       },
@@ -1585,13 +1777,37 @@
         "Height": 384.34314378791487,
         "FontSize": 36.0,
         "InitialTop": 1069.2044645138651,
-        "InitialHeight": 331.34314378791987,
+        "InitialHeight": 324.34314378791487,
         "TextblockHeight": 63.0,
         "Background": "#FFB5B5B5"
+      },
+      {
+        "Id": "e29b575273014d1aaeec5b9e177ae53e",
+        "Title": "Dynamo enumeration by enum type and value",
+        "DescriptionText": "",
+        "IsExpanded": true,
+        "WidthAdjustment": 0.0,
+        "HeightAdjustment": 0.0,
+        "Nodes": [
+          "2b81d3da0cab437d885e30bc81bad047",
+          "c28688561752473abf2fb876e475278d",
+          "6f5defb0d983483099be51592cc02293",
+          "29efcc90098f4efcb32892f0b6e7779d"
+        ],
+        "HasNestedGroups": false,
+        "Left": 0.320433550667758,
+        "Top": 1519.8003937464755,
+        "Width": 1432.0,
+        "Height": 235.0,
+        "FontSize": 36.0,
+        "InitialTop": 1592.8003937464755,
+        "InitialHeight": 361.0,
+        "TextblockHeight": 63.0,
+        "Background": "#FFD4B6DB"
       }
     ],
-    "X": 25.048579776456592,
-    "Y": 211.19031812976334,
-    "Zoom": 0.50828668304630675
+    "X": 25.671650058937288,
+    "Y": 98.202432705387224,
+    "Zoom": 0.44432557433632974
   }
 }
