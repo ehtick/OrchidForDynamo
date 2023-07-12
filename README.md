@@ -7,13 +7,13 @@
 Orchid is a solution designed for use in the [Dynamo](http://dynamobim.org) environment. The solution is designed to support practical, technical, geometrical, logical, and mathematical issues. The solution contains functions to solve data handling in Revit projects, Revit families, and materials in Revit. Besides this, also functions to solve common data handling like geometry, printing, exporting, and system actions. Orchid is among the largest and most coherent solutions besides what Autodesk releases for Dynamo.  
   
 **Software environment:**  
-Built for Dynamo 2.17 (Revit 2024), Dynamo 2.16 (Revit 2023), Dynamo 2.12 (Revit 2022), and Dynamo 2.6 (Revit 2021).  
+Built for Dynamo 2.18 (Revit 2024), Dynamo 2.16 (Revit 2023), Dynamo 2.12 (Revit 2022), and Dynamo 2.6 (Revit 2021).  
   
 **Orchid Samples:**  
 In the [samples](Samples) folder are examples using the Orchid package placed.  
   
 **History/Change Log:**  
-[![orchid](https://img.shields.io/badge/Orchid-217-lightgrey)](Orchid_217.md)  
+[![orchid](https://img.shields.io/badge/Orchid-218-lightgrey)](Orchid_218.md)  
 [![orchid](https://img.shields.io/badge/Orchid-216-lightgrey)](Orchid_216.md)  
 [![orchid](https://img.shields.io/badge/Orchid-212-lightgrey)](Orchid_212.md)  
 [![orchid](https://img.shields.io/badge/Orchid-206-lightgrey)](Orchid_206.md)  
@@ -23,7 +23,7 @@ In the [samples](Samples) folder are examples using the Orchid package placed.
 Use the executable installer in the **[Builds](Builds)** folder to install the Orchid package. Please note the vertical versions of Orchid are coded for a specific version of Dynamo and Revit to ensure code is applicable for that exact combination, and not least due to the enormous scope of Orchid.  
   
 Select the executable according to your dynamo version!  
-[![orchid](https://img.shields.io/badge/Orchid-217-brightgreen) &nbsp;&nbsp;&nbsp; ![dynamo](https://img.shields.io/badge/Dynamo-2.17-blue) &nbsp;&nbsp;&nbsp; ![revit](https://img.shields.io/badge/Revit-2024-blue)](Builds/OrchidForDynamo_217.exe)  
+[![orchid](https://img.shields.io/badge/Orchid-218-brightgreen) &nbsp;&nbsp;&nbsp; ![dynamo](https://img.shields.io/badge/Dynamo-2.18-blue) &nbsp;&nbsp;&nbsp; ![revit](https://img.shields.io/badge/Revit-2024-blue)](Builds/OrchidForDynamo_218.exe)  
 [![orchid](https://img.shields.io/badge/Orchid-216-brightgreen) &nbsp;&nbsp;&nbsp; ![dynamo](https://img.shields.io/badge/Dynamo-2.16-blue) &nbsp;&nbsp;&nbsp; ![revit](https://img.shields.io/badge/Revit-2023-blue)](Builds/OrchidForDynamo_216.exe)  
 [![orchid](https://img.shields.io/badge/Orchid-212-brightgreen) &nbsp;&nbsp;&nbsp; ![dynamo](https://img.shields.io/badge/Dynamo-2.12-blue) &nbsp;&nbsp;&nbsp; ![revit](https://img.shields.io/badge/Revit-2022-blue)](Builds/OrchidForDynamo_212.exe)  
 [![orchid](https://img.shields.io/badge/Orchid-206-brightgreen) &nbsp;&nbsp;&nbsp; ![dynamo](https://img.shields.io/badge/Dynamo-2.6-blue) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ![revit](https://img.shields.io/badge/Revit-2021-blue)](Builds/OrchidForDynamo_206.exe)  
@@ -35,7 +35,7 @@ Select the executable according to your dynamo version!
 The Orchid package may also be installed by manually copying files from the **[Zipped](Zipped)** folder. This is only recommendable for experienced users! To install/update this way, please unzip the zip-file of the chosen version into your dynamo package folder, into a folder named **Orchid**. Download may be handled either by downloading a single file, or by cloning or zipping the repository. The package folder path can be found in Dynamo via the menu item 'Settings' -> 'Manage Node and Package Paths'.  
   
 Select the zip-file according to your dynamo version!  
-Orchid_217_? &nbsp;&nbsp;&nbsp; (for the dynamo 2.17.x branch)  
+Orchid_218_? &nbsp;&nbsp;&nbsp; (for the dynamo 2.18.x branch)  
 Orchid_216_? &nbsp;&nbsp;&nbsp; (for the dynamo 2.16.x branch)  
 Orchid_212_? &nbsp;&nbsp;&nbsp; (for the dynamo 2.12.x branch)  
 Orchid_206_? &nbsp;&nbsp;&nbsp; (for the dynamo 2.6.x branch)  
