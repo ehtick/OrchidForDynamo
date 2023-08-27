@@ -2,7 +2,7 @@
   "Uuid": "3c9d0464-8643-5ffe-96e5-ab1769818209",
   "IsCustomNode": false,
   "Description": "",
-  "Name": "ExportDWGfromView",
+  "Name": "ExportDWGfromView_R23",
   "ElementResolver": {
     "ResolutionMap": {
       "Revit.Element": {
@@ -186,7 +186,7 @@
         }
       ],
       "Replication": "Auto",
-      "Description": "Determines if the given string contains any of the given substrings.\n\nString.Contains (string: string, searchFor: string[], ignoreCase: bool = false): bool"
+      "Description": "Verify if the given string contains any of the given substrings.\n\nString.Contains (string: string, searchFor: string[], ignoreCase: bool = false): bool"
     },
     {
       "ConcreteType": "CoreNodeModels.Input.BoolSelector, CoreNodeModels",
@@ -227,8 +227,8 @@
       "Outputs": [
         {
           "Id": "18a0d623f78b4dbeb79e8339c982ffc7",
-          "Name": "ViewType",
-          "Description": "View type.",
+          "Name": "Enum",
+          "Description": "ViewType as Revit enumeration type.",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -236,7 +236,7 @@
         }
       ],
       "Replication": "Auto",
-      "Description": "Get view type by name.\n\nViewType.ByName (name: string): var[]..[]"
+      "Description": "Get ViewType (Autodesk.Revit) enumeration value by name.\n\nViewType.ByName (name: string): var"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
@@ -257,45 +257,6 @@
       ],
       "Replication": "Disabled",
       "Description": "Allows for DesignScript code to be authored directly"
-    },
-    {
-      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
-      "NodeType": "FunctionNode",
-      "FunctionSignature": "Orchid.RevitProject.Views.View.ByType@var,bool",
-      "Id": "4d44e921e7f846cf8dc8fa2ce5467706",
-      "Inputs": [
-        {
-          "Id": "29cd3103c0bc47109d824159bcd218ba",
-          "Name": "viewType",
-          "Description": "View type.\n\nvar",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        },
-        {
-          "Id": "e12ad8be3ee84da69c8ae932f9a76d17",
-          "Name": "condense",
-          "Description": "Condense to shortest feasible output?\n\nbool\nDefault value : true",
-          "UsingDefaultValue": true,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        }
-      ],
-      "Outputs": [
-        {
-          "Id": "cebb3b3efcd54716ad423b074f6056bf",
-          "Name": "View",
-          "Description": "View.",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        }
-      ],
-      "Replication": "Auto",
-      "Description": "All view by viewType in current document.\n\nView.ByType (viewType: var, condense: bool = true): var[]..[]"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
@@ -849,7 +810,7 @@
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
       "NodeType": "FunctionNode",
-      "FunctionSignature": "Orchid.RevitProject.Common.ExportOption.CreateAcadOption@Revit.Application.Document,string,string,string",
+      "FunctionSignature": "Orchid.RevitProject.Common.ExportOption.CreateAcadOption@Revit.Application.Document,string,var,string",
       "Id": "75ed828310c646be8dea53c3e79221fe",
       "Inputs": [
         {
@@ -873,7 +834,7 @@
         {
           "Id": "e4a4d77c3f4043969c2bfe51206cddb5",
           "Name": "propOverride",
-          "Description": "Property overrides. Default value is according to the Revit localization.\n\nstring\nDefault value : null",
+          "Description": "Property overrides as enumeration type. Default value is according to the Revit localization.\n\nvar\nDefault value : Orchid.Internals.Enums.Revit(\"PropOverrideMode.ByEntity\")",
           "UsingDefaultValue": true,
           "Level": 2,
           "UseLevels": false,
@@ -901,12 +862,12 @@
         }
       ],
       "Replication": "Auto",
-      "Description": "Create DWG/DXF export option.\n\nExportOption.CreateAcadOption (document: Document = null, name: string, propOverride: string = null, layerMapping: string = null): Element"
+      "Description": "Create DWG/DXF export option.\n\nExportOption.CreateAcadOption (document: Document = null, name: string, propOverride: var = Orchid.Internals.Enums.Revit(\"PropOverrideMode.ByEntity\"), layerMapping: string = null): Element"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
       "NodeType": "FunctionNode",
-      "FunctionSignature": "Orchid.RevitProject.Common.ExportOption.AcadOptionSettings@Revit.Application.Document,Revit.Elements.Element,string,string,string,DSCore.Color,string,string,string,string,bool",
+      "FunctionSignature": "Orchid.RevitProject.Common.ExportOption.AcadOptionSettings@Revit.Application.Document,Revit.Elements.Element,var,string,string,DSCore.Color,var,var,var,var,bool",
       "Id": "daed4b8076c24b6297ecf5b0b9d45fca",
       "Inputs": [
         {
@@ -930,7 +891,7 @@
         {
           "Id": "3e1c43bb06fc4dcab12435ea16d95fa8",
           "Name": "lineScaling",
-          "Description": "The scaling mode for the line type. Default value is LineScaling.ViewScale.\n\nstring\nDefault value : null",
+          "Description": "The scaling mode for the line type as Revit enumeration type.\n\nvar\nDefault value : Orchid.Internals.Enums.Revit(\"LineScaling.ViewScale\")",
           "UsingDefaultValue": true,
           "Level": 2,
           "UseLevels": false,
@@ -966,7 +927,7 @@
         {
           "Id": "49247e0b23b04d00a08ff49abc78a2d5",
           "Name": "textTreatment",
-          "Description": "Text behavior when exported.\n\nstring\nDefault value : null",
+          "Description": "Text behavior when exported as enumeration type.\n\nvar\nDefault value : Orchid.Internals.Enums.Revit(\"TextTreatment.Exact\")",
           "UsingDefaultValue": true,
           "Level": 2,
           "UseLevels": false,
@@ -975,7 +936,7 @@
         {
           "Id": "17018ad4ac804eb5a53a1c10a88a6feb",
           "Name": "colorMode",
-          "Description": "Export colors as.\n\nstring\nDefault value : null",
+          "Description": "Export colors as enumeration type.\n\nvar\nDefault value : Orchid.Internals.Enums.Revit(\"ExportColorMode.IndexColors\")",
           "UsingDefaultValue": true,
           "Level": 2,
           "UseLevels": false,
@@ -984,7 +945,7 @@
         {
           "Id": "cd3abf328559432481426c5e794b0c48",
           "Name": "exportOfSolids",
-          "Description": "string\nDefault value : null",
+          "Description": "Export of solids as enumeration type.\n\nvar\nDefault value : Orchid.Internals.Enums.Revit(\"SolidGeometry.Polymesh\")",
           "UsingDefaultValue": true,
           "Level": 2,
           "UseLevels": false,
@@ -993,7 +954,7 @@
         {
           "Id": "637c98f68d974dcd9525b9490d0b8cca",
           "Name": "targetUnit",
-          "Description": "string\nDefault value : null",
+          "Description": "Target unit as enumeration type.\n\nvar\nDefault value : Orchid.Internals.Enums.Revit(\"ExportUnit.Default\")",
           "UsingDefaultValue": true,
           "Level": 2,
           "UseLevels": false,
@@ -1021,12 +982,12 @@
         }
       ],
       "Replication": "Auto",
-      "Description": "Set Lines, Patterns, Text & Fonts, Colors, Solids, and Units & Coordinates in DWG/DXF export option.\n\nExportOption.AcadOptionSettings (document: Document = null, option: Element, lineScaling: string = null, linetypesFile: string = null, hatchPatternsFile: string = null, hatchBackgroundColor: Color = null, textTreatment: string = null, colorMode: string = null, exportOfSolids: string = null, targetUnit: string = null, sharedCoordinate: bool = false): Element"
+      "Description": "Set Lines, Patterns, Text & Fonts, Colors, Solids, and Units & Coordinates in DWG/DXF export option.\n\nExportOption.AcadOptionSettings (document: Document = null, option: Element, lineScaling: var = Orchid.Internals.Enums.Revit(\"LineScaling.ViewScale\"), linetypesFile: string = null, hatchPatternsFile: string = null, hatchBackgroundColor: Color = null, textTreatment: var = Orchid.Internals.Enums.Revit(\"TextTreatment.Exact\"), colorMode: var = Orchid.Internals.Enums.Revit(\"ExportColorMode.IndexColors\"), exportOfSolids: var = Orchid.Internals.Enums.Revit(\"SolidGeometry.Polymesh\"), targetUnit: var = Orchid.Internals.Enums.Revit(\"ExportUnit.Default\"), sharedCoordinate: bool = false): Element"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
       "NodeType": "FunctionNode",
-      "FunctionSignature": "Orchid.RevitProject.Common.ExportOption.AcadOptionGenerel@Revit.Application.Document,Revit.Elements.Element,bool,string,bool,bool,bool,bool,bool,string",
+      "FunctionSignature": "Orchid.RevitProject.Common.ExportOption.AcadOptionGenerel@Revit.Application.Document,Revit.Elements.Element,bool,string,bool,bool,bool,bool,bool,var",
       "Id": "4a552b60bc9a49989010eecc380f5062",
       "Inputs": [
         {
@@ -1104,7 +1065,7 @@
         {
           "Id": "c50fc5ed8dc04e7cb38a61f875ff72ac",
           "Name": "mergedViews",
-          "Description": "bool\nDefault value : false",
+          "Description": "Whether to merge all views in one file (via XRefs). Default value is false for mergedViews.\n\nbool\nDefault value : false",
           "UsingDefaultValue": true,
           "Level": 2,
           "UseLevels": false,
@@ -1113,7 +1074,7 @@
         {
           "Id": "00c7fa82a5284e6db1d8aa41c8772512",
           "Name": "fileVersion",
-          "Description": "string\nDefault value : null",
+          "Description": "ACAD version as Revit enumeration type.\n\nvar\nDefault value : Orchid.Internals.Enums.Revit(\"ACADVersion.Default\")",
           "UsingDefaultValue": true,
           "Level": 2,
           "UseLevels": false,
@@ -1132,7 +1093,7 @@
         }
       ],
       "Replication": "Auto",
-      "Description": "Set General in DWG/DXF export option.\n\nExportOption.AcadOptionGenerel (document: Document = null, option: Element, exportingAreas: bool = false, nonplotSuffix: string = null, hideScopeBox: bool = true, hideReferencePlane: bool = true, hideUnreferenceViewTags: bool = true, preserveCoincidentLines: bool = false, mergedViews: bool = false, fileVersion: string = null): Element"
+      "Description": "Set General in DWG/DXF export option.\n\nExportOption.AcadOptionGenerel (document: Document = null, option: Element, exportingAreas: bool = false, nonplotSuffix: string = null, hideScopeBox: bool = true, hideReferencePlane: bool = true, hideUnreferenceViewTags: bool = true, preserveCoincidentLines: bool = false, mergedViews: bool = false, fileVersion: var = Orchid.Internals.Enums.Revit(\"ACADVersion.Default\")): Element"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
@@ -1153,6 +1114,45 @@
       ],
       "Replication": "Auto",
       "Description": "Get all DWG/DXF export option.\n\nExportOption.AcadOptions ( ): Element[]"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "Orchid.RevitProject.Views.View.ByViewType@var,bool",
+      "Id": "aee34ce803094bca8b0ebc3a5896ef73",
+      "Inputs": [
+        {
+          "Id": "db92800e64e744e394b53a12c5b8d567",
+          "Name": "viewType",
+          "Description": "ViewType as enumeration type.\n\nvar",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "a82583ef807143bd9235857c674b1743",
+          "Name": "condense",
+          "Description": "Condense to shortest feasible output?\n\nbool\nDefault value : true",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "5b0e178d4442484aa8bdb42a4787ac6a",
+          "Name": "View",
+          "Description": "View.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "All view by ViewType in document.\n\nView.ByViewType (viewType: var, condense: bool = true): var[]..[]"
     }
   ],
   "Connectors": [
@@ -1194,26 +1194,14 @@
     },
     {
       "Start": "18a0d623f78b4dbeb79e8339c982ffc7",
-      "End": "29cd3103c0bc47109d824159bcd218ba",
-      "Id": "5f6ea604c8b34a63aa729083d838e06e",
+      "End": "db92800e64e744e394b53a12c5b8d567",
+      "Id": "86c1a90cab0d4234bc278e62cd29e9ba",
       "IsHidden": "False"
     },
     {
       "Start": "2a2cac9cb4504ef9a9cc8dac179ad798",
       "End": "3966bd31d27b451dbcb1235f2b5a0b9c",
       "Id": "fa5dc5dc384842929448dc666fd304ae",
-      "IsHidden": "False"
-    },
-    {
-      "Start": "cebb3b3efcd54716ad423b074f6056bf",
-      "End": "e57b5eb5de834dbda5f7ee48edde3bc7",
-      "Id": "db7725f1075e47acad7b1f06b960a907",
-      "IsHidden": "False"
-    },
-    {
-      "Start": "cebb3b3efcd54716ad423b074f6056bf",
-      "End": "d943dc832fd54917adf8eab05c54894f",
-      "Id": "77d27b290901417e9c963191ac7b53d2",
       "IsHidden": "False"
     },
     {
@@ -1335,6 +1323,18 @@
       "End": "4f7f45181b334eddbb3d2a7ba52ff20f",
       "Id": "b47ce7c70b334895ad4226413f1dcd86",
       "IsHidden": "False"
+    },
+    {
+      "Start": "5b0e178d4442484aa8bdb42a4787ac6a",
+      "End": "d943dc832fd54917adf8eab05c54894f",
+      "Id": "c298cd7fd73b4d7c888299fcac85a135",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "5b0e178d4442484aa8bdb42a4787ac6a",
+      "End": "e57b5eb5de834dbda5f7ee48edde3bc7",
+      "Id": "03c3ff0b97e845ef9f4c9a85a4058220",
+      "IsHidden": "False"
     }
   ],
   "Dependencies": [],
@@ -1346,7 +1346,6 @@
       "Nodes": [
         "f11c34ffbff94bedb593a6328c800110",
         "b710f60d8faf4c53a4eb4764c8722783",
-        "4d44e921e7f846cf8dc8fa2ce5467706",
         "94a58d4b6f6747c3ae3c3ef9238f4ae5",
         "b118431985324696a82ec47bcecff208",
         "a2fa45427ccc49a08e11d174fdbe8cdc",
@@ -1354,28 +1353,15 @@
         "75ed828310c646be8dea53c3e79221fe",
         "daed4b8076c24b6297ecf5b0b9d45fca",
         "4a552b60bc9a49989010eecc380f5062",
-        "68f4db0eea7a4aae81acc79db8f4ed45"
+        "68f4db0eea7a4aae81acc79db8f4ed45",
+        "aee34ce803094bca8b0ebc3a5896ef73"
       ]
     },
     {
-      "Name": "LLYN.B205B_K01_F02 - Kopi (2).rvt",
+      "Name": "defaultProject.rvt",
       "ReferenceType": "External",
       "Nodes": [
         "94a58d4b6f6747c3ae3c3ef9238f4ae5"
-      ]
-    },
-    {
-      "Name": "DanEDU Exportlayers.txt",
-      "ReferenceType": "External",
-      "Nodes": [
-        "d3d89b92716743c7899926104dc303b5"
-      ]
-    },
-    {
-      "Name": "DanEDU Linetypes.lin",
-      "ReferenceType": "External",
-      "Nodes": [
-        "d3d89b92716743c7899926104dc303b5"
       ]
     }
   ],
@@ -1495,16 +1481,6 @@
         "Excluded": false,
         "X": 9.91917202529703,
         "Y": 868.94599479761268
-      },
-      {
-        "Name": "View.ByType",
-        "ShowGeometry": true,
-        "Id": "4d44e921e7f846cf8dc8fa2ce5467706",
-        "IsSetAsInput": false,
-        "IsSetAsOutput": false,
-        "Excluded": false,
-        "X": 606.919172025297,
-        "Y": 869.11849479761258
       },
       {
         "Name": "Element.Name",
@@ -1675,6 +1651,16 @@
         "Excluded": true,
         "X": 9.5125276333828879,
         "Y": -266.86443301768168
+      },
+      {
+        "Name": "View.ByViewType",
+        "ShowGeometry": true,
+        "Id": "aee34ce803094bca8b0ebc3a5896ef73",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 606.919172025297,
+        "Y": 869.118494797613
       }
     ],
     "Annotations": [
@@ -1693,7 +1679,7 @@
           "66238f9bfb0348618d653bf833c3ff83",
           "b710f60d8faf4c53a4eb4764c8722783",
           "3f8e472fb6554e1bbafe3248f64d8023",
-          "4d44e921e7f846cf8dc8fa2ce5467706"
+          "aee34ce803094bca8b0ebc3a5896ef73"
         ],
         "HasNestedGroups": false,
         "Left": -0.0808279747029701,
@@ -1823,7 +1809,7 @@
         "Background": "#FFC1D676"
       }
     ],
-    "X": 173.78386877378,
+    "X": 144.28386877378,
     "Y": 150.01585433561291,
     "Zoom": 0.43546219011715082
   }

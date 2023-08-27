@@ -2,7 +2,7 @@
   "Uuid": "3c9d0464-8643-5ffe-96e5-ab1769818209",
   "IsCustomNode": false,
   "Description": "",
-  "Name": "Category",
+  "Name": "Category_R22",
   "ElementResolver": {
     "ResolutionMap": {
       "List": {
@@ -289,23 +289,14 @@
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
       "NodeType": "FunctionNode",
-      "FunctionSignature": "Orchid.RevitProject.Categories.Category.ByCategoryType@string,bool",
+      "FunctionSignature": "Orchid.RevitProject.Categories.Category.ByCategoryType@var",
       "Id": "74b14fdda4e54234a1669fe499021f34",
       "Inputs": [
         {
           "Id": "ff006f1b0b344f84a7a5dd58ec2e5fea",
           "Name": "categoryType",
-          "Description": "CategoryType as string.\n\nstring",
+          "Description": "CategoryType as enumeration type.\n\nvar\nDefault value : Orchid.Internals.Enums.Revit(\"CategoryType.Model\") (disabled)",
           "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        },
-        {
-          "Id": "1cabd3bae7fc44ebb518016224c795a4",
-          "Name": "condense",
-          "Description": "Condense to shortest feasible output?\n\nbool\nDefault value : true",
-          "UsingDefaultValue": true,
           "Level": 2,
           "UseLevels": false,
           "KeepListStructure": false
@@ -323,7 +314,7 @@
         }
       ],
       "Replication": "Auto",
-      "Description": "Get all categories by category type.\n\nCategory.ByCategoryType (categoryType: string, condense: bool = true): var[]..[]"
+      "Description": "Get all categories by category (Autodesk.Revit) ennumeration type.\n\nCategory.ByCategoryType (categoryType: var = Orchid.Internals.Enums.Revit(\"CategoryType.Model\")): Category[]"
     },
     {
       "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
@@ -357,12 +348,12 @@
     {
       "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
       "NodeType": "CodeBlockNode",
-      "Code": "\"Model\";\n\"Annotation\";\n\"AnalyticalModel\";\n\"Internal\";\n\n[\"Model\",\n\"Annotation\",\n\"AnalyticalModel\",\n\"Internal\"];",
+      "Code": "\"CategoryType\";\n\n\"Model\";\n\"Annotation\";\n\"AnalyticalModel\";\n\"Internal\";\n\n[\"Model\",\n\"Annotation\",\n\"AnalyticalModel\",\n\"Internal\"];",
       "Id": "d9b0b47338f246208634138ef14c9479",
       "Inputs": [],
       "Outputs": [
         {
-          "Id": "f16cf802aabc4b29ae2f05e545f05239",
+          "Id": "e0369cd4c1ad4a5794abf34ccb9c3691",
           "Name": "",
           "Description": "Value of expression at line 1",
           "UsingDefaultValue": false,
@@ -371,16 +362,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "52fb4ab979c34ef89400c9d62e3f279b",
-          "Name": "",
-          "Description": "Value of expression at line 2",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        },
-        {
-          "Id": "985cbf2a456648ed8c43fc9f8ada8623",
+          "Id": "d6647d3c04cd4bd3835524741eafad10",
           "Name": "",
           "Description": "Value of expression at line 3",
           "UsingDefaultValue": false,
@@ -389,7 +371,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "ee4f6276164645239a1f88664e302d50",
+          "Id": "2af4ffbf0f29435393d20f156b82ac77",
           "Name": "",
           "Description": "Value of expression at line 4",
           "UsingDefaultValue": false,
@@ -398,9 +380,27 @@
           "KeepListStructure": false
         },
         {
-          "Id": "c7ba9fbc133a424797b2a66848001ff1",
+          "Id": "e8401909ba4741b59b935fabbda82c67",
+          "Name": "",
+          "Description": "Value of expression at line 5",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "98d2f3dfdad44614ba9243e8f06ff984",
           "Name": "",
           "Description": "Value of expression at line 6",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "4401b62be1f147aebb7034117ba940f9",
+          "Name": "",
+          "Description": "Value of expression at line 8",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -413,14 +413,23 @@
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
       "NodeType": "FunctionNode",
-      "FunctionSignature": "Orchid.RevitProject.Categories.SubCategory.ByCategory@var",
+      "FunctionSignature": "Orchid.RevitProject.Categories.SubCategory.ByCategory@Revit.Application.Document,var",
       "Id": "3ff384f8bd594d9eaa2b194e5aacf377",
       "Inputs": [
         {
           "Id": "fcb2176670ee4422875545ce76ab2c98",
+          "Name": "document",
+          "Description": "Project document (rvt).\n\nDocument\nDefault value : null",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "98bcbb1cc577473ea3ec9407a01b35f7",
           "Name": "category",
           "Description": "Category.\n\nvar",
-          "UsingDefaultValue": true,
+          "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
           "KeepListStructure": false
@@ -438,7 +447,7 @@
         }
       ],
       "Replication": "Auto",
-      "Description": "Get sub categories by category in document.\n\nSubCategory.ByCategory (category: var): Category[]"
+      "Description": "Get sub categories by category in document.\n\nSubCategory.ByCategory (document: Document = null, category: var): Category[]"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
@@ -814,22 +823,13 @@
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
       "NodeType": "FunctionNode",
-      "FunctionSignature": "Orchid.RevitProject.Categories.Category.InDocument@Revit.Application.Document,bool",
+      "FunctionSignature": "Orchid.RevitProject.Categories.Category.InDocument@Revit.Application.Document",
       "Id": "7bb1cf969b2541b8b30b079f0839d242",
       "Inputs": [
         {
           "Id": "4706402785b04e839b09332b00b1ec30",
           "Name": "document",
           "Description": "Project document (rvt).\n\nDocument\nDefault value : null",
-          "UsingDefaultValue": true,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        },
-        {
-          "Id": "559ad15864c44b3c80c6f7f547d938b6",
-          "Name": "condense",
-          "Description": "Condense to shortest feasible output?\n\nbool\nDefault value : true",
           "UsingDefaultValue": true,
           "Level": 2,
           "UseLevels": false,
@@ -848,7 +848,7 @@
         }
       ],
       "Replication": "Auto",
-      "Description": "Get all categories (BuiltInCategory) in document.\n\nCategory.InDocument (document: Document = null, condense: bool = true): var[]..[]"
+      "Description": "Get all categories (BuiltInCategory) in document.\n\nCategory.InDocument (document: Document = null): Category[]"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
@@ -878,7 +878,7 @@
         }
       ],
       "Replication": "Auto",
-      "Description": "Get architecture categories in current document. Note: Does only include first level categories in the architecture category tree.\n\nCategorySet.Architecture (instance: bool = false): Category[]"
+      "Description": "Get architecture filtered categories in current document.\n\nCategorySet.Architecture (instance: bool = false): Category[]"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
@@ -908,7 +908,7 @@
         }
       ],
       "Replication": "Auto",
-      "Description": "Get structure categories in current document Note: Does only include first level categories in the structure category tree.\n\nCategorySet.Structure (instance: bool = false): Category[]"
+      "Description": "Get structure filtered categories in current document.\n\nCategorySet.Structure (instance: bool = false): Category[]"
     },
     {
       "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
@@ -1085,7 +1085,7 @@
         }
       ],
       "Replication": "Auto",
-      "Description": "Get mechanical categories in current document Note: Does only include first level categories in the mechanical category tree.\n\nCategorySet.Mechanical (instance: bool = false): Category[]"
+      "Description": "Get mechanical filtered categories in current document.\n\nCategorySet.Mechanical (instance: bool = false): Category[]"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
@@ -1115,7 +1115,7 @@
         }
       ],
       "Replication": "Auto",
-      "Description": "Get electrical categories in current document Note: Does only include first level categories in the electrical category tree.\n\nCategorySet.Electrical (instance: bool = false): Category[]"
+      "Description": "Get electrical filtered categories in current document.\n\nCategorySet.Electrical (instance: bool = false): Category[]"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
@@ -1145,7 +1145,7 @@
         }
       ],
       "Replication": "Auto",
-      "Description": "Get piping categories in current document Note: Does only include first level categories in the piping category tree.\n\nCategorySet.Piping (instance: bool = false): Category[]"
+      "Description": "Get piping filtered categories in current document.\n\nCategorySet.Piping (instance: bool = false): Category[]"
     },
     {
       "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
@@ -1262,7 +1262,7 @@
         }
       ],
       "Replication": "Auto",
-      "Description": "Get infrastructure categories in current document. Note: Does only include first level categories in the infrastructure category tree.\n\nCategorySet.Infrastructure (instance: bool = false): Category[]"
+      "Description": "Get infrastructure filtered categories in current document.\n\nCategorySet.Infrastructure (instance: bool = false): Category[]"
     },
     {
       "ConcreteType": "CoreNodeModels.Input.BoolSelector, CoreNodeModels",
@@ -1283,6 +1283,45 @@
       ],
       "Replication": "Disabled",
       "Description": "Selection between a true and false."
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "Orchid.AdeskApp.Revit.EnumByName@string,string",
+      "Id": "b1057d34a4b3432cab6d17326757b3cb",
+      "Inputs": [
+        {
+          "Id": "5b32857e1df94d029250cca1c283614c",
+          "Name": "enumType",
+          "Description": "Name of the Revit enumeration type.\n\nstring",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "53b1e01b3ab7433ba2240d73ec36e015",
+          "Name": "valueName",
+          "Description": "Name of the enumeration value.\n\nstring",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "096f650e561a4068b4953726dc9a95b4",
+          "Name": "Enum",
+          "Description": "Revit enumeration type.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Get Autodesk Revit enumeration value by name and enumeration type.\n\nRevit.EnumByName (enumType: string, valueName: string): var[]..[]"
     }
   ],
   "Connectors": [
@@ -1312,9 +1351,14 @@
       "Id": "e597c85bb73540be8d1ef57135a19823"
     },
     {
-      "Start": "f16cf802aabc4b29ae2f05e545f05239",
-      "End": "ff006f1b0b344f84a7a5dd58ec2e5fea",
-      "Id": "4674278bc2a748128e504994aa464977"
+      "Start": "e0369cd4c1ad4a5794abf34ccb9c3691",
+      "End": "5b32857e1df94d029250cca1c283614c",
+      "Id": "224d528bf1cf4380bad279e612a10488"
+    },
+    {
+      "Start": "d6647d3c04cd4bd3835524741eafad10",
+      "End": "53b1e01b3ab7433ba2240d73ec36e015",
+      "Id": "1ff01cfcf9ea4d92aab6e8b7fe5009fe"
     },
     {
       "Start": "25fe03bc866a443595bfc047e64962f0",
@@ -1328,8 +1372,8 @@
     },
     {
       "Start": "26e251b42eaf4a668b9cb27b8695fbe1",
-      "End": "fcb2176670ee4422875545ce76ab2c98",
-      "Id": "59ae9b53a2bb422a9b555fac3d67f421"
+      "End": "98bcbb1cc577473ea3ec9407a01b35f7",
+      "Id": "7d5b52488e88444693a409691f53e55e"
     },
     {
       "Start": "012610f2337d4286ae9fd605f12a6b11",
@@ -1465,6 +1509,11 @@
       "Start": "e3b44a847e224ec9b02e8320fc762059",
       "End": "9af428cdfd4844a4bec55e51d114ef3e",
       "Id": "7a4e99dd4b8e4ebbae3b90e7c2566e00"
+    },
+    {
+      "Start": "096f650e561a4068b4953726dc9a95b4",
+      "End": "ff006f1b0b344f84a7a5dd58ec2e5fea",
+      "Id": "c3bcb8825ebe4a4b9a06bceed9661a54"
     }
   ],
   "Dependencies": [],
@@ -1490,6 +1539,14 @@
         "51c10a5f9fe840b08cf384db1db819d5",
         "f0a43c7f09b74b43ba3983288cc27f8c",
         "cee634410c554595985aecef5d309dc9"
+      ]
+    },
+    {
+      "Name": "Orchid",
+      "Version": "212.4.0.5985",
+      "ReferenceType": "Package",
+      "Nodes": [
+        "b1057d34a4b3432cab6d17326757b3cb"
       ]
     }
   ],
@@ -1646,8 +1703,8 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": -237.49244761528007,
-        "Y": 50.020159503335663
+        "X": -589.981803562242,
+        "Y": 53.20704118453358
       },
       {
         "ShowGeometry": true,
@@ -1666,8 +1723,8 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": -691.401888926946,
-        "Y": 949.922826456765
+        "X": -691.655979370872,
+        "Y": 975.84005173723529
       },
       {
         "ShowGeometry": true,
@@ -1676,8 +1733,8 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": -345.1638775606184,
-        "Y": 949.922826456765
+        "X": -345.4179680045446,
+        "Y": 975.84005173723529
       },
       {
         "ShowGeometry": true,
@@ -1938,6 +1995,16 @@
         "Excluded": false,
         "X": 1409.84586084246,
         "Y": 952.956861998573
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "o|Revit.EnumByName",
+        "Id": "b1057d34a4b3432cab6d17326757b3cb",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": -313.09739939691849,
+        "Y": 53.567041184533579
       }
     ],
     "Annotations": [
@@ -2067,10 +2134,41 @@
         "InitialHeight": 773.60013952451709,
         "TextblockHeight": 43.0,
         "Background": "#FFC1D676"
+      },
+      {
+        "Id": "9821c35bcf9f451ba365f6ebc5c976e1",
+        "Title": "enum",
+        "Nodes": [
+          "d9b0b47338f246208634138ef14c9479",
+          "b1057d34a4b3432cab6d17326757b3cb"
+        ],
+        "Left": -599.981803562242,
+        "Top": 0.20704118453357978,
+        "Width": 519.88440416532353,
+        "Height": 313.0,
+        "FontSize": 36.0,
+        "InitialTop": 53.20704118453358,
+        "InitialHeight": 290.0,
+        "TextblockHeight": 43.0,
+        "Background": "#FFFF7BAC"
+      },
+      {
+        "Id": "9512988fe9fa4dcda5bdde0ee1dd9605",
+        "Title": "File: defaultProject",
+        "Nodes": [],
+        "Left": 0.049696140424231317,
+        "Top": -59.594149746222584,
+        "Width": 0.0,
+        "Height": 0.0,
+        "FontSize": 36.0,
+        "InitialTop": 0.0,
+        "InitialHeight": 0.0,
+        "TextblockHeight": 0.0,
+        "Background": "#FFC1D676"
       }
     ],
-    "X": 461.71389679472782,
-    "Y": 8.2270398389616446,
-    "Zoom": 0.47532129993542632
+    "X": 436.52711565607137,
+    "Y": 56.893045804100048,
+    "Zoom": 0.45126989677044066
   }
 }

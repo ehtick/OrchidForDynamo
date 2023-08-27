@@ -2,7 +2,7 @@
   "Uuid": "3c9d0464-8643-5ffe-96e5-ab1769818209",
   "IsCustomNode": false,
   "Description": "",
-  "Name": "Category",
+  "Name": "Category_R23",
   "ElementResolver": {
     "ResolutionMap": {
       "List": {
@@ -1034,22 +1034,13 @@
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
       "NodeType": "FunctionNode",
-      "FunctionSignature": "Orchid.RevitProject.Categories.Category.InDocument@Revit.Application.Document,bool",
+      "FunctionSignature": "Orchid.RevitProject.Categories.Category.InDocument@Revit.Application.Document",
       "Id": "34bbde92fbc949e69683bd25ab337a33",
       "Inputs": [
         {
           "Id": "46b1ac1235904142888512e730ace55b",
           "Name": "document",
           "Description": "Project document (rvt).\n\nDocument\nDefault value : null",
-          "UsingDefaultValue": true,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        },
-        {
-          "Id": "dc6196f0615e451fbfaf543e3616acd4",
-          "Name": "condense",
-          "Description": "Condense to shortest feasible output?\n\nbool\nDefault value : true",
           "UsingDefaultValue": true,
           "Level": 2,
           "UseLevels": false,
@@ -1068,7 +1059,7 @@
         }
       ],
       "Replication": "Auto",
-      "Description": "Get all categories (BuiltInCategory) in document.\n\nCategory.InDocument (document: Document = null, condense: bool = true): var[]..[]"
+      "Description": "Get all categories (BuiltInCategory) in document.\n\nCategory.InDocument (document: Document = null): Category[]"
     },
     {
       "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
@@ -1161,23 +1152,14 @@
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
       "NodeType": "FunctionNode",
-      "FunctionSignature": "Orchid.RevitProject.Categories.Category.ByCategoryType@string,bool",
+      "FunctionSignature": "Orchid.RevitProject.Categories.Category.ByCategoryType@var",
       "Id": "34127b807a9e420ca8e3773140177dab",
       "Inputs": [
         {
           "Id": "f99e56ab53ab4311bcb1645c88fea201",
           "Name": "categoryType",
-          "Description": "CategoryType as string.\n\nstring",
+          "Description": "CategoryType as enumeration type.\n\nvar\nDefault value : Orchid.Internals.Enums.Revit(\"CategoryType.Model\") (disabled)",
           "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        },
-        {
-          "Id": "2b631b898c6343c7afd845a2519f027b",
-          "Name": "condense",
-          "Description": "Condense to shortest feasible output?\n\nbool\nDefault value : true",
-          "UsingDefaultValue": true,
           "Level": 2,
           "UseLevels": false,
           "KeepListStructure": false
@@ -1195,17 +1177,17 @@
         }
       ],
       "Replication": "Auto",
-      "Description": "Get all categories by category type.\n\nCategory.ByCategoryType (categoryType: string, condense: bool = true): var[]..[]"
+      "Description": "Get all categories by category (Autodesk.Revit) ennumeration type.\n\nCategory.ByCategoryType (categoryType: var = Orchid.Internals.Enums.Revit(\"CategoryType.Model\")): Category[]"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
       "NodeType": "CodeBlockNode",
-      "Code": "\"Model\";\n\"Annotation\";\n\"AnalyticalModel\";\n\"Internal\";\n\n[\"Model\",\n\"Annotation\",\n\"AnalyticalModel\",\n\"Internal\"];",
+      "Code": "\"CategoryType\";\n\n\"Model\";\n\"Annotation\";\n\"AnalyticalModel\";\n\"Internal\";\n\n[\"Model\",\n\"Annotation\",\n\"AnalyticalModel\",\n\"Internal\"];",
       "Id": "73230f8c31f14fdf92173d82bc327346",
       "Inputs": [],
       "Outputs": [
         {
-          "Id": "c382099bf7a54c8aaed88b5318dc5240",
+          "Id": "0b15697dfcda4d198141d99a6e7e57e8",
           "Name": "",
           "Description": "Value of expression at line 1",
           "UsingDefaultValue": false,
@@ -1214,16 +1196,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "1b200f6323354da7ae0d29709bd47ee7",
-          "Name": "",
-          "Description": "Value of expression at line 2",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        },
-        {
-          "Id": "07567bfdf00e4885804b5afbe554c70c",
+          "Id": "8c0becd0669a4dc29e16144507a61dd1",
           "Name": "",
           "Description": "Value of expression at line 3",
           "UsingDefaultValue": false,
@@ -1232,7 +1205,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "d889041f789143f2be514c64693d34af",
+          "Id": "03659fa7b6bc47549bc8cb58e637abbb",
           "Name": "",
           "Description": "Value of expression at line 4",
           "UsingDefaultValue": false,
@@ -1241,9 +1214,27 @@
           "KeepListStructure": false
         },
         {
-          "Id": "c2fcc59f7c3a48b6a6b50d642fb10fb5",
+          "Id": "f8b29c68cfdc4aba83008950a1f74b84",
+          "Name": "",
+          "Description": "Value of expression at line 5",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "b2b10a686edf435a918cda559997956e",
           "Name": "",
           "Description": "Value of expression at line 6",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "36e03ddd48cc472fb9a253355515b956",
+          "Name": "",
+          "Description": "Value of expression at line 8",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -1292,6 +1283,45 @@
       ],
       "Replication": "Disabled",
       "Description": "Allows for DesignScript code to be authored directly"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "Orchid.AdeskApp.Revit.EnumByName@string,string",
+      "Id": "c1eec23239264a91876c82210c08847f",
+      "Inputs": [
+        {
+          "Id": "7988ce1e4aed418abb97264c217cf6f1",
+          "Name": "enumType",
+          "Description": "Name of the Revit enumeration type.\n\nstring",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "7912bb33b4f24c249acd4398ce08a956",
+          "Name": "valueName",
+          "Description": "Name of the enumeration value.\n\nstring",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "d544e890ee534c42866018df4708a1aa",
+          "Name": "Enum",
+          "Description": "Revit enumeration type.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Get Autodesk Revit enumeration value by name and enumeration type.\n\nRevit.EnumByName (enumType: string, valueName: string): var[]..[]"
     }
   ],
   "Connectors": [
@@ -1500,9 +1530,15 @@
       "IsHidden": "False"
     },
     {
-      "Start": "c382099bf7a54c8aaed88b5318dc5240",
-      "End": "f99e56ab53ab4311bcb1645c88fea201",
-      "Id": "4f570148b59348548b943145b873078f",
+      "Start": "0b15697dfcda4d198141d99a6e7e57e8",
+      "End": "7988ce1e4aed418abb97264c217cf6f1",
+      "Id": "6fc662a96af4434b9fd2efc05605dc68",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "8c0becd0669a4dc29e16144507a61dd1",
+      "End": "7912bb33b4f24c249acd4398ce08a956",
+      "Id": "f44ed4deb5654f2aa9eb06e4ea9e8ed1",
       "IsHidden": "False"
     },
     {
@@ -1510,13 +1546,19 @@
       "End": "9500091a30a34386a2aed7b8885c1bff",
       "Id": "ca554747bf4843cdb4bf84b29277f21f",
       "IsHidden": "False"
+    },
+    {
+      "Start": "d544e890ee534c42866018df4708a1aa",
+      "End": "f99e56ab53ab4311bcb1645c88fea201",
+      "Id": "2cf9dc702b5f4023afbdd05a3370c427",
+      "IsHidden": "False"
     }
   ],
   "Dependencies": [],
   "NodeLibraryDependencies": [
     {
       "Name": "Orchid",
-      "Version": "216.3.0.5794",
+      "Version": "216.3.0.5985",
       "ReferenceType": "Package",
       "Nodes": [
         "c6eb0dcb775f4819976c445973322478",
@@ -1534,7 +1576,8 @@
         "a3fea6ceeb334c3ab215f92931d1be80",
         "34bbde92fbc949e69683bd25ab337a33",
         "35437d03270047a7891699b7d347fe98",
-        "34127b807a9e420ca8e3773140177dab"
+        "34127b807a9e420ca8e3773140177dab",
+        "c1eec23239264a91876c82210c08847f"
       ]
     }
   ],
@@ -1586,404 +1629,414 @@
     "ConnectorPins": [],
     "NodeViews": [
       {
+        "Name": "Watch",
+        "ShowGeometry": true,
         "Id": "5eb6e3d646f643008e536cb1dd1353c4",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
-        "Name": "Watch",
-        "ShowGeometry": true,
         "Excluded": false,
         "X": 2398.7254722816833,
         "Y": 1642.3178971913817
       },
       {
+        "Name": "Watch",
+        "ShowGeometry": true,
         "Id": "42c3a289b5aa42478be197b475fdd854",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
-        "Name": "Watch",
-        "ShowGeometry": true,
         "Excluded": false,
         "X": 2766.3426959579729,
         "Y": 1642.3178971913817
       },
       {
+        "Name": "CategorySet.Architecture",
+        "ShowGeometry": true,
         "Id": "c6eb0dcb775f4819976c445973322478",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
-        "Name": "CategorySet.Architecture",
-        "ShowGeometry": true,
         "Excluded": false,
         "X": 2031.1082486053931,
         "Y": 1001.4633579681617
       },
       {
+        "Name": "CategorySet.Structure",
+        "ShowGeometry": true,
         "Id": "1bc9677d9b8f41258769f997d7c7e695",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
-        "Name": "CategorySet.Structure",
-        "ShowGeometry": true,
         "Excluded": false,
         "X": 2398.7254722816833,
         "Y": 1001.4633579681617
       },
       {
+        "Name": "Watch",
+        "ShowGeometry": true,
         "Id": "bd8ac1d5e251424b8abff38d7e5678c9",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
-        "Name": "Watch",
-        "ShowGeometry": true,
         "Excluded": false,
         "X": 2031.1082486053931,
         "Y": 1153.7356121439518
       },
       {
+        "Name": "Watch",
+        "ShowGeometry": true,
         "Id": "a45e930697434a328d55b39b1ac4cff6",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
-        "Name": "Watch",
-        "ShowGeometry": true,
         "Excluded": false,
         "X": 2398.7254722816833,
         "Y": 1153.7356121439518
       },
       {
+        "Name": "Watch",
+        "ShowGeometry": true,
         "Id": "5b11a126466b45ea8f18e7d18ec7a584",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
-        "Name": "Watch",
-        "ShowGeometry": true,
         "Excluded": false,
         "X": 2766.3426959579729,
         "Y": 1153.7356121439518
       },
       {
+        "Name": "CategorySet.Infrastructure",
+        "ShowGeometry": true,
         "Id": "e5c336d806734a758b864542f5676ff0",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
-        "Name": "CategorySet.Infrastructure",
-        "ShowGeometry": true,
         "Excluded": false,
         "X": 2766.3426959579729,
         "Y": 1001.4633579681617
       },
       {
+        "Name": "CategorySet.Mechanical",
+        "ShowGeometry": true,
         "Id": "3fab2e16e4044e61bbe8b2a2deccc200",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
-        "Name": "CategorySet.Mechanical",
-        "ShowGeometry": true,
         "Excluded": false,
         "X": 2031.1082486053931,
         "Y": 1490.2453615964216
       },
       {
+        "Name": "CategorySet.Electrical",
+        "ShowGeometry": true,
         "Id": "39ab68454fc3414dbac090111e0584f3",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
-        "Name": "CategorySet.Electrical",
-        "ShowGeometry": true,
         "Excluded": false,
         "X": 2398.7254722816833,
         "Y": 1490.2453615964216
       },
       {
+        "Name": "CategorySet.Piping",
+        "ShowGeometry": true,
         "Id": "9fd8a0012cf14be39f628d71424dee5f",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
-        "Name": "CategorySet.Piping",
-        "ShowGeometry": true,
         "Excluded": false,
         "X": 2766.3426959579729,
         "Y": 1490.2453615964216
       },
       {
+        "Name": "Watch",
+        "ShowGeometry": true,
         "Id": "fe34e0d900c64ad6a84b78ead8f2e708",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
-        "Name": "Watch",
-        "ShowGeometry": true,
         "Excluded": false,
         "X": 2031.1082486053931,
         "Y": 1642.3178971913817
       },
       {
+        "Name": "Boolean",
+        "ShowGeometry": true,
         "Id": "3d2288fb60af401b9434025844a8cb14",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
-        "Name": "Boolean",
-        "ShowGeometry": true,
         "Excluded": false,
         "X": 1742.0852044604931,
         "Y": 1397.4423571840059
       },
       {
+        "Name": "Watch",
+        "ShowGeometry": true,
         "Id": "04b6031067be459bbcfbf249f4841fd9",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
-        "Name": "Watch",
-        "ShowGeometry": true,
         "Excluded": false,
         "X": 1451.515341472325,
         "Y": 453.72255088354279
       },
       {
+        "Name": "Watch",
+        "ShowGeometry": true,
         "Id": "59ac48c89f1f4434b34e5caf67c9f735",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
-        "Name": "Watch",
-        "ShowGeometry": true,
         "Excluded": false,
         "X": 1792.4529434649,
         "Y": 453.722550883543
       },
       {
+        "Name": "Watch",
+        "ShowGeometry": true,
         "Id": "ba4da892b6164e2b84da1b9889ebec7b",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
-        "Name": "Watch",
-        "ShowGeometry": true,
         "Excluded": false,
         "X": 1110.57773947975,
         "Y": 453.72255088354279
       },
       {
+        "Name": "Watch",
+        "ShowGeometry": true,
         "Id": "bff35466b4f64c20911b114cf98b8a22",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
-        "Name": "Watch",
-        "ShowGeometry": true,
         "Excluded": false,
         "X": 1330.4889601149621,
         "Y": 1145.6811511769006
       },
       {
+        "Name": "SubCategory.ByCategory",
+        "ShowGeometry": true,
         "Id": "7ba7224a1ce840e9b1fa2e53e3876eb2",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
-        "Name": "SubCategory.ByCategory",
-        "ShowGeometry": true,
         "Excluded": false,
         "X": 10.488960114962083,
         "Y": 1069.5949011769007
       },
       {
+        "Name": "SubCategory.ByName",
+        "ShowGeometry": true,
         "Id": "45a87d269f214e1bbc21071f281c8dfd",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
-        "Name": "SubCategory.ByName",
-        "ShowGeometry": true,
         "Excluded": false,
         "X": 994.48896011496208,
         "Y": 993.6811511769007
       },
       {
+        "Name": "Watch",
+        "ShowGeometry": true,
         "Id": "bcf48ee5de97451793841f7e4e8e56c4",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
-        "Name": "Watch",
-        "ShowGeometry": true,
         "Excluded": false,
         "X": 1330.4889601149621,
         "Y": 993.6811511769007
       },
       {
+        "Name": "Code Block",
+        "ShowGeometry": true,
         "Id": "18dd09ecb64a4baab8d90699c151cb17",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
-        "Name": "Code Block",
-        "ShowGeometry": true,
         "Excluded": false,
         "X": 372.48896011496208,
         "Y": 993.50865117690068
       },
       {
+        "Name": "String from Object",
+        "ShowGeometry": true,
         "Id": "0b340476537a44e68341133302df6a13",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
-        "Name": "String from Object",
-        "ShowGeometry": true,
         "Excluded": false,
         "X": 683.48896011496208,
         "Y": 993.6811511769007
       },
       {
+        "Name": "SubCategory.ByName",
+        "ShowGeometry": true,
         "Id": "bc0997d28d3d4f10b37ba2e3c8e8f602",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
-        "Name": "SubCategory.ByName",
-        "ShowGeometry": true,
         "Excluded": false,
         "X": 636.46305716861048,
         "Y": 1613.7733690390198
       },
       {
+        "Name": "Watch",
+        "ShowGeometry": true,
         "Id": "0864762c8f114639b6ff42980f830c3f",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
-        "Name": "Watch",
-        "ShowGeometry": true,
         "Excluded": false,
         "X": 991.46305716861048,
         "Y": 1626.7733690390198
       },
       {
+        "Name": "SubCategory.Create",
+        "ShowGeometry": true,
         "Id": "c98915ad5a314e83ae556ceaca7c4423",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
-        "Name": "SubCategory.Create",
-        "ShowGeometry": true,
         "Excluded": false,
         "X": 281.46305716861053,
         "Y": 1825.7733690390198
       },
       {
+        "Name": "SubCategory.Delete",
+        "ShowGeometry": true,
         "Id": "06ac9fb4b2f0456ea6cb78c75f23736c",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
-        "Name": "SubCategory.Delete",
-        "ShowGeometry": true,
         "Excluded": false,
         "X": 636.46305716861048,
         "Y": 1791.7733690390198
       },
       {
+        "Name": "Watch",
+        "ShowGeometry": true,
         "Id": "246e79bf26ab48e89ef2fcd1356fa718",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
-        "Name": "Watch",
-        "ShowGeometry": true,
         "Excluded": false,
         "X": 991.46305716861048,
         "Y": 1778.7733690390198
       },
       {
+        "Name": "Category.DeleteImported",
+        "ShowGeometry": true,
         "Id": "b3c3a8942c844ab2b6a7c94822ed6c3c",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
-        "Name": "Category.DeleteImported",
-        "ShowGeometry": true,
         "Excluded": true,
         "X": 10.0812025076507,
         "Y": 690.935625577825
       },
       {
+        "Name": "Code Block",
+        "ShowGeometry": true,
         "Id": "58094d87622c48e3a0144e0a3d268b57",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
-        "Name": "Code Block",
-        "ShowGeometry": true,
         "Excluded": false,
         "X": 10.463057168610646,
         "Y": 1791.60086903902
       },
       {
+        "Name": "Watch",
+        "ShowGeometry": true,
         "Id": "8239ab950e62460fa38f6861d9ec5fe3",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
-        "Name": "Watch",
-        "ShowGeometry": true,
         "Excluded": false,
         "X": 1792.4529434649,
         "Y": 65.8704375912725
       },
       {
+        "Name": "List.GroupByKey",
+        "ShowGeometry": true,
         "Id": "af5466de062a474cbddd45515704698a",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
-        "Name": "List.GroupByKey",
-        "ShowGeometry": true,
         "Excluded": false,
         "X": 1470.9141503166302,
         "Y": 184.98714230676541
       },
       {
+        "Name": "Category.CategoryType",
+        "ShowGeometry": true,
         "Id": "a3fea6ceeb334c3ab215f92931d1be80",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
-        "Name": "Category.CategoryType",
-        "ShowGeometry": true,
         "Excluded": false,
         "X": 1110.57773947975,
         "Y": 289.0004152710768
       },
       {
+        "Name": "Category.InDocument",
+        "ShowGeometry": true,
         "Id": "34bbde92fbc949e69683bd25ab337a33",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
-        "Name": "Category.InDocument",
-        "ShowGeometry": true,
         "Excluded": false,
         "X": 769.91415031663007,
         "Y": 184.98714230676541
       },
       {
+        "Name": "Watch",
+        "ShowGeometry": true,
         "Id": "acb5f94ce8df4f5ba61cd401046be751",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
-        "Name": "Watch",
-        "ShowGeometry": true,
         "Excluded": false,
         "X": 334.08120250765069,
         "Y": 534.04779533378519
       },
       {
+        "Name": "Category.Imported",
+        "ShowGeometry": true,
         "Id": "35437d03270047a7891699b7d347fe98",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
-        "Name": "Category.Imported",
-        "ShowGeometry": true,
         "Excluded": false,
         "X": 10.0812025076507,
         "Y": 534.047795333785
       },
       {
+        "Name": "Watch",
+        "ShowGeometry": true,
         "Id": "6d4cb8e1e6894952aeda75d9750b9db0",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
-        "Name": "Watch",
-        "ShowGeometry": true,
         "Excluded": false,
         "X": 375.04188415893503,
         "Y": 66.415269896665734
       },
       {
+        "Name": "Category.ByCategoryType",
+        "ShowGeometry": true,
         "Id": "34127b807a9e420ca8e3773140177dab",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
-        "Name": "Category.ByCategoryType",
-        "ShowGeometry": true,
         "Excluded": false,
-        "X": 10.041884158935,
+        "X": 10.041884158935005,
         "Y": 66.4152698966657
       },
       {
+        "Name": "Code Block",
+        "ShowGeometry": true,
         "Id": "73230f8c31f14fdf92173d82bc327346",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
-        "Name": "Code Block",
-        "ShowGeometry": true,
         "Excluded": false,
-        "X": -326.266798679381,
-        "Y": 66.4152698966657
+        "X": -662.96971687430687,
+        "Y": 73.635689024519223
       },
       {
+        "Name": "Built-in Categories",
+        "ShowGeometry": true,
         "Id": "a5031044c4fa4aa1acdade849ffd0ed1",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
-        "Name": "Built-in Categories",
-        "ShowGeometry": true,
         "Excluded": false,
         "X": -779.72047732763008,
         "Y": 1103.7510996990629
       },
       {
+        "Name": "Natural Category Name",
+        "ShowGeometry": true,
         "Id": "649a10fa44ec4d498f93d257f6c7ecf9",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
-        "Name": "Natural Category Name",
-        "ShowGeometry": true,
         "Excluded": false,
         "X": -389.266798679381,
         "Y": 1103.7510996990629
+      },
+      {
+        "Name": "Revit.EnumByName",
+        "ShowGeometry": true,
+        "Id": "c1eec23239264a91876c82210c08847f",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": -337.96971687430687,
+        "Y": 73.153189024519207
       }
     ],
     "Annotations": [
@@ -2092,7 +2145,7 @@
         "Height": 516.1724999999999,
         "FontSize": 30.0,
         "InitialTop": 993.50865117690068,
-        "InitialHeight": 329.87406009621191,
+        "InitialHeight": 297.1724999999999,
         "TextblockHeight": 56.0,
         "Background": "#FFA4E1FF"
       },
@@ -2125,7 +2178,7 @@
       {
         "Id": "2f51cdf51d194055b61ef233a31c7f12",
         "Title": "Category --> ByCategoryType",
-        "DescriptionText": "",
+        "DescriptionText": "File: defaultProject",
         "IsExpanded": true,
         "WidthAdjustment": 0.0,
         "HeightAdjustment": 0.0,
@@ -2134,7 +2187,7 @@
           "6d4cb8e1e6894952aeda75d9750b9db0"
         ],
         "HasNestedGroups": false,
-        "Left": 0.04188415893499986,
+        "Left": 0.041884158935005189,
         "Top": 0.41526989666570557,
         "Width": 662.00000000000011,
         "Height": 364.0,
@@ -2143,10 +2196,32 @@
         "InitialHeight": 145.00000000000003,
         "TextblockHeight": 56.0,
         "Background": "#FFFFAA45"
+      },
+      {
+        "Id": "d9549be8b27b4a019713374029f8afcb",
+        "Title": "enum",
+        "DescriptionText": "",
+        "IsExpanded": true,
+        "WidthAdjustment": 0.0,
+        "HeightAdjustment": 0.0,
+        "Nodes": [
+          "73230f8c31f14fdf92173d82bc327346",
+          "c1eec23239264a91876c82210c08847f"
+        ],
+        "HasNestedGroups": false,
+        "Left": -672.96971687430687,
+        "Top": 0.15318902451920735,
+        "Width": 573.0,
+        "Height": 362.48250000000007,
+        "FontSize": 36.0,
+        "InitialTop": 73.153189024519207,
+        "InitialHeight": 322.52445510458597,
+        "TextblockHeight": 63.0,
+        "Background": "#FFFF7BAC"
       }
     ],
-    "X": 340.2106327466455,
-    "Y": 95.4642961235956,
-    "Zoom": 0.39784851336705163
+    "X": 359.38209854426862,
+    "Y": 70.401603050366063,
+    "Zoom": 0.42243612694792138
   }
 }
