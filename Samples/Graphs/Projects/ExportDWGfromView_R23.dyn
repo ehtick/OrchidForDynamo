@@ -98,7 +98,7 @@
       "Inputs": [],
       "Outputs": [
         {
-          "Id": "bf9a1289309b4655a940a372ca51c02a",
+          "Id": "66717e48b5bc4377b62f8390497041f1",
           "Name": "",
           "Description": "Value of expression at line 2",
           "UsingDefaultValue": false,
@@ -209,46 +209,25 @@
       "Description": "Selection between a true and false."
     },
     {
-      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
-      "NodeType": "FunctionNode",
-      "FunctionSignature": "Orchid.RevitProject.Views.ViewType.ByName@string",
-      "Id": "b710f60d8faf4c53a4eb4764c8722783",
-      "Inputs": [
-        {
-          "Id": "3966bd31d27b451dbcb1235f2b5a0b9c",
-          "Name": "name",
-          "Description": "View name as string.\n\nstring",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        }
-      ],
-      "Outputs": [
-        {
-          "Id": "18a0d623f78b4dbeb79e8339c982ffc7",
-          "Name": "Enum",
-          "Description": "ViewType as Revit enumeration type.",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        }
-      ],
-      "Replication": "Auto",
-      "Description": "Get ViewType (Autodesk.Revit) enumeration value by name.\n\nViewType.ByName (name: string): var"
-    },
-    {
       "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
       "NodeType": "CodeBlockNode",
-      "Code": "\"FloorPlan\";",
+      "Code": "\"ViewType\";\n\"FloorPlan\";",
       "Id": "3f8e472fb6554e1bbafe3248f64d8023",
       "Inputs": [],
       "Outputs": [
         {
-          "Id": "2a2cac9cb4504ef9a9cc8dac179ad798",
+          "Id": "5e55e066bede4cc796c05fcce3a2be29",
           "Name": "",
           "Description": "Value of expression at line 1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "2c5cf3d049ae46ab9af79decc49a6eec",
+          "Name": "",
+          "Description": "Value of expression at line 2",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -1118,11 +1097,50 @@
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
       "NodeType": "FunctionNode",
-      "FunctionSignature": "Orchid.RevitProject.Views.View.ByViewType@var,bool",
-      "Id": "aee34ce803094bca8b0ebc3a5896ef73",
+      "FunctionSignature": "Orchid.AdeskApp.Revit.EnumByName@string,string",
+      "Id": "a60c9722cb6c4b02b0ac1dff2405cb1c",
       "Inputs": [
         {
-          "Id": "db92800e64e744e394b53a12c5b8d567",
+          "Id": "502b74a276d8492584162685582f3d7b",
+          "Name": "enumType",
+          "Description": "Name of the Revit enumeration type.\n\nstring",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "03ae92f909ea4e4b83a127c5c90619ed",
+          "Name": "valueName",
+          "Description": "Name of the enumeration value.\n\nstring",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "b714eff33b044c868e9b157352533bbb",
+          "Name": "Enum",
+          "Description": "Revit enumeration type.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Get Autodesk Revit enumeration value by name and enumeration type.\n\nRevit.EnumByName (enumType: string, valueName: string): var[]..[]"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "Orchid.RevitProject.Views.View.ByViewType@var,bool",
+      "Id": "a105c00013f548828b51e240b287e4cd",
+      "Inputs": [
+        {
+          "Id": "67da128ff8204415982f32f66267bd73",
           "Name": "viewType",
           "Description": "ViewType as enumeration type.\n\nvar",
           "UsingDefaultValue": false,
@@ -1131,7 +1149,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "a82583ef807143bd9235857c674b1743",
+          "Id": "9b88d8577d2f40ada8a844574af7f007",
           "Name": "condense",
           "Description": "Condense to shortest feasible output?\n\nbool\nDefault value : true",
           "UsingDefaultValue": true,
@@ -1142,7 +1160,7 @@
       ],
       "Outputs": [
         {
-          "Id": "5b0e178d4442484aa8bdb42a4787ac6a",
+          "Id": "62f79ab04ab7477cb48b45b677e998d5",
           "Name": "View",
           "Description": "View.",
           "UsingDefaultValue": false,
@@ -1152,7 +1170,7 @@
         }
       ],
       "Replication": "Auto",
-      "Description": "All view by ViewType in document.\n\nView.ByViewType (viewType: var, condense: bool = true): var[]..[]"
+      "Description": "All view by ViewType in current document.\n\nView.ByViewType (viewType: var, condense: bool = true): var[]..[]"
     }
   ],
   "Connectors": [
@@ -1169,7 +1187,7 @@
       "IsHidden": "False"
     },
     {
-      "Start": "bf9a1289309b4655a940a372ca51c02a",
+      "Start": "66717e48b5bc4377b62f8390497041f1",
       "End": "b859ff571054486a9bde1b9ccba2d30a",
       "Id": "cf7592ba86f246758877c590134d28b3",
       "IsHidden": "False"
@@ -1193,15 +1211,15 @@
       "IsHidden": "False"
     },
     {
-      "Start": "18a0d623f78b4dbeb79e8339c982ffc7",
-      "End": "db92800e64e744e394b53a12c5b8d567",
-      "Id": "86c1a90cab0d4234bc278e62cd29e9ba",
+      "Start": "5e55e066bede4cc796c05fcce3a2be29",
+      "End": "502b74a276d8492584162685582f3d7b",
+      "Id": "92e7389fc2fd48dab47c0e2b7b813559",
       "IsHidden": "False"
     },
     {
-      "Start": "2a2cac9cb4504ef9a9cc8dac179ad798",
-      "End": "3966bd31d27b451dbcb1235f2b5a0b9c",
-      "Id": "fa5dc5dc384842929448dc666fd304ae",
+      "Start": "2c5cf3d049ae46ab9af79decc49a6eec",
+      "End": "03ae92f909ea4e4b83a127c5c90619ed",
+      "Id": "5d78e95f2c4b49a7987fe77d5bdd6d88",
       "IsHidden": "False"
     },
     {
@@ -1325,15 +1343,21 @@
       "IsHidden": "False"
     },
     {
-      "Start": "5b0e178d4442484aa8bdb42a4787ac6a",
-      "End": "d943dc832fd54917adf8eab05c54894f",
-      "Id": "c298cd7fd73b4d7c888299fcac85a135",
+      "Start": "b714eff33b044c868e9b157352533bbb",
+      "End": "67da128ff8204415982f32f66267bd73",
+      "Id": "2213a4b8b612430e9fae6d0b6620f822",
       "IsHidden": "False"
     },
     {
-      "Start": "5b0e178d4442484aa8bdb42a4787ac6a",
+      "Start": "62f79ab04ab7477cb48b45b677e998d5",
+      "End": "d943dc832fd54917adf8eab05c54894f",
+      "Id": "b0d87cbd384d428887905ca6a1021aa8",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "62f79ab04ab7477cb48b45b677e998d5",
       "End": "e57b5eb5de834dbda5f7ee48edde3bc7",
-      "Id": "03c3ff0b97e845ef9f4c9a85a4058220",
+      "Id": "973459c1e2fb4fda8669abc597b04353",
       "IsHidden": "False"
     }
   ],
@@ -1341,11 +1365,10 @@
   "NodeLibraryDependencies": [
     {
       "Name": "Orchid",
-      "Version": "216.3.0.5794",
+      "Version": "2.16.4.5987",
       "ReferenceType": "Package",
       "Nodes": [
         "f11c34ffbff94bedb593a6328c800110",
-        "b710f60d8faf4c53a4eb4764c8722783",
         "94a58d4b6f6747c3ae3c3ef9238f4ae5",
         "b118431985324696a82ec47bcecff208",
         "a2fa45427ccc49a08e11d174fdbe8cdc",
@@ -1354,7 +1377,8 @@
         "daed4b8076c24b6297ecf5b0b9d45fca",
         "4a552b60bc9a49989010eecc380f5062",
         "68f4db0eea7a4aae81acc79db8f4ed45",
-        "aee34ce803094bca8b0ebc3a5896ef73"
+        "a60c9722cb6c4b02b0ac1dff2405cb1c",
+        "a105c00013f548828b51e240b287e4cd"
       ]
     },
     {
@@ -1419,8 +1443,8 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 1580.919172025297,
-        "Y": 913.61849479761258
+        "X": 1575.1966674186797,
+        "Y": 913.618494797613
       },
       {
         "Name": "Code Block",
@@ -1429,8 +1453,8 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 920.919172025297,
-        "Y": 973.10099479761288
+        "X": 921.443530373821,
+        "Y": 973.100994797613
       },
       {
         "Name": "Element.Name",
@@ -1439,8 +1463,8 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 920.919172025297,
-        "Y": 824.61849479761258
+        "X": 921.443530373821,
+        "Y": 824.618494797613
       },
       {
         "Name": "String.Contains",
@@ -1449,8 +1473,8 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 1238.919172025297,
-        "Y": 947.61849479761258
+        "X": 1236.32009889625,
+        "Y": 947.618494797613
       },
       {
         "Name": "Boolean",
@@ -1459,18 +1483,8 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 920.919172025297,
-        "Y": 1130.6184947976126
-      },
-      {
-        "Name": "ViewType.ByName",
-        "ShowGeometry": true,
-        "Id": "b710f60d8faf4c53a4eb4764c8722783",
-        "IsSetAsInput": false,
-        "IsSetAsOutput": false,
-        "Excluded": false,
-        "X": 288.91917202529703,
-        "Y": 869.11849479761258
+        "X": 921.443530373821,
+        "Y": 1130.61849479761
       },
       {
         "Name": "Code Block",
@@ -1479,8 +1493,8 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 9.91917202529703,
-        "Y": 868.94599479761268
+        "X": 9.81382480653139,
+        "Y": 877.698030506365
       },
       {
         "Name": "Element.Name",
@@ -1653,14 +1667,24 @@
         "Y": -266.86443301768168
       },
       {
-        "Name": "View.ByViewType",
+        "Name": "Revit.EnumByName",
         "ShowGeometry": true,
-        "Id": "aee34ce803094bca8b0ebc3a5896ef73",
+        "Id": "a60c9722cb6c4b02b0ac1dff2405cb1c",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 606.919172025297,
-        "Y": 869.118494797613
+        "X": 285.69039332896108,
+        "Y": 869.11849479761258
+      },
+      {
+        "Name": "View.ByViewType",
+        "ShowGeometry": true,
+        "Id": "a105c00013f548828b51e240b287e4cd",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 610.56696185139072,
+        "Y": 869.11849479761258
       }
     ],
     "Annotations": [
@@ -1677,18 +1701,18 @@
           "72ba6c52e6784b75a674727024b729b4",
           "f11c34ffbff94bedb593a6328c800110",
           "66238f9bfb0348618d653bf833c3ff83",
-          "b710f60d8faf4c53a4eb4764c8722783",
           "3f8e472fb6554e1bbafe3248f64d8023",
-          "aee34ce803094bca8b0ebc3a5896ef73"
+          "a105c00013f548828b51e240b287e4cd",
+          "a60c9722cb6c4b02b0ac1dff2405cb1c"
         ],
         "HasNestedGroups": false,
-        "Left": -0.0808279747029701,
-        "Top": 751.61849479761258,
-        "Width": 1826.0,
-        "Height": 511.0,
+        "Left": -0.18617519346861044,
+        "Top": 751.618494797613,
+        "Width": 1820.3828426121484,
+        "Height": 510.99999999999704,
         "FontSize": 36.0,
-        "InitialTop": 824.61849479761258,
-        "InitialHeight": 451.0,
+        "InitialTop": 824.618494797613,
+        "InitialHeight": 450.99999999999704,
         "TextblockHeight": 63.0,
         "Background": "#FFA4E1FF"
       },

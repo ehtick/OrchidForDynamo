@@ -1,7 +1,10 @@
 ﻿**Versioning:** Number syntax: Major.Minor.Build.Revision (x.x.x.x).  
-The major number follows the Dynamo version, 206.x.x is usable in Dynamo +2.6.x.x versions. The minor number is internal major builds. The build number is internal minor builds. The revision number is an internal build number without public documentation and display in this file.  
+The major and minor number follows the Dynamo version, 2.06.x.x is usable in Dynamo 2.6.x.x versions. The build number is internal major builds. The revision number is an internal build number without public documentation and display in this file.  
   
 ### History of Orchid for Dynamo 2.5.x and 2.6.x  
+  
+2.06.7  
+- Orchid versioning adjusted so major and minor number follows the Dynamo major and minor number. The build number follows internal Orchid major builds.  
   
 206.6.0  
 - Refactored layout.  

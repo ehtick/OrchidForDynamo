@@ -13,20 +13,20 @@ Built for Dynamo 2.18 (Revit 2024), Dynamo 2.16 (Revit 2023), Dynamo 2.12 (Revit
 In the [samples](Samples) folder are examples using the Orchid package placed.  
   
 **History/Change Log:**  
-[![orchid](https://img.shields.io/badge/Orchid-218-lightgrey)](Orchid_218.md)  
-[![orchid](https://img.shields.io/badge/Orchid-216-lightgrey)](Orchid_216.md)  
-[![orchid](https://img.shields.io/badge/Orchid-212-lightgrey)](Orchid_212.md)  
-[![orchid](https://img.shields.io/badge/Orchid-206-lightgrey)](Orchid_206.md)  
+[![orchid](https://img.shields.io/badge/Orchid-2.18-lightgrey)](Orchid_218.md)  
+[![orchid](https://img.shields.io/badge/Orchid-2.16-lightgrey)](Orchid_216.md)  
+[![orchid](https://img.shields.io/badge/Orchid-2.12-lightgrey)](Orchid_212.md)  
+[![orchid](https://img.shields.io/badge/Orchid-2.06-lightgrey)](Orchid_206.md)  
   
 ---
 ## Install or Update the package for Dynamo  
 Use the executable installer in the **[Builds](Builds)** folder to install the Orchid package. Please note the vertical versions of Orchid are coded for a specific version of Dynamo and Revit to ensure code is applicable for that exact combination, and not least due to the enormous scope of Orchid.  
   
 Select the executable according to your dynamo version!  
-[![orchid](https://img.shields.io/badge/Orchid-218-brightgreen) &nbsp;&nbsp;&nbsp; ![dynamo](https://img.shields.io/badge/Dynamo-2.18-blue) &nbsp;&nbsp;&nbsp; ![revit](https://img.shields.io/badge/Revit-2024-blue)](Builds/OrchidForDynamo_218.exe)  
-[![orchid](https://img.shields.io/badge/Orchid-216-brightgreen) &nbsp;&nbsp;&nbsp; ![dynamo](https://img.shields.io/badge/Dynamo-2.16-blue) &nbsp;&nbsp;&nbsp; ![revit](https://img.shields.io/badge/Revit-2023-blue)](Builds/OrchidForDynamo_216.exe)  
-[![orchid](https://img.shields.io/badge/Orchid-212-brightgreen) &nbsp;&nbsp;&nbsp; ![dynamo](https://img.shields.io/badge/Dynamo-2.12-blue) &nbsp;&nbsp;&nbsp; ![revit](https://img.shields.io/badge/Revit-2022-blue)](Builds/OrchidForDynamo_212.exe)  
-[![orchid](https://img.shields.io/badge/Orchid-206-brightgreen) &nbsp;&nbsp;&nbsp; ![dynamo](https://img.shields.io/badge/Dynamo-2.6-blue) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ![revit](https://img.shields.io/badge/Revit-2021-blue)](Builds/OrchidForDynamo_206.exe)  
+[![orchid](https://img.shields.io/badge/Orchid-2.18-brightgreen) &nbsp;&nbsp;&nbsp; ![dynamo](https://img.shields.io/badge/Dynamo-2.18-blue) &nbsp;&nbsp;&nbsp; ![revit](https://img.shields.io/badge/Revit-2024-blue)](Builds/OrchidForDynamo_218.exe)  
+[![orchid](https://img.shields.io/badge/Orchid-2.16-brightgreen) &nbsp;&nbsp;&nbsp; ![dynamo](https://img.shields.io/badge/Dynamo-2.16-blue) &nbsp;&nbsp;&nbsp; ![revit](https://img.shields.io/badge/Revit-2023-blue)](Builds/OrchidForDynamo_2.16.exe)  
+[![orchid](https://img.shields.io/badge/Orchid-2.12-brightgreen) &nbsp;&nbsp;&nbsp; ![dynamo](https://img.shields.io/badge/Dynamo-2.12-blue) &nbsp;&nbsp;&nbsp; ![revit](https://img.shields.io/badge/Revit-2022-blue)](Builds/OrchidForDynamo_2.12.exe)  
+[![orchid](https://img.shields.io/badge/Orchid-2.06-brightgreen) &nbsp;&nbsp;&nbsp; ![dynamo](https://img.shields.io/badge/Dynamo-2.6-blue) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ![revit](https://img.shields.io/badge/Revit-2021-blue)](Builds/OrchidForDynamo_206.exe)  
   
 <span style="color:red">**REVIT AND DYNAMO MUST BE CLOSED DURING INSTALLATION!**</span>  
 </br>

@@ -56,19 +56,28 @@
         }
       ],
       "Replication": "Auto",
-      "Description": "All view by ViewType in document.\n\nView.ByViewType (viewType: var, condense: bool = true): var[]..[]"
+      "Description": "All view by ViewType in current document.\n\nView.ByViewType (viewType: var, condense: bool = true): var[]..[]"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
       "NodeType": "CodeBlockNode",
-      "Code": "\"ThreeD\";",
+      "Code": "\"ViewType\";\n\"ThreeD\";",
       "Id": "fb270730e19245389d39e37eb0ab4184",
       "Inputs": [],
       "Outputs": [
         {
-          "Id": "a4bce830593e483a8ecd4a27acc98d9d",
+          "Id": "2d0a1996e5ba4476aa02c83f39683a7d",
           "Name": "",
           "Description": "Value of expression at line 1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "ea5678feab8749219e70f6eb8e643f37",
+          "Name": "",
+          "Description": "Value of expression at line 2",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -77,36 +86,6 @@
       ],
       "Replication": "Disabled",
       "Description": "Allows for DesignScript code to be authored directly"
-    },
-    {
-      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
-      "NodeType": "FunctionNode",
-      "FunctionSignature": "Orchid.RevitProject.Views.ViewType.ByName@string",
-      "Id": "e996463fda834b3a8553b038f1bc52e4",
-      "Inputs": [
-        {
-          "Id": "66bb8391ca4b407db4e76d4439f6ad85",
-          "Name": "name",
-          "Description": "View name as string.\n\nstring",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        }
-      ],
-      "Outputs": [
-        {
-          "Id": "0a95dc2e578a4a22917a80b2d69c4b84",
-          "Name": "Enum",
-          "Description": "ViewType as Revit enumeration type.",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        }
-      ],
-      "Replication": "Auto",
-      "Description": "Get ViewType (Autodesk.Revit) enumeration value by name.\n\nViewType.ByName (name: string): var"
     },
     {
       "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
@@ -2354,6 +2333,45 @@
       ],
       "Replication": "Auto",
       "Description": "Get Autodesk Revit enumeration value by name and enumeration type.\n\nRevit.EnumByName (enumType: string, valueName: string): var[]..[]"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "Orchid.AdeskApp.Revit.EnumByName@string,string",
+      "Id": "a90e2f30d45b4ae9b36f52a13de0078a",
+      "Inputs": [
+        {
+          "Id": "87442e8e3a5248c9b7c07a5be52c580c",
+          "Name": "enumType",
+          "Description": "Name of the Revit enumeration type.\n\nstring",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "cbafdd48b5924848ad6ebb34dbf94319",
+          "Name": "valueName",
+          "Description": "Name of the enumeration value.\n\nstring",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "2b0846bf77b4442e87bd543cc880aed4",
+          "Name": "Enum",
+          "Description": "Revit enumeration type.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Get Autodesk Revit enumeration value by name and enumeration type.\n\nRevit.EnumByName (enumType: string, valueName: string): var[]..[]"
     }
   ],
   "Connectors": [
@@ -2364,15 +2382,15 @@
       "IsHidden": "False"
     },
     {
-      "Start": "a4bce830593e483a8ecd4a27acc98d9d",
-      "End": "66bb8391ca4b407db4e76d4439f6ad85",
-      "Id": "54f3818e52594c4fb131284c648cedfe",
+      "Start": "2d0a1996e5ba4476aa02c83f39683a7d",
+      "End": "87442e8e3a5248c9b7c07a5be52c580c",
+      "Id": "6d8e4116fe3c4210bbb9eba5670f9be1",
       "IsHidden": "False"
     },
     {
-      "Start": "0a95dc2e578a4a22917a80b2d69c4b84",
-      "End": "4a8c545c49fb4f07bcfab5e3c34a62f2",
-      "Id": "9b0d50e9776e4c719a69dc3ee6d872b2",
+      "Start": "ea5678feab8749219e70f6eb8e643f37",
+      "End": "cbafdd48b5924848ad6ebb34dbf94319",
+      "Id": "c5bab8812ba74bfcba91aef59159e392",
       "IsHidden": "False"
     },
     {
@@ -2782,17 +2800,22 @@
       "End": "c6b9084a714b42ebbdbde25a0f3f1393",
       "Id": "ed9fdab6f02a4140ba82c8b2f5f63950",
       "IsHidden": "False"
+    },
+    {
+      "Start": "2b0846bf77b4442e87bd543cc880aed4",
+      "End": "4a8c545c49fb4f07bcfab5e3c34a62f2",
+      "Id": "345441360ab84ed9bbe468267772b6cc",
+      "IsHidden": "False"
     }
   ],
   "Dependencies": [],
   "NodeLibraryDependencies": [
     {
       "Name": "Orchid",
-      "Version": "216.3.0.5986",
+      "Version": "2.16.4.5987",
       "ReferenceType": "Package",
       "Nodes": [
         "3b5505b3d21f40dd8ca91927427779d4",
-        "e996463fda834b3a8553b038f1bc52e4",
         "a8b6b57032e64ccd87f75401281af60d",
         "219c6fd491234db88202f849b8ca8d63",
         "0665205b7b9e405587a9e1a0e0de3ac6",
@@ -2829,7 +2852,8 @@
         "423e4a8e3fe04d96b34477d8b119bfa5",
         "37311319a0b64b008d7af514df9800a9",
         "10665514e53f48b198faf0e34b13fa70",
-        "bdb094e263e8491899f0026b8cca9b91"
+        "bdb094e263e8491899f0026b8cca9b91",
+        "a90e2f30d45b4ae9b36f52a13de0078a"
       ]
     }
   ],
@@ -2887,7 +2911,7 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 3241.93533630819,
+        "X": 3250.60200297486,
         "Y": 1154.06385806428
       },
       {
@@ -2901,23 +2925,13 @@
         "Y": 1153.89135806428
       },
       {
-        "Name": "ViewType.ByName",
-        "ShowGeometry": true,
-        "Id": "e996463fda834b3a8553b038f1bc52e4",
-        "IsSetAsInput": false,
-        "IsSetAsOutput": false,
-        "Excluded": false,
-        "X": 2923.93533630819,
-        "Y": 1154.06385806428
-      },
-      {
         "Name": "Watch",
         "ShowGeometry": true,
         "Id": "708ac0af69f94b2788cd6281a88d6f32",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 3555.93533630819,
+        "X": 3555.9353363081905,
         "Y": 1154.06385806428
       },
       {
@@ -3549,6 +3563,16 @@
         "Excluded": false,
         "X": -2290.2369091447786,
         "Y": -1196.1523323570018
+      },
+      {
+        "Name": "Revit.EnumByName",
+        "ShowGeometry": true,
+        "Id": "a90e2f30d45b4ae9b36f52a13de0078a",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 2931.26866964152,
+        "Y": 1154.06385806428
       }
     ],
     "Annotations": [
@@ -3561,14 +3585,14 @@
         "HeightAdjustment": 0.0,
         "Nodes": [
           "fb270730e19245389d39e37eb0ab4184",
-          "e996463fda834b3a8553b038f1bc52e4",
           "3b5505b3d21f40dd8ca91927427779d4",
-          "708ac0af69f94b2788cd6281a88d6f32"
+          "708ac0af69f94b2788cd6281a88d6f32",
+          "a90e2f30d45b4ae9b36f52a13de0078a"
         ],
         "HasNestedGroups": false,
         "Left": 2658.93533630819,
         "Top": 1087.89135806428,
-        "Width": 1184.0,
+        "Width": 1184.0000000000005,
         "Height": 228.17250000000013,
         "FontSize": 30.0,
         "InitialTop": 1153.89135806428,
@@ -3791,7 +3815,7 @@
         "Height": 268.0,
         "FontSize": 30.0,
         "InitialTop": 661.641910156943,
-        "InitialHeight": 178.91374999999994,
+        "InitialHeight": 179.71361182622184,
         "TextblockHeight": 56.0,
         "Background": "#FFD4B6DB"
       },
@@ -3900,8 +3924,8 @@
         "Background": "#FFC1D676"
       }
     ],
-    "X": 616.60140663643233,
-    "Y": 447.37038527353781,
-    "Zoom": 0.22134435332810204
+    "X": -2029.5678768715113,
+    "Y": -406.03622979001318,
+    "Zoom": 0.80142632606157127
   }
 }
