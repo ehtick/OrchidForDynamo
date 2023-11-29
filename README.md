@@ -17,9 +17,9 @@ Check the [change log](changeLog.md) to see the history of the Orchid package.
   
 ---
 ## Install or Update the package for Dynamo  
-Download the **[OrchidForDynamo](Builds/OrchidForDynamo.exe)** executable installer in the [Builds](Builds) folder to install the Orchid package. Likewise if needed, download the [OrchidSamples](Builds/OrchidSamples.exe)  executable installer for the sample collection, and download the [data files](Builds/OrchidSampleDataFiles.exe) for the sample collection.
+Download the **[OrchidForDynamo](Builds/OrchidForDynamo.exe)** executable installer in the [Builds](Builds) folder to install the Orchid package. Likewise if needed, download the [OrchidSamples](Builds/OrchidSamples.exe) executable installer for the sample collection, and/or download the [data files](Builds/OrchidSampleDataFiles.exe) for the sample collection.
   
-<span style="color:red">**REVIT AND DYNAMO MUST BE CLOSED DURING INSTALLATION!**</span>  
+<span style="color:#FF0000">**REVIT AND DYNAMO MUST BE CLOSED DURING INSTALLATION!**</span>  
 </br>
 
 ### Manually installation

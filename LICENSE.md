@@ -3,6 +3,7 @@ Copyright(c) 2014
 Erik Falck Jørgensen  
   
 All content in this repository is part of the Orchid package.  
+The Orchid package is also available at http://dynamopackages.com  
   
 [![license](https://i.creativecommons.org/l/by-nd/4.0/88x31.png)](http://creativecommons.org/licenses/by-nd/4.0/)  
   
