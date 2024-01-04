@@ -2,7 +2,7 @@
   "Uuid": "3c9d0464-8643-5ffe-96e5-ab1769818209",
   "IsCustomNode": false,
   "Description": "",
-  "Name": "Purge",
+  "Name": "Purge_R23",
   "ElementResolver": {
     "ResolutionMap": {}
   },
@@ -359,36 +359,6 @@
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
       "NodeType": "FunctionNode",
-      "FunctionSignature": "Orchid.RevitProject.Parameters.ProjectParameter.Purge@Revit.Application.Document",
-      "Id": "5f86ef9413364e9da6e4d7a4112ec1a3",
-      "Inputs": [
-        {
-          "Id": "ae27901642a4442aba18fc26b8c6aa54",
-          "Name": "document",
-          "Description": "Document (project or family).\n\nDocument\nDefault value : null",
-          "UsingDefaultValue": true,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        }
-      ],
-      "Outputs": [
-        {
-          "Id": "731d1c2546b742aaa060048863add680",
-          "Name": "watch",
-          "Description": "Add a watch node!",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        }
-      ],
-      "Replication": "Auto",
-      "Description": "Purge parameter(s) in document.\n\nProjectParameter.Purge (document: Document = null): string"
-    },
-    {
-      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
-      "NodeType": "FunctionNode",
       "FunctionSignature": "Orchid.RevitProject.Filters.ParameterFilter.Purge@Revit.Application.Document",
       "Id": "c7765fc07c1d4b67a628451a2fb6e267",
       "Inputs": [
@@ -414,7 +384,7 @@
         }
       ],
       "Replication": "Auto",
-      "Description": "Purge parameter filter(s) in document.\n\nParameterFilter.Purge (document: Document = null): string"
+      "Description": "Purge parameter filter element(s) in document.\n\nParameterFilter.Purge (document: Document = null): string"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
@@ -811,6 +781,76 @@
       ],
       "Replication": "Auto",
       "Description": "Purge document using Post Command. Post commands can only take the current document to be run once. Re-run the graph to re-activate the post command. To get back the \"Purge\" window inside Revit, set the \"activate\" value to \"false\" and re-run the graph once more!\n\nPostCommand.Purge (activate: bool = false): void"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "Orchid.RevitProject.Common.Revision.DeleteAll",
+      "Id": "24c52674d46142eabe0ce4cb29fec2cb",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "6f3f8b36a80c47d2b26f7c079484a0d0",
+          "Name": "watch",
+          "Description": "Add a watch node to verify the output.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Delete all revisions.\n\nRevision.DeleteAll ( ): string"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "Orchid.RevitProject.Common.RevisionCloud.DeleteAll",
+      "Id": "c97b56c3640045579e71deb3802b5f19",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "da21aa73aa2640bbb2c9b8f2f7580ce5",
+          "Name": "watch",
+          "Description": "Add a watch node to verify the output.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Delete all revision clouds.\n\nRevisionCloud.DeleteAll ( ): string"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "Orchid.RevitProject.Parameters.Parameter.Purge@Revit.Application.Document",
+      "Id": "ce38413323284e5d97efdc177f1776f3",
+      "Inputs": [
+        {
+          "Id": "f4089ad7b75b4b04b35675f1591601c8",
+          "Name": "document",
+          "Description": "Document (project or family).\n\nDocument\nDefault value : null",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "a9934a7be6db4e269e471b7605f97e68",
+          "Name": "watch",
+          "Description": "Add a watch node!",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Purge parameter(s) in document.\n\nParameter.Purge (document: Document = null): string"
     }
   ],
   "Connectors": [
@@ -885,7 +925,7 @@
   "NodeLibraryDependencies": [
     {
       "Name": "Orchid",
-      "Version": "216.3.0.5794",
+      "Version": "2.16.4.6115",
       "ReferenceType": "Package",
       "Nodes": [
         "57cfe910d2ef4cb29af131c0cbc76926",
@@ -897,7 +937,6 @@
         "d9041de3237f4362b1793b1141ed4be2",
         "bb2a0fb12af442249b8bfe2674445e48",
         "fee310f2b83441c9b18b4e08ff0073a5",
-        "5f86ef9413364e9da6e4d7a4112ec1a3",
         "c7765fc07c1d4b67a628451a2fb6e267",
         "9180f96689f04d68a72a587e149d0282",
         "26ad14e0c37e4fcd8d89f78635bc6360",
@@ -907,7 +946,10 @@
         "d621ae3560ca4d9386fe74cd2fdca53c",
         "7167e99ffc514e889ad2d6579795cd49",
         "abdc6af52eb14a59974bc49f0bb10d7f",
-        "1b1c15bd1bca4c55bc3ade915dd707a9"
+        "1b1c15bd1bca4c55bc3ade915dd707a9",
+        "24c52674d46142eabe0ce4cb29fec2cb",
+        "c97b56c3640045579e71deb3802b5f19",
+        "ce38413323284e5d97efdc177f1776f3"
       ]
     }
   ],
@@ -940,7 +982,7 @@
       "ScaleFactor": 1.0,
       "HasRunWithoutCrash": true,
       "IsVisibleInDynamoLibrary": true,
-      "Version": "2.16.1.2727",
+      "Version": "2.16.2.5624",
       "RunType": "Manual",
       "RunPeriod": "1000"
     },
@@ -965,8 +1007,8 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 10.415344687159177,
-        "Y": 708.819772793556
+        "X": 9.6384968284047545,
+        "Y": 1700.8657269929392
       },
       {
         "Name": "Category.Imported",
@@ -975,8 +1017,8 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": true,
-        "X": 10.156297764872789,
-        "Y": 221.671901917063
+        "X": 9.73010464008189,
+        "Y": 1206.3541067032115
       },
       {
         "Name": "Code Block",
@@ -985,8 +1027,8 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": true,
-        "X": 10.156297764872789,
-        "Y": 375.266473836202
+        "X": 9.73010464008189,
+        "Y": 1359.9486786223501
       },
       {
         "Name": "Category.DeleteImported",
@@ -995,8 +1037,8 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 10.156297764872789,
-        "Y": 72.5967688853087
+        "X": 9.73010464008189,
+        "Y": 1057.2789736714572
       },
       {
         "Name": "Document.Purge",
@@ -1005,8 +1047,8 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 304.00243559180387,
-        "Y": 1169.6506988033241
+        "X": 303.50135381300464,
+        "Y": 370.3351329249777
       },
       {
         "Name": "Boolean",
@@ -1015,8 +1057,8 @@
         "IsSetAsInput": true,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 10.002435591803874,
-        "Y": 1203.6506988033238
+        "X": 9.5013538130046413,
+        "Y": 404.33513292497747
       },
       {
         "Name": "ViewTemplate.Purge",
@@ -1025,8 +1067,8 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": true,
-        "X": 669.32379848934613,
-        "Y": 1176.6516438794542
+        "X": 649.97080817407527,
+        "Y": 73.3209755053964
       },
       {
         "Name": "LineStyle.Purge",
@@ -1035,8 +1077,8 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": true,
-        "X": 669.32379848934613,
-        "Y": 1480.6795499882542
+        "X": 649.97080817407527,
+        "Y": 377.34888161419633
       },
       {
         "Name": "LinePattern.Purge",
@@ -1045,8 +1087,8 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": true,
-        "X": 669.32379848934613,
-        "Y": 1628.832773129936
+        "X": 649.97080817407527,
+        "Y": 525.50210475587812
       },
       {
         "Name": "Material.Purge",
@@ -1055,8 +1097,8 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": true,
-        "X": 1036.7701167078189,
-        "Y": 1176.1028339394693
+        "X": 1022.3842194195804,
+        "Y": 72.5781735410215
       },
       {
         "Name": "Asset.Purge",
@@ -1065,18 +1107,8 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": true,
-        "X": 1036.7701167078189,
-        "Y": 1327.4739282923374
-      },
-      {
-        "Name": "ProjectParameter.Purge",
-        "ShowGeometry": true,
-        "Id": "5f86ef9413364e9da6e4d7a4112ec1a3",
-        "IsSetAsInput": false,
-        "IsSetAsOutput": false,
-        "Excluded": true,
-        "X": 669.32379848934613,
-        "Y": 1331.4862115293463
+        "X": 1022.3842194195804,
+        "Y": 223.94926789388961
       },
       {
         "Name": "ParameterFilter.Purge",
@@ -1085,8 +1117,8 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": true,
-        "X": 669.32379848934613,
-        "Y": 1778.9790308046968
+        "X": 649.97080817407527,
+        "Y": 675.64836243063894
       },
       {
         "Name": "Element.Delete",
@@ -1095,8 +1127,8 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 958.41534468715963,
-        "Y": 831.279240224733
+        "X": 957.63849682840532,
+        "Y": 1823.3251944241163
       },
       {
         "Name": "Code Block",
@@ -1105,8 +1137,8 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": true,
-        "X": 10.415344687159177,
-        "Y": 865.106740224733
+        "X": 9.6384968284047545,
+        "Y": 1857.1526944241161
       },
       {
         "Name": "Class.ByName",
@@ -1115,8 +1147,8 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 328.41534468715969,
-        "Y": 865.279240224733
+        "X": 327.63849682840521,
+        "Y": 1857.3251944241163
       },
       {
         "Name": "FamilyDocument.Purge",
@@ -1125,8 +1157,8 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": true,
-        "X": 304.48835520319653,
-        "Y": 1510.4108227933855
+        "X": 303.61315675357383,
+        "Y": 709.9972262301477
       },
       {
         "Name": "Boolean",
@@ -1135,8 +1167,8 @@
         "IsSetAsInput": true,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 10.488355203196534,
-        "Y": 1544.4108227933853
+        "X": 9.6131567535738327,
+        "Y": 743.99722623014748
       },
       {
         "Name": "SubCategory.Delete",
@@ -1145,8 +1177,8 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 1056.1562977648714,
-        "Y": 341.43897383620163
+        "X": 1055.7301046400805,
+        "Y": 1326.1211786223498
       },
       {
         "Name": "Category.ByName",
@@ -1155,8 +1187,8 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 367.156297764872,
-        "Y": 375.438973836202
+        "X": 366.73010464008121,
+        "Y": 1360.1211786223503
       },
       {
         "Name": "SubCategory.ByCategory",
@@ -1165,8 +1197,8 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 682.15629776487231,
-        "Y": 375.43897383620163
+        "X": 681.73010464008144,
+        "Y": 1360.1211786223498
       },
       {
         "Name": "Sheet.Purge",
@@ -1175,8 +1207,8 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 1036.9543488274485,
-        "Y": 1640.5884483946438
+        "X": 1366.095623742757,
+        "Y": 533.46892503573326
       },
       {
         "Name": "Element.Delete",
@@ -1185,8 +1217,8 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 367.156297764872,
-        "Y": 221.671901917063
+        "X": 366.73010464008121,
+        "Y": 1206.3541067032115
       },
       {
         "Name": "Element.OfClass",
@@ -1195,8 +1227,8 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 622.41534468715963,
-        "Y": 831.279240224733
+        "X": 621.63849682840532,
+        "Y": 1823.3251944241163
       },
       {
         "Name": "Boolean",
@@ -1205,8 +1237,8 @@
         "IsSetAsInput": true,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 9.8846673191991954,
-        "Y": 1850.3125201787218
+        "X": 9.5185997316513919,
+        "Y": 65.984244897827068
       },
       {
         "Name": "PostCommand.Purge",
@@ -1215,14 +1247,44 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": true,
-        "X": 303.8846673191992,
-        "Y": 1850.3125201787218
+        "X": 303.51859973165142,
+        "Y": 65.984244897827068
+      },
+      {
+        "Name": "Revision.DeleteAll",
+        "ShowGeometry": true,
+        "Id": "24c52674d46142eabe0ce4cb29fec2cb",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1365.8838350925737,
+        "Y": 217.00790974898661
+      },
+      {
+        "Name": "RevisionCloud.DeleteAll",
+        "ShowGeometry": true,
+        "Id": "c97b56c3640045579e71deb3802b5f19",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1365.8838350925737,
+        "Y": 65.702657392386811
+      },
+      {
+        "Name": "Parameter.Purge",
+        "ShowGeometry": true,
+        "Id": "ce38413323284e5d97efdc177f1776f3",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": true,
+        "X": 649.970808174075,
+        "Y": 228.155543155288
       }
     ],
     "Annotations": [
       {
         "Id": "74d377d4d7cd40b399b573f642242873",
-        "Title": "",
+        "Title": "Document purge",
         "DescriptionText": null,
         "IsExpanded": true,
         "WidthAdjustment": 0.0,
@@ -1232,12 +1294,12 @@
           "6648d7d55c374394ba5b463f0ad48ccc"
         ],
         "HasNestedGroups": false,
-        "Left": 0.002435591803873649,
-        "Top": 1103.6506988033241,
+        "Left": -0.49864618699535868,
+        "Top": 304.3351329249777,
         "Width": 533.0,
-        "Height": 231.99999999999977,
+        "Height": 231.99999999999972,
         "FontSize": 30.0,
-        "InitialTop": 1169.6506988033241,
+        "InitialTop": 370.3351329249777,
         "InitialHeight": 178.99999999999977,
         "TextblockHeight": 56.0,
         "Background": "#FFFF7BAC"
@@ -1253,16 +1315,16 @@
           "7109f6cff90140b1983fd508d06bae14",
           "d9041de3237f4362b1793b1141ed4be2",
           "cc7d5e863a32467fa4a4b5e421db3d62",
-          "5f86ef9413364e9da6e4d7a4112ec1a3",
-          "c7765fc07c1d4b67a628451a2fb6e267"
+          "c7765fc07c1d4b67a628451a2fb6e267",
+          "ce38413323284e5d97efdc177f1776f3"
         ],
         "HasNestedGroups": false,
-        "Left": 659.32379848934613,
-        "Top": 1103.6516438794542,
-        "Width": 270.0,
+        "Left": 639.970808174075,
+        "Top": 0.32097550539640451,
+        "Width": 257.00000000000023,
         "Height": 807.32738692524254,
         "FontSize": 36.0,
-        "InitialTop": 1176.6516438794542,
+        "InitialTop": 73.3209755053964,
         "InitialHeight": 747.32738692524254,
         "TextblockHeight": 63.0,
         "Background": "#FFA4E1FF"
@@ -1279,12 +1341,12 @@
           "fee310f2b83441c9b18b4e08ff0073a5"
         ],
         "HasNestedGroups": false,
-        "Left": 1026.7701167078189,
-        "Top": 1103.1028339394693,
+        "Left": 1012.3842194195804,
+        "Top": -0.4218264589785008,
         "Width": 244.0,
         "Height": 356.37109435286811,
         "FontSize": 36.0,
-        "InitialTop": 1176.1028339394693,
+        "InitialTop": 72.5781735410215,
         "InitialHeight": 296.37109435286811,
         "TextblockHeight": 63.0,
         "Background": "#FFC1D676"
@@ -1304,19 +1366,19 @@
           "abdc6af52eb14a59974bc49f0bb10d7f"
         ],
         "HasNestedGroups": false,
-        "Left": 0.41534468715917683,
-        "Top": 635.819772793556,
+        "Left": -0.36150317159524548,
+        "Top": 1627.8657269929392,
         "Width": 1181.0000000000005,
         "Height": 361.459467431177,
         "FontSize": 36.0,
-        "InitialTop": 708.819772793556,
+        "InitialTop": 1700.8657269929392,
         "InitialHeight": 301.459467431177,
         "TextblockHeight": 63.0,
         "Background": "#FFBB87C6"
       },
       {
         "Id": "7e77108852fd4461baae77cd5d0d2c12",
-        "Title": "",
+        "Title": "FamilyDocument purge",
         "DescriptionText": null,
         "IsExpanded": true,
         "WidthAdjustment": 0.0,
@@ -1326,12 +1388,12 @@
           "36d2147a5a21445c87a3bc8ecc15d567"
         ],
         "HasNestedGroups": false,
-        "Left": 0.48835520319653369,
-        "Top": 1444.4108227933855,
+        "Left": -0.3868432464261673,
+        "Top": 643.9972262301477,
         "Width": 564.0,
         "Height": 231.99999999999977,
         "FontSize": 30.0,
-        "InitialTop": 1510.4108227933855,
+        "InitialTop": 709.9972262301477,
         "InitialHeight": 178.99999999999977,
         "TextblockHeight": 56.0,
         "Background": "#FFFF7BAC"
@@ -1353,19 +1415,19 @@
           "7167e99ffc514e889ad2d6579795cd49"
         ],
         "HasNestedGroups": false,
-        "Left": 0.15629776487278946,
-        "Top": -0.40323111469129458,
+        "Left": -0.26989535991810953,
+        "Top": 984.27897367145715,
         "Width": 1303.9999999999986,
-        "Height": 537.84220495089289,
+        "Height": 537.84220495089266,
         "FontSize": 36.0,
-        "InitialTop": 72.5967688853087,
-        "InitialHeight": 447.84220495089335,
+        "InitialTop": 1057.2789736714572,
+        "InitialHeight": 447.84220495089312,
         "TextblockHeight": 63.0,
-        "Background": "#FFB5B5B5"
+        "Background": "#FFD4B6DB"
       },
       {
         "Id": "31e471402f6d4a44a29225a127c59b23",
-        "Title": "",
+        "Title": "Sheet",
         "DescriptionText": null,
         "IsExpanded": true,
         "WidthAdjustment": 0.0,
@@ -1374,13 +1436,13 @@
           "d621ae3560ca4d9386fe74cd2fdca53c"
         ],
         "HasNestedGroups": false,
-        "Left": 1026.9543488274485,
-        "Top": 1567.5884483946438,
+        "Left": 1356.095623742757,
+        "Top": 460.46892503573326,
         "Width": 244.0,
         "Height": 205.0,
         "FontSize": 36.0,
-        "InitialTop": 1640.5884483946438,
-        "InitialHeight": 145.00000000000023,
+        "InitialTop": 533.46892503573326,
+        "InitialHeight": 145.0,
         "TextblockHeight": 63.0,
         "Background": "#FFFFAA45"
       },
@@ -1396,19 +1458,41 @@
           "a94ce5bb98b0400cb0da5f5e549493e7"
         ],
         "HasNestedGroups": false,
-        "Left": -0.11533268080080461,
-        "Top": 1784.3125201787218,
+        "Left": -0.48140026834860805,
+        "Top": -0.015755102172931856,
         "Width": 542.0,
         "Height": 198.0,
         "FontSize": 30.0,
-        "InitialTop": 1850.3125201787218,
+        "InitialTop": 65.984244897827068,
         "InitialHeight": 145.0,
         "TextblockHeight": 56.0,
         "Background": "#FFB5B5B5"
+      },
+      {
+        "Id": "a6650db57bcf4e75aef4e9031be5ba17",
+        "Title": "Delete Revisions",
+        "DescriptionText": null,
+        "IsExpanded": true,
+        "WidthAdjustment": 0.0,
+        "HeightAdjustment": 0.0,
+        "Nodes": [
+          "24c52674d46142eabe0ce4cb29fec2cb",
+          "c97b56c3640045579e71deb3802b5f19"
+        ],
+        "HasNestedGroups": false,
+        "Left": 1355.8838350925737,
+        "Top": -0.29734260761318865,
+        "Width": 271.0,
+        "Height": 349.30525235659979,
+        "FontSize": 30.0,
+        "InitialTop": 65.702657392386811,
+        "InitialHeight": 296.30525235659979,
+        "TextblockHeight": 56.0,
+        "Background": "#FFD8D8D8"
       }
     ],
-    "X": 450.02780524858616,
-    "Y": -5.4034183777878013,
-    "Zoom": 0.4876720950724342
+    "X": 41.928336244348543,
+    "Y": 66.049218109599735,
+    "Zoom": 0.46658323337972735
   }
 }
