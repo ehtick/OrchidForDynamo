@@ -123,13 +123,13 @@
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
       "NodeType": "FunctionNode",
-      "FunctionSignature": "Orchid.RevitMaterial.Physical.GetInformation@var",
+      "FunctionSignature": "Orchid.RevitMaterial.Physical.GetInformation@Revit.Elements.Element",
       "Id": "10a3b66316444100af12e58f1be7b1d9",
       "Inputs": [
         {
           "Id": "2a4ecebad3f84411bb7970a1b8c01fd5",
           "Name": "propertySet",
-          "Description": "Physical property set.\n\nvar",
+          "Description": "Physical property set as Dynamo type.\n\nElement",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -176,7 +176,7 @@
         {
           "Id": "be3ba237fe754149bb19f3c178f100e0",
           "Name": "SourceUrl",
-          "Description": "SourceUrl.",
+          "Description": "Source Url.",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -184,18 +184,18 @@
         }
       ],
       "Replication": "Auto",
-      "Description": "Get information.\n\nPhysical.GetInformation (propertySet: var): var[]..[]"
+      "Description": "Get information.\n\nPhysical.GetInformation (propertySet: Element): var[]..[]"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
       "NodeType": "FunctionNode",
-      "FunctionSignature": "Orchid.RevitMaterial.Physical.GetBehavior@var",
+      "FunctionSignature": "Orchid.RevitMaterial.Physical.GetBehavior@Revit.Elements.Element",
       "Id": "a05d2e3a2db141448ebb1c229301ee45",
       "Inputs": [
         {
           "Id": "6c4bbecde19c44fb967700b4ca7f321c",
           "Name": "propertySet",
-          "Description": "Physical property set.\n\nvar",
+          "Description": "Physical property set as Dynamo type.\n\nElement",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -214,7 +214,7 @@
         }
       ],
       "Replication": "Auto",
-      "Description": "Get behavior.\n\nPhysical.GetBehavior (propertySet: var): var[]..[]"
+      "Description": "Get behavior.\n\nPhysical.GetBehavior (propertySet: Element): string"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
@@ -253,7 +253,7 @@
         }
       ],
       "Replication": "Auto",
-      "Description": "Create physical property set. Note: If a thermal property exists with the same name it is being replaced!\n\nPhysical.Create (name: string, type: var): var[]..[]"
+      "Description": "Create physical property set. Note: If a thermal property exists it is being replaced!\n\nPhysical.Create (name: string, type: var): Element"
     },
     {
       "ConcreteType": "Orchid.E.RevitMaterial.PhysicalType, OrchidRE",
@@ -460,7 +460,7 @@
         {
           "Id": "7f7709e78dd94daa8e80df4761daecd9",
           "Name": "type",
-          "Description": "Thermal type as string value.\n\nvar",
+          "Description": "Thermal type as enumeration type.\n\nvar",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -479,7 +479,7 @@
         }
       ],
       "Replication": "Auto",
-      "Description": "Create thermal property set. Note: If a thermal property exists with the same name it is being replaced!\n\nThermal.Create (name: string, type: var): Element"
+      "Description": "Create thermal property set. Note: If a thermal property exists it is being replaced!\n\nThermal.Create (name: string, type: var): Element"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
@@ -504,13 +504,13 @@
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
       "NodeType": "FunctionNode",
-      "FunctionSignature": "Orchid.RevitMaterial.Physical.SetBehavior@var,var",
+      "FunctionSignature": "Orchid.RevitMaterial.Physical.SetBehavior@Revit.Elements.Element,var",
       "Id": "4b0994e78d8a43458c40747788fc8c98",
       "Inputs": [
         {
           "Id": "8291639e58594559b700b48a54048c72",
           "Name": "propertySet",
-          "Description": "Physical property set.\n\nvar",
+          "Description": "Physical property set as Dynamo type.\n\nElement",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -538,7 +538,7 @@
         }
       ],
       "Replication": "Auto",
-      "Description": "Set behavior.\n\nPhysical.SetBehavior (propertySet: var, behavior: var): var[]..[]"
+      "Description": "Set behavior.\n\nPhysical.SetBehavior (propertySet: Element, behavior: var): Element"
     },
     {
       "ConcreteType": "Orchid.E.RevitMaterial.PhysicalBehavior, OrchidRE",
@@ -716,13 +716,13 @@
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
       "NodeType": "FunctionNode",
-      "FunctionSignature": "Orchid.RevitMaterial.Physical.SetInformation@var,string,string,string,string,string",
+      "FunctionSignature": "Orchid.RevitMaterial.Physical.SetInformation@Revit.Elements.Element,string,string,string,string,string",
       "Id": "3ff850d77cb24904bed97178fe175338",
       "Inputs": [
         {
           "Id": "8bd551313306431a8e1ab7c0ad344806",
           "Name": "propertySet",
-          "Description": "Physical property set.\n\nvar",
+          "Description": "Physical property set as Dynamo type.\n\nElement",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -731,7 +731,7 @@
         {
           "Id": "3f47c6d1d8c0468e8692c14c2a16a83a",
           "Name": "description",
-          "Description": "string\nDefault value : null (disabled)",
+          "Description": "Description.\n\nstring",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -740,7 +740,7 @@
         {
           "Id": "4c351489843a4b1fa6bb29f65492a927",
           "Name": "keywords",
-          "Description": "string\nDefault value : null (disabled)",
+          "Description": "Keywords.\n\nstring",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -749,7 +749,7 @@
         {
           "Id": "bf318152e0ab4d45953110e75f5d376f",
           "Name": "subclass",
-          "Description": "string\nDefault value : null (disabled)",
+          "Description": "Subclass.\n\nstring",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -758,7 +758,7 @@
         {
           "Id": "ae99afdcf20a42d583c9688dcdae8f78",
           "Name": "source",
-          "Description": "string\nDefault value : null (disabled)",
+          "Description": "Source.\n\nstring",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -767,7 +767,7 @@
         {
           "Id": "7897c6c8889b44a6baa5f71f6a6d4b3c",
           "Name": "sourceUrl",
-          "Description": "string\nDefault value : null (disabled)",
+          "Description": "Source Url.\n\nstring",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -786,18 +786,18 @@
         }
       ],
       "Replication": "Auto",
-      "Description": "Set information.\n\nPhysical.SetInformation (propertySet: var, description: string = null, keywords: string = null, subclass: string = null, source: string = null, sourceUrl: string = null): var[]..[]"
+      "Description": "Set information.\n\nPhysical.SetInformation (propertySet: Element, description: string, keywords: string, subclass: string, source: string, sourceUrl: string): Element"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
       "NodeType": "FunctionNode",
-      "FunctionSignature": "Orchid.RevitMaterial.Physical.GetExpansionCoefficient@var",
+      "FunctionSignature": "Orchid.RevitMaterial.Physical.GetExpansionCoefficient@Revit.Elements.Element",
       "Id": "67d8b72db9054edfa7333bc4398b2d0b",
       "Inputs": [
         {
           "Id": "ddd93c0354c240e8a1a7f5cf9a54e51c",
           "Name": "propertySet",
-          "Description": "Physical property set.\n\nvar",
+          "Description": "Physical property set as Dynamo type.\n\nElement",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -808,7 +808,7 @@
         {
           "Id": "e0bf3a57fdad4c339dce1fa4e2925d42",
           "Name": "ExpansionCoefficient",
-          "Description": "ExpansionCoefficient.",
+          "Description": "Expansion coefficient.",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -817,7 +817,7 @@
         {
           "Id": "46246ddb1b7a4dd38910e7f729e64da2",
           "Name": "ExpansionCoefficientX",
-          "Description": "ExpansionCoefficientX.",
+          "Description": "Expansion coefficient X.",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -826,7 +826,7 @@
         {
           "Id": "422d6363444b44afba43d3a59c4f2c01",
           "Name": "ExpansionCoefficientY",
-          "Description": "ExpansionCoefficientY.",
+          "Description": "Expansion coefficient Y.",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -835,7 +835,7 @@
         {
           "Id": "127f59c53ef84e0f8f3c2de9331575b6",
           "Name": "ExpansionCoefficientZ",
-          "Description": "ExpansionCoefficientZ.",
+          "Description": "Expansion coefficient Z.",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -844,7 +844,7 @@
         {
           "Id": "fb4e49f5368c45f5af6bf4031833f891",
           "Name": "ExpansionCoefficient1",
-          "Description": "ExpansionCoefficient1.",
+          "Description": "Expansion coefficient 1.",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -853,7 +853,7 @@
         {
           "Id": "c12a483c8bf349cea1b2be1db240d655",
           "Name": "ExpansionCoefficient2",
-          "Description": "ExpansionCoefficient2.",
+          "Description": "Expansion coefficient 2.",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -861,7 +861,7 @@
         }
       ],
       "Replication": "Auto",
-      "Description": "Get expansion coefficient (basic thermal).\n\nPhysical.GetExpansionCoefficient (propertySet: var): var[]..[]"
+      "Description": "Get expansion coefficient (basic thermal).\n\nPhysical.GetExpansionCoefficient (propertySet: Element): var[]..[]"
     },
     {
       "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
@@ -924,13 +924,13 @@
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
       "NodeType": "FunctionNode",
-      "FunctionSignature": "Orchid.RevitMaterial.Thermal.GetInformation@var",
+      "FunctionSignature": "Orchid.RevitMaterial.Thermal.GetInformation@Revit.Elements.Element",
       "Id": "6a3e893820b54e3e8338002977d59027",
       "Inputs": [
         {
           "Id": "fde3468d16b34f379b1b7916685f0530",
           "Name": "propertySet",
-          "Description": "Thermal property set.\n\nvar",
+          "Description": "Thermal property set as Dynamo type.\n\nElement",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -977,7 +977,7 @@
         {
           "Id": "5cc5b6b08ffb46a698e797069d1c836d",
           "Name": "SourceUrl",
-          "Description": "SourceUrl.",
+          "Description": "Source Url.",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -985,7 +985,7 @@
         }
       ],
       "Replication": "Auto",
-      "Description": "Get information.\n\nThermal.GetInformation (propertySet: var): var[]..[]"
+      "Description": "Get information.\n\nThermal.GetInformation (propertySet: Element): var[]..[]"
     },
     {
       "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
@@ -1106,13 +1106,13 @@
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
       "NodeType": "FunctionNode",
-      "FunctionSignature": "Orchid.RevitMaterial.Thermal.GetProperties@var",
+      "FunctionSignature": "Orchid.RevitMaterial.Thermal.GetProperties@Revit.Elements.Element",
       "Id": "a3a4b70fe6484c249e0171aba11bc359",
       "Inputs": [
         {
           "Id": "fdf3dd4744554967a0491c016421bd7c",
           "Name": "propertySet",
-          "Description": "Thermal property set.\n\nvar",
+          "Description": "Thermal property set as Dynamo type.\n\nElement",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -1123,7 +1123,7 @@
         {
           "Id": "8bdd70fb3a7a451182b5c062792eacda",
           "Name": "TransmitsLight",
-          "Description": "TransmitsLight.",
+          "Description": "Transmits light.",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -1141,7 +1141,7 @@
         {
           "Id": "cbdecc60b046404580516c8f6f6ba79f",
           "Name": "ThermalConductivity",
-          "Description": "ThermalConductivity.",
+          "Description": "Thermal conductivity.",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -1150,7 +1150,7 @@
         {
           "Id": "f557067a8e9c447e9de867cfc04e000b",
           "Name": "SpecificHeat",
-          "Description": "SpecificHeat.",
+          "Description": "Specific heat.",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -1204,7 +1204,7 @@
         {
           "Id": "521eb9629c1043709e46325432052fb1",
           "Name": "ElectricalResistivity",
-          "Description": "ElectricalResistivity.",
+          "Description": "Electrical resistivity.",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -1212,7 +1212,7 @@
         }
       ],
       "Replication": "Auto",
-      "Description": "Get properties.\n\nThermal.GetProperties (propertySet: var): var[]..[]"
+      "Description": "Get properties.\n\nThermal.GetProperties (propertySet: Element): var[]..[]"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
@@ -1341,13 +1341,13 @@
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
       "NodeType": "FunctionNode",
-      "FunctionSignature": "Orchid.RevitMaterial.Thermal.SetProperties@var,bool,var,double,double,double,double,double,double,double,double",
+      "FunctionSignature": "Orchid.RevitMaterial.Thermal.SetProperties@Revit.Elements.Element,bool,var,double,double,double,double,double,double,double,double",
       "Id": "2eab37394f4c44c0968e6420d0839118",
       "Inputs": [
         {
           "Id": "bde845a5c9fb40e68457f27df0665eb3",
           "Name": "propertySet",
-          "Description": "Thermal property set.\n\nvar",
+          "Description": "Thermal property set as Dynamo type.\n\nElement",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -1356,7 +1356,7 @@
         {
           "Id": "10cc10c91da04493bb417bd07cf70be9",
           "Name": "transmitsLight",
-          "Description": "bool\nDefault value : false (disabled)",
+          "Description": "Transmits light.\n\nbool\nDefault value : false (disabled)",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -1365,7 +1365,7 @@
         {
           "Id": "1b7e6419145849b5abcaece84fd81f75",
           "Name": "behavior",
-          "Description": "Thermal behavior as enumeration type.\n\nvar\nDefault value : null (disabled)",
+          "Description": "Thermal behavior as enumeration type.\n\nvar\nDefault value : Orchid.Internals.Enums.Revit(\"StructuralBehavior.Isotropic\") (disabled)",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -1374,7 +1374,7 @@
         {
           "Id": "abc67a11fd8c4a2ba99ee1ba740abb58",
           "Name": "thermalConductivity",
-          "Description": "double\nDefault value : -1 (disabled)",
+          "Description": "Thermal conductivity.\n\ndouble\nDefault value : -1 (disabled)",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -1383,7 +1383,7 @@
         {
           "Id": "6631feb491dc4054a36376ba6c0692cf",
           "Name": "specificHeat",
-          "Description": "double\nDefault value : -1 (disabled)",
+          "Description": "Specific heat.\n\ndouble\nDefault value : -1 (disabled)",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -1392,7 +1392,7 @@
         {
           "Id": "1aaa198b960b48d1994d979f89f3a5dc",
           "Name": "density",
-          "Description": "double\nDefault value : -1 (disabled)",
+          "Description": "Density.\n\ndouble\nDefault value : -1 (disabled)",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -1401,7 +1401,7 @@
         {
           "Id": "b1c7b42496fe4d908e062350ebf31bb8",
           "Name": "emissivity",
-          "Description": "double\nDefault value : -1 (disabled)",
+          "Description": "Emissivity.\n\ndouble\nDefault value : -1 (disabled)",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -1410,7 +1410,7 @@
         {
           "Id": "4fd13c2e1c0f4e0eac687e76b5c4b686",
           "Name": "permeability",
-          "Description": "double\nDefault value : -1 (disabled)",
+          "Description": "Permeability.\n\ndouble\nDefault value : -1 (disabled)",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -1419,7 +1419,7 @@
         {
           "Id": "9367e3bbb1fd4d4bb7b06dc981878608",
           "Name": "porosity",
-          "Description": "double\nDefault value : -1 (disabled)",
+          "Description": "Porosity.\n\ndouble\nDefault value : -1 (disabled)",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -1428,7 +1428,7 @@
         {
           "Id": "b9b9a8b17bd243ce88073e1f623975a9",
           "Name": "reflectivity",
-          "Description": "double\nDefault value : -1 (disabled)",
+          "Description": "Reflectivity.\n\ndouble\nDefault value : -1 (disabled)",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -1437,7 +1437,7 @@
         {
           "Id": "622b3b1ad9e74f4ba1e3b72b45d65f30",
           "Name": "electricalResistivity",
-          "Description": "double\nDefault value : -1 (disabled)",
+          "Description": "Electrical resistivity.\n\ndouble\nDefault value : -1 (disabled)",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -1456,7 +1456,7 @@
         }
       ],
       "Replication": "Auto",
-      "Description": "Set properties. Note: Can only be used for the thermal type Solid!\n\nThermal.SetProperties (propertySet: var, transmitsLight: bool = false, behavior: var = null, thermalConductivity: double = -1, specificHeat: double = -1, density: double = -1, emissivity: double = -1, permeability: double = -1, porosity: double = -1, reflectivity: double = -1, electricalResistivity: double = -1): var[]..[]"
+      "Description": "Set properties. Note: Can only be used for the thermal type Solid!\n\nThermal.SetProperties (propertySet: Element, transmitsLight: bool = false, behavior: var = Orchid.Internals.Enums.Revit(\"StructuralBehavior.Isotropic\"), thermalConductivity: double = -1, specificHeat: double = -1, density: double = -1, emissivity: double = -1, permeability: double = -1, porosity: double = -1, reflectivity: double = -1, electricalResistivity: double = -1): Element"
     },
     {
       "ConcreteType": "Orchid.E.RevitMaterial.MaterialAspect, OrchidRE",
@@ -1482,13 +1482,13 @@
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
       "NodeType": "FunctionNode",
-      "FunctionSignature": "Orchid.RevitMaterial.Thermal.SetInformation@var,string,string,string,string,string",
+      "FunctionSignature": "Orchid.RevitMaterial.Thermal.SetInformation@Revit.Elements.Element,string,string,string,string,string",
       "Id": "83ce4e49034b45ec9b534fabb98d589f",
       "Inputs": [
         {
           "Id": "8ac27be1acdc4721ac9fad04e697e396",
           "Name": "propertySet",
-          "Description": "Thermal property set.\n\nvar",
+          "Description": "Thermal property set as Dynamo type.\n\nElement",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -1497,7 +1497,7 @@
         {
           "Id": "b938c7b4a6a449f8acf549213ce5ba43",
           "Name": "description",
-          "Description": "string\nDefault value : null (disabled)",
+          "Description": "Description.\n\nstring",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -1506,7 +1506,7 @@
         {
           "Id": "dd7ff31cb6314f94ab74de6ace6a2075",
           "Name": "keywords",
-          "Description": "string\nDefault value : null (disabled)",
+          "Description": "Keywords.\n\nstring",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -1515,7 +1515,7 @@
         {
           "Id": "77faed1612f546a89c9e44c304ce5617",
           "Name": "subclass",
-          "Description": "string\nDefault value : null (disabled)",
+          "Description": "Subclass.\n\nstring",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -1524,7 +1524,7 @@
         {
           "Id": "1e8f7933c2a14f67a2a04cdea7874c37",
           "Name": "source",
-          "Description": "string\nDefault value : null (disabled)",
+          "Description": "Source.\n\nstring",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -1533,7 +1533,7 @@
         {
           "Id": "c102dee06fcf44a7a1e8012918be1724",
           "Name": "sourceUrl",
-          "Description": "string\nDefault value : null (disabled)",
+          "Description": "Source Url.\n\nstring",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -1552,7 +1552,7 @@
         }
       ],
       "Replication": "Auto",
-      "Description": "Set information.\n\nThermal.SetInformation (propertySet: var, description: string = null, keywords: string = null, subclass: string = null, source: string = null, sourceUrl: string = null): var[]..[]"
+      "Description": "Set information.\n\nThermal.SetInformation (propertySet: Element, description: string, keywords: string, subclass: string, source: string, sourceUrl: string): Element"
     },
     {
       "ConcreteType": "Orchid.E.RevitMaterial.MaterialAspect, OrchidRE",
@@ -1578,79 +1578,13 @@
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
       "NodeType": "FunctionNode",
-      "FunctionSignature": "Orchid.RevitMaterial.Physical.SetMechanical@var,double,double,double,double",
-      "Id": "b748d669f82b4d15866edcee1bfe7b1f",
-      "Inputs": [
-        {
-          "Id": "8ad85e556f7c44749e552d7e2d0f8030",
-          "Name": "propertySet",
-          "Description": "Physical property set.\n\nvar",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        },
-        {
-          "Id": "cfaff56e8447410bb02c555684c8c236",
-          "Name": "youngModulus",
-          "Description": "double\nDefault value : -1 (disabled)",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        },
-        {
-          "Id": "33580034d1014cbabc5b2d1ac021aa9a",
-          "Name": "poissonRatio",
-          "Description": "double\nDefault value : -1 (disabled)",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        },
-        {
-          "Id": "7682a4da4ba940348ae518769a111d58",
-          "Name": "shearModulus",
-          "Description": "double\nDefault value : -1 (disabled)",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        },
-        {
-          "Id": "bae1bf7d415f401cb67948f8c4d1df7e",
-          "Name": "density",
-          "Description": "double\nDefault value : -1 (disabled)",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        }
-      ],
-      "Outputs": [
-        {
-          "Id": "c27fd3ccef424733bf645d225d615fb5",
-          "Name": "PropertySet",
-          "Description": "Physical property set.",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        }
-      ],
-      "Replication": "Auto",
-      "Description": "Set mechanical.\n\nPhysical.SetMechanical (propertySet: var, youngModulus: double = -1, poissonRatio: double = -1, shearModulus: double = -1, density: double = -1): var[]..[]"
-    },
-    {
-      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
-      "NodeType": "FunctionNode",
       "FunctionSignature": "Orchid.RevitMaterial.Material.Create@string",
       "Id": "83e3a74ab8bb40ec90910093cbdf82cb",
       "Inputs": [
         {
           "Id": "a6ad8475cc3a4a1ea90f171c29d888d3",
           "Name": "name",
-          "Description": "The material name.\n\nstring",
+          "Description": "Name as string value.\n\nstring",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -1669,18 +1603,18 @@
         }
       ],
       "Replication": "Auto",
-      "Description": "Create material.\n\nMaterial.Create (name: string): var[]..[]"
+      "Description": "Create material. Note: If the material exists it is being replaced!\n\nMaterial.Create (name: string): Material"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
       "NodeType": "FunctionNode",
-      "FunctionSignature": "Orchid.RevitMaterial.Physical.SetBasicThermal@var,double",
+      "FunctionSignature": "Orchid.RevitMaterial.Physical.SetBasicThermal@Revit.Elements.Element,double",
       "Id": "753680a4f19a47efb97bf0b3144f187a",
       "Inputs": [
         {
           "Id": "2ad525d530084ec2a3ca0a3ce8b66272",
           "Name": "propertySet",
-          "Description": "Physical property set.\n\nvar",
+          "Description": "Physical property set as Dynamo type.\n\nElement",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -1689,7 +1623,7 @@
         {
           "Id": "e1c61a9073fd4c8488177b591fd26a3a",
           "Name": "expansionCoefficient",
-          "Description": "double",
+          "Description": "Expansion coefficient.\n\ndouble",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -1708,7 +1642,7 @@
         }
       ],
       "Replication": "Auto",
-      "Description": "Set basic thermal.\n\nPhysical.SetBasicThermal (propertySet: var, expansionCoefficient: double): var[]..[]"
+      "Description": "Set basic thermal.\n\nPhysical.SetBasicThermal (propertySet: Element, expansionCoefficient: double): Element"
     },
     {
       "ConcreteType": "CoreNodeModels.Input.BoolSelector, CoreNodeModels",
@@ -1762,13 +1696,13 @@
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
       "NodeType": "FunctionNode",
-      "FunctionSignature": "Orchid.RevitMaterial.Physical.SetStrength@var,double,double,bool",
+      "FunctionSignature": "Orchid.RevitMaterial.Physical.SetStrength@Revit.Elements.Element,double,double,bool",
       "Id": "ffeaea23c2f04e508e830474b69965bc",
       "Inputs": [
         {
           "Id": "d79a73e196ba4f1cb29fd726881d5cbf",
           "Name": "propertySet",
-          "Description": "Physical property set.\n\nvar",
+          "Description": "Physical property set as Dynamo type.\n\nElement",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -1777,7 +1711,7 @@
         {
           "Id": "84728cf86a10472e9ccdc7ed80cf3744",
           "Name": "yieldStress",
-          "Description": "double\nDefault value : -1 (disabled)",
+          "Description": "Yield stress.\n\ndouble\nDefault value : -1 (disabled)",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -1786,7 +1720,7 @@
         {
           "Id": "76d8aa921af44b6a908e8c37b2b25e6c",
           "Name": "tensileStrength",
-          "Description": "double\nDefault value : -1 (disabled)",
+          "Description": "Tensile strength.\n\ndouble\nDefault value : -1 (disabled)",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -1795,7 +1729,7 @@
         {
           "Id": "7c651811b2214ea2a9a52de2730c8b18",
           "Name": "thermalTreated",
-          "Description": "bool\nDefault value : false (disabled)",
+          "Description": "Thermal treated.\n\nbool\nDefault value : false (disabled)",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -1814,18 +1748,18 @@
         }
       ],
       "Replication": "Auto",
-      "Description": "Set strength.\n\nPhysical.SetStrength (propertySet: var, yieldStress: double = -1, tensileStrength: double = -1, thermalTreated: bool = false): var[]..[]"
+      "Description": "Set strength.\n\nPhysical.SetStrength (propertySet: Element, yieldStress: double = -1, tensileStrength: double = -1, thermalTreated: bool = false): Element"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
       "NodeType": "FunctionNode",
-      "FunctionSignature": "Orchid.RevitMaterial.Physical.GetPoissonRatio@var",
+      "FunctionSignature": "Orchid.RevitMaterial.Physical.GetPoissonRatio@Revit.Elements.Element",
       "Id": "71af57db25c74a3ebb93385642341fc9",
       "Inputs": [
         {
           "Id": "77ecb6b5adeb42bb9b8681fc93cfee99",
           "Name": "propertySet",
-          "Description": "Physical property set.\n\nvar",
+          "Description": "Physical property set as Dynamo type.\n\nElement",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -1836,7 +1770,7 @@
         {
           "Id": "b60eec27c10b4facb2aff1e34eda3d0d",
           "Name": "PoissonRatio",
-          "Description": "PoissonRatio.",
+          "Description": "Poisson ratio.",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -1845,7 +1779,7 @@
         {
           "Id": "5cd28b56fe15421682f6461e36eb8f6b",
           "Name": "PoissonRatioX",
-          "Description": "PoissonRatioX.",
+          "Description": "Poisson ratio X.",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -1854,7 +1788,7 @@
         {
           "Id": "677736f2d83547388f22b3a4f0760e52",
           "Name": "PoissonRatioY",
-          "Description": "PoissonRatioY.",
+          "Description": "Poisson ratio Y.",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -1863,7 +1797,7 @@
         {
           "Id": "66c7227c119246f985d652d0b08e4567",
           "Name": "PoissonRatioZ",
-          "Description": "PoissonRatioZ.",
+          "Description": "Poisson ratio Z.",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -1872,7 +1806,7 @@
         {
           "Id": "1fe1701fef0b4721851818cdf0000052",
           "Name": "PoissonRatio12",
-          "Description": "PoissonRatio12.",
+          "Description": "Poisson ratio 12.",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -1881,7 +1815,7 @@
         {
           "Id": "df284e818efe43c3a66b5edc3e3159c0",
           "Name": "PoissonRatio23",
-          "Description": "PoissonRatio23.",
+          "Description": "Poisson ratio 23.",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -1889,18 +1823,18 @@
         }
       ],
       "Replication": "Auto",
-      "Description": "Get poisson ratio (mechanical).\n\nPhysical.GetPoissonRatio (propertySet: var): var[]..[]"
+      "Description": "Get poisson ratio (mechanical).\n\nPhysical.GetPoissonRatio (propertySet: Element): var[]..[]"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
       "NodeType": "FunctionNode",
-      "FunctionSignature": "Orchid.RevitMaterial.Physical.GetYoungModulus@var",
+      "FunctionSignature": "Orchid.RevitMaterial.Physical.GetYoungModulus@Revit.Elements.Element",
       "Id": "45220fb14f324d54a2a5e6f9e16e881c",
       "Inputs": [
         {
           "Id": "30f27cf600a541a8aa81271d509efbf6",
           "Name": "propertySet",
-          "Description": "Physical property set.\n\nvar",
+          "Description": "Physical property set as Dynamo type.\n\nElement",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -1911,7 +1845,7 @@
         {
           "Id": "c66696adc5b7415ea9aad356d888fd90",
           "Name": "YoungModulus",
-          "Description": "YoungModulus.",
+          "Description": "Young modulus.",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -1920,7 +1854,7 @@
         {
           "Id": "f8e677e5f93e4d87a1e888028ba27d36",
           "Name": "YoungModulusX",
-          "Description": "YoungModulusX.",
+          "Description": "Young modulus X.",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -1929,7 +1863,7 @@
         {
           "Id": "445343f5305649ed96bd773bd54fa776",
           "Name": "YoungModulusY",
-          "Description": "YoungModulusY.",
+          "Description": "Young modulus Y.",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -1938,7 +1872,7 @@
         {
           "Id": "d9a2bcbc16064b9995fdaa08882a20f5",
           "Name": "YoungModulusZ",
-          "Description": "YoungModulusZ.",
+          "Description": "Young modulus Z.",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -1947,7 +1881,7 @@
         {
           "Id": "e1bc19ade60c4c1786f721128cc42fa2",
           "Name": "YoungModulus1",
-          "Description": "YoungModulus1.",
+          "Description": "Young modulus 1.",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -1956,7 +1890,7 @@
         {
           "Id": "72ce3666cb054d3493e34c4abce2a108",
           "Name": "YoungModulus2",
-          "Description": "YoungModulus2.",
+          "Description": "Young modulus 2.",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -1964,7 +1898,7 @@
         }
       ],
       "Replication": "Auto",
-      "Description": "Get young modulus (mechanical).\n\nPhysical.GetYoungModulus (propertySet: var): var[]..[]"
+      "Description": "Get young modulus (mechanical).\n\nPhysical.GetYoungModulus (propertySet: Element): var[]..[]"
     },
     {
       "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
@@ -2637,13 +2571,13 @@
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
       "NodeType": "FunctionNode",
-      "FunctionSignature": "Orchid.RevitMaterial.Material.SetPhysical@var,var,var",
+      "FunctionSignature": "Orchid.RevitMaterial.Material.SetPhysical@Revit.Elements.Material,var,Revit.Elements.Element",
       "Id": "824c8df02c074ea1b9c24b1a640c94eb",
       "Inputs": [
         {
           "Id": "812f426a7d0a4c6b894df679a56ca8f2",
           "Name": "material",
-          "Description": "Material as string or object.\n\nvar",
+          "Description": "Material as Dynamo type.\n\nMaterial",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -2661,7 +2595,7 @@
         {
           "Id": "71bccbece21e4ef2b3d5acf54f3d4ad1",
           "Name": "propertySet",
-          "Description": "Physical property set as string or object.\n\nvar",
+          "Description": "Physical property set as Dynamo type.\n\nElement",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -2680,7 +2614,7 @@
         }
       ],
       "Replication": "Auto",
-      "Description": "Set physical property.\n\nMaterial.SetPhysical (material: var, aspect: var, propertySet: var): var[]..[]"
+      "Description": "Set physical property.\n\nMaterial.SetPhysical (material: Material, aspect: var, propertySet: Element): var[]..[]"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
@@ -2889,13 +2823,13 @@
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
       "NodeType": "FunctionNode",
-      "FunctionSignature": "Orchid.RevitMaterial.Material.SetThermal@var,var,var",
+      "FunctionSignature": "Orchid.RevitMaterial.Material.SetThermal@Revit.Elements.Material,var,Revit.Elements.Element",
       "Id": "2d9712c92e0a43c5ac19358daf58d1e1",
       "Inputs": [
         {
           "Id": "d4902c306b964f28b9888239cc2cef59",
           "Name": "material",
-          "Description": "Material as string or object.\n\nvar",
+          "Description": "Material as Dynamo type.\n\nMaterial",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -2913,7 +2847,7 @@
         {
           "Id": "c76f5fa4020b4ab6942df939cab405ad",
           "Name": "propertySet",
-          "Description": "Thermal property set as string or object.\n\nvar",
+          "Description": "Thermal property set as Dynamo type.\n\nElement",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -2932,7 +2866,7 @@
         }
       ],
       "Replication": "Auto",
-      "Description": "Set thermal property.\n\nMaterial.SetThermal (material: var, aspect: var, propertySet: var): var[]..[]"
+      "Description": "Set thermal property.\n\nMaterial.SetThermal (material: Material, aspect: var, propertySet: Element): var[]..[]"
     },
     {
       "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
@@ -3024,13 +2958,13 @@
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
       "NodeType": "FunctionNode",
-      "FunctionSignature": "Orchid.RevitMaterial.Physical.GetStrength@var",
+      "FunctionSignature": "Orchid.RevitMaterial.Physical.GetStrength@Revit.Elements.Element",
       "Id": "f2339fc4c4ee4c97aaa73f46813c7ae6",
       "Inputs": [
         {
           "Id": "2a1260bf5fa04d00a8979fbe387b1854",
           "Name": "propertySet",
-          "Description": "Physical property set.\n\nvar",
+          "Description": "Physical property set as Dynamo type.\n\nElement",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -3041,7 +2975,7 @@
         {
           "Id": "48793cbeda454186b426dad7562aa095",
           "Name": "YieldStress",
-          "Description": "YieldStress.",
+          "Description": "Yield stress.",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -3050,7 +2984,7 @@
         {
           "Id": "79636eefa6224670ada35cff2dd6574d",
           "Name": "TensileStrength",
-          "Description": "TensileStrength.",
+          "Description": "Tensile strength.",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -3059,7 +2993,7 @@
         {
           "Id": "5fb7d38531024dc581995a1601d5fab1",
           "Name": "ThermalTreated",
-          "Description": "ThermalTreated.",
+          "Description": "Thermal treated.",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -3067,7 +3001,7 @@
         }
       ],
       "Replication": "Auto",
-      "Description": "Get strength.\n\nPhysical.GetStrength (propertySet: var): var[]..[]"
+      "Description": "Get strength.\n\nPhysical.GetStrength (propertySet: Element): var[]..[]"
     },
     {
       "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
@@ -3188,13 +3122,13 @@
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
       "NodeType": "FunctionNode",
-      "FunctionSignature": "Orchid.RevitMaterial.Physical.GetShearModulus@var",
+      "FunctionSignature": "Orchid.RevitMaterial.Physical.GetShearModulus@Revit.Elements.Element",
       "Id": "9d5710aca78e472da8e8f035af8a887e",
       "Inputs": [
         {
           "Id": "c98b5aa10c9b452cbbbafa4b4f456635",
           "Name": "propertySet",
-          "Description": "Physical property set.\n\nvar",
+          "Description": "Physical property set as Dynamo type.\n\nElement",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -3205,7 +3139,7 @@
         {
           "Id": "08d3be452b6940dbb23b822ff7af4e1d",
           "Name": "ShearModulus",
-          "Description": "ShearModulus.",
+          "Description": "Shear modulus.",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -3214,7 +3148,7 @@
         {
           "Id": "89e7da32b4cc4d96b7155d0c9f20807c",
           "Name": "ShearModulusX",
-          "Description": "ShearModulusX.",
+          "Description": "Shear modulus X.",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -3223,7 +3157,7 @@
         {
           "Id": "4bd1862dab7944a096eb8d43045b8e9f",
           "Name": "ShearModulusY",
-          "Description": "ShearModulusY.",
+          "Description": "Shear modulus Y.",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -3232,7 +3166,7 @@
         {
           "Id": "5fab7c0d19d4405983145e79ea909e31",
           "Name": "ShearModulusZ",
-          "Description": "ShearModulusZ.",
+          "Description": "Shear modulus Z.",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -3241,7 +3175,7 @@
         {
           "Id": "c05a8e5fda1e4c889a3233422e92a4c6",
           "Name": "ShearModulus12",
-          "Description": "ShearModulus12.",
+          "Description": "Shear modulus 12.",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -3249,7 +3183,7 @@
         }
       ],
       "Replication": "Auto",
-      "Description": "Get shear modulus (mechanical).\n\nPhysical.GetShearModulus (propertySet: var): var[]..[]"
+      "Description": "Get shear modulus (mechanical).\n\nPhysical.GetShearModulus (propertySet: Element): var[]..[]"
     },
     {
       "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
@@ -3395,6 +3329,131 @@
       ],
       "Replication": "Disabled",
       "Description": "Visualize the node's output"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "Orchid.RevitMaterial.Physical.SetMechanical@Revit.Elements.Element,double,double,double,double",
+      "Id": "04dc6b1423534558b73d0ef9447db8ff",
+      "Inputs": [
+        {
+          "Id": "ea8e01fd8b514be0aeb578579424a771",
+          "Name": "propertySet",
+          "Description": "Physical property set as Dynamo type.\n\nElement",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "def5ac9881d84b07aa5023e193c9bef8",
+          "Name": "youngModulus",
+          "Description": "Young modulus.\n\ndouble\nDefault value : -1",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "690d6ffde1ec435baca7b02cf0033f98",
+          "Name": "poissonRatio",
+          "Description": "Poisson ratio.\n\ndouble\nDefault value : -1",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "41dbe800ac844bd49f8fda8e71674d6c",
+          "Name": "shearModulus",
+          "Description": "Shear modulus.\n\ndouble\nDefault value : -1",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "6f03d39de7a849f1999d5e17eb6aa0fc",
+          "Name": "density",
+          "Description": "Density.\n\ndouble\nDefault value : -1",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "ef35ea918105491fa590d81a4ac597e3",
+          "Name": "PropertySet",
+          "Description": "Physical property set.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Set mechanical.\n\nPhysical.SetMechanical (propertySet: Element, youngModulus: double = -1, poissonRatio: double = -1, shearModulus: double = -1, density: double = -1): Element"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "Orchid.RevitMaterial.Physical.GetDensity@Revit.Elements.Element",
+      "Id": "1602892276ac4ed695b00313b526df95",
+      "Inputs": [
+        {
+          "Id": "19c83b8fcfdf428986b9f3dae3aaee7b",
+          "Name": "propertySet",
+          "Description": "Physical property set as Dynamo type.\n\nElement",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "79cd249c375a4edb9ce54764915e0de0",
+          "Name": "Density",
+          "Description": "Density.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Get density (mechanical).\n\nPhysical.GetDensity (propertySet: Element): double"
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
+      "NodeType": "ExtensionNode",
+      "Id": "46b0ffa7295f44b283f1bece0878cc00",
+      "Inputs": [
+        {
+          "Id": "ed19bac8bf294ab1977daaeb88714f58",
+          "Name": "",
+          "Description": "Node to show output from",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "cb1f7d71cdac4fbd9a40f8d3405a5455",
+          "Name": "",
+          "Description": "Node output",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Visualize the node's output"
     }
   ],
   "Connectors": [
@@ -3490,26 +3549,26 @@
     },
     {
       "Start": "4da3c87b77b24775b6e0d856ea14ce96",
-      "End": "cfaff56e8447410bb02c555684c8c236",
-      "Id": "4e69e8be9a744c7c848ebd11828523f9",
+      "End": "def5ac9881d84b07aa5023e193c9bef8",
+      "Id": "c759837ab874445ba8c13e5f024d901a",
       "IsHidden": "False"
     },
     {
       "Start": "86cd45ff1a17428395cc6fbea473fc17",
-      "End": "33580034d1014cbabc5b2d1ac021aa9a",
-      "Id": "6a6e52bcf9db42a5b57b95f4c7d19e07",
+      "End": "690d6ffde1ec435baca7b02cf0033f98",
+      "Id": "b1e980ea6305464b938221ab31afd68c",
       "IsHidden": "False"
     },
     {
       "Start": "e6c3539c45934f6f8930ca45f0c5002b",
-      "End": "7682a4da4ba940348ae518769a111d58",
-      "Id": "2d0807fbad1e4991b70333dfa4e7c146",
+      "End": "41dbe800ac844bd49f8fda8e71674d6c",
+      "Id": "6d2110265f2f4215a62d8d07088c4ccb",
       "IsHidden": "False"
     },
     {
       "Start": "064e6a07ce6e43409ca6035a590d2c4c",
-      "End": "bae1bf7d415f401cb67948f8c4d1df7e",
-      "Id": "d2be089c666f46d4815f1fd17081b1e5",
+      "End": "6f03d39de7a849f1999d5e17eb6aa0fc",
+      "Id": "cac6d79240874c00849689ba3d17804a",
       "IsHidden": "False"
     },
     {
@@ -3819,30 +3878,6 @@
       "IsHidden": "False"
     },
     {
-      "Start": "c27fd3ccef424733bf645d225d615fb5",
-      "End": "d79a73e196ba4f1cb29fd726881d5cbf",
-      "Id": "f6b687b45c604386845aa01365d3341b",
-      "IsHidden": "False"
-    },
-    {
-      "Start": "c27fd3ccef424733bf645d225d615fb5",
-      "End": "30f27cf600a541a8aa81271d509efbf6",
-      "Id": "4102009d2c1a4e63b1fda004682b02a4",
-      "IsHidden": "False"
-    },
-    {
-      "Start": "c27fd3ccef424733bf645d225d615fb5",
-      "End": "77ecb6b5adeb42bb9b8681fc93cfee99",
-      "Id": "209ad1d3af2641bf936b119175439777",
-      "IsHidden": "False"
-    },
-    {
-      "Start": "c27fd3ccef424733bf645d225d615fb5",
-      "End": "c98b5aa10c9b452cbbbafa4b4f456635",
-      "Id": "01b101dd96aa45f5a66960f16ffa9c76",
-      "IsHidden": "False"
-    },
-    {
       "Start": "6e7d8075fcd143678a3b9ea014051c75",
       "End": "812f426a7d0a4c6b894df679a56ca8f2",
       "Id": "f91e33524cf247de9d676535ba31b3af",
@@ -3862,8 +3897,8 @@
     },
     {
       "Start": "d7ec0c64b8a049d58d1bd6a9425814e4",
-      "End": "8ad85e556f7c44749e552d7e2d0f8030",
-      "Id": "2bcbab7da44b4d9382233f638c31f91b",
+      "End": "ea8e01fd8b514be0aeb578579424a771",
+      "Id": "379423ff31434f99b54ca9fca510f809",
       "IsHidden": "False"
     },
     {
@@ -4051,13 +4086,49 @@
       "End": "08feea742f7e46d4b10c309be9295990",
       "Id": "7a2c6ef1ca504948b9d3dc04552bd120",
       "IsHidden": "False"
+    },
+    {
+      "Start": "ef35ea918105491fa590d81a4ac597e3",
+      "End": "d79a73e196ba4f1cb29fd726881d5cbf",
+      "Id": "d4741f43f79e4266a4acb02a0a6790bb",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "ef35ea918105491fa590d81a4ac597e3",
+      "End": "30f27cf600a541a8aa81271d509efbf6",
+      "Id": "4b05bd27ecb14f5993c5d2b1bf4d759f",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "ef35ea918105491fa590d81a4ac597e3",
+      "End": "77ecb6b5adeb42bb9b8681fc93cfee99",
+      "Id": "6764fcd972f74fa48b11dbb2ed0d7d64",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "ef35ea918105491fa590d81a4ac597e3",
+      "End": "c98b5aa10c9b452cbbbafa4b4f456635",
+      "Id": "ce6f1089eae54d5d9c64a9860fde9df5",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "ef35ea918105491fa590d81a4ac597e3",
+      "End": "19c83b8fcfdf428986b9f3dae3aaee7b",
+      "Id": "8fd3206005dc4ebc8a14cef33db90118",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "79cd249c375a4edb9ce54764915e0de0",
+      "End": "ed19bac8bf294ab1977daaeb88714f58",
+      "Id": "ed9ce5da279d440d830f2d8aed21e544",
+      "IsHidden": "False"
     }
   ],
   "Dependencies": [],
   "NodeLibraryDependencies": [
     {
       "Name": "Orchid",
-      "Version": "216.3.0.5828",
+      "Version": "2.16.4.6166",
       "ReferenceType": "Package",
       "Nodes": [
         "10a3b66316444100af12e58f1be7b1d9",
@@ -4077,7 +4148,6 @@
         "209fb7cfe9ed44c79f20c921f87b8174",
         "83ce4e49034b45ec9b534fabb98d589f",
         "d6b57efd95674fada4ee0acb55a8d6f9",
-        "b748d669f82b4d15866edcee1bfe7b1f",
         "83e3a74ab8bb40ec90910093cbdf82cb",
         "753680a4f19a47efb97bf0b3144f187a",
         "ffeaea23c2f04e508e830474b69965bc",
@@ -4086,7 +4156,9 @@
         "824c8df02c074ea1b9c24b1a640c94eb",
         "2d9712c92e0a43c5ac19358daf58d1e1",
         "f2339fc4c4ee4c97aaa73f46813c7ae6",
-        "9d5710aca78e472da8e8f035af8a887e"
+        "9d5710aca78e472da8e8f035af8a887e",
+        "04dc6b1423534558b73d0ef9447db8ff",
+        "1602892276ac4ed695b00313b526df95"
       ]
     }
   ],
@@ -4119,7 +4191,7 @@
       "ScaleFactor": 100.0,
       "HasRunWithoutCrash": true,
       "IsVisibleInDynamoLibrary": true,
-      "Version": "2.16.1.2727",
+      "Version": "2.16.2.5624",
       "RunType": "Manual",
       "RunPeriod": "1000"
     },
@@ -4486,16 +4558,6 @@
         "Excluded": false,
         "X": 2386.8947355232262,
         "Y": 461.33819961290556
-      },
-      {
-        "Name": "Physical.SetMechanical",
-        "ShowGeometry": true,
-        "Id": "b748d669f82b4d15866edcee1bfe7b1f",
-        "IsSetAsInput": false,
-        "IsSetAsOutput": false,
-        "Excluded": false,
-        "X": 2002.8947355232258,
-        "Y": 339.33819961290556
       },
       {
         "Name": "Material.Create",
@@ -4974,8 +5036,8 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 3114.4896732412362,
-        "Y": -615.02972681504525
+        "X": 3105.864355704045,
+        "Y": -923.69368795748119
       },
       {
         "Name": "Watch",
@@ -4984,8 +5046,8 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 3507.4896732412362,
-        "Y": -698.02972681504525
+        "X": 3498.864355704045,
+        "Y": -1006.6936879574812
       },
       {
         "Name": "Watch",
@@ -4994,8 +5056,8 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 3507.4896732412362,
-        "Y": -547.02972681504525
+        "X": 3498.864355704045,
+        "Y": -855.69368795748119
       },
       {
         "Name": "Watch",
@@ -5004,8 +5066,8 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 3507.4896732412362,
-        "Y": -849.02972681505162
+        "X": 3498.864355704045,
+        "Y": -1157.6936879574876
       },
       {
         "Name": "Watch",
@@ -5014,8 +5076,8 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 3507.4896732412362,
-        "Y": -396.02972681504525
+        "X": 3498.864355704045,
+        "Y": -704.69368795748119
       },
       {
         "Name": "Watch",
@@ -5024,8 +5086,38 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 3507.4896732412362,
-        "Y": -245.02972681504525
+        "X": 3498.864355704045,
+        "Y": -553.69368795748119
+      },
+      {
+        "Name": "Physical.SetMechanical",
+        "ShowGeometry": true,
+        "Id": "04dc6b1423534558b73d0ef9447db8ff",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 2002.89473552323,
+        "Y": 339.338199612906
+      },
+      {
+        "Name": "Physical.GetDensity",
+        "ShowGeometry": true,
+        "Id": "1602892276ac4ed695b00313b526df95",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 3106.4988410592878,
+        "Y": -244.5057339096866
+      },
+      {
+        "Name": "Watch",
+        "ShowGeometry": true,
+        "Id": "46b0ffa7295f44b283f1bece0878cc00",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 3449.4988410592873,
+        "Y": -244.5057339096866
       }
     ],
     "Annotations": [
@@ -5069,7 +5161,7 @@
         "HasNestedGroups": false,
         "Left": 501.4281595935031,
         "Top": -310.98178603087308,
-        "Width": 488.0,
+        "Width": 535.0,
         "Height": 202.0,
         "FontSize": 30.0,
         "InitialTop": -244.98178603087308,
@@ -5259,7 +5351,6 @@
           "824c8df02c074ea1b9c24b1a640c94eb",
           "e29e490c09bc49128722f9565952e4db",
           "d6b57efd95674fada4ee0acb55a8d6f9",
-          "b748d669f82b4d15866edcee1bfe7b1f",
           "83e3a74ab8bb40ec90910093cbdf82cb",
           "bfadcdb7dc1b4af18623ae5a856ab10c",
           "d545ad5c82464b0696335204ba6a11af",
@@ -5279,7 +5370,8 @@
           "d0165da79f00467f9d63fef35b5bf12f",
           "3ff850d77cb24904bed97178fe175338",
           "83ce4e49034b45ec9b534fabb98d589f",
-          "2d9712c92e0a43c5ac19358daf58d1e1"
+          "2d9712c92e0a43c5ac19358daf58d1e1",
+          "04dc6b1423534558b73d0ef9447db8ff"
         ],
         "HasNestedGroups": false,
         "Left": -0.10526447677693795,
@@ -5308,19 +5400,41 @@
           "3da639d959d244978e18ad7734c46944"
         ],
         "HasNestedGroups": false,
-        "Left": 3104.4896732412362,
-        "Top": -915.02972681505162,
+        "Left": 3095.864355704045,
+        "Top": -1223.6936879574876,
         "Width": 548.0,
         "Height": 806.00000000000637,
         "FontSize": 30.0,
-        "InitialTop": -849.02972681505162,
+        "InitialTop": -1157.6936879574876,
         "InitialHeight": 749.00000000000637,
+        "TextblockHeight": 56.0,
+        "Background": "#FFC1D676"
+      },
+      {
+        "Id": "cb5b64f701624c2aa85d4c8fccd9d5e6",
+        "Title": "",
+        "DescriptionText": "",
+        "IsExpanded": true,
+        "WidthAdjustment": 0.0,
+        "HeightAdjustment": 0.0,
+        "Nodes": [
+          "1602892276ac4ed695b00313b526df95",
+          "46b0ffa7295f44b283f1bece0878cc00"
+        ],
+        "HasNestedGroups": false,
+        "Left": 3096.4988410592878,
+        "Top": -310.50573390968657,
+        "Width": 489.99999999999955,
+        "Height": 201.99999999999997,
+        "FontSize": 30.0,
+        "InitialTop": -244.5057339096866,
+        "InitialHeight": 145.0,
         "TextblockHeight": 56.0,
         "Background": "#FFC1D676"
       }
     ],
-    "X": 323.91875686541226,
-    "Y": 306.129727341297,
-    "Zoom": 0.24810161934069669
+    "X": 157.90257244367967,
+    "Y": 431.713834945192,
+    "Zoom": 0.34699492544865945
   }
 }
