@@ -12,6 +12,15 @@
       "Name": "Project Locations",
       "Type": "selection",
       "Type2": "dropdownSelection",
+      "Value": "DKTM3",
+      "Description": "Project locations (origin) in current document.",
+      "SelectedIndex": 0
+    },
+    {
+      "Id": "1c2139797485459983eef8a159bc0525",
+      "Name": "Project Locations",
+      "Type": "selection",
+      "Type2": "dropdownSelection",
       "Value": "Internal",
       "Description": "Project locations (origin) in current document.",
       "SelectedIndex": 0
@@ -189,7 +198,7 @@
     {
       "ConcreteType": "Orchid.E.RevitProject.Common.ProjectLocation, OrchidRE",
       "SelectedIndex": 0,
-      "SelectedString": "Internal",
+      "SelectedString": "DKTM3",
       "NodeType": "ExtensionNode",
       "Id": "874353b9e94d4348a80a15ca09b82edf",
       "Inputs": [],
@@ -590,13 +599,22 @@
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
       "NodeType": "FunctionNode",
-      "FunctionSignature": "Orchid.RevitProject.Common.Location.InternalOrigin@Revit.Application.Document",
+      "FunctionSignature": "Orchid.RevitProject.Common.Location.InternalOrigin@Revit.Application.Document,bool",
       "Id": "a5de8c91261b4085a548112e658b34a3",
       "Inputs": [
         {
           "Id": "e545bf834dba4e4a8cb5593d47401ca4",
           "Name": "document",
           "Description": "Project document (rvt).\n\nDocument\nDefault value : null",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "375a8eba003245d0b3e48fe08ef39a5c",
+          "Name": "byOrigin",
+          "Description": "Boolean value if point should be by internal origin (true) or by project base point (false)?\n\nbool\nDefault value : true",
           "UsingDefaultValue": true,
           "Level": 2,
           "UseLevels": false,
@@ -615,7 +633,7 @@
         }
       ],
       "Replication": "Auto",
-      "Description": "Get internal origin by document.\n\nLocation.InternalOrigin (document: Document = null): Point"
+      "Description": "Get internal origin by document, in relation to byOrigin selection. Note. The returned value is the negated value of the project position! Furthermore, It is extremely bad NOT to have Internal Origin and Project Base Point as the exact same point!\n\nLocation.InternalOrigin (document: Document = null, byOrigin: bool = true): Point"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
@@ -1121,7 +1139,7 @@
     {
       "ConcreteType": "CoreNodeModels.Input.BoolSelector, CoreNodeModels",
       "NodeType": "BooleanInputNode",
-      "InputValue": true,
+      "InputValue": false,
       "Id": "668fab51b2594c04a2d7427e3703634e",
       "Inputs": [],
       "Outputs": [
@@ -1141,7 +1159,7 @@
     {
       "ConcreteType": "CoreNodeModels.Input.BoolSelector, CoreNodeModels",
       "NodeType": "BooleanInputNode",
-      "InputValue": true,
+      "InputValue": false,
       "Id": "65b28718bdf54698921f86d52d4cc3ce",
       "Inputs": [],
       "Outputs": [
@@ -1226,6 +1244,264 @@
       ],
       "Replication": "Disabled",
       "Description": "Visualize the node's output"
+    },
+    {
+      "ConcreteType": "Orchid.E.RevitProject.Common.ProjectLocation, OrchidRE",
+      "SelectedIndex": 0,
+      "SelectedString": "Internal",
+      "NodeType": "ExtensionNode",
+      "Id": "1c2139797485459983eef8a159bc0525",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "1c72469a9b284376b6e52f391ecdf4ab",
+          "Name": "Location",
+          "Description": "The selected Location",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Project locations (origin) in current document."
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "Orchid.RevitProject.Common.Location.SetProjectPosition@Revit.Application.Document,bool,double,double,double,double",
+      "Id": "9a984c56bb024e5487826abfd8c4f4a1",
+      "Inputs": [
+        {
+          "Id": "61357cae4e8a43218cc49c8fc20a113e",
+          "Name": "document",
+          "Description": "Project document (rvt).\n\nDocument\nDefault value : null",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "66bede3cc30440b5a857442354a9f2d6",
+          "Name": "byOrigin",
+          "Description": "Boolean value if point should be by internal origin (true) or by project base point (false)?\n\nbool\nDefault value : true",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "ca63f68009c84287960f43fbb975e734",
+          "Name": "northSouth",
+          "Description": "North/South offset.\n\ndouble\nDefault value : 0",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "05463135be46479e9e0761c979c40844",
+          "Name": "eastWest",
+          "Description": "East/West offset.\n\ndouble\nDefault value : 0",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "79822c68d8a340558f0b808e46c6b25d",
+          "Name": "elevation",
+          "Description": "Elevation according to ground level.\n\ndouble\nDefault value : 0",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "f49bc5da9ce14cac830418a06df1aef7",
+          "Name": "angle",
+          "Description": "Angle from True North.\n\ndouble\nDefault value : 0",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "d0a32d63c1ee4faa98e4179d65ea9d1e",
+          "Name": "void",
+          "Description": "void",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Set the active project position, in relation to byOrigin selection. Note. It is extremely bad NOT to have Internal Origin and Project Base Point as the exact same point!\n\nLocation.SetProjectPosition (document: Document = null, byOrigin: bool = true, northSouth: double = 0, eastWest: double = 0, elevation: double = 0, angle: double = 0): void"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "Orchid.RevitProject.Common.Location.SetProjectPosition@Revit.Elements.Element,bool,double,double,double,double",
+      "Id": "df6863601095401091edbec0162d5af7",
+      "Inputs": [
+        {
+          "Id": "2bcce9f60ffd459a8cd866a864bae6ba",
+          "Name": "element",
+          "Description": "Element or location.\n\nElement",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "20225241a3984f1cb3440bd218fc743b",
+          "Name": "byOrigin",
+          "Description": "Boolean value if point should be by internal origin (true) or by project base point (false)?\n\nbool\nDefault value : true",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "e8edba515bf74d30bf19303a63723fb7",
+          "Name": "northSouth",
+          "Description": "North/South offset.\n\ndouble\nDefault value : 0",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "ca6880cd023a4e39add0a7ea03eccebf",
+          "Name": "eastWest",
+          "Description": "East/West offset.\n\ndouble\nDefault value : 0",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "5f2d4d64bcad42a1af499d9bc9f49f38",
+          "Name": "elevation",
+          "Description": "Elevation according to ground level.\n\ndouble\nDefault value : 0",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "070ed95ebb6745d8b1bd9d70d5819fae",
+          "Name": "angle",
+          "Description": "Angle from True North.\n\ndouble\nDefault value : 0",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "b13f6c0973f44f37b7b0a578b35d5f34",
+          "Name": "void",
+          "Description": "void",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Set the project position by element or location, in relation to byOrigin selection. This is similar to the Revit command \"Specify Coordinates at Point\". Note. It is extremely bad NOT to have Internal Origin and Project Base Point as the exact same point!\n\nLocation.SetProjectPosition (element: Element, byOrigin: bool = true, northSouth: double = 0, eastWest: double = 0, elevation: double = 0, angle: double = 0): void"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "2000;\n-2000;\n0;\n10;",
+      "Id": "aee45fcb5bed42cc8126e7377bfea496",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "a6046015416548349112175e724f9d33",
+          "Name": "",
+          "Description": "Value of expression at line 1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "4c1450343f744d7dbae33ce3b07d980a",
+          "Name": "",
+          "Description": "Value of expression at line 2",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "bb15cc3d79fa44f2b0f07dcd6f7fd208",
+          "Name": "",
+          "Description": "Value of expression at line 3",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "3e72bc364a7f47a89fe2620381343eec",
+          "Name": "",
+          "Description": "Value of expression at line 4",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Allows for DesignScript code to be authored directly"
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Input.BoolSelector, CoreNodeModels",
+      "NodeType": "BooleanInputNode",
+      "InputValue": false,
+      "Id": "fcfe3745232648b08d353e5a524fa64d",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "d60925ea7d4b4ba3babe404e9ae78c0d",
+          "Name": "",
+          "Description": "Boolean",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Selection between a true and false."
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "Revit.Application.Document.Current",
+      "Id": "5282c00de58243378379ac9fbedfaff9",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "e726f5ea9b824c608be2d4c4755c5365",
+          "Name": "Document",
+          "Description": "Document",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Get the current document\n\nDocument.Current: Document"
     }
   ],
   "Connectors": [
@@ -1386,6 +1662,12 @@
       "IsHidden": "False"
     },
     {
+      "Start": "d0fc649057a049f08641a089e0191ac3",
+      "End": "375a8eba003245d0b3e48fe08ef39a5c",
+      "Id": "90c5532762b04a4d9525ee2a4cfafa1c",
+      "IsHidden": "False"
+    },
+    {
       "Start": "77d719c9d1a448269082ab894c3b061b",
       "End": "fdeeb3fccdea4d029c6c1c1d1b4c3306",
       "Id": "c7afd38192a54f1ca0bfae5fc10726b6",
@@ -1414,6 +1696,78 @@
       "End": "ce3733cb326d44bfa5ccf7ae4d4f0e6b",
       "Id": "80ed19b1f61c4ba49c11dbcb6c574c85",
       "IsHidden": "False"
+    },
+    {
+      "Start": "1c72469a9b284376b6e52f391ecdf4ab",
+      "End": "2bcce9f60ffd459a8cd866a864bae6ba",
+      "Id": "fcae54d1de7a4303bcdd0f1b1ba08a4d",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "a6046015416548349112175e724f9d33",
+      "End": "ca63f68009c84287960f43fbb975e734",
+      "Id": "cbeb349768204c96b896b695bcd5d54f",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "a6046015416548349112175e724f9d33",
+      "End": "e8edba515bf74d30bf19303a63723fb7",
+      "Id": "879e371b53ad4c6d821c3cbe8d9fe7f5",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "4c1450343f744d7dbae33ce3b07d980a",
+      "End": "05463135be46479e9e0761c979c40844",
+      "Id": "089ab0bf48984fecbe189f7208a1a3eb",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "4c1450343f744d7dbae33ce3b07d980a",
+      "End": "ca6880cd023a4e39add0a7ea03eccebf",
+      "Id": "8f2426e147754f52b6e1eec95e32006a",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "bb15cc3d79fa44f2b0f07dcd6f7fd208",
+      "End": "79822c68d8a340558f0b808e46c6b25d",
+      "Id": "994614025eda4020af6183a585b7850a",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "bb15cc3d79fa44f2b0f07dcd6f7fd208",
+      "End": "5f2d4d64bcad42a1af499d9bc9f49f38",
+      "Id": "6ae37a79853e42f4ad2b30f541086350",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "3e72bc364a7f47a89fe2620381343eec",
+      "End": "f49bc5da9ce14cac830418a06df1aef7",
+      "Id": "101520b0bf784426ba50c7373e66ad21",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "3e72bc364a7f47a89fe2620381343eec",
+      "End": "070ed95ebb6745d8b1bd9d70d5819fae",
+      "Id": "462ab0606a3548d88c9da91bc9601f14",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "d60925ea7d4b4ba3babe404e9ae78c0d",
+      "End": "66bede3cc30440b5a857442354a9f2d6",
+      "Id": "c9d54292924542fc943887df81aab840",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "d60925ea7d4b4ba3babe404e9ae78c0d",
+      "End": "20225241a3984f1cb3440bd218fc743b",
+      "Id": "d4a2fab7a2234bedaef49d944f3c572a",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "e726f5ea9b824c608be2d4c4755c5365",
+      "End": "61357cae4e8a43218cc49c8fc20a113e",
+      "Id": "61a6fa880bad4f989e852dafd3e020c1",
+      "IsHidden": "False"
     }
   ],
   "Dependencies": [],
@@ -1433,7 +1787,10 @@
         "488c808c2f1a43fd8d94144a75e58058",
         "230fc589667c4440aa5fafcebed0651e",
         "b5654b1180c743958c2e7e71eaa13949",
-        "b5bd4c44dec04717ab4e40173abb340c"
+        "b5bd4c44dec04717ab4e40173abb340c",
+        "1c2139797485459983eef8a159bc0525",
+        "9a984c56bb024e5487826abfd8c4f4a1",
+        "df6863601095401091edbec0162d5af7"
       ]
     }
   ],
@@ -1510,7 +1867,7 @@
         "Id": "3cde98cb94e84952a4fc54fd43c2a003",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
-        "Excluded": false,
+        "Excluded": true,
         "X": 343.11725471913178,
         "Y": 559.56909412053733
       },
@@ -1801,8 +2158,8 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 1310.1850881483938,
-        "Y": 1692.8200833369056
+        "X": 1309.7115670150245,
+        "Y": 1693.1284248142106
       },
       {
         "Name": "Watch",
@@ -1811,8 +2168,8 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 1644.1850881483967,
-        "Y": 1785.8200833369056
+        "X": 1643.7115670150274,
+        "Y": 1786.1284248142106
       },
       {
         "Name": "Watch",
@@ -1821,8 +2178,8 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 1644.1850881483967,
-        "Y": 1633.8200833369051
+        "X": 1643.7115670150274,
+        "Y": 1634.1284248142101
       },
       {
         "Name": "Boolean",
@@ -1831,7 +2188,7 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 9.8437114881183039,
+        "X": 9.8437114881183021,
         "Y": 2008.1029833843095
       },
       {
@@ -1893,13 +2250,73 @@
         "Excluded": false,
         "X": 652.781052264358,
         "Y": 2506.13056173282
+      },
+      {
+        "Name": "Project Locations",
+        "ShowGeometry": true,
+        "Id": "1c2139797485459983eef8a159bc0525",
+        "IsSetAsInput": true,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1310.1212149363073,
+        "Y": 33.360111464054512
+      },
+      {
+        "Name": "Location.SetProjectPosition",
+        "ShowGeometry": true,
+        "Id": "9a984c56bb024e5487826abfd8c4f4a1",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": true,
+        "X": 1643.1212149363073,
+        "Y": 392.36011146405451
+      },
+      {
+        "Name": "Location.SetProjectPosition",
+        "ShowGeometry": true,
+        "Id": "df6863601095401091edbec0162d5af7",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": true,
+        "X": 1643.1212149363073,
+        "Y": 74.360111464054512
+      },
+      {
+        "Name": "Code Block",
+        "ShowGeometry": true,
+        "Id": "aee45fcb5bed42cc8126e7377bfea496",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1310.1212149363073,
+        "Y": 328.67011146405446
+      },
+      {
+        "Name": "Boolean",
+        "ShowGeometry": true,
+        "Id": "fcfe3745232648b08d353e5a524fa64d",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1310.1212149363073,
+        "Y": 181.36011146405451
+      },
+      {
+        "Name": "Document.Current",
+        "ShowGeometry": true,
+        "Id": "5282c00de58243378379ac9fbedfaff9",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1310.1212149363073,
+        "Y": 518.36011146405451
       }
     ],
     "Annotations": [
       {
         "Id": "bf0ce4a4dcfb451abd2678f683bd54b9",
         "Title": "Project location",
-        "DescriptionText": "File: defaultProject_location",
+        "DescriptionText": "File: defaultProject",
         "IsExpanded": true,
         "WidthAdjustment": 0.0,
         "HeightAdjustment": 0.0,
@@ -1945,13 +2362,13 @@
           "54a4f04b5ff84870a13655c055511b1c"
         ],
         "HasNestedGroups": false,
-        "Left": -0.15628851188169612,
+        "Left": -0.1562885118816979,
         "Top": 1567.7416091191396,
         "Width": 1097.9373407762398,
         "Height": 754.05752448009,
         "FontSize": 30.0,
         "InitialTop": 1633.7416091191396,
-        "InitialHeight": 705.05752448009,
+        "InitialHeight": 671.05752448009048,
         "TextblockHeight": 56.0,
         "Background": "#FFA4E1FF"
       },
@@ -2010,7 +2427,7 @@
       },
       {
         "Id": "a89726c7e0604b5ea493102ecf60c4dd",
-        "Title": "",
+        "Title": "World Coordinates",
         "DescriptionText": "",
         "IsExpanded": true,
         "WidthAdjustment": 0.0,
@@ -2021,15 +2438,15 @@
           "f652a408cc39442189630142d42b2286"
         ],
         "HasNestedGroups": false,
-        "Left": 1300.1850881483938,
-        "Top": 1567.8200833369051,
+        "Left": 1299.7115670150245,
+        "Top": 1568.1284248142101,
         "Width": 571.000000000003,
         "Height": 354.00000000000045,
         "FontSize": 30.0,
-        "InitialTop": 1633.8200833369051,
+        "InitialTop": 1634.1284248142101,
         "InitialHeight": 297.00000000000045,
         "TextblockHeight": 56.0,
-        "Background": "#FFBB87C6"
+        "Background": "#FFA4E1FF"
       },
       {
         "Id": "86bcc0a7e700400fa788e7c4a5484f36",
@@ -2059,6 +2476,32 @@
         "Background": "#FFFFAA45"
       },
       {
+        "Id": "edb6c8a213b84061929d7d2f67ac737f",
+        "Title": "Set Project Position -> Survey point",
+        "DescriptionText": "When testing, run individual one at the time!",
+        "IsExpanded": true,
+        "WidthAdjustment": 0.0,
+        "HeightAdjustment": 0.0,
+        "Nodes": [
+          "9a984c56bb024e5487826abfd8c4f4a1",
+          "df6863601095401091edbec0162d5af7",
+          "aee45fcb5bed42cc8126e7377bfea496",
+          "1c2139797485459983eef8a159bc0525",
+          "fcfe3745232648b08d353e5a524fa64d",
+          "5282c00de58243378379ac9fbedfaff9"
+        ],
+        "HasNestedGroups": false,
+        "Left": 1300.1212149363073,
+        "Top": -39.639888535945488,
+        "Width": 633.0,
+        "Height": 734.0,
+        "FontSize": 36.0,
+        "InitialTop": 33.360111464054512,
+        "InitialHeight": 630.0,
+        "TextblockHeight": 63.0,
+        "Background": "#FFBB87C6"
+      },
+      {
         "Id": "68a958d1df464abfaf735955bb3efa4d",
         "Title": "Note: the survey point in the OOTB node might fail, if larger values is set in the document!",
         "DescriptionText": null,
@@ -2078,8 +2521,8 @@
         "Background": "#FFC1D676"
       }
     ],
-    "X": 283.42762494836836,
-    "Y": 0.27227376469580022,
-    "Zoom": 0.45167688418121155
+    "X": 288.2092581594016,
+    "Y": 15.095917203611217,
+    "Zoom": 0.44676357908599668
   }
 }
