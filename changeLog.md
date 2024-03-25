@@ -4,6 +4,9 @@ The major and minor number follows the Dynamo version, e.g. Orchid 2.19.x.x is u
   
 ### History of Orchid for Dynamo 2.17.x -- 2.19.x (Revit 2024)  
   
+2.19.1  
+- Refactoring nodes/functions for adaptation naming convention (uniform access principle) to get rid of “get” as prefix. At the time of writing, it is not possible to get rid of “set” as a prefix, as Dynamo handles methods with multiple signatures poorly.  
+  
 2.19.0
 - 1st version of Orchid for the Dynamo 2.19.x series.  
   
@@ -18,6 +21,9 @@ The major and minor number follows the Dynamo version, e.g. Orchid 2.19.x.x is u
   
   
 ### History of Orchid for Dynamo 2.13.x -- 2.16.x (Revit 2023)  
+  
+2.16.5  
+- Refactoring nodes/functions for adaptation naming convention (uniform access principle) to get rid of “get” as prefix. At the time of writing, it is not possible to get rid of “set” as a prefix, as Dynamo handles methods with multiple signatures poorly.  
   
 2.16.4  
 - Orchid versioning adjusted so major and minor number follows the Dynamo major and minor number. The build number follows internal Orchid major builds.  
@@ -50,6 +56,9 @@ The major and minor number follows the Dynamo version, e.g. Orchid 2.19.x.x is u
   
   
 ### History of Orchid for Dynamo 2.10.x -- 2.12.x (Revit 2022)  
+  
+2.12.6  
+- Refactoring nodes/functions for adaptation naming convention (uniform access principle) to get rid of “get” as prefix. At the time of writing, it is not possible to get rid of “set” as a prefix, as Dynamo handles methods with multiple signatures poorly.  
   
 2.12.5
 - Orchid versioning adjusted so major and minor number follows the Dynamo major and minor number. The build number follows internal Orchid major builds.  
@@ -88,7 +97,10 @@ The major and minor number follows the Dynamo version, e.g. Orchid 2.19.x.x is u
   
 ### History of Orchid for Dynamo 2.5.x -- 2.6.x (Revit 2021)  
   
-2.06.7  
+2.6.8  
+- Refactoring nodes/functions for adaptation naming convention (uniform access principle) to get rid of “get” as prefix. At the time of writing, it is not possible to get rid of “set” as a prefix, as Dynamo handles methods with multiple signatures poorly.  
+  
+2.6.7  
 - Orchid versioning adjusted so major and minor number follows the Dynamo major and minor number. The build number follows internal Orchid major builds.  
   
 206.6.0  

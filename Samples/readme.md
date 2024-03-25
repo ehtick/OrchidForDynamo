@@ -35,4 +35,3 @@ To use these sample files, please open one of the Revit documents in the "Data" 
 &nbsp;&nbsp;&nbsp; ![folder](../img/folder.png) Families  
 &nbsp;&nbsp;&nbsp; ![folder](../img/folder.png) Materials  
 &nbsp;&nbsp;&nbsp; ![folder](../img/folder.png) Projects  
-&nbsp; ![folder](../img/folder.png) Graphs_To212  
