@@ -4,11 +4,17 @@ The major and minor number follows the Dynamo version, e.g. Orchid 3.0.x.x is us
   
 ### History of Orchid for Dynamo 3.0.x (Revit 2025)  
   
+3.0.1  
+- Function for validating if the IFC exporter is validly implemented.  
+
 3.0.0  
 - 1st version of Orchid for the Dynamo 3.0.x series.  
   
 
 ### History of Orchid for Dynamo 2.17.x -- 2.19.x (Revit 2024)  
+  
+2.19.2  
+- Function for validating if the IFC exporter is validly implemented.  
   
 2.19.1  
 - Refactoring nodes/functions for adaptation naming convention (uniform access principle) to get rid of “get” as prefix. At the time of writing, it is not possible to get rid of “set” as a prefix, as Dynamo handles methods with multiple signatures poorly.  
@@ -27,6 +33,9 @@ The major and minor number follows the Dynamo version, e.g. Orchid 3.0.x.x is us
   
   
 ### History of Orchid for Dynamo 2.13.x -- 2.16.x (Revit 2023)  
+  
+2.16.6  
+- Function for validating if the IFC exporter is validly implemented.  
   
 2.16.5  
 - Refactoring nodes/functions for adaptation naming convention (uniform access principle) to get rid of “get” as prefix. At the time of writing, it is not possible to get rid of “set” as a prefix, as Dynamo handles methods with multiple signatures poorly.  
@@ -62,6 +71,9 @@ The major and minor number follows the Dynamo version, e.g. Orchid 3.0.x.x is us
   
   
 ### History of Orchid for Dynamo 2.10.x -- 2.12.x (Revit 2022)  
+  
+2.12.7  
+- Function for validating if the IFC exporter is validly implemented.  
   
 2.12.6  
 - Refactoring nodes/functions for adaptation naming convention (uniform access principle) to get rid of “get” as prefix. At the time of writing, it is not possible to get rid of “set” as a prefix, as Dynamo handles methods with multiple signatures poorly.  
@@ -102,6 +114,9 @@ The major and minor number follows the Dynamo version, e.g. Orchid 3.0.x.x is us
   
   
 ### History of Orchid for Dynamo 2.5.x -- 2.6.x (Revit 2021)  
+  
+2.6.9  
+- Function for validating if the IFC exporter is validly implemented.  
   
 2.6.8  
 - Refactoring nodes/functions for adaptation naming convention (uniform access principle) to get rid of “get” as prefix. At the time of writing, it is not possible to get rid of “set” as a prefix, as Dynamo handles methods with multiple signatures poorly.  
