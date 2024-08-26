@@ -19,7 +19,7 @@ Check the [change log](changeLog.md) to see the history of the Orchid package.
 ## Install or Update the package for Dynamo  
 Download the **[OrchidForDynamo](Builds/OrchidForDynamo.exe)** executable installer in the [Builds](Builds) folder to install the Orchid package. Likewise if needed, download the [OrchidSamples](Builds/OrchidSamples.exe) executable installer for the sample collection, and/or download the [data files](Builds/OrchidSampleDataFiles.exe) for the sample collection.
   
-<code style="color : red">**REVIT AND DYNAMO MUST BE CLOSED DURING INSTALLATION!**</code>  
+<span style="color: red">**REVIT AND DYNAMO MUST BE CLOSED DURING INSTALLATION!**</span>  
 </br>
 
 ### Manually installation
@@ -43,10 +43,10 @@ If Orchid dosnt work after installation, then try to see if you have one of thes
   
 ---
 ## Node description and organization  
-Nodes are generally arranged in assemblies directed towards the Dynamo application. One assembly cover all the basic in the Orchid package, two assemblies cover either the Core (Sandbox) application, or the Dynamo for Revit application. Next, two assemblies that cover the IFC exporter at [github.com/Autodesk/revit-ifc](http://github.com/Autodesk/revit-ifc). Lastly, some assemblies cover third-party functions. Each of the assemblies is a 'set' of two assemblies for base/standard nodes and extensible nodes, mainly dropdown nodes.  
+Nodes are generally arranged in assemblies directed towards the Dynamo application. One assembly cover all the basic in the Orchid package, two assemblies cover either the Core (Sandbox) application, or the Dynamo for Revit application. Next, two assemblies that cover the [Autodesk IFC exporter](http://github.com/Autodesk/revit-ifc). Lastly, some assemblies cover third-party functions. Each of the assemblies is a 'set' of two assemblies for base/standard nodes and extensible nodes, mainly dropdown nodes.  
 The nodes may also be used as textual scripted functions in code blocks and custom nodes, example when using design script in code blocks as the Dynamo functions.  
   
-Inside Dynamo are the Orchid package nodes arranged into different main branches: Core, RevitFamily, RevitMaterial, and RevitProject. The Core branch is subdivided into About, Autodesk, Common, and Geometry. The About branch covers functions for information about the Orchid package. The Autodesk branch covers functions for the Revit application. The Common and Geometry branch covers functions that are used for generic purposes. The branches starting named 'Revit' covers functions to be used inside Revit. Functions for MEP System are included in the RevitProject branch.  
+Inside Dynamo are the Orchid package nodes arranged into four different main branches: Core, RevitFamily, RevitMaterial, and RevitProject. The Core branch is subdivided into About, Autodesk, Common, and Geometry. The About branch covers functions for information about the Orchid package. The Autodesk branch covers functions for the Revit application. The Common and Geometry branch covers functions that are used for generic purposes. The branches starting named 'Revit' covers functions to be used inside Revit. Functions for MEP System are included in the RevitProject branch.  
   
 Nodes in the four Revit driven branches can be recognized by their icon ribbon/edge color:  
 Core -> yellow &nbsp;|&nbsp; RevitFamily -> blue &nbsp;|&nbsp; RevitMaterial -> green &nbsp;|&nbsp; RevitProject -> red ... MEPSystem -> purple  
