@@ -4,6 +4,11 @@ The major and minor number follows the Dynamo version, e.g. Orchid 3.0.x.x is us
   
 ### History of Orchid for Dynamo 3.0.x -- 3.2.x (Revit 2025)  
   
+3.2.1  
+- The “condense” option is removed from several nodes. A specific list.condense function is added.  
+- SystemTree (MEP) functions have been extended and include also xml/json export options.  
+- MEP system functions have a specific color (purple) to indicate the namespace of the nodes.  
+  
 3.2.0  
 - 1st version of Orchid for the Dynamo 3.2.x series.  
   
@@ -15,6 +20,11 @@ The major and minor number follows the Dynamo version, e.g. Orchid 3.0.x.x is us
   
 
 ### History of Orchid for Dynamo 2.17.x -- 2.19.x (Revit 2024)  
+  
+2.19.3  
+- The “condense” option is removed from several nodes. A specific list.condense function is added.  
+- SystemTree (MEP) functions have been extended and include also xml/json export options.  
+- MEP system functions have a specific color (purple) to indicate the namespace of the nodes.  
   
 2.19.2  
 - Function for validating if the IFC exporter is validly implemented.  
@@ -36,6 +46,11 @@ The major and minor number follows the Dynamo version, e.g. Orchid 3.0.x.x is us
   
   
 ### History of Orchid for Dynamo 2.13.x -- 2.16.x (Revit 2023)  
+  
+2.16.7  
+- The “condense” option is removed from several nodes. A specific list.condense function is added.  
+- SystemTree (MEP) functions have been extended and include also xml/json export options.  
+- MEP system functions have a specific color (purple) to indicate the namespace of the nodes.  
   
 2.16.6  
 - Function for validating if the IFC exporter is validly implemented.  
@@ -74,6 +89,11 @@ The major and minor number follows the Dynamo version, e.g. Orchid 3.0.x.x is us
   
   
 ### History of Orchid for Dynamo 2.10.x -- 2.12.x (Revit 2022)  
+  
+2.12.8  
+- The “condense” option is removed from several nodes. A specific list.condense function is added.  
+- SystemTree (MEP) functions have been extended and include also xml/json export options.  
+- MEP system functions have a specific color (purple) to indicate the namespace of the nodes.  
   
 2.12.7  
 - Function for validating if the IFC exporter is validly implemented.  
@@ -117,6 +137,11 @@ The major and minor number follows the Dynamo version, e.g. Orchid 3.0.x.x is us
   
   
 ### History of Orchid for Dynamo 2.5.x -- 2.6.x (Revit 2021)  
+  
+2.6.10  
+- The “condense” option is removed from several nodes. A specific list.condense function is added.  
+- SystemTree (MEP) functions have been extended and include also xml/json export options.  
+- MEP system functions have a specific color (purple) to indicate the namespace of the nodes.  
   
 2.6.9  
 - Function for validating if the IFC exporter is validly implemented.  
