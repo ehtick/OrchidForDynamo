@@ -6,7 +6,7 @@ Do always ensure Revit (and Dynamo) is closed during installation!
 ### Dynamo package path  
 The executable installer will install Orchid in the default user path for dynamo packages. If you want to move the default location for packages, then put the path you want to use as the first path. This may also include network and unc paths!  
   
-From Dynamo version 2.10 the dynamo team included that installations were installed in version-specific folders even if the Revit version is not changed. This decision is also followed when installing the Orchid package! ...meaning an Orchid 212 will be installed in a 2.12 packages path even if it is installed in a Dynamo 2.10 version, and might not be loaded due to this!  
+From Dynamo version 2.10 the dynamo team included that installations were installed in version-specific folders even if the Revit version is not changed. This decision is also followed when installing the Orchid package! ...meaning an Orchid 219 will be installed in a 2.19 packages path even if it is installed in a Dynamo 2.18 version, and might not be loaded due to this!  
 This can be solved by adding the needed path manually or by moving the Orchid package manually.  
   
 ### Errors coursed by improper packages 
@@ -21,9 +21,12 @@ If Orchid is installed using the executable, then a dynamic function will verify
 If the IFC Exporter is being uninstalled, the dynamic function will also reverse the access for the IFC nodes, this will also require a restart of Dynamo before it works without any errors.  
   
 ### Errors coursed by Windows  
-A well-known "error" is windows blocking files upon download, and this includes the executable, the zipped file, and the assembly files in the package. Files that are meant to place in system folders like %ProgramData% and %AppData% may be blocked by Windows to protect the system, if so, then unblock the files, by entering the 'Properties' -> 'Unblock' menu item.  
+A well-known "error" is Windows zip tool blocking files upon download, due to permission set on your machine. Files that are meant to be placed in system folders like %ProgramData% and %AppData% may be blocked, if so, then unblock the files, by entering the 'Properties' -> 'Unblock' menu item. However, using [7zip]( https://www.7-zip.org/download.html) as your zip tool instead can solve the problem, since this tool offers unblocking while unzipping.  
 ![unblock](img/unblock.png)  
   
 ### Other challenges  
 In the last couple of years have many things changed in Revit, old methods change names and functions, new methods arrive, and some methods are being deprecated. Also, Dynamo is concurrently being developed which in itself involves challenges.  
 However, the largest challenge is the development of the Orchid package. The package is constantly expanding and the amount of new methods is huge. This involves challenges for the organization of nodes in the package, which are being reorganized when there is no other way around to keep the progress of Orchid development.  
+  
+### Further information  
+For more information about manual installations and issues using Dynamo, please see the [Dynamo Builds]( https://github.com/DynamoDS/Dynamo/wiki/How-to-Utilize-Dynamo-Builds) wiki page or the [Help Center](https://dynamobim.org/help-center/) page.  
