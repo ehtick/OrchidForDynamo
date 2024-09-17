@@ -64,4 +64,4 @@ This work is licensed under the [Creative Commons Attribution-NoDerivatives 4.0 
   
 In short terms does the CC BY-ND license state: This license allows for redistribution, commercial and non-commercial, as long as it is passed along unchanged and in whole, with credit to the author.  
   
-In the event of violation of the license terms or any other harassment (including, of the author), it will block for the use of the Orchid solution for the user/company until a solution is found.  
+Since the use of the software may be seen as a conflict of interest for the author, the use of the license may be limited where a professional work-related conflict of interest may arise. Such cases may be the case in the geographical immediate environment, where the author acts professionally and must live off the intellectual property rights in the form of job security/consultancy. It will also be seen as a conflict of interest if the author experiences personal bothering or other harassment from any user or company. In case of conflict of interest, it will block the use of the Orchid solution for the user/company until a solution can be found.  
